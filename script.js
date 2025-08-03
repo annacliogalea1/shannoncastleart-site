@@ -12,27 +12,31 @@ setInterval(() => {
   banner.src = bannerImages[current];
 }, 4000);
 
+// ─── Fullscreen Menu ───────────────────────────
 const toggleBtn = document.getElementById('menu-toggle');
-const dropdown  = document.getElementById('dropdown-menu');
+const fullscreenMenu = document.getElementById('fullscreen-menu');
 
-// Toggle open/close on click
+// Toggle menu
 toggleBtn.addEventListener('click', () => {
-  dropdown.classList.toggle('show');
+  fullscreenMenu.classList.toggle('show');
   toggleBtn.classList.toggle('open');
 });
 
-// Auto-close when clicking a link
-dropdown.querySelectorAll('a').forEach(link => {
+// Close menu when clicking a link
+fullscreenMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    dropdown.classList.remove('show');
+    fullscreenMenu.classList.remove('show');
     toggleBtn.classList.remove('open');
   });
 });
 
-// Auto-close when clicking outside
-document.addEventListener('click', e => {
-  if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
-    dropdown.classList.remove('show');
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  const clickedInsideToggle = toggleBtn.contains(e.target);
+  const clickedInsideMenu = fullscreenMenu.contains(e.target);
+
+  if (!clickedInsideToggle && !clickedInsideMenu && fullscreenMenu.classList.contains('show')) {
+    fullscreenMenu.classList.remove('show');
     toggleBtn.classList.remove('open');
   }
 });
