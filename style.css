@@ -80,7 +80,7 @@ p {
 header {
   position: fixed;
   top: 0;
-  width: 50%;
+  width: 100%;
   background: rgb(60, 60, 60);
   padding: 1em;
   display: flex;
