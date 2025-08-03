@@ -243,3 +243,32 @@ header h1 {
   opacity: 1;
   pointer-events: auto;
 }
+
+.menu-toggle {
+  font-size: 2.2em;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: transform 0.3s ease;
+  z-index: 1002; /* sits above overlay */
+}
+
+.menu-toggle::before {
+  content: "+";
+  color: white;
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* When menu is open, switch to − and rotate slightly */
+.menu-toggle.open::before {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .fullscreen-menu {
+    width: 100vw; /* Full screen on small devices */
+  }
+}
