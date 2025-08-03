@@ -91,7 +91,7 @@ header {
 nav a {
   margin-left: 1em;
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 /* =======================================================
@@ -169,4 +169,47 @@ footer {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+/* =======================================================
+   Dropdown Styles
+======================================================= */
+.menu-toggle {
+  font-size: 2em;
+  cursor: pointer;
+  user-select: none;
+  display: none; /* hidden by default, shown at smaller screen sizes */
+}
+
+nav {
+  display: flex;
+  gap: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    padding: 1em;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
 }
