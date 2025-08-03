@@ -82,7 +82,7 @@ header {
   top: 0;
   width: 100%;
   background: rgb(60, 60, 60);
-  padding: 1em;
+  padding: .05em;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
