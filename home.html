@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artist Home</title>
+  <title>Shannon Castle</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
     <h1>SHANNON CASTLE</h1>
-    
-    <!-- Dropdown Toggle -->
-    <div class="menu-toggle" onclick="toggleMenu()">+</div>
-
-    <!-- Dropdown Menu -->
-    <nav id="dropdown-menu"
-      <a href="#">Home</a>
-      <a href="#">Collections</a>
-      <a href="#">Artist</a>
-      <a href="#">Studio</a>
-      <a href="#">Videos</a>
-      <a href="#">Exhibitions</a>
-      <a href="#">Contact</a>
-    </nav>
+    <div id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation"></div>
   </header>
 
+  <nav id="fullscreen-menu" class="fullscreen-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Artist</a></li>
+      <li><a href="#">Studio</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">Exhibitions</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
   <section class="quote">
     <blockquote>“[PLACEDHOLDER FOR SHANNON QUOTE OR TEXT BLOCK]”</blockquote>
@@ -53,18 +51,5 @@
     </form>
     <p class="caption">© 2025 Shannon Castle</p>
   </footer>
-  <script>
-  function toggleMenu() {
-    const nav = document.getElementById('dropdown-menu');
-    nav.classList.toggle('show');
-  }
-</script>
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('dropdown-menu');
-    nav.classList.toggle('show');
-  }
-</script>
-
 </body>
 </html>
