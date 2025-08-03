@@ -13,7 +13,6 @@ body, html {
 
 /* =======================================================
    Typography
-   - Headings, paragraphs, labels, and captions
 ======================================================= */
 h1,
 h2,
@@ -32,7 +31,6 @@ p {
 
 /* =======================================================
    Landing Page
-   - Full-screen background, overlay, title, and Enter button
 ======================================================= */
 .landing {
   background: url('images/landing-bg.jpg') no-repeat center center/cover;
@@ -74,31 +72,7 @@ p {
 }
 
 /* =======================================================
-   Header & Navigation
-   - Fixed top bar, links
-======================================================= */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(51, 51, 51, 0.95); /* slightly transparent */
-  color: white;
-  padding: 0.5em 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-
-nav a {
-  margin-left: 1em;
-  text-decoration: none;
-  color: black;
-}
-
-/* =======================================================
    Banner Section
-   - Full-width, auto-rotating banner images
 ======================================================= */
 .banner img {
   width: 100%;
@@ -108,7 +82,6 @@ nav a {
 
 /* =======================================================
    Quote Section
-   - Centered, italicized quote block
 ======================================================= */
 .quote {
   padding: 2em;
@@ -118,7 +91,6 @@ nav a {
 
 /* =======================================================
    Collections Grid
-   - Three-panel grid layout with images and captions
 ======================================================= */
 .collections-grid {
   display: flex;
@@ -138,7 +110,6 @@ nav a {
 
 /* =======================================================
    Footer & Contact Form
-   - Footer background and styled contact form
 ======================================================= */
 footer {
   background: #f0f0f0;
@@ -173,22 +144,47 @@ footer {
   cursor: pointer;
 }
 
-/* =======================================================
-   Dropdown Styles
-======================================================= */
-/* Hides nav by default */
-#dropdown-menu {
-  display: none;
-  flex-direction: column;
-  background: #333;
-  padding: 1em;
+/* ── Header ───────────────────────────────────────────────────────────────── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(51,51,51,0.95);
+  color: white;
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
 }
 
-#dropdown-menu a {
+/* ── Toggle Button (no inner text) ────────────────────────────────────────── */
+.menu-toggle {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.menu-toggle::before {
+  content: "+";
+  font-size: 2em;
+  line-height: 1;
+  color: white;
+  display: block;
+  text-align: center;
+}
+.menu-toggle.open::before {
+  content: "−";
+}
+
+/* ── Dropdown Menu ───────────────────────────────────────────────────────── */
+#dropdown-menu {
   position: absolute;
-  top: 60px; /* adjust to match header height */
+  top: 100%;    /* directly below header */
+  left: 0;
   width: 100%;
-  background: rgba(51, 51, 51, 0.95);
+  background: rgba(51,51,51,0.95);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -197,55 +193,20 @@ footer {
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 9;
 }
-
-/* Show nav when .show is added */
-#dropdown-menu.show {
-  display: flex;
-}
-
-/* Style the + icon */
-.menu-toggle {
-  font-size: 2em;
-  cursor: pointer;
-  user-select: none;
-  transition: transform 0.2s ease;
-}
-
-/* Optional: make sure header looks right */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #333;
-  color: white;
-  padding: 0.5em 1em;
-}
-
-/* When menu is open */
 #dropdown-menu.show {
   display: flex;
   opacity: 1;
   transform: translateY(0);
 }
-
 #dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 1em;
   color: white;
   text-decoration: none;
-  padding: 1em;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
 #dropdown-menu a:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,0.05);
 }
 
-/* "+" to "-" visual */
-.menu-toggle.open::after {
-  content: "-";
-}
-
-.menu-toggle::after {
-  content: "+";
-}
