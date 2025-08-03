@@ -10,16 +10,22 @@
 <body>
   <header>
     <h1>SHANNON CASTLE</h1>
-    <nav>
+    
+    <!-- Dropdown Toggle -->
+    <div class="menu-toggle" onclick="toggleMenu()">+</div>
+
+    <!-- Dropdown Menu -->
+    <nav id="dropdown-menu"
       <a href="#">Home</a>
       <a href="#">Collections</a>
-      <a href="#">About</a>
+      <a href="#">Artist</a>
+      <a href="#">Studio</a>
+      <a href="#">Videos</a>
+      <a href="#">Exhibitions</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
-  <section class="banner">
-    <img id="banner-image" src="images/banner1.jpg" alt="Banner Image">
-  </section>
 
   <section class="quote">
     <blockquote>“[PLACEDHOLDER FOR SHANNON QUOTE OR TEXT BLOCK]”</blockquote>
@@ -47,5 +53,18 @@
     </form>
     <p class="caption">© 2025 Shannon Castle</p>
   </footer>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('dropdown-menu');
+    nav.classList.toggle('show');
+  }
+</script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('dropdown-menu');
+    nav.classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>

@@ -174,42 +174,40 @@ footer {
 /* =======================================================
    Dropdown Styles
 ======================================================= */
+/* Hides nav by default */
+#dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background: #333;
+  padding: 1em;
+}
+
+#dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 0;
+  display: block;
+}
+
+/* Show nav when .show is added */
+#dropdown-menu.show {
+  display: flex;
+}
+
+/* Style the + icon */
 .menu-toggle {
   font-size: 2em;
   cursor: pointer;
+  color: white;
   user-select: none;
-  display: none; /* hidden by default, shown at smaller screen sizes */
 }
 
-nav {
+/* Optional: make sure header looks right */
+header {
   display: flex;
-  gap: 1em;
-}
-
-.hidden {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    color: white;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    padding: 1em;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5em 0;
-  }
-
-  nav.show {
-    display: flex;
-  }
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: white;
+  padding: 0.5em 1em;
 }
