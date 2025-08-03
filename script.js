@@ -12,31 +12,29 @@ setInterval(() => {
   banner.src = bannerImages[current];
 }, 4000);
 
-// ─── Fullscreen Menu ───────────────────────────
 const toggleBtn = document.getElementById('menu-toggle');
 const fullscreenMenu = document.getElementById('fullscreen-menu');
+const overlay = document.getElementById('overlay');
 
-// Toggle menu
+// Toggle menu + overlay
 toggleBtn.addEventListener('click', () => {
   fullscreenMenu.classList.toggle('show');
+  overlay.classList.toggle('show');
   toggleBtn.classList.toggle('open');
 });
 
-// Close menu when clicking a link
+// Close when clicking a link
 fullscreenMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     fullscreenMenu.classList.remove('show');
+    overlay.classList.remove('show');
     toggleBtn.classList.remove('open');
   });
 });
 
-// Close when clicking outside
-document.addEventListener('click', (e) => {
-  const clickedInsideToggle = toggleBtn.contains(e.target);
-  const clickedInsideMenu = fullscreenMenu.contains(e.target);
-
-  if (!clickedInsideToggle && !clickedInsideMenu && fullscreenMenu.classList.contains('show')) {
-    fullscreenMenu.classList.remove('show');
-    toggleBtn.classList.remove('open');
-  }
+// Close when clicking outside (on overlay)
+overlay.addEventListener('click', () => {
+  fullscreenMenu.classList.remove('show');
+  overlay.classList.remove('show');
+  toggleBtn.classList.remove('open');
 });
