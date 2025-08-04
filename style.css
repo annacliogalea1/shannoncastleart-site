@@ -179,7 +179,7 @@ header h1 {
 }
 
 .overlay.show {
-  opacity: 1;
+  opacity: 1.5;
   pointer-events: auto;
 }
 
