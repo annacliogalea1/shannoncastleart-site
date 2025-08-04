@@ -119,13 +119,10 @@ footer {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.5em;
   max-width: 600px;
   margin: 4em auto;
-}
-
-.contact-form label {
-  display: none; /* Hides all labels like 'Contact', 'Name*', etc. */
+  font-family: 'Lato', sans-serif;
 }
 
 .contact-form-row {
@@ -133,73 +130,51 @@ footer {
   gap: 1em;
 }
 
+/* Wrapper for each field (Name, Email, Message) */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Label styles */
+.form-field label {
+  font-size: 0.8em;
+  color: #333;
+  margin-bottom: 0.3em;
+}
+
+/* Input and textarea shared styling */
 .contact-form input,
 .contact-form textarea {
   padding: 0.5em;
   border: 1px solid #444;
-  border-radius: 0; /* Removes rounding */
+  border-radius: 0;
   background: #f7f7f7;
   font-family: 'Lato', sans-serif;
   font-size: 1em;
-  flex: 1;
 }
 
+/* Textarea height */
 .contact-form textarea {
   height: 8em;
   resize: vertical;
 }
 
+/* Submit button */
 .contact-form button {
   align-self: flex-end;
   padding: 0.5em 1.5em;
+  width: 50%; /* Half width of full row */
+  max-width: 200px;
   background: black;
   color: white;
   font-size: 0.95em;
-  font-family: 'Lato', sans-serif;
   border: none;
   border-radius: 0;
   cursor: pointer;
-  width: auto;
-  margin-top: 0.5em;
-}
-
-/* ── Header ───────────────────────────────────────────── */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background-color: #000;
-  color: white;
-  padding: 0.8em 1.5em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-header h1 {
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  font-weight: normal;
-  margin: 0;
-}
-
-/* ── Overlay ───────────────────────────────────────────── */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-.overlay.show {
-  opacity: 1.5;
-  pointer-events: auto;
+  margin-top: 1em;
+  font-family: 'Lato', sans-serif;
 }
 
 /* ── Slide-In Menu ─────────────────────────────────────── */
