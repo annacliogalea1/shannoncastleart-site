@@ -38,3 +38,16 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('show');
   toggleBtn.classList.remove('open');
 });
+
+const contactForm = document.getElementById('contact-form');
+const confirmation = document.getElementById('confirmation-message');
+
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent page reload
+
+  // Hide the form
+  contactForm.style.display = 'none';
+
+  // Show the confirmation message
+  confirmation.style.display = 'block';
+});
