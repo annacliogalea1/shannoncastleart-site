@@ -44,18 +44,20 @@ const confirmation = document.getElementById('confirmation-message');
 const userNameSpan = document.getElementById('user-name');
 
 contactForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent page reload
+  e.preventDefault();
 
   const userName = document.getElementById('name').value.trim();
-  userNameSpan.textContent = userName || 'there'; // Fallback if name is blank
+  userNameSpan.textContent = userName || 'there';
 
   contactForm.style.display = 'none';
   confirmation.style.display = 'block';
 
+  // Fade-in effect
   setTimeout(() => {
     confirmation.classList.add('visible');
   }, 50);
 
+  // Hide message + restore form after 5 seconds
   setTimeout(() => {
     confirmation.classList.remove('visible');
     setTimeout(() => {

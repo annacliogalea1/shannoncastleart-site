@@ -14,8 +14,14 @@ body, html {
 /* =======================================================
    Typography
 ======================================================= */
-h1,
-h2,
+header h1 {
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+  margin: 0;
+}
+
+header h2,
 nav,
 blockquote,
 label,
@@ -58,8 +64,8 @@ p {
 .enter-button {
   position: absolute;
   bottom: 40px;
-  font-size: 1.2em;
-  padding: 0.7em 1.5em;
+  font-size: 1em;
+  padding: 0.7em 1.2em;
   border: 2px solid rgb(60, 60, 60);
   color: rgb(60, 60, 60);
   text-decoration: none;
@@ -130,13 +136,6 @@ footer {
   gap: 1em;
 }
 
-.form-container {
-  min-height: 300px; /* Adjust as needed for smooth transition */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 /* Wrapper for each field (Name, Email, Message) */
 .form-field {
   display: flex;
@@ -191,13 +190,30 @@ footer {
   font-size: 1em;
 }
 
-/* Confirmation message */
+.form-container {
+  min-height: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
 .confirmation-message {
   font-family: 'Lato', sans-serif;
   text-align: center;
   margin-top: 2em;
   color: #333;
   font-size: 1em;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  display: none;
+}
+
+.confirmation-message.visible {
+  display: block;
+  opacity: 1;
 }
 
 /* Button hover animation */
@@ -261,13 +277,33 @@ footer {
   align-items: center; /* center list vertically */
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  display: none; /* <-- ADD THIS */
+}
+
+.overlay.show {
+  display: block;   /* <-- ADD THIS */
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* ── Header & Toggle ───────────────────────────────────── */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
   background-color: #000;
   color: white;
-  padding: 0.8em 1.5em;
+  padding: 0.6em 1.2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
