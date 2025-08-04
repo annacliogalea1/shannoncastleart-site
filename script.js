@@ -41,13 +41,27 @@ overlay.addEventListener('click', () => {
 
 const contactForm = document.getElementById('contact-form');
 const confirmation = document.getElementById('confirmation-message');
+const userNameSpan = document.getElementById('user-name');
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent page reload
 
-  // Hide the form
-  contactForm.style.display = 'none';
+  const userName = document.getElementById('name').value.trim();
+  userNameSpan.textContent = userName || 'there'; // Fallback if name is blank
 
-  // Show the confirmation message
+  contactForm.style.display = 'none';
   confirmation.style.display = 'block';
+
+  setTimeout(() => {
+    confirmation.classList.add('visible');
+  }, 50);
+
+  setTimeout(() => {
+    confirmation.classList.remove('visible');
+    setTimeout(() => {
+      confirmation.style.display = 'none';
+      contactForm.reset();
+      contactForm.style.display = 'flex';
+    }, 600);
+  }, 5000);
 });

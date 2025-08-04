@@ -130,6 +130,13 @@ footer {
   gap: 1em;
 }
 
+.form-container {
+  min-height: 300px; /* Adjust as needed for smooth transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* Wrapper for each field (Name, Email, Message) */
 .form-field {
   display: flex;
