@@ -192,8 +192,8 @@ header h1 {
   height: 100vh;
   background: rgba(0, 0, 0, 0.95);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   transform: translateX(100%);
   transition: transform 0.5s ease;
   z-index: 1001;
@@ -217,7 +217,7 @@ header {
 }
 
 .menu-toggle {
-  font-size: 2.2em;
+  font-size: 4em;
   cursor: pointer;
   user-select: none;
   position: relative;
