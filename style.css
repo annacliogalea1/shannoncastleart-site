@@ -192,8 +192,8 @@ header h1 {
   height: 100vh;
   background: rgba(0, 0, 0, 0.95);
   display: flex;
-  justify-content: right;
-  align-items: right;
+  justify-content: flex-end;
+  align-items: center;
   transform: translateX(100%);
   transition: transform 0.5s ease;
   z-index: 1001;
@@ -201,6 +201,33 @@ header h1 {
 
 .fullscreen-menu.show {
   transform: translateX(0);
+}
+
+.fullscreen-menu ul {
+  list-style: none;
+  padding: 0 2em 0 0;
+  margin: 0;
+  text-align: right;
+}
+
+.fullscreen-menu li {
+  margin: 1.5em 0;
+}
+
+.fullscreen-menu a {
+  font-size: 2em;
+  color: white;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  transition: opacity 0.3s;
+}
+
+.fullscreen-menu a:hover {
+  opacity: 0.6;
+}
+
+.fullscreen-menu {
+  align-items: center; /* center list vertically */
 }
 
 /* ── Header & Toggle ───────────────────────────────────── */
@@ -217,7 +244,7 @@ header {
 }
 
 .menu-toggle {
-  font-size: 4em;
+  font-size: 2.2em;
   cursor: pointer;
   user-select: none;
   position: relative;
