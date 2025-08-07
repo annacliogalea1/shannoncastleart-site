@@ -10,34 +10,22 @@
   <div class="fade-container">
     <div class="landing-overlay">
       <h1 class="landing-title">Shannon Castle</h1>
-      <a href="home.html" class="enter-button">Enter</a>
     </div>
-
-    <!-- BLACK FADE OVERLAY -->
+    <a href="home.html" class="enter-button">Enter</a>
     <div class="black-fade-overlay"></div>
   </div>
 
   <script>
     const button = document.querySelector('.enter-button');
     const fadeOverlay = document.querySelector('.black-fade-overlay');
-    const fadeContainer = document.querySelector('.fade-container');
 
     button.addEventListener('click', function (e) {
       e.preventDefault();
-
-      // Fade out the button
       button.classList.add('button-exit');
-
-      // Fade in the black overlay
       fadeOverlay.classList.add('show-black');
-
-      // Optionally fade out the whole container (text)
-      fadeContainer.classList.add('fade-out');
-
-      // Redirect after animation
       setTimeout(() => {
         window.location.href = button.getAttribute('href');
-      }, 1000); // match fade duration
+      }, 1200);
     });
   </script>
 </body>
