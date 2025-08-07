@@ -35,14 +35,21 @@ p {
   font-size: 0.9em;
 }
 
-/* =======================================================
+  /* =======================================================
    Landing Page
 ======================================================= */
 .landing {
-  background: url('images/landing-bg.jpg') no-repeat center center/cover;
+  background: url('SirtautCU1.jpg') no-repeat center center/cover;
+  width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   position: relative;
-  color: rgb(60, 60, 60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
 }
 
 .landing-overlay {
@@ -55,26 +62,74 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0); /* no overlay tint unless you want one */
 }
 
 .landing-title {
   font-size: 3em;
+  color: white;
+  text-align: center;
+  margin: 0;
 }
 
 .enter-button {
-  position: absolute;
-  bottom: 40px;
+  margin-top: 1.5em;
   font-size: 1em;
-  padding: 0.7em 1.2em;
-  border: 2px solid rgb(60, 60, 60);
-  color: rgb(60, 60, 60);
+  padding: 0.7em 1.5em;
+  border: 2px solid white;
+  color: white;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .enter-button:hover {
-  background: rgb(60, 60, 60);
+  background: white;
   color: black;
+}
+
+/* Fade In container + cinematic button reveal */
+.fade-container {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  transition: opacity 0.8s ease;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-out transition for the whole page */
+.fade-container.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* Cinematic entrance for Enter button */
+.enter-button {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: buttonFadeIn 1.5s ease 1s forwards; /* 1s delay, then fade in */
+}
+
+@keyframes buttonFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button exit animation on click */
+.button-exit {
+  animation: buttonExit 0.6s ease forwards;
+}
+
+@keyframes buttonExit {
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
 }
 
 /* =======================================================
