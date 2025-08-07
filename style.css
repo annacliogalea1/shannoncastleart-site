@@ -9,6 +9,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  height: 100%;
 }
 
 /* =======================================================
@@ -35,15 +36,13 @@ p {
   font-size: 0.9em;
 }
 
-  /* =======================================================
+/* =======================================================
    Landing Page
 ======================================================= */
 .landing {
   background: url('images/SirtautCU1.jpg') no-repeat center center/cover;
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   position: relative;
   display: flex;
   justify-content: center;
@@ -53,11 +52,13 @@ p {
 }
 
 .landing-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 3em 0;
 }
 
 .landing-title {
@@ -65,16 +66,22 @@ p {
   color: white;
   text-align: center;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .enter-button {
-  margin-top: 1.5em;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1em;
   padding: 0.7em 1.5em;
   border: 2px solid white;
   color: white;
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  animation: buttonFadeIn 1.5s ease 1s forwards;
 }
 
 .enter-button:hover {
@@ -86,6 +93,7 @@ p {
 .fade-container {
   opacity: 0;
   animation: fadeIn 1s ease forwards;
+  transition: opacity 0.8s ease;
 }
 
 @keyframes fadeIn {
@@ -96,26 +104,13 @@ p {
 
 .fade-container.fade-out {
   opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-/* Fade-out transition for the whole page */
-.fade-container.fade-out {
-  opacity: 0;
-  transition: opacity 0.8s ease;
 }
 
 /* Cinematic entrance for Enter button */
-.enter-button {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: buttonFadeIn 1.5s ease 1s forwards; /* 1s delay, then fade in */
-}
-
 @keyframes buttonFadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 }
 
@@ -127,7 +122,7 @@ p {
 @keyframes buttonExit {
   to {
     opacity: 0;
-    transform: scale(0.85);
+    transform: scale(0.85) translateX(-50%);
   }
 }
 
