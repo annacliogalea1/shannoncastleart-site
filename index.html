@@ -8,28 +8,27 @@
 </head>
 <body class="landing">
   <div class="fade-container">
-    <div class="landing-overlay">
-      <h1 class="landing-title">SHANNON CASTLE</h1>
-      <a href="home.html" class="enter-button">Enter</a>
+  <div class="landing-overlay">
+    <h1 class="landing-title">SHANNON CASTLE</h1>
+    <div class="spacer"></div>
+    <a href="home.html" class="enter-button">Enter</a>
+  </div>
+</div>
 
-<script>
-  const button = document.querySelector('.enter-button');
-  const fadeContainer = document.querySelector('.fade-container');
+  <script>
+    const button = document.querySelector('.enter-button');
+    const fadeContainer = document.querySelector('.fade-container');
 
-  button.addEventListener('click', function (e) {
-    e.preventDefault();
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    // Add fade-out and scale-down effect to the button
-    button.classList.add('button-exit');
+      button.classList.add('button-exit');
+      fadeContainer.classList.add('fade-out');
 
-    // Fade out the whole screen
-    fadeContainer.classList.add('fade-out');
-
-    // Redirect after transition
-    setTimeout(() => {
-      window.location.href = button.getAttribute('href');
-    }, 1200); // match the longest transition
-  });
-</script>
+      setTimeout(() => {
+        window.location.href = button.getAttribute('href');
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
