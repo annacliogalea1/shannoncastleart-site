@@ -8,12 +8,11 @@
 </head>
 <body class="landing">
   <div class="fade-container">
-  <div class="landing-overlay">
-    <h1 class="landing-title">SHANNON CASTLE</h1>
-    <div class="spacer"></div>
-    <a href="home.html" class="enter-button">Enter</a>
+    <div class="landing-overlay">
+      <h1 class="landing-title">Shannon Castle</h1>
+      <a href="home.html" class="enter-button">Enter</a>
+    </div>
   </div>
-</div>
 
   <script>
     const button = document.querySelector('.enter-button');
@@ -21,13 +20,11 @@
 
     button.addEventListener('click', function (e) {
       e.preventDefault();
-
-      button.classList.add('button-exit');
       fadeContainer.classList.add('fade-out');
 
       setTimeout(() => {
         window.location.href = button.getAttribute('href');
-      }, 1200);
+      }, 800); // match the fade-out duration
     });
   </script>
 </body>
