@@ -123,7 +123,24 @@ p {
   to {
     opacity: 0;
     transform: scale(0.85) translateX(-50%);
-  }
+  } 
+}
+
+/* Black overlay that fades in */
+.black-fade-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  z-index: 10;
+}
+
+.black-fade-overlay.show-black {
+  opacity: 1;
 }
 
 /* =======================================================
