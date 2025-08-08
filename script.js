@@ -1,15 +1,19 @@
-// Banner slider logic
+// Fade-based banner slider logic
+const slider = document.getElementById('banner-slider');
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const next = document.querySelector('.arrow.next');
+const prev = document.querySelector('.arrow.prev');
 let index = 0;
-const slider = document.getElementById("banner-slider");
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-const next = document.querySelector(".arrow.next");
-const prev = document.querySelector(".arrow.prev");
+let interval = setInterval(nextSlide, 5000);
 
 function updateSlide(position) {
-  slider.style.transform = "translateX(" + -100 * position + "%)";
-  document.querySelector(".dot.active").classList.remove("active");
-  dots[position].classList.add("active");
+  slides.forEach((slide, i) => {
+    slide.style.opacity = i === position ? '1' : '0';
+    slide.style.zIndex = i === position ? '2' : '1';
+  });
+  document.querySelector('.dot.active').classList.remove('active');
+  dots[position].classList.add('active');
 }
 
 function nextSlide() {
@@ -22,46 +26,35 @@ function prevSlide() {
   updateSlide(index);
 }
 
-let interval = setInterval(nextSlide, 5000);
-
 function resetInterval() {
   clearInterval(interval);
   interval = setInterval(nextSlide, 5000);
 }
 
-next.addEventListener("click", () => {
+next.addEventListener('click', () => {
   nextSlide();
   resetInterval();
 });
 
-prev.addEventListener("click", () => {
+prev.addEventListener('click', () => {
   prevSlide();
   resetInterval();
 });
 
 dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
+  dot.addEventListener('click', () => {
     index = i;
     updateSlide(index);
     resetInterval();
   });
 });
 
-// Swipe support
-let startX = 0;
-let endX = 0;
-
-slider.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-}, false);
-
-slider.addEventListener("touchend", (e) => {
-  endX = e.changedTouches[0].clientX;
-  const diff = endX - startX;
-  if (diff > 50) prevSlide();
-  if (diff < -50) nextSlide();
-  resetInterval();
-}, false);
+// Lazy blur-up effect for images
+document.querySelectorAll('img.lazy-blur').forEach(img => {
+  img.addEventListener('load', () => {
+    img.classList.add('loaded');
+  });
+});
 
 // Toggle menu + overlay
 toggleBtn.addEventListener('click', () => {
@@ -114,3 +107,24 @@ contactForm.addEventListener('submit', (e) => {
     }, 600);
   }, 5000);
 });
+
+// Touch/swipe support
+let startX = 0;
+let endX = 0;
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+}, false);
+
+slider.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  const diff = endX - startX;
+  if (diff > 50) {
+    prevSlide();
+    resetInterval();
+  }
+  if (diff < -50) {
+    nextSlide();
+    resetInterval();
+  }
+}, false);
