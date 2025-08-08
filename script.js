@@ -128,3 +128,21 @@ slider.addEventListener("touchend", (e) => {
     resetInterval();
   }
 }, false);
+
+// Quote fade in on scroll
+const quote = document.querySelector('.quote');
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+  const top = quote.getBoundingClientRect().top;
+  if (top < trigger) {
+    quote.style.opacity = '1';
+    quote.style.transform = 'translateY(0)';
+  }
+});
+
+// Blur-up effect
+document.querySelectorAll('.lazy-blur').forEach(img => {
+  img.addEventListener('load', () => {
+    img.classList.add('loaded');
+  });
+});

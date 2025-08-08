@@ -152,9 +152,16 @@ body.landing {
    Quote Section
 ======================================================= */
 .quote {
-  padding: 2em;
+  padding: 6em 2em 4em;
   text-align: center;
   font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 /* =======================================================
@@ -174,6 +181,15 @@ body.landing {
 .grid-item img {
   width: 100%;
   height: auto;
+}
+
+.lazy-blur {
+  filter: blur(12px);
+  transition: filter 0.6s ease;
+}
+
+.lazy-blur.loaded {
+  filter: blur(0);
 }
 
 /* =======================================================
@@ -437,9 +453,9 @@ header {
 }
 
 .arrow {
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
-  background: rgba(0, 0, 0, 0.3);
+  background: none;
   padding: 0.3em 0.6em;
   cursor: pointer;
   user-select: none;
@@ -459,8 +475,8 @@ header {
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   background: white;
   border-radius: 50%;
   opacity: 0.6;
