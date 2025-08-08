@@ -4,8 +4,12 @@ const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const next = document.querySelector('.arrow.next');
 const prev = document.querySelector('.arrow.prev');
+const toggleBtn = document.getElementById('menu-toggle');
+const fullscreenMenu = document.getElementById('fullscreen-menu');
+const overlay = document.getElementById('overlay');
 let index = 0;
-updateSlide(index); // Show first slide immediately
+
+updateSlide(index);
 let interval = setInterval(nextSlide, 5000);
 
 function updateSlide(position) {
@@ -13,7 +17,7 @@ function updateSlide(position) {
     slide.style.opacity = i === position ? '1' : '0';
     slide.style.zIndex = i === position ? '2' : '1';
   });
-  document.querySelector('.dot.active').classList.remove('active');
+  document.querySelector('.dot.active')?.classList.remove('active');
   dots[position].classList.add('active');
 }
 
@@ -50,65 +54,6 @@ dots.forEach((dot, i) => {
   });
 });
 
-// Lazy blur-up effect for images
-document.querySelectorAll('img.lazy-blur').forEach(img => {
-  img.addEventListener('load', () => {
-    img.classList.add('loaded');
-  });
-});
-
-// Toggle menu + overlay
-toggleBtn.addEventListener('click', () => {
-  fullscreenMenu.classList.toggle('show');
-  overlay.classList.toggle('show');
-  toggleBtn.classList.toggle('open');
-});
-
-// Close when clicking a link
-fullscreenMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    fullscreenMenu.classList.remove('show');
-    overlay.classList.remove('show');
-    toggleBtn.classList.remove('open');
-  });
-});
-
-// Close when clicking outside (on overlay)
-overlay.addEventListener('click', () => {
-  fullscreenMenu.classList.remove('show');
-  overlay.classList.remove('show');
-  toggleBtn.classList.remove('open');
-});
-
-const contactForm = document.getElementById('contact-form');
-const confirmation = document.getElementById('confirmation-message');
-const userNameSpan = document.getElementById('user-name');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const userName = document.getElementById('name').value.trim();
-  userNameSpan.textContent = userName || 'there';
-
-  contactForm.style.display = 'none';
-  confirmation.style.display = 'block';
-
-  // Fade-in effect
-  setTimeout(() => {
-    confirmation.classList.add('visible');
-  }, 50);
-
-  // Hide message + restore form after 5 seconds
-  setTimeout(() => {
-    confirmation.classList.remove('visible');
-    setTimeout(() => {
-      confirmation.style.display = 'none';
-      contactForm.reset();
-      contactForm.style.display = 'flex';
-    }, 600);
-  }, 5000);
-});
-
 // Touch/swipe support
 let startX = 0;
 let endX = 0;
@@ -136,7 +81,59 @@ window.addEventListener('scroll', () => {
   const trigger = window.innerHeight * 0.85;
   const top = quote.getBoundingClientRect().top;
   if (top < trigger) {
+    quote.classList.add('visible');
     quote.style.opacity = '1';
     quote.style.transform = 'translateY(0)';
   }
+});
+
+// Menu toggle logic
+toggleBtn.addEventListener('click', () => {
+  fullscreenMenu.classList.toggle('show');
+  overlay.classList.toggle('show');
+  toggleBtn.classList.toggle('open');
+});
+
+fullscreenMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    fullscreenMenu.classList.remove('show');
+    overlay.classList.remove('show');
+    toggleBtn.classList.remove('open');
+  });
+});
+
+overlay.addEventListener('click', () => {
+  fullscreenMenu.classList.remove('show');
+  overlay.classList.remove('show');
+  toggleBtn.classList.remove('open');
+});
+
+// Contact form logic
+const contactForm = document.getElementById('contact-form');
+const confirmation = document.getElementById('confirmation-message');
+const userNameSpan = document.getElementById('user-name');
+
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const userName = document.getElementById('name').value.trim();
+  userNameSpan.textContent = userName || 'there';
+
+  contactForm.style.display = 'none';
+  confirmation.style.display = 'block';
+
+  // Fade-in effect
+  setTimeout(() => {
+    confirmation.classList.add('visible');
+  }, 50);
+
+  // Hide message + restore form after 5 seconds
+  setTimeout(() => {
+    confirmation.classList.remove('visible');
+    setTimeout(() => {
+      confirmation.style.display = 'none';
+      contactForm.reset();
+      contactForm.style.display = 'flex';
+    }, 600);
+  }, 5000);
 });
