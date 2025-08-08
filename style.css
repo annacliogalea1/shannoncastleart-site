@@ -410,6 +410,7 @@ header {
   overflow: hidden;
 }
 
+/* Banner Slider with Fade Transition */
 .slider {
   position: relative;
   width: 100%;
@@ -422,8 +423,14 @@ header {
   width: 100%;
   height: 100%;
   opacity: 0;
+  transition: opacity 1s ease-in-out;
   z-index: 1;
-  transition: opacity 0.8s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .slide.active {
