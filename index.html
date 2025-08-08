@@ -9,11 +9,11 @@
 <body class="landing">
   <div class="fade-container">
     <div class="landing-overlay">
-      <h1 class="landing-title">Shannon Castle</h1>
+      <h1 class="landing-title">SHANNON CASTLE</h1>
       <a href="home.html" class="enter-button">Enter</a>
     </div>
 
-    <!-- BLACK FADE OVERLAY -->
+    <!-- Black fade overlay -->
     <div class="black-fade-overlay"></div>
   </div>
 
@@ -25,19 +25,16 @@
     button.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // Fade out the button
+      // Fade out only the button
       button.classList.add('button-exit');
 
       // Fade in the black overlay
       fadeOverlay.classList.add('show-black');
 
-      // Optionally fade out the whole container (text)
-      fadeContainer.classList.add('fade-out');
-
-      // Redirect after animation
+      // Redirect after fade
       setTimeout(() => {
         window.location.href = button.getAttribute('href');
-      }, 1000); // match fade duration
+      }, 1000);
     });
   </script>
 </body>

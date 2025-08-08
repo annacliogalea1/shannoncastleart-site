@@ -35,63 +35,27 @@ p {
   font-size: 0.9em;
 }
 
-  /* =======================================================
-   Landing Page
-======================================================= */
-.landing {
-  background: url('SirtautCU1.jpg') no-repeat center center/cover;
-  width: 100vw;
-  height: 100vh;
+/* ========= LANDING PAGE ========= */
+body.landing {
+  background: url('images/SirtautCU1.jpg') no-repeat center center/cover;
   margin: 0;
   padding: 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
+  font-family: 'Lato', sans-serif;
 }
 
-.landing-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.fade-container {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0); /* no overlay tint unless you want one */
-}
-
-.landing-title {
-  font-size: 3em;
-  color: white;
-  text-align: center;
-  margin: 0;
-}
-
-.enter-button {
-  margin-top: 1.5em;
-  font-size: 1em;
-  padding: 0.7em 1.5em;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.enter-button:hover {
-  background: white;
-  color: black;
-}
-
-/* Fade In container + cinematic button reveal */
-.fade-container {
-  opacity: 0;
   animation: fadeIn 1s ease forwards;
-  transition: opacity 0.8s ease;
+  opacity: 0;
+  position: relative;
 }
 
 @keyframes fadeIn {
@@ -100,36 +64,79 @@ p {
   }
 }
 
-/* Fade-out transition for the whole page */
-.fade-container.fade-out {
-  opacity: 0;
-  transition: opacity 0.8s ease;
+.landing-overlay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* Cinematic entrance for Enter button */
+.landing-title {
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
 .enter-button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1em;
+  padding: 0.7em 1.5em;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+  animation: buttonFadeIn 1.5s ease 1s forwards;
   opacity: 0;
-  transform: translateY(20px);
-  animation: buttonFadeIn 1.5s ease 1s forwards; /* 1s delay, then fade in */
+}
+
+.enter-button:hover {
+  background: white;
+  color: black;
 }
 
 @keyframes buttonFadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 }
 
-/* Button exit animation on click */
 .button-exit {
-  animation: buttonExit 0.6s ease forwards;
+  animation: buttonExit 0.9s ease forwards;
 }
 
 @keyframes buttonExit {
   to {
     opacity: 0;
-    transform: scale(0.85);
+    transform: scale(0.85) translateX(-50%);
   }
+}
+
+.black-fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+}
+
+.black-fade-overlay.show-black {
+  opacity: 1;
 }
 
 /* =======================================================
