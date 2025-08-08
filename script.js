@@ -12,14 +12,6 @@ preloadImages.forEach((src) => {
   img.src = src;
 });
 
-let current = 0;
-const banner = document.getElementById('banner-image');
-
-setInterval(() => {
-  current = (current + 1) % bannerImages.length;
-  banner.src = bannerImages[current];
-}, 4000);
-
 const toggleBtn = document.getElementById('menu-toggle');
 const fullscreenMenu = document.getElementById('fullscreen-menu');
 const overlay = document.getElementById('overlay');
