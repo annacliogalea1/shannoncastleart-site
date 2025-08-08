@@ -11,8 +11,7 @@ let index = 0;
 
 function updateSlide(position) {
   slides.forEach((slide, i) => {
-    slide.style.opacity = i === position ? '1' : '0';
-    slide.style.zIndex = i === position ? '2' : '1';
+    slide.classList.toggle('active', i === position);
   });
   document.querySelector('.dot.active')?.classList.remove('active');
   dots[position].classList.add('active');
