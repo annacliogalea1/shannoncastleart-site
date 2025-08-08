@@ -1,23 +1,67 @@
-// Preload all banner images
-const bannerImages = [
-  "images/bike-feature-5.jpg",
-  "images/bike-feature-7.jpg",
-  "images/GLASS 6.jpg",
-  "images/IbizaSilverRomanEdit.jpg",
-  "images/moto 2.png"
-];
+// Banner slider logic
+let index = 0;
+const slider = document.getElementById("banner-slider");
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const next = document.querySelector(".arrow.next");
+const prev = document.querySelector(".arrow.prev");
 
-let current = 0;
-const banner = document.getElementById('banner-image');
+function updateSlide(position) {
+  slider.style.transform = "translateX(" + -100 * position + "%)";
+  document.querySelector(".dot.active").classList.remove("active");
+  dots[position].classList.add("active");
+}
 
-setInterval(() => {
-  current = (current + 1) % bannerImages.length;
-  banner.src = bannerImages[current];
-}, 4000);
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  updateSlide(index);
+}
 
-const toggleBtn = document.getElementById('menu-toggle');
-const fullscreenMenu = document.getElementById('fullscreen-menu');
-const overlay = document.getElementById('overlay');
+function prevSlide() {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlide(index);
+}
+
+let interval = setInterval(nextSlide, 5000);
+
+function resetInterval() {
+  clearInterval(interval);
+  interval = setInterval(nextSlide, 5000);
+}
+
+next.addEventListener("click", () => {
+  nextSlide();
+  resetInterval();
+});
+
+prev.addEventListener("click", () => {
+  prevSlide();
+  resetInterval();
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    index = i;
+    updateSlide(index);
+    resetInterval();
+  });
+});
+
+// Swipe support
+let startX = 0;
+let endX = 0;
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+}, false);
+
+slider.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  const diff = endX - startX;
+  if (diff > 50) prevSlide();
+  if (diff < -50) nextSlide();
+  resetInterval();
+}, false);
 
 // Toggle menu + overlay
 toggleBtn.addEventListener('click', () => {
