@@ -13,8 +13,10 @@ function updateSlide(position) {
   slides.forEach((slide, i) => {
     slide.classList.toggle('active', i === position);
   });
-  document.querySelector('.dot.active')?.classList.remove('active');
-  dots[position].classList.add('active');
+
+  const activeDot = document.querySelector('.dot.active');
+  if (activeDot) activeDot.classList.remove('active');
+  if (dots[position]) dots[position].classList.add('active');
 }
 
 function nextSlide() {
