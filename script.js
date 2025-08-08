@@ -5,6 +5,7 @@ const dots = document.querySelectorAll('.dot');
 const next = document.querySelector('.arrow.next');
 const prev = document.querySelector('.arrow.prev');
 let index = 0;
+updateSlide(index); // Show first slide immediately
 let interval = setInterval(nextSlide, 5000);
 
 function updateSlide(position) {
