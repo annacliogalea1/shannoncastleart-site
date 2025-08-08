@@ -10,9 +10,11 @@ const overlay = document.getElementById('overlay');
 const contactForm = document.getElementById('contact-form');
 const confirmation = document.getElementById('confirmation-message');
 const userNameSpan = document.getElementById('user-name');
-let index = 0;
-let interval; // reserve the variable
 
+let index = 0;
+let interval; 
+
+// Update which slide/dot is active
 function updateSlide(position) {
   slides.forEach((slide, i) => {
     slide.classList.toggle('active', i === position);
@@ -23,86 +25,103 @@ function updateSlide(position) {
   if (dots[position]) dots[position].classList.add('active');
 }
 
+// Jump to a slide; if `instant`, suppress the CSS fade briefly
+function goToSlide(pos, instant = false) {
+  if (instant) {
+    slides.forEach(s => s.classList.add('no-transition'));
+  }
+
+  index = pos;
+  updateSlide(index);
+
+  if (instant) {
+    requestAnimationFrame(() => {
+      slides.forEach(s => s.classList.remove('no-transition'));
+    });
+  }
+}
+
+// Advance one slide (with normal fade)
 function nextSlide() {
-  index = (index + 1) % slides.length;
-  updateSlide(index);
+  goToSlide((index + 1) % slides.length);
 }
 
+// Go back one slide (with normal fade)
 function prevSlide() {
-  index = (index - 1 + slides.length) % slides.length;
-  updateSlide(index);
+  goToSlide((index - 1 + slides.length) % slides.length);
 }
 
+// Reset the 5-second auto-rotate
 function resetInterval() {
   clearInterval(interval);
   interval = setInterval(nextSlide, 5000);
 }
 
-// Initialize slider if elements exist
-if (slides.length > 0 && dots.length === slides.length) {
-  updateSlide(index); // set initial active slide/dot
+// ——— Wire up controls ——— 
+if (slides.length && dots.length === slides.length) {
+  // Initialize
+  updateSlide(0);
   interval = setInterval(nextSlide, 5000);
-}
 
-// Arrow click handlers with guards
-if (next) {
-  next.setAttribute('tabindex', '0');
-  next.addEventListener('click', () => {
-    nextSlide();
-    resetInterval();
-  });
-}
-
-if (prev) {
-  prev.setAttribute('tabindex', '0');
-  prev.addEventListener('click', () => {
-    prevSlide();
-    resetInterval();
-  });
-}
-
-// Dot click handlers
-dots.forEach((dot, i) => {
-  dot.setAttribute('tabindex', '0');
-  dot.addEventListener('click', () => {
-    index = i;
-    updateSlide(index);
-    resetInterval();
-  });
-});
-
-// Keyboard support: left/right arrows
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') {
-    nextSlide();
-    resetInterval();
-  } else if (e.key === 'ArrowLeft') {
-    prevSlide();
-    resetInterval();
+  // Arrows
+  if (next) {
+    next.setAttribute('tabindex', '0');
+    next.addEventListener('click', () => {
+      clearInterval(interval);
+      goToSlide((index + 1) % slides.length, true);
+      resetInterval();
+    });
   }
-});
+  if (prev) {
+    prev.setAttribute('tabindex', '0');
+    prev.addEventListener('click', () => {
+      clearInterval(interval);
+      goToSlide((index - 1 + slides.length) % slides.length, true);
+      resetInterval();
+    });
+  }
 
-// Touch/swipe support
-let startX = 0;
-let endX = 0;
+  // Dots
+  dots.forEach((dot, i) => {
+    dot.setAttribute('tabindex', '0');
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      goToSlide(i, true);
+      resetInterval();
+    });
+  });
 
-if (slider) {
-  slider.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  }, false);
-
-  slider.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
-    if (diff > 50) {
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') {
+      clearInterval(interval);
+      nextSlide();
+      resetInterval();
+    } else if (e.key === 'ArrowLeft') {
+      clearInterval(interval);
       prevSlide();
       resetInterval();
     }
-    if (diff < -50) {
+  });
+
+  // Touch / swipe
+  let startX = 0;
+  slider?.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+  slider?.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+    if (diff > 50) {
+      clearInterval(interval);
+      prevSlide();
+      resetInterval();
+    } else if (diff < -50) {
+      clearInterval(interval);
       nextSlide();
       resetInterval();
     }
-  }, false);
+  });
 }
 
 // Quote fade in on scroll

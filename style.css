@@ -419,6 +419,11 @@ header {
   z-index: 2;
 }
 
+/* Disable fade for instant jumps */
+.slide.no-transition {
+  transition: none !important;
+}
+
 /* Navigation Arrows */
 .nav-arrows {
   position: absolute;
