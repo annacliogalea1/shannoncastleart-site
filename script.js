@@ -9,9 +9,6 @@ const fullscreenMenu = document.getElementById('fullscreen-menu');
 const overlay = document.getElementById('overlay');
 let index = 0;
 
-updateSlide(index);
-let interval = setInterval(nextSlide, 5000);
-
 function updateSlide(position) {
   slides.forEach((slide, i) => {
     slide.style.opacity = i === position ? '1' : '0';
