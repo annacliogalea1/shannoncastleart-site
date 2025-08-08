@@ -157,34 +157,34 @@ body.landing {
 }
 
 /* ── Collections Section ───────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&display=swap');
-
 .collections {
-  padding: 3em 2em 2em;       
-  background: #000;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3em 0 2em;           
+  background: #fff;             
 }
 
 .collections-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 300;
-  font-size: 2.5em;          
-  text-align: right;         
-  margin: 0 0 1em;
-  color: #fff;
+  font-family: 'Lato', sans-serif; 
+  font-size: 2.5em;                
+  text-align: left;                
+  margin: 0 0 0.5em;               
+  color: #000;                     
 }
 
+/* 3-column fixed panels, spans 90% viewport */
 .collections-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .collections-grid .grid-item {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;        
+  aspect-ratio: 4 / 3;
 }
 
 .collections-grid .grid-item img {
@@ -194,19 +194,19 @@ body.landing {
   transition: transform 0.5s ease;
 }
 
-/* base overlay */
+/* constant overlay at 30% */
 .collections-grid .grid-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);  
   transition: background 0.3s ease;
   z-index: 0;
 }
 
-/* darker on hover */
+/* darker overlay on hover */
 .collections-grid .grid-item:hover::before {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* grid item titles */
@@ -216,9 +216,8 @@ body.landing {
   transform: translate(-50%, -50%);
   margin: 0;
   color: #fff;
-  font-family: 'Playfair Display', serif;
-  font-weight: 300;
-  font-size: 1.5em;           
+  font-family: 'Lato', sans-serif;
+  font-size: 1.875em;            
   text-align: center;
   z-index: 1;
 }
