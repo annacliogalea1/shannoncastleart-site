@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection One | Shannon Castle</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>SHANNON CASTLE</h1>
+    <div id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation"></div>
+  </header>
+  <nav id="fullscreen-menu" class="fullscreen-menu"> ...same menu items... </nav>
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Static Banner with Vignette and Text -->
+  <section class="collection-banner">
+    <h2>Collection Title</h2>
+  </section>
+
+  <!-- Title & Description -->
+  <section class="collection-info">
+    <h2>Collection Title</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, justo at ultricies fermentum, orci urna scelerisque dui, at sodales orci magna ut velit.</p>
+  </section>
+
+  <!-- Responsive Gallery -->
+  <section class="collection-gallery">
+    <div class="gallery-grid">
+      <img src="images/item1.jpg" alt="Item 1" data-caption="Caption for Item 1">
+      <img src="images/item2.jpg" alt="Item 2" data-caption="Caption for Item 2">
+      <img src="images/item3.jpg" alt="Item 3" data-caption="Caption for Item 3">
+    </div>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="lightbox">
+    <button class="nav-btn prev">&#10094;</button>
+    <div class="lightbox-content">
+      <button class="nav-btn close">&times;</button>
+      <img src="" alt="" id="lightbox-img">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+    <button class="nav-btn next">&#10095;</button>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const galleryImages = document.querySelectorAll('.gallery-grid img');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbCaption = document.getElementById('lightbox-caption');
+    const btnPrev = lightbox.querySelector('.prev');
+    const btnNext = lightbox.querySelector('.next');
+    const btnClose = lightbox.querySelector('.close');
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      const img = galleryImages[index];
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = img.dataset.caption || '';
+      currentIndex = index;
+      lightbox.classList.add('show');
+    }
+
+    function hideLightbox() {
+      lightbox.classList.remove('show');
+    }
+
+    function navigate(dir) {
+      currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
+      showLightbox(currentIndex);
+    }
+
+    galleryImages.forEach((img, i) => img.addEventListener('click', () => showLightbox(i)));
+    btnClose.addEventListener('click', hideLightbox);
+    btnPrev.addEventListener('click', () => navigate(-1));
+    btnNext.addEventListener('click', () => navigate(1));
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) hideLightbox();
+    });
+  </script>
+</body>
+</html>
