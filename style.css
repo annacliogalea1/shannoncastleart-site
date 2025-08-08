@@ -1,6 +1,4 @@
-/* =======================================================
-   Base Styles
-======================================================= */
+/* ── Base Styles ───────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -11,9 +9,7 @@ body, html {
   font-family: 'Lato', sans-serif;
 }
 
-/* =======================================================
-   Typography
-======================================================= */
+/* ── Typography ───────────────────────────────────── */
 header h1 {
   font-size: 1em;
   letter-spacing: 1.5px;
@@ -35,7 +31,7 @@ p {
   font-size: 0.9em;
 }
 
-/* ========= LANDING PAGE ========= */
+/* ── Landing Page ───────────────────────────────────── */
 body.landing {
   background: url('images/SirtautCU1.jpg') no-repeat center center/cover;
   margin: 0;
@@ -139,18 +135,14 @@ body.landing {
   opacity: 1;
 }
 
-/* =======================================================
-   Banner Section
-======================================================= */
+/* ── Banner Section ───────────────────────────────────── */
 .banner img {
   width: 100%;
   height: 90vh;
   object-fit: cover;
 }
 
-/* =======================================================
-   Quote Section
-======================================================= */
+/* ── Quote Section ───────────────────────────────────── */
 .quote {
   padding: 6em 2em 4em;
   text-align: center;
@@ -164,9 +156,7 @@ body.landing {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* =======================================================
-   Collections Grid
-======================================================= */
+/* ── Collections Grid ───────────────────────────────────── */
 .collections-grid {
   display: flex;
   justify-content: space-around;
@@ -183,9 +173,7 @@ body.landing {
   height: auto;
 }
 
-/* =======================================================
-   Footer & Contact Form
-======================================================= */
+/* ── Footer & Contact Form ───────────────────────────────────── */
 footer {
   background: #f0f0f0;
   padding: 1.5em;
@@ -205,21 +193,18 @@ footer {
   gap: 1em;
 }
 
-/* Wrapper for each field (Name, Email, Message) */
 .form-field {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* Label styles */
 .form-field label {
   font-size: 0.8em;
   color: #333;
   margin-bottom: 0.3em;
 }
 
-/* Input and textarea shared styling */
 .contact-form input,
 .contact-form textarea {
   padding: 0.5em;
@@ -230,17 +215,15 @@ footer {
   font-size: 1em;
 }
 
-/* Textarea height */
 .contact-form textarea {
   height: 8em;
   resize: vertical;
 }
 
-/* Submit button */
 .contact-form button {
   align-self: flex-end;
   padding: 0.5em 1.5em;
-  width: 50%; /* Half width of full row */
+  width: 50%;
   max-width: 200px;
   background: black;
   color: white;
@@ -252,7 +235,6 @@ footer {
   font-family: 'Lato', sans-serif;
 }
 
-/* Required asterisk */
 .required {
   color: #222;
   margin-left: 0.2em;
@@ -285,14 +267,12 @@ footer {
   opacity: 1;
 }
 
-/* Button hover animation */
 .contact-form button:hover {
   background: #222;
   transform: scale(1.02);
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Responsive: collapse form to single column on mobile */
 @media (max-width: 768px) {
   .contact-form-row {
     flex-direction: column;
@@ -343,7 +323,7 @@ footer {
 }
 
 .fullscreen-menu {
-  align-items: center; /* center list vertically */
+  align-items: center;
 }
 
 .overlay {
@@ -357,7 +337,7 @@ footer {
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 1000;
-  display: none; /* <-- ADD THIS */
+  display: none;
 }
 
 .overlay.show {
@@ -401,10 +381,10 @@ header {
   transform: rotate(180deg);
 }
 
-/* ── Banner Gallery ─────────────────────────────── */
+/* ── Banner Gallery ───────────────────────────────────── */
 .banner-gallery {
   position: relative;
-  top: 50px; /* height of header */
+  top: 50px;
   width: 100%;
   height: calc(100vh - 50px);
   overflow: hidden;
@@ -488,8 +468,18 @@ header {
   opacity: 1;
 }
 
-/* Show controls on hover */
-.banner-gallery:hover .nav-arrows,
+/* Bring arrows & dots above slides */
+.banner-gallery .nav-arrows,
+.banner-gallery .nav-dots {
+  z-index: 3;
+}
+
+/* Show & activate controls on hover */
+.banner-gallery:hover .nav-arrows {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .banner-gallery:hover .nav-dots {
   opacity: 1;
 }
