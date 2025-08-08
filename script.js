@@ -140,10 +140,3 @@ window.addEventListener('scroll', () => {
     quote.style.transform = 'translateY(0)';
   }
 });
-
-// Blur-up effect
-document.querySelectorAll('.lazy-blur').forEach(img => {
-  img.addEventListener('load', () => {
-    img.classList.add('loaded');
-  });
-});

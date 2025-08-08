@@ -183,15 +183,6 @@ body.landing {
   height: auto;
 }
 
-.lazy-blur {
-  filter: blur(6px);
-  transition: filter 0.3s ease;
-}
-
-.lazy-blur.loaded {
-  filter: blur(0);
-}
-
 /* =======================================================
    Footer & Contact Form
 ======================================================= */
