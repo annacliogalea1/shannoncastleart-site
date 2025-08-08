@@ -159,7 +159,7 @@ body.landing {
 /* ── Collections Grid ───────────────────────────────────── */
 .collections {
   padding: 4em 2em;
-  background: #000; /* optional: gives contrast behind grid */
+  background: #3c3b3b; /* optional: gives contrast behind grid */
 }
 
 .collections-title {
