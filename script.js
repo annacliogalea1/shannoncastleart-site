@@ -108,22 +108,42 @@ if (quote) {
 
 // Menu toggle logic
 if (toggleBtn && fullscreenMenu && overlay) {
-  toggleBtn.addEventListener('click', () => {
-    fullscreenMenu.classList.toggle('show');
-    overlay.classList.toggle('show');
-    toggleBtn.classList.toggle('open');
-  });
-  fullscreenMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      fullscreenMenu.classList.remove('show');
-      overlay.classList.remove('show');
-      toggleBtn.classList.remove('open');
-    });
-  });
-  overlay.addEventListener('click', () => {
+  const closeMenu = () => {
     fullscreenMenu.classList.remove('show');
     overlay.classList.remove('show');
     toggleBtn.classList.remove('open');
+    // collapse any open submenus
+    fullscreenMenu.querySelectorAll('.has-submenu.open').forEach(li => {
+      li.classList.remove('open');
+      li.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  const openMenu = () => {
+    fullscreenMenu.classList.add('show');
+    overlay.classList.add('show');
+    toggleBtn.classList.add('open');
+  };
+
+  toggleBtn.addEventListener('click', () => {
+    fullscreenMenu.classList.contains('show') ? closeMenu() : openMenu();
+  });
+
+  // Close on overlay or any link click
+  fullscreenMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  overlay.addEventListener('click', closeMenu);
+
+  // Submenu toggle(s)
+  fullscreenMenu.querySelectorAll('.has-submenu .submenu-toggle').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();      
+      e.stopPropagation();
+      const li = btn.closest('.has-submenu');
+      const isOpen = li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
   });
 }
 
