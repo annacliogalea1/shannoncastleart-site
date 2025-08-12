@@ -192,37 +192,49 @@ body.landing {
   aspect-ratio: 4 / 3;
 }
 
-/* cover image, no transform */
 .collections-grid .grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* constant 30% dark overlay */
+.collections-grid .grid-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  isolation: isolate;            
+}
+
 .collections-grid .grid-item::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
-  z-index: 1;
-  pointer-events: none;
+  z-index: 10;                   
+  pointer-events: none;          
 }
 
-/* darken to 60% on hover */
 .collections-grid .grid-item:hover::before {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.collections-grid .grid-item a {
-  position: relative;
-  z-index: 1;
-  display: block;
+/* 3) Image on the base layer */
+.collections-grid .grid-item img {
+  position: relative;            
+  z-index: 0;                    /* base layer */
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-/* panel titles */
+.collections-grid .grid-item a {
+  display: block;
+  height: 100%;
+  position: static;             
+}
+
+/* 5) Title above the overlay */
 .collections-grid .grid-item p {
   position: absolute;
   top: 50%; left: 50%;
@@ -230,10 +242,10 @@ body.landing {
   margin: 0;
   color: #fff;
   font-family: 'Lato', sans-serif;
-  font-size: 1.875em;            
+  font-size: 1.875em;
   text-align: center;
-  z-index: 2;
-  transition: transform 0.3s ease;  
+  z-index: 20;                   /* above overlay */
+  transition: transform 0.3s ease;
 }
 
 /* text zooms on hover */
@@ -420,22 +432,18 @@ footer {
 
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0;                 
+  pointer-events: none;       
   transition: opacity 0.3s ease;
-  z-index: 1000;
-  display: none;
+  z-index: 1003;              
 }
 
 .overlay.show {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
+  opacity: 1;                 
+  pointer-events: auto;       
 }
 
 /* ── Header & Toggle ───────────────────────────────────── */
