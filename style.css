@@ -9,6 +9,10 @@ body, html {
   font-family: 'Lato', sans-serif;
 }
 
+:root { 
+  --header-h: 56px;
+}
+
 /* ── Typography ───────────────────────────────────── */
 header h1 {
   font-size: 1em;
@@ -203,11 +207,19 @@ body.landing {
   background: rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
   z-index: 0;
+  pointer-events: none;
 }
 
 /* darken to 60% on hover */
 .collections-grid .grid-item:hover::before {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.collections-grid .grid-item a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
 }
 
 /* panel titles */
@@ -231,16 +243,13 @@ body.landing {
 
 /* ── Contact Form ───────────────────────────────────── */
 .contact-form {
-  background: #f0f0f0;
-  padding: 1.2em;
-}
-
-.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
   max-width: 600px;
-  margin: 4em auto;
+  margin: 0 auto;           
+  padding: 1.2em;
+  background: transparent;  
   font-family: 'Lato', sans-serif;
 }
 
@@ -335,6 +344,18 @@ body.landing {
   }
 }
 
+/* Full-bleed contact area */
+.form-section {
+  width: 100%;
+  background: #f0f0f0;   
+  padding: 3em 0 0;       
+}
+
+/* Keep form centered */
+.form-container { 
+  padding: 0 1.2em;
+}
+
 /* ── Footer ───────────────────────────────────── */
 footer {
   background: #000000;
@@ -404,7 +425,7 @@ footer {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  opacity: 1.5;
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 1000;
@@ -421,13 +442,14 @@ footer {
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
+  height: var(--header-h);
   background-color: #000;
   color: white;
-  padding: 0.6em 1.2em;
+  padding: 0 1.2em;              /* vertical padding handled by fixed height */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1002;
+  z-index: 1003;
 }
 
 header h1 a {
@@ -461,9 +483,8 @@ header h1 a:hover { opacity: 0.7; }
 /* ── Banner Gallery ───────────────────────────────────── */
 .banner-gallery {
   position: relative;
-  top: 50px;
-  width: 100%;
-  height: calc(100vh - 50px);
+  margin-top: var(--header-h);         
+  height: calc(100vh - var(--header-h));
   overflow: hidden;
 }
 
@@ -691,4 +712,19 @@ header h1 a:hover { opacity: 0.7; }
   top: 1em; right: 1em;
   font-size: 2em;
   transform: none;
+}
+
+/* ── Header layout for smaller screens ───────────────────────────────── */
+/* tablets */
+@media (max-width: 768px) {
+  :root { --header-h: 60px; }
+}
+
+/* phones (overrides the 768px one on small screens) */
+@media (max-width: 480px) {
+  :root { --header-h: 64px; }
+
+  /* optional tweaks */
+  header h1 { font-size: 0.95em; letter-spacing: 1.2px; }
+  .menu-toggle { font-size: 2em; }
 }
