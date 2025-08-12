@@ -229,8 +229,8 @@ body.landing {
   transform: translate(-50%, -50%) scale(1.25);
 }
 
-/* ── Footer & Contact Form ───────────────────────────────────── */
-footer {
+/* ── Contact Form ───────────────────────────────────── */
+.contact-form {
   background: #f0f0f0;
   padding: 1.2em;
 }
@@ -333,6 +333,21 @@ footer {
   .contact-form-row {
     flex-direction: column;
   }
+}
+
+/* ── Footer ───────────────────────────────────── */
+footer {
+  background: #000000;
+  padding: 1.2em;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 600px;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 /* ── Slide-In Menu ─────────────────────────────────────── */
