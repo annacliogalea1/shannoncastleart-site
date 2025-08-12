@@ -232,7 +232,7 @@ body.landing {
 /* ── Contact Form ───────────────────────────────────── */
 .contact-form {
   background: #f0f0f0;
-  padding: 1.2em;
+  padding: 0;
 }
 
 .contact-form {
