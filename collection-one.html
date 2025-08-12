@@ -14,16 +14,27 @@
   </header>
 
   <nav id="fullscreen-menu" class="fullscreen-menu">
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="#">Work</a></li>
-      <li><a href="#">Artist</a></li>
-      <li><a href="#">Studio</a></li>
-      <li><a href="#">Videos</a></li>
-      <li><a href="#">Exhibitions</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+
+    <li class="has-submenu">
+      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
+        Work
+      </button>
+      <ul id="work-submenu" class="submenu">
+        <li><a href="collection-one.html">List Item</a></li>
+        <li><a href="#">List Item</a></li>
+        <li><a href="#">List Item</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Artist</a></li>
+    <li><a href="#">Studio</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Exhibitions</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
   
 <div id="overlay" class="overlay"></div>
 
