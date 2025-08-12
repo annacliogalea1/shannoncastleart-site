@@ -206,7 +206,7 @@ body.landing {
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -232,7 +232,7 @@ body.landing {
   font-family: 'Lato', sans-serif;
   font-size: 1.875em;            
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   transition: transform 0.3s ease;  
 }
 
