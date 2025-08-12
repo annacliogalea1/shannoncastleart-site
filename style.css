@@ -447,12 +447,14 @@ footer a { color: inherit; text-decoration: none; }
   font-family: 'Lato', sans-serif;
 }
 
+.fullscreen-menu .submenu a { padding-right: 0.5em; }
+
 /* Chevron indicator */
 .fullscreen-menu .has-submenu > .submenu-toggle::before {
   content: '+';
   display: inline-block;
-  margin-left: 0.2em;
-  transform: translateX(100%);
+  margin-left: 0.3em;
+  transform: rotate(-90deg);
   transition: transform 0.25s ease;
 }
 .fullscreen-menu .has-submenu.open > .submenu-toggle::after {
