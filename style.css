@@ -671,7 +671,7 @@ header h1 a:hover { opacity: 0.7; }
 /* ── Collection Info ───────────────────────────────── */
 .collection-info {
   text-align: center;
-  padding: 4em 2em;
+  padding: 2em 1em;
   background: #fff;
 }
 .collection-info h2 {
