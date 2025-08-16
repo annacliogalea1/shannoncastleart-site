@@ -800,3 +800,177 @@ header h1 a:hover { opacity: 0.7; }
   header h1 { font-size: 0.95em; letter-spacing: 1.2px; }
   .menu-toggle { font-size: 2em; }
 }
+/* ─────────────────────────────────────────────────────────── */
+/* Font Import */
+/* ─────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-500.woff2') format('woff2');
+  font-weight: 300 500;
+  font-style: normal;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Base Typography & Layout */
+/* ─────────────────────────────────────────────────────────── */
+body {
+  font-family: 'TWKLausanne', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Banner Section (Layered PNG Title) */
+/* ─────────────────────────────────────────────────────────── */
+.image-banner {
+  position: relative;
+  height: 100vh;
+  background: url('Untitled-4-01.png') no-repeat center/cover;
+}
+
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  z-index: 2;
+  max-width: 70%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Section Titles and Descriptive Text */
+/* ─────────────────────────────────────────────────────────── */
+.mockup-title {
+  font-size: 60pt;
+  font-weight: 450;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.bio-text {
+  font-size: 26pt;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto 3em;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.gallery-title {
+  font-size: 80pt;
+  font-weight: 450;
+  text-align: center;
+  margin: 2em 0 0.5em;
+}
+
+.gallery-caption {
+  text-align: center;
+  font-size: 18pt;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Commission Section */
+/* ─────────────────────────────────────────────────────────── */
+.commission-section h2 {
+  font-size: 250pt;
+  font-weight: 350;
+  font-style: italic;
+  text-align: center;
+  margin: 2em 0 0.2em;
+}
+
+.commission-section .location {
+  font-size: 24pt;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.commission-section .text {
+  font-size: 26pt;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto 2em;
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Gallery Styles (Shared) */
+/* ─────────────────────────────────────────────────────────── */
+.gallery-grid {
+  position: relative;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Commission Gallery Hover Arrows */
+/* ─────────────────────────────────────────────────────────── */
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.commission-gallery:hover .slider-arrows {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider-arrow {
+  font-size: 2em;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.4em 0.7em;
+  z-index: 10;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/* Responsive Typography */
+/* ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mockup-title {
+    font-size: 36pt;
+  }
+
+  .bio-text,
+  .commission-section .text {
+    font-size: 18pt;
+  }
+
+  .gallery-title {
+    font-size: 50pt;
+  }
+
+  .commission-section h2 {
+    font-size: 120pt;
+  }
+
+  .commission-section .location {
+    font-size: 18pt;
+  }
+}
