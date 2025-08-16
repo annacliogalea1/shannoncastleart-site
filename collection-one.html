@@ -6,146 +6,225 @@
   <title>Collection One | Shannon Castle</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    @font-face {
+      font-family: 'TWKLausanne';
+      src: url('TWKLausanne-500.woff2') format('woff2');
+      font-weight: 300 500;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'TWKLausanne', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .mockup-title {
+      font-size: 60pt;
+      font-weight: 450;
+      text-align: center;
+      margin: 1em 0;
+    }
+
+    .bio-text {
+      font-size: 26pt;
+      font-weight: 500;
+      max-width: 800px;
+      margin: 0 auto 3em;
+      text-align: center;
+      white-space: pre-line;
+    }
+
+    .image-banner {
+      position: relative;
+      height: 100vh;
+      background: url('Untitled-4-01.png') no-repeat center/cover;
+    }
+
+    .image-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+      z-index: 1;
+    }
+
+    .image-banner img.text-overlay {
+      position: absolute;
+      z-index: 2;
+      max-width: 70%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .image-gallery,
+    .commission-gallery {
+      padding: 2em;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1em;
+    }
+
+    .gallery-title {
+      font-size: 80pt;
+      font-weight: 450;
+      text-align: center;
+      margin: 2em 0 0.5em;
+    }
+
+    .gallery-caption {
+      text-align: center;
+      font-size: 18pt;
+      font-weight: 500;
+      margin-bottom: 1.5em;
+    }
+
+    .commission-section h2 {
+      font-size: 250pt;
+      font-weight: 350;
+      font-style: italic;
+      text-align: center;
+      margin: 2em 0 0.2em;
+    }
+
+    .commission-section .location {
+      font-size: 24pt;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+
+    .commission-section .text {
+      font-size: 26pt;
+      font-weight: 500;
+      max-width: 800px;
+      margin: 0 auto 2em;
+      text-align: center;
+      white-space: pre-line;
+    }
+
+    .gallery-grid {
+      position: relative;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      display: block;
+    }
+
+    .slider-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .commission-gallery:hover .slider-arrows {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .slider-arrow {
+      font-size: 2em;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 0.4em 0.7em;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .mockup-title {
+        font-size: 36pt;
+      }
+
+      .bio-text,
+      .commission-section .text {
+        font-size: 18pt;
+      }
+
+      .gallery-title {
+        font-size: 50pt;
+      }
+
+      .commission-section h2 {
+        font-size: 120pt;
+      }
+
+      .commission-section .location {
+        font-size: 18pt;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1><a href="home.html" class="brand" aria-label="Go to Home">SHANNON CASTLE</a></h1>
-    <div id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation"></div>
+    <h1><a href="home.html" class="brand">SHANNON CASTLE</a></h1>
+    <div id="menu-toggle" class="menu-toggle"></div>
   </header>
+  <nav id="fullscreen-menu" class="fullscreen-menu">[...]</nav>
+  <div id="overlay" class="overlay"></div>
 
-  <nav id="fullscreen-menu" class="fullscreen-menu">
-  <ul>
-    <li><a href="home.html">Home</a></li>
-
-    <li class="has-submenu">
-      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
-        Work
-      </button>
-      <ul id="work-submenu" class="submenu">
-        <li><a href="collection-one.html">List Item</a></li>
-        <li><a href="#">List Item</a></li>
-        <li><a href="#">List Item</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#">Artist</a></li>
-    <li><a href="#">Studio</a></li>
-    <li><a href="#">Videos</a></li>
-    <li><a href="#">Exhibitions</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-  
-<div id="overlay" class="overlay"></div>
-
-  <!-- Static Banner with Vignette and Text -->
-  <section class="collection-banner">
-    <h2>Collection Title</h2>
+  <section class="image-banner">
+    <img src="Untitled-4-02.png" alt="Shannon Castle Text" class="text-overlay" />
   </section>
 
-  <!-- Title & Description -->
-  <section class="collection-info">
-    <h2>Collection Title</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, justo at ultricies fermentum, orci urna scelerisque dui, at sodales orci magna ut velit.</p>
-  </section>
+  <div class="mockup-title">ABOUT THE ARTIST / SHANNON CONNOR CASTLE</div>
+  <div class="bio-text">
+Born in California and currently based out of Santa Fe, New Mexico, Shannon Castle is a self-taught master glass carver. Castle has always embraced bold creativity, fearlessly transforming her visions into groundbreaking glass art. In a field where trade secrets are closely guarded, she has forged her own path, constantly innovating with techniques and materials that push the boundaries of the medium.
 
-  <!-- Responsive Gallery -->
-  <section class="collection-gallery">
-    <div class="gallery-grid">
-      <img src="images/IMG_2850.JPG" alt="Item 1" data-caption="Caption for Item 1">
-      <img src="images/IMG_2858.JPG" alt="Item 2" data-caption="Caption for Item 2">
-      <img src="images/IMG_2852.JPG" alt="Item 3" data-caption="Caption for Item 3">
-      <img src="images/IMG_2861.JPG" alt="Item 4" data-caption="Caption for Item 4">
-      <img src="images/IMG_2848.JPG" alt="Item 5" data-caption="Caption for Item 5">
-      <img src="images/SirtautCU1.jpg" alt="Item 6" data-caption="Caption for Item 6">
-    </div>
-  </section>
+Her artistic journey began in childhood, sketching intricate worlds 
+inspired by fairytales, revealing an innate talent far beyond her years. 
+Drawn to the luminous, dimensional qualities of glass, she envisioned her work coming to life through depth, light, and vibrant color.
 
-  <!-- Lightbox Overlay -->
-  <div id="lightbox" class="lightbox">
-    <button class="nav-btn prev">&#10094;</button>
-    <div class="lightbox-content">
-      <button class="nav-btn close">&times;</button>
-      <img src="" alt="" id="lightbox-img">
-      <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-    <button class="nav-btn next">&#10095;</button>
+At just 19, she founded Shannon Studios in Sausalito, California, 
+specializing in architectual glass installations across the West Coast. Over the decades, her work evolved beyond commissions, allowing her artistic vision to flourish without limitations.
   </div>
 
-  <!-- Text Block -->
-  <section class="collection-text-block">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Vivamus venenatis sapien sit amet libero semper, quis egestas velit ultricies. Curabitur aliquet mi at nisi fermentum, id dictum magna sollicitudin. Donec ullamcorper augue eu arcu bibendum, in pretium nulla dignissim.</p>
+  <div class="gallery-title">IMAGE / GALLERY</div>
+  <div class="gallery-caption">[TEXT FIELD] [TEXT FIELD] / 0000–0000 SELECTED WORKS</div>
+  <section class="image-gallery gallery-grid">
+    <!-- Add <img src="..."> -->
   </section>
+
+  <section class="commission-section">
+    <h2>Commission Work</h2>
+    <div class="location">Historic Turquoise Trail / Santa Fe, New Mexico</div>
+    <div class="text">
+Shannon Castle is always open to new opportunities and 
+collaborations that push the boundaries of glass art and design. 
+Previous projects include glass water walls, grand piano tops, 
+architectural installations, entry doors that combine carved glass 
+and wrought iron, portraits, and more! She can be reached directly for inquiries, 
+partnerships, or to discuss potential projects via email at shannoncastleart@gmailcom.
+    </div>
+    <section class="commission-gallery gallery-grid">
+      <!-- Add <img src="..."> -->
+      <div class="slider-arrows">
+        <button class="slider-arrow" onclick="scrollSlider(-1)">&#10094;</button>
+        <button class="slider-arrow" onclick="scrollSlider(1)">&#10095;</button>
+      </div>
+    </section>
+  </section>
+
+  <div id="lightbox" class="lightbox">[...]</div>
+  <section class="form-section">[...]</section>
+  <footer><p class="caption">© 2025 Shannon Castle</p></footer>
 
   <script>
-    // Lightbox functionality
-    const galleryImages = document.querySelectorAll('.gallery-grid img');
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightbox-img');
-    const lbCaption = document.getElementById('lightbox-caption');
-    const btnPrev = lightbox.querySelector('.prev');
-    const btnNext = lightbox.querySelector('.next');
-    const btnClose = lightbox.querySelector('.close');
-    let currentIndex = 0;
-
-    function showLightbox(index) {
-      const img = galleryImages[index];
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      lbCaption.textContent = img.dataset.caption || '';
-      currentIndex = index;
-      lightbox.classList.add('show');
+    function scrollSlider(direction) {
+      const gallery = document.querySelector('.commission-gallery');
+      gallery.scrollBy({ left: direction * 300, behavior: 'smooth' });
     }
-
-    function hideLightbox() {
-      lightbox.classList.remove('show');
-    }
-
-    function navigate(dir) {
-      currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
-      showLightbox(currentIndex);
-    }
-
-    galleryImages.forEach((img, i) => img.addEventListener('click', () => showLightbox(i)));
-    btnClose.addEventListener('click', hideLightbox);
-    btnPrev.addEventListener('click', () => navigate(-1));
-    btnNext.addEventListener('click', () => navigate(1));
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) hideLightbox();
-    });
   </script>
-
-<!-- Contact Form -->
-<section class="form-section">
-  <div class="form-container">
-    <form class="contact-form" id="contact-form">
-      <div class="contact-form-row">
-        <div class="form-field">
-          <label for="name">Name<span class="required">*</span></label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-field">
-          <label for="email">Email<span class="required">*</span></label>
-          <input type="email" id="email" name="email" required>
-        </div>
-      </div>
-
-      <div class="form-field">
-        <label for="message">Message<span class="required">*</span></label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <div id="confirmation-message" class="confirmation-message">
-      Thank you, <span id="user-name"></span>! We will be in touch soon.
-    </div>
-  </div>
-</section>
-<footer>
-  <p class="caption">© 2025 Shannon Castle</p>
-</footer>
 </body>
 </html>
