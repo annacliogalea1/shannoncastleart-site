@@ -180,12 +180,12 @@ function openLightbox(index) {
   currentImageIndex = index;
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
-  lightbox.style.display = "block";
+  lightbox.classList.add("show");
   lightboxImg.src = galleryImages[index].src;
 }
 
 function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+  document.getElementById("lightbox").classList.remove("show");
 }
 
 function changeImage(direction) {
@@ -194,3 +194,16 @@ function changeImage(direction) {
   if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
   document.getElementById("lightbox-img").src = galleryImages[currentImageIndex].src;
 }
+
+document.addEventListener("keydown", e => {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox.classList.contains("show")) return;
+
+  if (e.key === "ArrowRight") {
+    changeImage(1);
+  } else if (e.key === "ArrowLeft") {
+    changeImage(-1);
+  } else if (e.key === "Escape") {
+    closeLightbox();
+  }
+});
