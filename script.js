@@ -166,3 +166,31 @@ if (contactForm && confirmation && userNameSpan) {
     }, 5000);
   });
 }
+let currentImageIndex = 0;
+let galleryImages = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+  galleryImages = Array.from(document.querySelectorAll(".image-gallery img, .commission-gallery img"));
+  galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
+});
+
+function openLightbox(index) {
+  currentImageIndex = index;
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  lightbox.style.display = "block";
+  lightboxImg.src = galleryImages[index].src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeImage(direction) {
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+  if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+  document.getElementById("lightbox-img").src = galleryImages[currentImageIndex].src;
+}
