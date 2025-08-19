@@ -1,4 +1,4 @@
-/* ── Base Styles ───────────────────────────────────── */
+/* ── BASE STYLES ───────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -14,7 +14,7 @@ body, html {
   --header-h: 56px;
 }
 
-/* ── Typography ───────────────────────────────────── */
+/* ── TYPOGRAPHY ───────────────────────────────────── */
 header h1 {
   font-size: 1em;
   letter-spacing: 1.5px;
@@ -36,7 +36,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ── Font Import ───────────────────────────────── */
+/* ── FONT IMPORT ───────────────────────────────── */
 @font-face {
   font-family: 'TWKLausanne';
   src: url('TWKLausanne-500.woff2') format('woff2');
@@ -44,7 +44,7 @@ body {
   font-style: normal;
 }
 
-/* ── Contact Form ───────────────────────────────────── */
+/* ── CONTACT FORM ───────────────────────────────────── */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -163,7 +163,7 @@ body {
   padding: 0 1.2em;
 }
 
-/* ── Footer ───────────────────────────────────── */
+/* ── FOOTER ───────────────────────────────────── */
 footer {
   background: #000000;
   color:#ffffff;
@@ -182,7 +182,7 @@ footer a { color: inherit; text-decoration: none; }
   font-weight: 500;
 }
 
-/* ── Slide-In Menu ─────────────────────────────────────── */
+/* ── SLIDE-IN MENU ─────────────────────────────────────── */
 .fullscreen-menu {
   position: fixed;
   top: 0;
@@ -311,7 +311,7 @@ footer a { color: inherit; text-decoration: none; }
   pointer-events: auto;       
 }
 
-/* ── Header & Toggle ───────────────────────────────────── */
+/* ── HEADER & TOGGLE ───────────────────────────────────── */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -353,7 +353,7 @@ header h1 a:hover { opacity: 0.7; }
   transform: rotate(180deg);
 }
 
-/* ── Header layout for smaller screens ───────────────────────────────── */
+/* ── Header layout for smaller screens ─── */
 /* tablets */
 @media (max-width: 768px) {
   :root { --header-h: 60px; }
@@ -363,12 +363,12 @@ header h1 a:hover { opacity: 0.7; }
 @media (max-width: 480px) {
   :root { --header-h: 64px; }
 
-  header h1 { font-size: 0.95em; letter-spacing: 1.2px; }
+  header h1 { font-size: 0.95em; letter-spacing: 1.2px; } 
   .menu-toggle { font-size: 2em; }
 }
 
-/* ── Lightbox (SHARED, CAN BE USED WITH OTHER PAGES) ────────────────────────────── */
-/* lightbox base */
+/* ── Lightbox ────────────────────────────── */
+/* base styles */
 .lightbox {
   display: none; 
   position: fixed;
@@ -479,16 +479,126 @@ header h1 a:hover { opacity: 0.7; }
   cursor: none;
 }
 
-/* ── Gallery Styles (SHARED, can be used with other pages) ─────────────────────────── */
-.gallery-grid {
-  position: relative;
+/* ── GRID STYLES ───────────────────────────────── */
+.grid-base {
+  display: grid;
+  gap: 1em;
 }
 
-.gallery-grid img {
+/* ── Collection Grid (Fixed 3-Column Layout) ─── */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.collection-grid .grid-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  isolation: isolate;
+}
+
+.collection-grid .grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-grid .grid-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.collection-grid .grid-item:hover::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.collection-grid .grid-item p {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+  font-size: 1.875em;
+  z-index: 20;
+  transition: transform 0.3s ease;
+}
+
+.collection-grid .grid-item:hover p {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+/* title above the overlay */
+.collection-grid .grid-item p {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  margin: 0;
+  color: #fff;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  font-size: 1.875em;
+  text-align: center;
+  z-index: 20;                   
+  transition: transform 0.3s ease;
+}
+
+/* text zooms on hover */
+.collection-grid .grid-item:hover p {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+/* ── Editorial Grid ─── */
+.editorial-gallery {
+  width: min(1200px, 92vw);
+  margin: 0 auto;          
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.editorial-grid img {
+  display: block;
   width: 100%;
   height: auto;
+}
+
+/* ── Horizontal Scroll Grid ─── */
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.horizontalscroll-gallery:hover .slider-arrows {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider-arrow {
+  font-size: 2em;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
   cursor: pointer;
-  display: block;
+  padding: 0.4em 0.7em;
+  z-index: 10;
 }
 
 /* ── LANDING PAGE ───────────────────────────────────── */
@@ -599,14 +709,14 @@ body.landing {
 }
 
 /* ── HOME PAGE ───────────────────────────────────── */
-/* ── Banner ───────────────────────────────────── */
+/* ── Banner ─── */
 .banner img {
   width: 100%;
   height: 90vh;
   object-fit: cover;
 }
 
-/* ── Banner Gallery ───────────────────────────────────── */
+/* ── Banner Gallery ─── */
 .banner-gallery {
   position: relative;
   margin-top: var(--header-h);         
@@ -713,7 +823,7 @@ body.landing {
   opacity: 1;
 }
 
-/* ── Text Section ───────────────────────────────────── */
+/* ── Text Section ─── */
 .quote {
   padding: 6em 2em 4em;
   text-align: center;
@@ -727,7 +837,7 @@ body.landing {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* ── Collections Section ───────────────────────────────── */
+/* ── Collections Section ─── */
 .collections {
   width: 90%;
   margin: 0 auto;
@@ -745,77 +855,14 @@ body.landing {
   text-transform: uppercase;      
 }
 
-/* 3-column fixed panels */
-.collections-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.collections-grid .grid-item {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  isolation: isolate;
-}
-
-.collections-grid .grid-item img {
-  position: relative;            
-  z-index: 0; 
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collections-grid .grid-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease;
-  z-index: 10;                   
-  pointer-events: none;          
-}
-
-.collections-grid .grid-item:hover::before {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.collections-grid .grid-item a {
-  display: block;
-  height: 100%;
-  position: static;             
-}
-
-/* title above the overlay */
-.collections-grid .grid-item p {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  margin: 0;
-  color: #fff;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
-  font-size: 1.875em;
-  text-align: center;
-  z-index: 20;                   
-  transition: transform 0.3s ease;
-}
-
-/* text zooms on hover */
-.collections-grid .grid-item:hover p {
-  transform: translate(-50%, -50%) scale(1.25);
-}
-
 /* ── COLLECTION PAGE ───────────────────────────────── */
-/* ── Banner ───────────────────────────────── */
+/* ── Banner ─── */
 .collection-banner {
   position: relative;
   height: 100vh;
   background: url('images/IMG_2861.JPG') no-repeat center/cover;
 }
+
 .collection-banner::before {
   content: '';
   position: absolute;
@@ -823,6 +870,7 @@ body.landing {
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 75%);
   z-index: 1;
 }
+
 .collection-banner h2 {
   position: absolute;
   bottom: 20%;
@@ -836,12 +884,13 @@ body.landing {
   margin: 0;
 }
 
-/* ── Collection Info ───────────────────────────────── */
+/* ── Collection Info ─── */
 .collection-info {
   text-align: center;
   padding: 2em 1em;
   background: #fff;
 }
+
 .collection-info h2 {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 500;
@@ -849,6 +898,7 @@ body.landing {
   color: #000;
   margin-bottom: 0.5em;
 }
+
 .collection-info p {
   max-width: 800px;
   margin: 0 auto;
@@ -859,24 +909,8 @@ body.landing {
   line-height: 1.6;
 }
 
-/* ── Gallery Grid ───────────────────────────────── */
-.collection-gallery {
-  padding: 2em;
-  background: #fff;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1em;
-}
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
-}
-
-/* ── Overview Page Image Banner ───────────────────────────────── */
+/* ── OVERVIEW PAGE ───────────────────────────────── */
+/* ── Banner ─── */
 .image-banner {
   position: relative;
   height: 100vh;
@@ -901,7 +935,7 @@ body.landing {
   pointer-events: none;
 }
 
-/* ── Section Titles and Descriptive Text ───────────────────────────────── */
+/* ── Section Titles and Descriptive Text ─── */
 .mockup-title {
   font-size: 60pt;
   font-weight: 450;
@@ -932,7 +966,7 @@ body.landing {
   margin-bottom: 1.5em;
 }
 
-/* ── Commission Section ───────────────────────────────── */
+/* ── Commission Section ─── */
 .commission-section h2 {
   font-size: 250pt;
   font-weight: 350;
@@ -955,34 +989,6 @@ body.landing {
   margin: 0 auto 2em;
   text-align: center;
   white-space: pre-line;
-}
-
-/* commission section nav */
-.slider-arrows {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.commission-gallery:hover .slider-arrows {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.slider-arrow {
-  font-size: 2em;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 0.4em 0.7em;
-  z-index: 10;
 }
 
 /* Responsive Typography */
