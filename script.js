@@ -1,6 +1,6 @@
 // === Lightbox Setup ===
 function setupLightbox({
-  gallerySelector = ".image-gallery img, .commission-gallery img",
+  gallerySelector = ".masonry-gallery img, .horizontalscroll-gallery img",
   captionSelector = "#lightbox-caption",
   fadeDuration = 300
 } = {}) {
