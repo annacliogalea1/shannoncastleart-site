@@ -563,14 +563,14 @@ header h1 a:hover { opacity: 0.7; }
 
 .masonry-grid {
   column-count: 4;               
-  column-gap: 12px;              
+  column-gap: 10px;              
   width: min(1400px, 96vw);
   margin: 0 auto;
 }
 
 .masonry-grid img {
   width: 100%;
-  margin-bottom: 12px;           
+  margin-bottom: 10px;           
   break-inside: avoid;          
   display: block;
 }
