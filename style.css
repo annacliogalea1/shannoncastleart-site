@@ -738,6 +738,7 @@ header h1 a:hover { opacity: 0.7; }
   font-size: 2em;
   color: rgb(118, 118, 118);         
   background: transparent;
+  font-family: 'TWKLausanne', sans-serif;
   border: none;
   cursor: pointer;
   opacity: 0;
@@ -756,7 +757,8 @@ header h1 a:hover { opacity: 0.7; }
   right: 30px;
   color: rgb(118, 118, 118);
   font-size: 2em;
-  font-weight: bold;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: normal;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s ease;
