@@ -6,7 +6,7 @@ function setupLightbox({
 } = {}) {
   const galleryImages = Array.from(document.querySelectorAll(gallerySelector));
   const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
+  let lightboxImg = document.getElementById("lightbox-img");
   const captionEl = document.querySelector(captionSelector);
   const closeBtn = lightbox.querySelector(".close");
   const prevBtn = lightbox.querySelector(".prev");
