@@ -16,6 +16,123 @@ function setupLightbox({
 
   if (!lightbox || !lightboxImg || galleryImages.length === 0) return;
 
+  // ---------- Zoom Modal ----------
+  let zoomModal = document.getElementById("zoom-modal");
+  if (!zoomModal) {
+    zoomModal = document.createElement("div");
+    zoomModal.id = "zoom-modal";
+    zoomModal.className = "zoom-modal";
+    zoomModal.innerHTML = `
+      <div class="zoom-inner">
+        <button class="zoom-close" aria-label="Close zoom">×</button>
+        <img id="zoom-img" alt="Zoomed detail" />
+      </div>
+    `;
+    document.body.appendChild(zoomModal);
+  }
+  const zoomImg = zoomModal.querySelector("#zoom-img");
+  const zoomClose = zoomModal.querySelector(".zoom-close");
+
+  // state for zoom/pan
+  let scale = 1;
+  let originX = 0; // translate x
+  let originY = 0; // translate y
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+
+  function applyTransform() {
+    zoomImg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+  }
+
+  function clampPan() {
+    const rect = zoomImg.getBoundingClientRect();
+    const modalRect = zoomModal.getBoundingClientRect();
+    const pad = 40;
+    if (rect.width > modalRect.width) {
+      originX = Math.min(originX, (rect.width - modalRect.width) / 2 + pad);
+      originX = Math.max(originX, -((rect.width - modalRect.width) / 2 + pad));
+    } else {
+      originX = 0;
+    }
+    if (rect.height > modalRect.height) {
+      originY = Math.min(originY, (rect.height - modalRect.height) / 2 + pad);
+      originY = Math.max(originY, -((rect.height - modalRect.height) / 2 + pad));
+    } else {
+      originY = 0;
+    }
+  }
+
+  function openZoom(src) {
+    zoomImg.src = src;
+    scale = 1.6; // initial zoom
+    originX = 0;
+    originY = 0;
+    applyTransform();
+    zoomModal.classList.add("show");
+  }
+
+  function closeZoom() {
+    zoomModal.classList.remove("show");
+  }
+
+  // Wheel to zoom
+  function onWheel(e) {
+    e.preventDefault();
+    const delta = Math.sign(e.deltaY);
+    const prevScale = scale;
+    scale += delta > 0 ? -0.2 : 0.2;
+    scale = Math.min(Math.max(scale, 1), 5);
+    // Zoom toward cursor
+    const rect = zoomImg.getBoundingClientRect();
+    const cx = e.clientX - rect.left - rect.width / 2;
+    const cy = e.clientY - rect.top - rect.height / 2;
+    originX -= (cx / prevScale - cx / scale);
+    originY -= (cy / prevScale - cy / scale);
+    clampPan();
+    applyTransform();
+  }
+
+  function onMouseDown(e) {
+    if (scale === 1) return; // no drag when not zoomed
+    isDragging = true;
+    startX = e.clientX - originX;
+    startY = e.clientY - originY;
+    zoomModal.classList.add("dragging");
+  }
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    originX = e.clientX - startX;
+    originY = e.clientY - startY;
+    clampPan();
+    applyTransform();
+  }
+  function onMouseUp() {
+    isDragging = false;
+    zoomModal.classList.remove("dragging");
+  }
+
+  zoomModal.addEventListener("wheel", onWheel, { passive: false });
+  zoomImg.addEventListener("mousedown", onMouseDown);
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("mouseup", onMouseUp);
+  zoomClose.addEventListener("click", closeZoom);
+  zoomModal.addEventListener("click", (e) => {
+    const inner = zoomModal.querySelector(".zoom-inner");
+    if (e.target === zoomModal || (inner && !inner.contains(e.target))) {
+      closeZoom();
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (zoomModal.classList.contains("show") && e.key === "Escape") closeZoom();
+  });
+
+  // Hover cursor for lightbox image
+  lightboxImg.style.cursor = "zoom-in";
+
+  // Clicking the lightbox image opens the zoom modal
+  lightboxImg.addEventListener("click", () => openZoom(lightboxImg.src));
+
   function showImage(index) {
     const img = galleryImages[index];
     lightboxImg.src = img.src;
