@@ -28,21 +28,21 @@
   <img src="images/gallery-header.png" alt="Gallery header layout" />
 </section>
   <section class="image-gallery gallery-grid">
-    <img src="images/WoodsmanCopy2.jpg" alt="Woodsman" />
-    <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" />
-    <img src="images/SantaMariaFramed2.jpg" alt="Santa Maria" />
-    <img src="images/BikeFullShot.JPG" alt="Bike 1" />
-    <img src="images/BikeBackTireCU.JPG" alt="Bike 2" />
-    <img src="images/bike-feature-3.jpg" alt="Bike 3" />
-    <img src="images/bike-feature-5.jpg" alt="Bike 4" />
-    <img src="images/bike-feature-7.jpg" alt="Bike 5" />
-    <img src="images/Bikew_FlagCandid.JPG" alt="Bike 6" />
-    <img src="images/bike-feature-8.jpg" alt="Bike 7" />
-    <img src="images/TheOracleRomanEdit.jpg" alt="The Oracle" />
-    <img src="images/SistersFramedRomanEdit.jpg" alt="Sisters" />
-    <img src="images/IbizaSilverRomanEdit.jpg" alt="Ibiza Silver" />
-    <img src="images/CatherineFramedRomanEdit.jpg" alt="Catherine" />
-    <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" />
+    <img src="images/WoodsmanCopy2.jpg" alt="Sisters" data-title="‘Woodsman’ – framed in gold, oil on panel, 2022" />
+    <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" data-title="‘AI Tile’ – digital print, 2025" />
+    <img src="images/SantaMariaFramed2.jpg" alt="Santa Maria" data-title="‘Santa Maria’ – framed in silver, oil on canvas, 2022" />
+    <img src="images/BikeFullShot.JPG" alt="Bike 1" data-title="‘Bike 1’ – full shot, oil on panel, 2022" />
+    <img src="images/BikeBackTireCU.JPG" alt="Bike 2" data-title="‘Bike 2’ – close-up, oil on panel, 2022" />
+    <img src="images/bike-feature-3.jpg" alt="Bike 3" data-title="‘Bike 3’ – feature shot, oil on panel, 2022" />
+    <img src="images/bike-feature-5.jpg" alt="Bike 4" data-title="‘Bike 4’ – feature shot, oil on panel, 2022" />
+    <img src="images/bike-feature-7.jpg" alt="Bike 5" data-title="‘Bike 5’ – feature shot, oil on panel, 2022" />
+    <img src="images/Bikew_FlagCandid.JPG" alt="Bike 6" data-title="‘Bike 6’ – feature shot, oil on panel, 2022" />
+    <img src="images/bike-feature-8.jpg" alt="Bike 7" data-title="‘Bike 7’ – feature shot, oil on panel, 2022" />
+    <img src="images/TheOracleRomanEdit.jpg" alt="The Oracle" data-title="‘The Oracle’ – framed in gold, oil on panel, 2022" />
+    <img src="images/SistersFramedRomanEdit.jpg" alt="Sisters" data-title="‘Sisters’ – framed in silver, oil on canvas, 2022" />
+    <img src="images/IbizaSilverRomanEdit.jpg" alt="Ibiza Silver" data-title="‘Ibiza Silver’ – framed in silver, oil on canvas, 2022" />
+    <img src="images/CatherineFramedRomanEdit.jpg" alt="Catherine" data-title="‘Catherine’ – framed in gold, oil on panel, 2022" />
+    <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" data-title="‘AI Tile’ – digital print, 2025" />
   </section>
 
   <section class="placeholder-image">
@@ -95,6 +95,7 @@
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" class="lightbox-content" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
     <a class="prev" onclick="changeImage(-1)">&#10094;</a>
     <a class="next" onclick="changeImage(1)">&#10095;</a>
   </div>

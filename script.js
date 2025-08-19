@@ -1,213 +1,245 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const galleryImages = Array.from(document.querySelectorAll(".image-gallery img, .commission-gallery img"));
+// === Lightbox Setup ===
+function setupLightbox({
+  gallerySelector = ".image-gallery img, .commission-gallery img",
+  captionSelector = "#lightbox-caption",
+  fadeDuration = 300
+} = {}) {
+  const galleryImages = Array.from(document.querySelectorAll(gallerySelector));
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  const captionEl = document.querySelector(captionSelector);
+  const closeBtn = lightbox.querySelector(".close");
+  const prevBtn = lightbox.querySelector(".prev");
+  const nextBtn = lightbox.querySelector(".next");
 
   let currentImageIndex = 0;
 
+  if (!lightbox || !lightboxImg || galleryImages.length === 0) return;
+
+  function showImage(index) {
+    const img = galleryImages[index];
+    lightboxImg.src = img.src;
+
+    // Caption support
+    const caption = img.getAttribute("data-title") || img.alt || "";
+    if (captionEl) {
+      captionEl.textContent = caption;
+      captionEl.style.opacity = "0";
+      setTimeout(() => {
+        captionEl.style.opacity = "1";
+      }, fadeDuration);
+    }
+  }
+
+  function openLightbox(index) {
+    currentImageIndex = index;
+    showImage(currentImageIndex);
+    lightbox.classList.add("show");
+    lightbox.style.opacity = "0";
+    setTimeout(() => (lightbox.style.opacity = "1"), 10);
+  }
+
+  function closeLightbox() {
+    lightbox.style.opacity = "0";
+    setTimeout(() => {
+      lightbox.classList.remove("show");
+    }, fadeDuration);
+  }
+
+  function changeImage(direction) {
+    currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+    showImage(currentImageIndex);
+  }
+
   galleryImages.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      currentImageIndex = index;
-      lightbox.classList.add("show");
-      lightboxImg.src = img.src;
-    });
+    img.addEventListener("click", () => openLightbox(index));
   });
 
-  document.querySelector(".close").addEventListener("click", () => {
-    lightbox.classList.remove("show");
+  closeBtn?.addEventListener("click", closeLightbox);
+  prevBtn?.addEventListener("click", () => changeImage(-1));
+  nextBtn?.addEventListener("click", () => changeImage(1));
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
   });
 
-  document.querySelector(".next").addEventListener("click", () => {
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentImageIndex].src;
-  });
-
-  document.querySelector(".prev").addEventListener("click", () => {
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentImageIndex].src;
-  });
-
-  document.addEventListener("keydown", e => {
+  document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("show")) return;
-    if (e.key === "Escape") lightbox.classList.remove("show");
-    if (e.key === "ArrowRight") {
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentImageIndex].src;
+
+    switch (e.key) {
+      case "Escape":
+        closeLightbox();
+        break;
+      case "ArrowRight":
+        changeImage(1);
+        break;
+      case "ArrowLeft":
+        changeImage(-1);
+        break;
     }
-    if (e.key === "ArrowLeft") {
-      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentImageIndex].src;
-    }
   });
-});
-
-// Fade-based banner slider logic
-const slider          = document.getElementById('banner-slider');
-const slides          = document.querySelectorAll('.slide');
-const dots            = document.querySelectorAll('.dot');
-const next            = document.querySelector('.arrow.next');
-const prev            = document.querySelector('.arrow.prev');
-
-// Menu toggling elements
-const toggleBtn       = document.getElementById('menu-toggle');
-const fullscreenMenu  = document.getElementById('fullscreen-menu');
-const overlay         = document.getElementById('overlay');
-
-// Contact form elements
-const contactForm     = document.getElementById('contact-form');
-const confirmation    = document.getElementById('confirmation-message');
-const userNameSpan    = document.getElementById('user-name');
-
-let index    = 0;
-let interval;
-
-// Update active slide & dot
-function updateSlide(pos) {
-  slides.forEach((s, i) => s.classList.toggle('active', i === pos));
-  document.querySelector('.dot.active')?.classList.remove('active');
-  dots[pos]?.classList.add('active');
 }
 
-// Advance one (fade)
-function nextSlide() {
-  index = (index + 1) % slides.length;
-  updateSlide(index);
-}
+// === DOM READY ===
+document.addEventListener("DOMContentLoaded", () => {
+  setupLightbox();
 
-// Go back one (fade)
-function prevSlide() {
-  index = (index - 1 + slides.length) % slides.length;
-  updateSlide(index);
-}
+  // Banner slider logic
+  const slider = document.getElementById('banner-slider');
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const next = document.querySelector('.arrow.next');
+  const prev = document.querySelector('.arrow.prev');
 
-// Restart the 5s auto-rotate
-function resetInterval() {
-  clearInterval(interval);
-  interval = setInterval(nextSlide, 5000);
-}
+  let index = 0;
+  let interval;
 
-// Wire up slider controls
-if (slides.length && dots.length === slides.length) {
-  updateSlide(0);
-  interval = setInterval(nextSlide, 5000);
+  function updateSlide(pos) {
+    slides.forEach((s, i) => s.classList.toggle('active', i === pos));
+    document.querySelector('.dot.active')?.classList.remove('active');
+    dots[pos]?.classList.add('active');
+  }
 
-  next?.addEventListener('click', () => {
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    updateSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlide(index);
+  }
+
+  function resetInterval() {
     clearInterval(interval);
-    nextSlide();
-    resetInterval();
-  });
-  prev?.addEventListener('click', () => {
-    clearInterval(interval);
-    prevSlide();
-    resetInterval();
-  });
+    interval = setInterval(nextSlide, 5000);
+  }
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      clearInterval(interval);
-      index = i;
-      updateSlide(i);
-      resetInterval();
-    });
-  });
+  if (slides.length && dots.length === slides.length) {
+    updateSlide(0);
+    interval = setInterval(nextSlide, 5000);
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') {
+    next?.addEventListener('click', () => {
       clearInterval(interval);
       nextSlide();
       resetInterval();
-    } else if (e.key === 'ArrowLeft') {
+    });
+    prev?.addEventListener('click', () => {
       clearInterval(interval);
       prevSlide();
       resetInterval();
-    }
-  });
-
-  let startX = 0;
-  slider?.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
-  slider?.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].clientX - startX;
-    if (Math.abs(diff) < 50) return;
-    clearInterval(interval);
-    diff > 0 ? prevSlide() : nextSlide();
-    resetInterval();
-  });
-}
-
-// Quote fade in on scroll (unchanged)
-const quote = document.querySelector('.quote');
-if (quote) {
-  window.addEventListener('scroll', () => {
-    const trigger = window.innerHeight * 0.85;
-    if (quote.getBoundingClientRect().top < trigger) {
-      quote.classList.add('visible');
-      quote.style.opacity = '1';
-      quote.style.transform = 'translateY(0)';
-    }
-  });
-}
-
-// Menu toggle logic
-if (toggleBtn && fullscreenMenu && overlay) {
-  const closeMenu = () => {
-    fullscreenMenu.classList.remove('show');
-    overlay.classList.remove('show');
-    toggleBtn.classList.remove('open');
-    // collapse any open submenus
-    fullscreenMenu.querySelectorAll('.has-submenu.open').forEach(li => {
-      li.classList.remove('open');
-      li.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false');
     });
-  };
 
-  const openMenu = () => {
-    fullscreenMenu.classList.add('show');
-    overlay.classList.add('show');
-    toggleBtn.classList.add('open');
-  };
-
-  toggleBtn.addEventListener('click', () => {
-    fullscreenMenu.classList.contains('show') ? closeMenu() : openMenu();
-  });
-
-  // Close on overlay or any link click
-  fullscreenMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-  overlay.addEventListener('click', closeMenu);
-
-  // Submenu toggle(s)
-  fullscreenMenu.querySelectorAll('.has-submenu .submenu-toggle').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();      
-      e.stopPropagation();
-      const li = btn.closest('.has-submenu');
-      const isOpen = li.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(interval);
+        index = i;
+        updateSlide(i);
+        resetInterval();
+      });
     });
-  });
-}
 
-// Contact form logic
-if (contactForm && confirmation && userNameSpan) {
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const userName = document.getElementById('name').value.trim() || 'there';
-    userNameSpan.textContent = userName;
-    contactForm.style.display = 'none';
-    confirmation.style.display = 'block';
-    setTimeout(() => confirmation.classList.add('visible'), 50);
-    setTimeout(() => {
-      confirmation.classList.remove('visible');
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') {
+        clearInterval(interval);
+        nextSlide();
+        resetInterval();
+      } else if (e.key === 'ArrowLeft') {
+        clearInterval(interval);
+        prevSlide();
+        resetInterval();
+      }
+    });
+
+    let startX = 0;
+    slider?.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+    slider?.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diff) < 50) return;
+      clearInterval(interval);
+      diff > 0 ? prevSlide() : nextSlide();
+      resetInterval();
+    });
+  }
+
+  // Quote fade-in
+  const quote = document.querySelector('.quote');
+  if (quote) {
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.85;
+      if (quote.getBoundingClientRect().top < trigger) {
+        quote.classList.add('visible');
+        quote.style.opacity = '1';
+        quote.style.transform = 'translateY(0)';
+      }
+    });
+  }
+
+  // Menu toggle
+  const toggleBtn = document.getElementById('menu-toggle');
+  const fullscreenMenu = document.getElementById('fullscreen-menu');
+  const overlay = document.getElementById('overlay');
+
+  if (toggleBtn && fullscreenMenu && overlay) {
+    const closeMenu = () => {
+      fullscreenMenu.classList.remove('show');
+      overlay.classList.remove('show');
+      toggleBtn.classList.remove('open');
+      fullscreenMenu.querySelectorAll('.has-submenu.open').forEach(li => {
+        li.classList.remove('open');
+        li.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    const openMenu = () => {
+      fullscreenMenu.classList.add('show');
+      overlay.classList.add('show');
+      toggleBtn.classList.add('open');
+    };
+
+    toggleBtn.addEventListener('click', () => {
+      fullscreenMenu.classList.contains('show') ? closeMenu() : openMenu();
+    });
+
+    fullscreenMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    overlay.addEventListener('click', closeMenu);
+
+    fullscreenMenu.querySelectorAll('.has-submenu .submenu-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const li = btn.closest('.has-submenu');
+        const isOpen = li.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  }
+
+  // Contact form logic
+  const contactForm = document.getElementById('contact-form');
+  const confirmation = document.getElementById('confirmation-message');
+  const userNameSpan = document.getElementById('user-name');
+
+  if (contactForm && confirmation && userNameSpan) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const userName = document.getElementById('name').value.trim() || 'there';
+      userNameSpan.textContent = userName;
+      contactForm.style.display = 'none';
+      confirmation.style.display = 'block';
+      setTimeout(() => confirmation.classList.add('visible'), 50);
       setTimeout(() => {
-        confirmation.style.display = 'none';
-        contactForm.reset();
-        contactForm.style.display = 'flex';
-      }, 600);
-    }, 5000);
-  });
-}
-let currentImageIndex = 0;
-let galleryImages = [];
+        confirmation.classList.remove('visible');
+        setTimeout(() => {
+          confirmation.style.display = 'none';
+          contactForm.reset();
+          contactForm.style.display = 'flex';
+        }, 600);
+      }, 5000);
+    });
+  }
+});
