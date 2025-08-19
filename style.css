@@ -790,6 +790,18 @@ header h1 a:hover { opacity: 0.7; }
   transition: opacity 0.3s ease;
 }
 
+/* Stack image and caption vertically inside the lightbox */
+.lightbox { 
+  flex-direction: column; 
+}
+
+/* Keep the image within the viewport even with a caption below */
+.lightbox-content {
+  max-width: 90vw;
+  max-height: calc(90vh - 64px); /* adjust 64px if your captions are taller/shorter */
+  margin-bottom: 12px;
+}
+
 /* ── Header layout for smaller screens ───────────────────────────────── */
 /* tablets */
 @media (max-width: 768px) {
