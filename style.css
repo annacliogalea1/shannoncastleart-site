@@ -709,7 +709,7 @@ header h1 a:hover { opacity: 0.7; }
 /* ── Lightbox ───────────────────────────────── */
 /* Lightbox base */
 .lightbox {
-  display: none; /* ❗️HIDE until activated */
+  display: none; 
   position: fixed;
   z-index: 9999;
   padding-top: 60px;
@@ -730,19 +730,13 @@ header h1 a:hover { opacity: 0.7; }
   display: flex;
 }
 
-/* Lightbox content */
-.lightbox-content {
-  max-width: 90%;
-  max-height: 90vh;
-}
-
 /* Navigation arrows */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3em;
-  color: black;         
+  font-size: 2em;
+  color: rgb(118, 118, 118);         
   background: transparent;
   border: none;
   cursor: pointer;
@@ -799,7 +793,7 @@ header h1 a:hover { opacity: 0.7; }
 .lightbox-content {
   max-width: 90vw;
   max-height: calc(90vh - 64px); /* adjust 64px if your captions are taller/shorter */
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 /* ── Header layout for smaller screens ───────────────────────────────── */
