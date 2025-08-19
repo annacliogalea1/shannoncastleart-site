@@ -6,7 +6,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  letter-spacing: 0.05em;
 }
 
 :root { 
@@ -26,218 +27,21 @@ nav,
 blockquote,
 label,
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  letter-spacing: 0.05em;
 }
 
-.caption,
-.grid-item p {
-  font-family: 'Courier Prime', serif;
-  font-size: 0.9em;
+body {
+  font-family: 'TWKLausanne', sans-serif;
+  letter-spacing: 0.05em;
 }
 
-/* ── Landing Page ───────────────────────────────────── */
-body.landing {
-  background: url('images/SirtautCU1.jpg') no-repeat center center/cover;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: 'Lato', sans-serif;
-}
-
-.fade-container {
-  width: 100%;
-  height: 100%;
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
-  position: relative;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.landing-overlay {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.landing-title {
-  font-size: 3em;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  margin: 0;
-}
-
-.enter-button {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1em;
-  padding: 0.7em 1.5em;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  background: transparent;
-  transition: background 0.3s ease, color 0.3s ease;
-  animation: buttonFadeIn 1.5s ease 1s forwards;
-  opacity: 0;
-}
-
-.enter-button:hover {
-  background: white;
-  color: black;
-}
-
-@keyframes buttonFadeIn {
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-.button-exit {
-  animation: buttonExit 0.9s ease forwards;
-}
-
-@keyframes buttonExit {
-  to {
-    opacity: 0;
-    transform: scale(0.85) translateX(-50%);
-  }
-}
-
-.black-fade-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: black;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1.2s ease;
-  z-index: 1;
-}
-
-.black-fade-overlay.show-black {
-  opacity: 1;
-}
-
-/* ── Banner Section ───────────────────────────────────── */
-.banner img {
-  width: 100%;
-  height: 90vh;
-  object-fit: cover;
-}
-
-/* ── Quote Section ───────────────────────────────────── */
-.quote {
-  padding: 6em 2em 4em;
-  text-align: center;
-  font-style: italic;
-  font-size: 1.2em;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-/* ── Collections Section ───────────────────────────────── */
-.collections {
-  width: 90%;
-  margin: 0 auto;
-  padding: 3em 0 2em;           
-  background: #fff;             
-}
-
-.collections-title {
-  font-family: 'Lato', sans-serif; 
-  font-size: 2.5em;                
-  text-align: left;                
-  margin: 0 0 0.5em;               
-  color: #000;                     
-  text-transform: uppercase;       /* FORCE UPPERCASE */
-}
-
-/* 3-column fixed panels */
-.collections-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.collections-grid .grid-item {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  isolation: isolate;
-}
-
-.collections-grid .grid-item img {
-  position: relative;            
-  z-index: 0; 
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collections-grid .grid-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease;
-  z-index: 10;                   
-  pointer-events: none;          
-}
-
-.collections-grid .grid-item:hover::before {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.collections-grid .grid-item a {
-  display: block;
-  height: 100%;
-  position: static;             
-}
-
-/* 5) Title above the overlay */
-.collections-grid .grid-item p {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  margin: 0;
-  color: #fff;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.875em;
-  text-align: center;
-  z-index: 20;                   /* above overlay */
-  transition: transform 0.3s ease;
-}
-
-/* text zooms on hover */
-.collections-grid .grid-item:hover p {
-  transform: translate(-50%, -50%) scale(1.25);
+/* ── Font Import ───────────────────────────────── */
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-500.woff2') format('woff2');
+  font-weight: 300 500;
+  font-style: normal;
 }
 
 /* ── Contact Form ───────────────────────────────────── */
@@ -249,7 +53,8 @@ body.landing {
   margin: 0 auto;           
   padding: 0.4em;
   background: transparent;  
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
 }
 
 .contact-form-row {
@@ -275,7 +80,8 @@ body.landing {
   border: 1px solid #444;
   border-radius: 0;
   background: #f7f7f7;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
   font-size: 1em;
 }
 
@@ -296,7 +102,8 @@ body.landing {
   border-radius: 0;
   cursor: pointer;
   margin-top: 1em;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
 }
 
 .required {
@@ -316,7 +123,8 @@ body.landing {
 }
 
 .confirmation-message {
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
   text-align: center;
   margin-top: 2em;
   color: #333;
@@ -343,14 +151,14 @@ body.landing {
   }
 }
 
-/* Full-bleed contact area */
+/* full-bleed contact area */
 .form-section {
   width: 100%;
   background: #f0f0f0;   
   padding: 1em 0 1.25em;       
 }
 
-/* Keep form centered */
+/* keep form centered */
 .form-container { 
   padding: 0 1.2em;
 }
@@ -370,7 +178,8 @@ footer a { color: inherit; text-decoration: none; }
   gap: 1.5em;
   max-width: 600px;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
 }
 
 /* ── Slide-In Menu ─────────────────────────────────────── */
@@ -408,7 +217,8 @@ footer a { color: inherit; text-decoration: none; }
   font-size: 2em;
   color: white;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
   transition: opacity 0.3s;
 }
 
@@ -431,7 +241,8 @@ footer a { color: inherit; text-decoration: none; }
   border: 0;
   padding: 0;
   cursor: pointer;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
 }
 
 .fullscreen-menu .submenu a { padding-right: 0.5em; }
@@ -452,7 +263,7 @@ footer a { color: inherit; text-decoration: none; }
 
 .fullscreen-menu .has-submenu > .submenu-toggle::before { content: none !important; }
 
-/* Collapsible container */
+/* collapsible container */
 .fullscreen-menu .submenu {
   list-style: none;
   margin: 0;
@@ -536,6 +347,259 @@ header h1 a:hover { opacity: 0.7; }
   transform: rotate(180deg);
 }
 
+/* ── Header layout for smaller screens ───────────────────────────────── */
+/* tablets */
+@media (max-width: 768px) {
+  :root { --header-h: 60px; }
+}
+
+/* phones */
+@media (max-width: 480px) {
+  :root { --header-h: 64px; }
+
+  header h1 { font-size: 0.95em; letter-spacing: 1.2px; }
+  .menu-toggle { font-size: 2em; }
+}
+
+/* ── Lightbox (SHARED, CAN BE USED WITH OTHER PAGES) ────────────────────────────── */
+/* lightbox base */
+.lightbox {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.98);
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+/* navigation arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  color: rgb(118, 118, 118);         
+  background: transparent;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+  padding: 0.5em;
+}
+
+.prev { left: 1em; }
+.next { right: 1em; }
+
+/* close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: rgb(118, 118, 118);
+  font-size: 1.5em;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+/* fade in nav controls on hover */
+.lightbox.show:hover .prev,
+.lightbox.show:hover .next,
+.lightbox.show:hover .close {
+  opacity: 1;
+}
+
+/* lightbox caption below image */
+.lightbox-caption {
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-size: 1em;
+  font-family: 'Lausanne', sans-serif;
+  font-weight: 500;
+  margin-top: 1em;
+  max-width: 90%;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* lightbox image and caption stacking */
+.lightbox { 
+  flex-direction: column; 
+}
+
+/* keeps the image within the viewport even with a caption below */
+.lightbox-content {
+  max-width: 90vw;
+  max-height: calc(90vh - 64px);
+  margin-bottom: 6px;
+}
+
+/* magnifier cursor over the lightbox image */
+.lightbox-content { cursor: zoom-in; }
+
+
+.magnifier-lens {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #aaa;
+  border-radius: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  z-index: 10000;
+  display: none;
+  cursor: none;
+}
+
+/* ── Gallery Styles (SHARED, can be used with other pages) ─────────────────────────── */
+.gallery-grid {
+  position: relative;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+}
+
+/* ── LANDING PAGE ───────────────────────────────────── */
+body.landing {
+  background: url('images/SirtautCU1.jpg') no-repeat center center/cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+}
+
+.fade-container {
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.landing-overlay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-title {
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+.enter-button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1em;
+  padding: 0.7em 1.5em;
+  border: 2px solid white;
+  color: white;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+  animation: buttonFadeIn 1.5s ease 1s forwards;
+  opacity: 0;
+}
+
+.enter-button:hover {
+  background: white;
+  color: black;
+}
+
+@keyframes buttonFadeIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.button-exit {
+  animation: buttonExit 0.9s ease forwards;
+}
+
+@keyframes buttonExit {
+  to {
+    opacity: 0;
+    transform: scale(0.85) translateX(-50%);
+  }
+}
+
+.black-fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+}
+
+.black-fade-overlay.show-black {
+  opacity: 1;
+}
+
+/* ── HOME PAGE ───────────────────────────────────── */
+/* ── Banner ───────────────────────────────────── */
+.banner img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
 /* ── Banner Gallery ───────────────────────────────────── */
 .banner-gallery {
   position: relative;
@@ -544,7 +608,7 @@ header h1 a:hover { opacity: 0.7; }
   overflow: hidden;
 }
 
-/* Banner Slider with Fade Transition */
+/* banner slider with fade transition */
 .slider {
   position: relative;
   width: 100%;
@@ -573,12 +637,12 @@ header h1 a:hover { opacity: 0.7; }
   z-index: 2;
 }
 
-/* Disable fade for instant jumps */
+/* disable fade for instant jumps */
 .slide.no-transition {
   transition: none !important;
 }
 
-/* Navigation Arrows */
+/* navigation arrows */
 .nav-arrows {
   position: absolute;
   width: 100%;
@@ -602,7 +666,7 @@ header h1 a:hover { opacity: 0.7; }
   pointer-events: all;
 }
 
-/* Navigation Dots */
+/* navigation dots */
 .nav-dots {
   position: absolute;
   bottom: 15px;
@@ -627,13 +691,13 @@ header h1 a:hover { opacity: 0.7; }
   opacity: 1;
 }
 
-/* Bring arrows & dots above slides */
+/* bring arrows & dots above slides */
 .banner-gallery .nav-arrows,
 .banner-gallery .nav-dots {
   z-index: 3;
 }
 
-/* Show & activate controls on hover */
+/* show & activate controls on hover */
 .banner-gallery:hover .nav-arrows {
   opacity: 1;
   pointer-events: auto;
@@ -643,7 +707,104 @@ header h1 a:hover { opacity: 0.7; }
   opacity: 1;
 }
 
-/* ── Collection Page Banner ───────────────────────────────── */
+/* ── Text Section ───────────────────────────────────── */
+.quote {
+  padding: 6em 2em 4em;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* ── Collections Section ───────────────────────────────── */
+.collections {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3em 0 2em;           
+  background: #fff;             
+}
+
+.collections-title {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  font-size: 2.5em;                
+  text-align: left;                
+  margin: 0 0 0.5em;               
+  color: #000;                     
+  text-transform: uppercase;      
+}
+
+/* 3-column fixed panels */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.collections-grid .grid-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  isolation: isolate;
+}
+
+.collections-grid .grid-item img {
+  position: relative;            
+  z-index: 0; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collections-grid .grid-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+  z-index: 10;                   
+  pointer-events: none;          
+}
+
+.collections-grid .grid-item:hover::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.collections-grid .grid-item a {
+  display: block;
+  height: 100%;
+  position: static;             
+}
+
+/* title above the overlay */
+.collections-grid .grid-item p {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  margin: 0;
+  color: #fff;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  font-size: 1.875em;
+  text-align: center;
+  z-index: 20;                   
+  transition: transform 0.3s ease;
+}
+
+/* text zooms on hover */
+.collections-grid .grid-item:hover p {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+/* ── COLLECTION PAGE ───────────────────────────────── */
+/* ── Banner ───────────────────────────────── */
 .collection-banner {
   position: relative;
   height: 100vh;
@@ -662,7 +823,8 @@ header h1 a:hover { opacity: 0.7; }
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
   font-size: 3em;
   z-index: 2;
   margin: 0;
@@ -675,7 +837,8 @@ header h1 a:hover { opacity: 0.7; }
   background: #fff;
 }
 .collection-info h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
   font-size: 2em;
   color: #000;
   margin-bottom: 0.5em;
@@ -683,7 +846,8 @@ header h1 a:hover { opacity: 0.7; }
 .collection-info p {
   max-width: 800px;
   margin: 0 auto;
-  font-family: 'Lato', sans-serif;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
   font-size: 1em;
   color: #333;
   line-height: 1.6;
@@ -706,133 +870,7 @@ header h1 a:hover { opacity: 0.7; }
   cursor: pointer;
 }
 
-/* ── Lightbox ───────────────────────────────── */
-/* Lightbox base */
-.lightbox {
-  display: none; 
-  position: fixed;
-  z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(255, 255, 255, 0.98); /* white background as intended */
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease;
-}
-
-.lightbox.show {
-  display: flex;
-}
-
-/* Navigation arrows */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5em;
-  color: rgb(118, 118, 118);         
-  background: transparent;
-  font-family: 'TWKLausanne', sans-serif;
-  border: none;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 100;
-  padding: 0.5em;
-}
-
-.prev { left: 1em; }
-.next { right: 1em; }
-
-/* Close button */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: rgb(118, 118, 118);
-  font-size: 1.5em;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: normal;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 100;
-}
-
-/* Fade in nav controls on hover */
-.lightbox.show:hover .prev,
-.lightbox.show:hover .next,
-.lightbox.show:hover .close {
-  opacity: 1;
-}
-
-/* Lightbox caption below image */
-.lightbox-caption {
-  width: 100%;
-  text-align: center;
-  color: #333;
-  font-size: 1em;
-  font-family: 'Lausanne', sans-serif;
-  margin-top: 1em;
-  max-width: 90%;
-  line-height: 1.4;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Stack image and caption vertically inside the lightbox */
-.lightbox { 
-  flex-direction: column; 
-}
-
-/* Keep the image within the viewport even with a caption below */
-.lightbox-content {
-  max-width: 90vw;
-  max-height: calc(90vh - 64px); /* adjust 64px if your captions are taller/shorter */
-  margin-bottom: 6px;
-}
-
-/* ── Header layout for smaller screens ───────────────────────────────── */
-/* tablets */
-@media (max-width: 768px) {
-  :root { --header-h: 60px; }
-}
-
-/* phones (overrides the 768px one on small screens) */
-@media (max-width: 480px) {
-  :root { --header-h: 64px; }
-
-  /* optional tweaks */
-  header h1 { font-size: 0.95em; letter-spacing: 1.2px; }
-  .menu-toggle { font-size: 2em; }
-}
-/* ─────────────────────────────────────────────────────────── */
-/* Font Import */
-/* ─────────────────────────────────────────────────────────── */
-@font-face {
-  font-family: 'TWKLausanne';
-  src: url('TWKLausanne-500.woff2') format('woff2');
-  font-weight: 300 500;
-  font-style: normal;
-}
-
-/* ─────────────────────────────────────────────────────────── */
-/* Base Typography & Layout */
-/* ─────────────────────────────────────────────────────────── */
-body {
-  font-family: 'TWKLausanne', sans-serif;
-  letter-spacing: 0.05em;
-}
-
-/* ─────────────────────────────────────────────────────────── */
-/* Banner Section (Layered PNG Title) */
-/* ─────────────────────────────────────────────────────────── */
+/* ── Overview Page Image Banner ───────────────────────────────── */
 .image-banner {
   position: relative;
   height: 100vh;
@@ -857,9 +895,7 @@ body {
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────────────────────── */
-/* Section Titles and Descriptive Text */
-/* ─────────────────────────────────────────────────────────── */
+/* ── Section Titles and Descriptive Text ───────────────────────────────── */
 .mockup-title {
   font-size: 60pt;
   font-weight: 450;
@@ -890,9 +926,7 @@ body {
   margin-bottom: 1.5em;
 }
 
-/* ─────────────────────────────────────────────────────────── */
-/* Commission Section */
-/* ─────────────────────────────────────────────────────────── */
+/* ── Commission Section ───────────────────────────────── */
 .commission-section h2 {
   font-size: 250pt;
   font-weight: 350;
@@ -917,23 +951,7 @@ body {
   white-space: pre-line;
 }
 
-/* ─────────────────────────────────────────────────────────── */
-/* Gallery Styles (Shared) */
-/* ─────────────────────────────────────────────────────────── */
-.gallery-grid {
-  position: relative;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  display: block;
-}
-
-/* ─────────────────────────────────────────────────────────── */
-/* Commission Gallery Hover Arrows */
-/* ─────────────────────────────────────────────────────────── */
+/* commission section nav */
 .slider-arrows {
   position: absolute;
   top: 50%;
@@ -961,9 +979,7 @@ body {
   z-index: 10;
 }
 
-/* ─────────────────────────────────────────────────────────── */
 /* Responsive Typography */
-/* ─────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .mockup-title {
     font-size: 36pt;
@@ -993,59 +1009,3 @@ body {
   display: block;
   margin: 0 auto;
 }
-
-/* === Zoom Modal === */
-.zoom-modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.75);
-  z-index: 10000;
-}
-.zoom-modal.show {
-  display: flex;
-  animation: zoomFadeIn 150ms ease-out;
-}
-@keyframes zoomFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.zoom-inner {
-  position: relative;
-  max-width: 95vw;
-  max-height: 95vh;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  border-radius: 6px;
-}
-#zoom-img {
-  display: block;
-  max-width: none;
-  will-change: transform;
-  cursor: grab;
-  user-select: none;
-  -webkit-user-drag: none;
-  transition: transform 40ms linear;
-}
-.zoom-modal.dragging #zoom-img { cursor: grabbing; }
-.zoom-close {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  font-size: 28px;
-  line-height: 1;
-  border: none;
-  background: transparent;
-  color: #000;
-  cursor: pointer;
-  font-family: 'TWKLausanne', sans-serif;
-  padding: 4px 8px;
-  opacity: 0.85;
-}
-.zoom-close:hover { opacity: 1; }
-
-/* Magnifier cursor over the lightbox image */
-.lightbox-content { cursor: zoom-in; }
