@@ -9,11 +9,32 @@
 </head>
 <body>
   <header>
-    <h1><a href="home.html" class="brand">SHANNON CASTLE</a></h1>
+    <h1><a href="overview.html" class="brand">SHANNON CASTLE</a></h1>
     <div id="menu-toggle" class="menu-toggle"></div>
   </header>
   <nav id="fullscreen-menu" class="fullscreen-menu">[...]</nav>
   <div id="overlay" class="overlay"></div>
+
+  <nav id="fullscreen-menu" class="fullscreen-menu">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+
+    <li class="has-submenu">
+      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
+        Work
+      </button>
+      <ul id="work-submenu" class="submenu">
+        <li><a href="overview.html">Overview</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Artist</a></li>
+    <li><a href="#">Studio</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Exhibitions</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
   <section class="image-banner">
   <div class="overlay-layer"></div>
