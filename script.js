@@ -1,4 +1,4 @@
-// === Lightbox Setup ===
+/* ── LIGHTBOX LOGIC ───────────────────────────────────── */
 function setupLightbox({
   gallerySelector = ".masonry-gallery img, .horizontalscroll-gallery img",
   captionSelector = "#lightbox-caption",
@@ -25,7 +25,7 @@ function setupLightbox({
     lightboxImg = document.getElementById("lightbox-img");
     setupMagnifier(lightboxImg);
 
-    // Caption support
+    /* ── Caption Support ─── */
     const caption = img.getAttribute("data-title") || img.alt || "";
     if (captionEl) {
       captionEl.textContent = caption;
@@ -88,11 +88,11 @@ function setupLightbox({
   });
 }
 
-// === DOM READY ===
+/* ── DOM ready ─── */
 document.addEventListener("DOMContentLoaded", () => {
   setupLightbox();
 
-  // Banner slider logic
+  /* ── BANNER SLIDER LOGIC ───────────────────────────────────── */
   const slider = document.getElementById('banner-slider');
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.dot');
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Quote fade-in
+  /* ── Quote Fade-in ─── */
   const quote = document.querySelector('.quote');
   if (quote) {
     window.addEventListener('scroll', () => {
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Menu toggle
+  /* ── MENU TOGGLE LOGIC ───────────────────────────────────── */
   const toggleBtn = document.getElementById('menu-toggle');
   const fullscreenMenu = document.getElementById('fullscreen-menu');
   const overlay = document.getElementById('overlay');
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Contact form logic
+  /* ── CONTACT FORM LOGIC ───────────────────────────────────── */
   const contactForm = document.getElementById('contact-form');
   const confirmation = document.getElementById('confirmation-message');
   const userNameSpan = document.getElementById('user-name');
