@@ -60,8 +60,11 @@ function setupLightbox({
   nextBtn?.addEventListener("click", () => changeImage(1));
 
   lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
+  const inner = lightbox.querySelector(".lightbox-inner");
+  if (e.target === lightbox || (inner && !inner.contains(e.target))) {
+    closeLightbox();
+  }
+});
 
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("show")) return;

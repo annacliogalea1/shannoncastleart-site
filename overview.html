@@ -93,11 +93,16 @@
   </script>
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="close">&times;</span>
     <img id="lightbox-img" class="lightbox-content" />
     <div id="lightbox-caption" class="lightbox-caption"></div>
-    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-    <a class="next" onclick="changeImage(1)">&#10095;</a>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+
+  <div class="lightbox-inner">
+    <img id="lightbox-img" class="lightbox-content" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
   </div>
 </body>
 </html>
