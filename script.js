@@ -92,27 +92,28 @@ function setupLightbox({
 document.addEventListener("DOMContentLoaded", () => {
   setupLightbox();
 
-  const backToTopLink = document.querySelector('.back-to-top-link');
-if (backToTopLink) {
-  backToTopLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-}
-
+  
 const backToTopSection = document.querySelector('.back-to-top-section');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopSection?.classList.add('show');
-  } else {
-    backToTopSection?.classList.remove('show');
-  }
-});
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopSection?.classList.add('show');
+    } else {
+      backToTopSection?.classList.remove('show');
+    }
+  });
 
+  const backToTopLink = document.querySelector('.back-to-top-link');
+  if (backToTopLink) {
+    backToTopLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+  
   /* ── BANNER SLIDER LOGIC ───────────────────────────────────── */
   const slider = document.getElementById('banner-slider');
   const slides = document.querySelectorAll('.slide');
