@@ -36,6 +36,19 @@ body {
   letter-spacing: 0.05em;
 }
 
+.fullscreen-menu a {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 2.4em;
+  letter-spacing: 0.1em;
+}
+
+h1, h2, nav, .submenu a {
+  font-weight: 250;
+  text-transform: uppercase;
+}
+
 /* ── FONT IMPORT ───────────────────────────────── */
 @font-face {
   font-family: 'TWKLausanne';
@@ -291,14 +304,12 @@ footer a { color: inherit; text-decoration: none; }
 .fullscreen-menu .submenu-toggle {
   width: 100%;
   text-align: right;
-  font-size: 2em;                 
+  font-size: 3em;                 
   color: white;
   background: none;
   border: 0;
   padding: 0;
   cursor: pointer;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
 }
 
 .fullscreen-menu .submenu a { padding-right: 0.5em; }
