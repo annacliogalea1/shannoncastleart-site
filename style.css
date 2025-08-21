@@ -1430,3 +1430,91 @@ main.contact-layout {
   }
   .studio-about { margin-top: 2rem; }
 }
+
+/* ── CONTACT PAGE: PIXEL TUNING FOR DESKTOP (>=1280px) ───────────── */
+@media (min-width: 1280px) {
+  /* Grid + page width */
+  main.contact-layout {
+    width: 1280px;           /* lock to comp width */
+    grid-template-columns: 420px 1fr; 
+    gap: 48px;               
+    padding: 32px 0 40px;    
+  }
+
+  /* Left column stack */
+  .studio-title {
+    margin: 0 0 22px 0;
+  }
+  .studio-title .title-line {
+    font-size: 44px;         
+    letter-spacing: 0.08em;
+  }
+  .studio-title .title-line:first-child { padding-bottom: 6px; }
+  .studio-title .title-line:first-child::after {
+    width: 72px;             
+    height: 2px;
+  }
+
+  .studio-info {
+    font-size: 12px;        
+    line-height: 1.55;
+    letter-spacing: 0.06em;
+    margin: 12px 0 18px;
+  }
+  .studio-links { margin-top: 12px; }
+  .studio-links li { font-size: 12px; margin: 6px 0; }
+  .studio-about { margin-top: 56px; gap: 12px; }
+  .studio-about .about-heading { font-size: 12px; letter-spacing: 0.08em; }
+
+  /* Right column */
+  .contact-right .contact-image {
+    max-width: 812px;        
+    margin-bottom: 18px;
+  }
+  .contact-us-block h3 {
+    font-size: 13px;         
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .contact-us-block p {
+    font-size: 12px;         
+    line-height: 1.55;
+    max-width: 640px;       
+  }
+
+  /* Form alignment + sizing */
+  .contact-form {
+    max-width: 520px;
+    gap: 14px;
+    padding: 0;
+  }
+  .contact-form-row { gap: 14px; }
+  .form-field label { font-size: 11px; margin-bottom: 4px; }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 8px 10px;
+    border: 1px solid #444;
+    background: #f7f7f7;
+  }
+  .contact-form textarea { height: 146px; }
+  .contact-form button {
+    width: 180px;
+    font-size: 13px;
+    padding: 10px 14px;
+    margin-top: 8px;
+  }
+
+  /* Confirmation message */
+  #confirmation-message {
+    font-size: 15px;
+    margin-top: 14px;
+  }
+
+  /* Back to Home alignment under grid */
+  .back-to-home-section { padding: 12px 0 20px; }
+  .back-to-home-container { width: 1280px; }
+}
+
+/* Small refinement so the overlay opacity is valid */
+.overlay.show { opacity: 1; }
