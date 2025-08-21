@@ -1,130 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Shannon Castle</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Shannon Castle</title>
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1><a href="overview.html" class="brand">SHANNON CASTLE</a></h1>
-    <div id="menu-toggle" class="menu-toggle"></div>
+    <h1><a href="home.html">SHANNON CASTLE</a></h1>
+    <div class="menu-toggle"></div>
   </header>
-  <nav id="fullscreen-menu" class="fullscreen-menu">
-  <ul>
-    <li><a href="home.html">Home</a></li>
 
-    <li class="has-submenu">
-      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
-        Work
-      </button>
-      <ul id="work-submenu" class="submenu">
-        <li><a href="overview.html">Overview</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#">Artist</a></li>
-    <li><a href="#">Studio</a></li>
-    <li><a href="#">Videos</a></li>
-    <li><a href="#">Exhibitions</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-
-    <div id="overlay" class="overlay"></div>
-
-  <div class="contact-container">
-    <div class="contact-heading">
-      <span>Turquoise <span class="six">Six</span> Arts</span>
-    </div>
-
-    <div class="studio-info">
-      3796 NM-14 . Santa Fe NM . 87508<br>
-      206 - 619 - 5007<br>
-      info.shannoncastleart@gmail.com
-    </div>
-
-    <div class="social-links">
-      <a href="https://instagram.com" target="_blank"><span class="plus">+</span> Instagram</a>
-      <a href="https://youtube.com" target="_blank"><span class="plus">+</span> YouTube</a>
-      <a href="https://turquoisetrailstudiotour.com" target="_blank"><span class="plus">+</span> Turquoise Trail Studio Tour</a>
-    </div>
-
-    <div class="about-text">
-      <p>About Shannon Castle</p>
-      <p>And our turquoise six arts studio</p>
-    </div>
-
-    <div class="arrow-symbol">&#8594;</div>
-
-    <div class="contact-section">
-  <div class="contact-left-column">
-    <!-- turquoise title, address, links, etc -->
+  <div class="fullscreen-menu">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="overview.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
-  <div class="contact-right-column">
-    <img src="images/HarleyCandid.jpg" class="contact-side-image" />
-    <div class="form-header">
-      <h2 class="contact-header">Contact Us</h2>
-      <p class="contact-description">Please use the form below for inquiries about commissions, gallery appointments, upcoming events, or to schedule a private appointment at our turquoise six arts studio.<br>
-      We will be in touch as soon as possible.</p>
-    </div>
-    <div class="form-spacer"></div>
-    <div class="form-container">
-      <form id="contact-form" class="contact-form">
+  <div class="overlay"></div>
+
+  <main class="contact-layout">
+    <section class="contact-left">
+      <h2 class="studio-title">
+        <span class="title-line italic-550">Turquoise</span><br />
+        <span class="title-line italic-550">Arts</span>
+        <span class="title-line italic-750">Six</span>
+      </h2>
+
+      <div class="studio-info">
+        <p>3796 NM-14 · SANTA FE NM · 87508<br />
+        206 - 619 - 5007<br />
+        INFO.SHANNONCASTLEART@GMAIL.COM</p>
+
+        <ul class="studio-links">
+          <li><span class="plus">+</span><a href="#">Instagram</a></li>
+          <li><span class="plus">+</span><a href="#">YouTube</a></li>
+          <li><span class="plus">+</span><a href="#">Turquoise Trail Studio Tour</a></li>
+        </ul>
+      </div>
+
+      <div class="studio-about">
+        <p class="about-heading">About Shannon Castle<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And our Turquoise Six Arts Studio</p>
+        <div class="studio-arrow">→</div>
+      </div>
+    </section>
+
+    <section class="contact-right">
+      <img src="images/HarleyCandid.jpg" alt="Studio portrait" class="contact-image" />
+
+      <div class="contact-us-block">
+        <h3>Contact Us</h3>
+        <p>Please use the form below for inquiries about commissions, gallery appointments, upcoming events, or to schedule a private appointment at our Turquoise Six Arts Studio. We will be in touch as soon as possible.</p>
+      </div>
+
+      <form class="contact-form">
         <div class="contact-form-row">
           <div class="form-field">
             <label for="name">Name<span class="required">*</span></label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required />
           </div>
           <div class="form-field">
             <label for="email">Email<span class="required">*</span></label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required />
           </div>
         </div>
+
         <div class="form-field">
           <label for="message">Message<span class="required">*</span></label>
           <textarea id="message" name="message" required></textarea>
         </div>
+
         <button type="submit">Send</button>
+        <p class="confirmation-message">Thank you! We'll be in touch shortly.</p>
       </form>
-      <div id="confirmation-message" class="confirmation-message">
-        Thank you, <span id="user-name"></span>. Your message has been received.
-      </div>
-  </div>
-</div>
+    </section>
+  </main>
 
   <section class="back-to-home-section">
     <div class="back-to-home-container">
       <a href="home.html" class="back-to-home-link">
-        <span class="arrow">&#8592;</span>
         <span class="back-text">Back to Home</span>
+        <span class="arrow">↑</span>
       </a>
     </div>
   </section>
 
-  <script src="script.js"></script>
-
-</section>
   <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-section footer-left">
-      <a href="https://www.instagram.com/" target="_blank" class="footer-link">Instagram</a>
-      <span class="separator">|</span>
-      <a href="about.html" class="footer-link">About Shannon Castle</a>
-      <span class="separator">|</span>
-      <a href="contact.html" class="footer-link">Contact</a>
+    <div class="footer-container">
+      <div class="footer-section">
+        <a href="#" class="footer-link">Instagram</a>
+        <span class="separator">|</span>
+        <a href="#" class="footer-link">About Shannon Castle</a>
+        <span class="separator">|</span>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-section">
+        <a href="#" class="footer-link">Terms of Use</a>
+        <span class="separator">|</span>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <span class="separator">|</span>
+        <span class="footer-copy">© 2025 Shannon Castle</span>
+      </div>
     </div>
-
-    <div class="footer-section footer-right">
-      <a href="terms.html" class="footer-link">Terms of Use</a>
-      <span class="separator">|</span>
-      <a href="privacy.html" class="footer-link">Privacy Policy</a>
-      <span class="separator">|</span>
-      <span class="footer-copy">© 2025 Shannon Castle</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
