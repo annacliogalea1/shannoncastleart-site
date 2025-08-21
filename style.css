@@ -40,7 +40,63 @@ body {
 @font-face {
   font-family: 'TWKLausanne';
   src: url('TWKLausanne-500.woff2') format('woff2');
-  font-weight: 300 500;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-200.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-250.woff2') format('woff2');
+  font-weight: 250;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-250Italic.woff2') format('woff2');
+  font-weight: 250;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-300Italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-350.woff2') format('woff2');
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-450.woff2') format('woff2');
+  font-weight: 450;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-450Italic.woff2') format('woff2');
+  font-weight: 450;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('TWKLausanne-550.woff2') format('woff2');
+  font-weight: 550;
   font-style: normal;
 }
 
