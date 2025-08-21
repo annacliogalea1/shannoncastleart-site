@@ -103,6 +103,16 @@ if (backToTopLink) {
   });
 }
 
+const backToTopSection = document.querySelector('.back-to-top-section');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopSection?.classList.add('show');
+  } else {
+    backToTopSection?.classList.remove('show');
+  }
+});
+
   /* ── BANNER SLIDER LOGIC ───────────────────────────────────── */
   const slider = document.getElementById('banner-slider');
   const slides = document.querySelectorAll('.slide');
