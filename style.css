@@ -282,13 +282,36 @@ footer a { color: inherit; text-decoration: none; }
   margin: 1.5em 0;
 }
 
-.fullscreen-menu a {
-  font-size: 2em;
+/* ── MENU TYPOGRAPHY ─────────── */
+.fullscreen-menu a,
+.fullscreen-menu .submenu-toggle {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 250;            
+  text-transform: uppercase;
+  font-size: 2.4em;            
+  letter-spacing: 0.1em;
   color: white;
   text-decoration: none;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
+  background: none;            
+  border: none;                
+  cursor: pointer;
   transition: opacity 0.3s;
+}
+
+.fullscreen-menu a:hover,
+.fullscreen-menu .submenu-toggle:hover {
+  opacity: 0.6;
+}
+
+/* Submenu items (smaller, lighter for hierarchy) */
+.fullscreen-menu .submenu a {
+  font-size: 1.5em;            
+  font-weight: 200;            
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: white;
+  opacity: 0.85;
+  padding-right: 0.5em;        
 }
 
 .fullscreen-menu a:hover {
@@ -300,17 +323,6 @@ footer a { color: inherit; text-decoration: none; }
 }
 
 .fullscreen-menu .has-submenu { position: relative; }
-
-.fullscreen-menu .submenu-toggle {
-  width: 100%;
-  text-align: right;
-  font-size: 3em;                 
-  color: white;
-  background: none;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
 
 .fullscreen-menu .submenu a { padding-right: 0.5em; }
 
@@ -357,10 +369,6 @@ footer a { color: inherit; text-decoration: none; }
 }
 
 .fullscreen-menu .submenu li { margin: 0.5em 0; }
-.fullscreen-menu .submenu a {
-  font-size: 1.25em;
-  opacity: 0.9;
-}
 
 .overlay {
   position: fixed;
