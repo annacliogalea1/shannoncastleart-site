@@ -1,115 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Shannon Castle</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1><a href="index.html">Shannon Castle</a></h1>
-    <div class="menu-toggle"></div>
-  </header>
-
-  <!-- Slide-In Menu -->
-  <nav class="fullscreen-menu">
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="overview.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="overlay"></div>
-
-  <!-- Contact Title -->
-  <section class="contact-header">
-    <h2 class="contact-title">Contact</h2>
-  </section>
-
-  <!-- Contact Info + Form -->
-  <section class="contact-content">
-    <div class="contact-text">
-      <p><strong>Studio Address:</strong><br>123 Canyon Road, Santa Fe, NM</p>
-      <p><strong>Phone:</strong><br>(505) 555-1234</p>
-      <p><strong>Email:</strong><br><a href="mailto:info@shannoncastle.com">info@shannoncastle.com</a></p>
+  <div class="contact-container">
+    <div class="contact-heading">
+      <span>Turquoise <span class="six">Six</span> Arts</span>
     </div>
 
-    <div class="contact-columns">
-      <!-- Contact Form -->
-      <div class="form-container">
-        <form class="contact-form">
-          <div class="contact-form-row">
-            <div class="form-field">
-              <label for="name">Name <span class="required">*</span></label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-field">
-              <label for="email">Email <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required>
-            </div>
+    <div class="studio-info">
+      3796 NM-14 . Santa Fe NM . 87508<br>
+      206 - 619 - 5007<br>
+      info.shannoncastleart@gmail.com
+    </div>
+
+    <div class="social-links">
+      <a href="https://instagram.com" target="_blank"><span class="plus">+</span> Instagram</a>
+      <a href="https://youtube.com" target="_blank"><span class="plus">+</span> YouTube</a>
+      <a href="https://turquoisetrailstudiotour.com" target="_blank"><span class="plus">+</span> Turquoise Trail Studio Tour</a>
+    </div>
+
+    <div class="about-text">
+      <p>About Shannon Castle</p>
+      <p>And our turquoise six arts studio</p>
+    </div>
+
+    <div class="arrow-symbol">&#8594;</div>
+
+    <div class="inquiry-header">Contact Us</div>
+    <div class="inquiry-text form-inquiry-text">
+      Please use the form below for inquiries about commissions, gallery appointments, upcoming events, or to schedule a private appointment at our turquoise six arts studio.<br>
+      We will be in touch as soon as possible.
+    </div>
+
+    <div class="form-spacer"></div>
+    <div class="form-container">
+      <form id="contact-form" class="contact-form">
+        <div class="contact-form-row">
+          <div class="form-field">
+            <label for="name">Name<span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
           </div>
           <div class="form-field">
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
           </div>
-          <button type="submit">Send Message</button>
-          <div class="confirmation-message">Thank you! Your message has been sent.</div>
-        </form>
-      </div>
-
-      <!-- Contact Photo -->
-      <div class="contact-image">
-        <img src="images/HarleyCandid.jpg" alt="Studio or Artist" />
+        </div>
+        <div class="form-field">
+          <label for="message">Message<span class="required">*</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+      <div id="confirmation-message" class="confirmation-message">
+        Thank you, <span id="user-name"></span>. Your message has been received.
       </div>
     </div>
-  </section>
-
-  <!-- Social Icons -->
-  <section class="social-section">
-    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.6.5.3.9.6 1.3 1.1.4.4.7.8 1.1 1.3.3.5.5 1.2.6 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.6 2.4-.3.5-.6.9-1.1 1.3-.4.4-.8.7-1.3 1.1-.5.3-1.2.5-2.4.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.6-.5-.3-.9-.6-1.3-1.1-.4-.4-.7-.8-1.1-1.3-.3-.5-.5-1.2-.6-2.4-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.6-2.4.3-.5.6-.9 1.1-1.3.4-.4.8-.7 1.3-1.1.5-.3 1.2-.5 2.4-.6 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.2 4.6.5 3.7 1c-.9.5-1.7 1.1-2.5 1.9S.5 4.6 1 5.5c-.5.9-.8 2-1 3.3C0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 1.3.5 2.4 1 3.3.5.9 1.1 1.7 1.9 2.5s1.6 1.4 2.5 1.9c.9.5 2 .8 3.3 1C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c1.3-.2 2.4-.5 3.3-1 .9-.5 1.7-1.1 2.5-1.9s1.4-1.6 1.9-2.5c.5-.9.8-2 1-3.3.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-1.3-.5-2.4-1-3.3-.5-.9-1.1-1.7-1.9-2.5S20.3.5 19.4 0c-.9-.5-2-.8-3.3-1C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-11.6a1.4 1.4 0 11-2.8 0 1.4 1.4 0 012.8 0z"/>
-      </svg>
-    </a>
-    <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="social-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.6 3.2H4.4C2.9 3.2 1.6 4.5 1.6 6v12c0 1.5 1.3 2.8 2.8 2.8h15.2c1.5 0 2.8-1.3 2.8-2.8V6c0-1.5-1.3-2.8-2.8-2.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
-      </svg>
-    </a>
-  </section>
-
-  <!-- Back to Home button -->
-  <section class="back-to-home-section">
-  <div class="back-to-home-container">
-    <a href="#" class="back-to-home-link">
-      <span class="arrow">←</span>
-      <span class="back-text">Back to home</span>
-    </a>
   </div>
-</section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-section footer-left">
-        <a href="https://www.instagram.com" class="footer-link">Instagram</a>
-        <span class="separator">|</span>
-        <a href="about.html" class="footer-link">About Shannon Castle</a>
-        <span class="separator">|</span>
-        <a href="contact.html" class="footer-link">Contact</a>
-      </div>
-      <div class="footer-section footer-right">
-        <a href="terms.html" class="footer-link">Terms of Use</a>
-        <span class="separator">|</span>
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <span class="separator">|</span>
-        <span class="footer-copy">© 2025 Shannon Castle</span>
-      </div>
+  <section class="back-to-home-section">
+    <div class="back-to-home-container">
+      <a href="home.html" class="back-to-home-link">
+        <span class="arrow">&#8592;</span>
+        <span class="back-text">Back to Home</span>
+      </a>
     </div>
-  </footer>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

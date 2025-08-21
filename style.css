@@ -1277,3 +1277,176 @@ body.landing {
   display: block;
   margin: 0 auto;
 }
+
+/* ── CONTACT PAGE ─────────────────────────────────────── */
+body {
+  background: white;
+  text-transform: uppercase;
+  font-family: 'TWKLausanne', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3em 1.2em;
+}
+
+.contact-heading {
+  font-size: 48pt;
+  font-weight: 550;
+  font-style: italic;
+  line-height: 23pt;
+}
+
+.contact-heading .six {
+  font-weight: 750;
+}
+.studio-info,
+.social-links,
+.about-text,
+.inquiry-header,
+.inquiry-text {
+  font-size: 14pt;
+  font-weight: 300;
+  line-height: 18pt;
+  margin-top: 1.5em;
+}
+
+.about-text {
+  font-size: 20pt;
+  font-weight: 400;
+  margin-top: 2em;
+}
+
+.about-text p {
+  margin: 0;
+  text-indent: 2em;
+}
+
+.arrow-symbol {
+  font-size: 60pt;
+  font-weight: 400;
+  line-height: 18pt;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.social-links a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  color: black;
+  display: block;
+}
+
+.social-links a .plus {
+  text-decoration: none;
+  margin-right: 0.2em;
+}
+
+.inquiry-header {
+  font-weight: 550;
+  margin-top: 3em;
+}
+
+.form-inquiry-text {
+  max-width: 600px;
+}
+
+.form-spacer {
+  height: 2em;
+}
+
+/* ── Page Text Styling ─── */
+.turquoise-six-title {
+  text-align: center;
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 48pt;
+  font-style: italic;
+  font-weight: 550;
+  line-height: 23pt;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.turquoise-six-title .six {
+  font-weight: 750;
+}
+
+.contact-info-block {
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+  line-height: 18pt;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.5em;
+}
+
+.social-links {
+  text-align: center;
+  margin-top: 1.2em;
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+  line-height: 18pt;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.social-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: inherit;
+  margin: 0.3em 0;
+  display: block;
+}
+
+.social-links .plus {
+  text-decoration: none;
+  margin-right: 0.2em;
+  font-weight: 400;
+}
+
+.about-links {
+  text-align: center;
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 20pt;
+  font-weight: 400;
+  line-height: 18pt;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 2em 0;
+}
+
+.about-links .arrow {
+  display: block;
+  font-size: 60pt;
+  font-weight: 400;
+  line-height: 18pt;
+  margin-top: -0.3em;
+  text-align: center;
+}
+
+.contact-header {
+  font-size: 14pt;
+  font-weight: 550;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.contact-description {
+  font-size: 14pt;
+  font-weight: 300;
+  line-height: 18pt;
+  max-width: 700px;
+  margin: 1em auto 2em;
+  text-align: center;
+  font-family: 'TWKLausanne', sans-serif;
+  letter-spacing: 0.05em;
+}
