@@ -1302,7 +1302,7 @@ main.contact-layout {
 }
 .studio-title .title-line {
   display: block;
-  font-size: clamp(1.8rem, 2.4vw, 2.25rem);
+  font-size: 27pt;
   letter-spacing: 0.08em;
 }
 .studio-title .italic-550 { font-style: italic; font-weight: 450; }
@@ -1323,7 +1323,7 @@ main.contact-layout {
 }
 
 .studio-info {
-  font-size: 0.78rem;
+  font-size: 9pt;
   letter-spacing: 0.06em;
   margin: 1rem 0 1.5rem;
 }
@@ -1335,7 +1335,7 @@ main.contact-layout {
 .studio-links li {
   margin: 0.35rem 0;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 9pt;
 }
 .studio-links .plus {
   margin-right: 0.35rem;
@@ -1354,7 +1354,7 @@ main.contact-layout {
   margin-top: 3.5rem;
 }
 .studio-about .about-heading {
-  font-size: 0.78rem;
+  font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0;
@@ -1377,12 +1377,12 @@ main.contact-layout {
   margin: 0 0 0.35rem 0;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 11pt;
   letter-spacing: 0.08em;
 }
 .contact-us-block p {
   margin: 0 0 1rem 0;
-  font-size: 0.75rem;
+  font-size: 11pt;
   line-height: 1.5;
   max-width: 52ch;
 }
@@ -1394,7 +1394,7 @@ main.contact-layout {
   padding: 0;
 }
 .contact-form-row { gap: 0.8rem; }
-.form-field label { font-size: 0.72rem; }
+.form-field label { font-size: 9pt; }
 .contact-form input,
 .contact-form textarea {
   background: #f7f7f7;
@@ -1411,7 +1411,7 @@ main.contact-layout {
 #confirmation-message {
   text-align: left;
   margin: 1rem 0 0 0;
-  font-size: 0.95rem;
+  font-size: 11pt;
 }
 
 /* Back to Home aligns under the grid */
