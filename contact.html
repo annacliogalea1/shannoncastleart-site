@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Shannon Castle</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview | Shannon Castle</title>
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <h1><a href="index.html">Shannon Castle</a></h1>
-    <div class="menu-toggle"></div>
+    <h1><a href="overview.html" class="brand">SHANNON CASTLE</a></h1>
+    <div id="menu-toggle" class="menu-toggle"></div>
   </header>
+  <nav id="fullscreen-menu" class="fullscreen-menu">
+  <ul>
+    <li><a href="home.html">Home</a></li>
 
-  <!-- Slide-In Menu -->
-  <nav class="fullscreen-menu">
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="overview.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="overlay"></div>
+    <li class="has-submenu">
+      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
+        Work
+      </button>
+      <ul id="work-submenu" class="submenu">
+        <li><a href="overview.html">Overview</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Artist</a></li>
+    <li><a href="#">Studio</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Exhibitions</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+  <div id="overlay" class="overlay"></div>
 
   <main class="contact-layout">
     <section class="contact-left">
@@ -59,27 +69,31 @@
         <p>Please use the form below for inquiries about commissions, gallery appointments, upcoming events, or to schedule a private appointment at our Turquoise Six Arts Studio. We will be in touch as soon as possible.</p>
       </div>
 
-      <form class="contact-form">
+    <form id="contact-form" class="contact-form">
         <div class="contact-form-row">
-          <div class="form-field">
-            <label for="name">Name<span class="required">*</span></label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-field">
-            <label for="email">Email<span class="required">*</span></label>
-            <input type="email" id="email" name="email" required />
-          </div>
+            <div class="form-field">
+                <label for="name">Name<span class="required">*</span></label>
+                <input type="text" id="name" name="name" required />
         </div>
+            <div class="form-field">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+        </div>
+    </div>
 
         <div class="form-field">
-          <label for="message">Message<span class="required">*</span></label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
+                <label for="message">Message<span class="required">*</span></label>
+                <textarea id="message" name="message" required></textarea>
+    </div>
 
-        <button type="submit">Send</button>
-        <p class="confirmation-message">Thank you! We'll be in touch shortly.</p>
-      </form>
-    </section>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p class="confirmation-message" id="confirmation-message">
+        Thank you, <span id="user-name">there</span>! We’ll be in touch shortly.
+    </p>
+</form>
+</section>
   </main>
 
   <section class="back-to-home-section">
