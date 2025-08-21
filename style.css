@@ -328,6 +328,24 @@ footer a { color: inherit; text-decoration: none; }
   opacity: 0.6;
 }
 
+.back-to-top-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+  text-decoration: none; 
+}
+
+.back-to-top-link .back-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.back-to-top-link .arrow {
+  font-size: 1em;
+  transform: translateY(-1px); 
+}
+
 /* ── SLIDE-IN MENU ─────────────────────────────────────── */
 .fullscreen-menu {
   position: fixed;
