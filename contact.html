@@ -7,6 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1><a href="overview.html" class="brand">SHANNON CASTLE</a></h1>
+    <div id="menu-toggle" class="menu-toggle"></div>
+  </header>
+  <nav id="fullscreen-menu" class="fullscreen-menu">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+
+    <li class="has-submenu">
+      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
+        Work
+      </button>
+      <ul id="work-submenu" class="submenu">
+        <li><a href="overview.html">Overview</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Artist</a></li>
+    <li><a href="#">Studio</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Exhibitions</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
   <div class="contact-container">
     <div class="contact-heading">
       <span>Turquoise <span class="six">Six</span> Arts</span>
@@ -72,5 +97,26 @@
   </section>
 
   <script src="script.js"></script>
+
+</section>
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section footer-left">
+      <a href="https://www.instagram.com/" target="_blank" class="footer-link">Instagram</a>
+      <span class="separator">|</span>
+      <a href="about.html" class="footer-link">About Shannon Castle</a>
+      <span class="separator">|</span>
+      <a href="contact.html" class="footer-link">Contact</a>
+    </div>
+
+    <div class="footer-section footer-right">
+      <a href="terms.html" class="footer-link">Terms of Use</a>
+      <span class="separator">|</span>
+      <a href="privacy.html" class="footer-link">Privacy Policy</a>
+      <span class="separator">|</span>
+      <span class="footer-copy">© 2025 Shannon Castle</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
