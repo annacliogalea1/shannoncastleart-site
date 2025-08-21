@@ -184,7 +184,8 @@ h1, h2, nav, .submenu a {
 .form-container {
   min-height: 0;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1340,9 +1341,8 @@ body {
   display: block;
 }
 
-.social-links a .plus {
-  text-decoration: none;
-  margin-right: 0.2em;
+.social-links .plus {
+  text-decoration: none !important;
 }
 
 .inquiry-header {
@@ -1379,10 +1379,33 @@ body {
   font-size: 14pt;
   font-weight: 300;
   line-height: 18pt;
-  text-align: center;
+  text-align: left;
+  margin-left: 2em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 1.5em;
+}
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2em;
+  margin: 3em 2em;
+}
+
+.contact-left-column {
+  flex: 1 1 40%;
+}
+
+.contact-right-column {
+  flex: 1 1 50%;
+  max-width: 600px;
+}
+
+.form-container {
+  margin: 0;
+  padding-left: 0;
 }
 
 .social-links {
@@ -1449,4 +1472,16 @@ body {
   text-align: center;
   font-family: 'TWKLausanne', sans-serif;
   letter-spacing: 0.05em;
+}
+
+.contact-image-container {
+  max-width: 50%;
+  margin-left: auto;
+  padding-right: 2em;
+}
+
+.contact-side-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
