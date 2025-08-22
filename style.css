@@ -1444,7 +1444,7 @@ main.contact-layout {
 /* ── CONTACT PAGE • Match Illustrator 1440 spec ────────────────── */
 /* Place at the VERY END of style.css */
 
-.contact-page { background: #000; }
+.contact-page { background: white; }
 
 /* Use a simple block flow (no grid) and lock the canvas to 1440 */
 .contact-page main.contact-layout {
