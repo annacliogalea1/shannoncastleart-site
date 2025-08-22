@@ -1473,7 +1473,7 @@ main.contact-layout {
   }
 
   .studio-about {
-    margin-top: 60px;
+    margin-top: 80px;
     gap: 12px;
   }
 
@@ -1563,4 +1563,9 @@ main.contact-layout {
   .back-to-home-container {
     width: 1440px;
   }
+}
+
+.about-heading .indent-line {
+  display: inline-block;
+  text-indent: 3em;  /* or adjust to 2.5em if needed */
 }
