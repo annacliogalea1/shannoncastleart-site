@@ -1310,20 +1310,6 @@ main.contact-layout {
 .studio-title .italic-550 { font-style: italic; font-weight: 550; }
 .studio-title .italic-750 { font-style: italic; font-weight: 750; }
 
-/* small underline under "Turquoise" for the spec */
-.studio-title .title-line:first-child {
-  position: relative;
-  padding-bottom: 0.35rem;
-}
-.studio-title .title-line:first-child::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 64px;
-  height: 2px;
-  background: #000;
-}
-
 .studio-info {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
@@ -1399,6 +1385,7 @@ main.contact-layout {
 }
 .contact-us-block p {
   margin: 0 0 1rem 0;
+  text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
   font-size: 11pt; 
