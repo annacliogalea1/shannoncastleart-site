@@ -1285,8 +1285,8 @@ main.contact-layout {
   grid-template-columns: 36% 64%;
   gap: 3vw;
   align-items: start;
-  width: min(1500px, 92vw);
-  margin-inline: auto;
+  width: 1440px;
+  margin: 0 auto;
   padding: 2.5rem 0 3rem;
 }
 
@@ -1299,8 +1299,8 @@ main.contact-layout {
   margin: 0 0 1.25rem 0;
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
-  font-size: 28pt;
-  line-height: 24pt;
+  font-size: 37.5px;
+  line-height: 32px;
   letter-spacing: 0.05em;
 }
 
@@ -1310,8 +1310,8 @@ main.contact-layout {
 .studio-info {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
-  font-size: 11pt;
-  line-height: 18pt;
+  font-size: 14px;
+  line-height: 24px;
   letter-spacing: 0.05em;
   margin: 1rem 0 1.5rem;
 }
@@ -1325,8 +1325,8 @@ main.contact-layout {
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
-  font-size: 11pt;
-  line-height: 18pt;
+  font-size: 14px;
+  line-height: 24px;
   letter-spacing: 0.05em;
 }
 .studio-links .plus {
@@ -1348,16 +1348,16 @@ main.contact-layout {
 .studio-about .about-heading {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 400;
-  font-size: 14pt;
-  line-height: 14pt;
+  font-size: 19px;
+  line-height: 18px;
   letter-spacing: 0.05em;
   margin: 0;
 }
 .studio-arrow {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 400;
-  font-size: 60pt;
-  line-height: 18pt;
+  font-size: 80px;
+  line-height: 24px;
   letter-spacing: 0.05em;
   transform: translateY(2px);
 }
@@ -1376,8 +1376,8 @@ main.contact-layout {
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 750;
-  font-size: 11pt;
-  line-height: 18pt;
+  font-size: 14px;
+  line-height: 24px;
   letter-spacing: 0.05em;
 }
 .contact-us-block p {
@@ -1385,8 +1385,8 @@ main.contact-layout {
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
-  font-size: 11pt; 
-  line-height: 18pt;
+  font-size: 14px;
+  line-height: 24px;
   letter-spacing: 0.05em;
   max-width: 52ch;
 }
@@ -1398,7 +1398,7 @@ main.contact-layout {
   padding: 0;
 }
 .contact-form-row { gap: 0.8rem; }
-.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 11pt; line-height: 18pt; letter-spacing: 0.05em; text-transform: uppercase; }
+.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 14px; line-height: 24px; letter-spacing: 0.05em; text-transform: uppercase; }
 .contact-form input,
 .contact-form textarea {
   background: #f7f7f7;
@@ -1419,8 +1419,8 @@ main.contact-layout {
   font-family: 'TWKLausanne', sans-serif;
   text-transform: uppercase;
   font-weight: 750;
-  font-size: 14pt;
-  line-height: 18pt;
+  font-size: 19px;
+  line-height: 24px;
   letter-spacing: 0.05em;
 }
 
@@ -1441,131 +1441,149 @@ main.contact-layout {
   .studio-about { margin-top: 2rem; }
 }
 
-@media (min-width: 1440px) {
+/* ── CONTACT PAGE • PIXEL PERFECT 1440 LOCK ───────────────────────── */
+/* Put this at the END of style.css */
+
+@media (min-width: 1200px) {
+  /* Lock the page container to the design width */
   main.contact-layout {
-    width: 1440px;
-    grid-template-columns: 480px 1fr; 
-    gap: 60px;
-    padding: 40px 0 60px;
+    width: 1440px !important;      /* override min(1500px, 92vw) */
+    margin-inline: auto;
+    grid-template-columns: 480px 1fr !important;  /* 480 / flexible */
+    gap: 60px !important;
+    padding: 40px 0 60px !important;
   }
 
-  /* Left column: studio title and info */
+  /* Left column */
   .studio-title {
-    margin: 0 0 24px 0;
+    /* 28pt in old CSS ≈ 37px; design comp uses ~36px */
+    font-size: 36px !important;
+    line-height: 36px !important;
+    margin: 0 0 24px 0 !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
+  .studio-title .italic-550 { font-style: italic; font-weight: 550; }
+  .studio-title .italic-750 { font-style: italic; font-weight: 750; }
 
   .studio-info {
-    font-size: 11pt;
-    line-height: 18pt;
+    /* was 11pt/18pt – normalize to px */
+    font-size: 14px !important;
+    line-height: 24px !important;
     font-weight: 300;
-    margin: 14px 0 20px;
+    margin: 14px 0 20px !important;
   }
 
-  .studio-links {
-    margin-top: 12px;
-  }
-
+  .studio-links { margin-top: 12px !important; }
   .studio-links li {
-    font-size: 11pt;
-    line-height: 18pt;
+    font-size: 14px !important;
+    line-height: 24px !important;
     font-weight: 300;
-    margin: 6px 0;
+    margin: 6px 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
+  .studio-links .plus { margin-right: 0.35rem; }
 
   .studio-about {
-    margin-top: 80px;
-    gap: 12px;
+    margin-top: 80px !important;
+    gap: 12px !important;
+    display: flex;
+    align-items: center;
   }
-
   .studio-about .about-heading {
-    font-size: 14pt;
-    line-height: 14pt;
+    font-size: 16px !important;
+    line-height: 24px !important;
     font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: none;
   }
+  .about-heading .indent-line { display: inline-block; padding-left: 32px; }
 
   .studio-arrow {
-    font-size: 60pt;
-    transform: translateY(0);  /* tighter alignment with text */
+    font-size: 72px !important;
+    line-height: 72px !important;
+    font-weight: 300;
+    transform: translateY(4px);
   }
 
-  /* Right column: image and form block */
+  /* Right column */
   .contact-right .contact-image {
-    max-width: 812px;
-    margin-bottom: 20px;
+    width: auto;
+    max-width: 812px !important; /* comp width */
+    height: auto;
+    display: block;
+    margin: 0 0 20px 0 !important;
+    object-fit: cover;
   }
 
   .contact-us-block h3 {
-    font-size: 11pt;
-    line-height: 18pt;
-    font-weight: 750;
-    margin-bottom: 4px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-weight: 750 !important;
+    margin: 0 0 8px 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
-
   .contact-us-block p {
-    font-size: 11pt;
-    line-height: 18pt;
-    font-weight: 300;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.05em;
     max-width: 640px;
+    margin: 0 0 20px 0 !important;
+    text-transform: uppercase;
   }
 
+  /* Form */
   .contact-form {
-    max-width: 520px;
-    gap: 14px;
-    padding: 0;
+    max-width: 520px !important;
+    gap: 18px !important;
+    padding: 0 !important;
+    margin: 0;
   }
-
-  .contact-form-row {
-    gap: 14px;
-  }
+  .contact-form-row { gap: 18px !important; }
 
   .form-field label {
-    font-size: 11pt;
-    line-height: 18pt;
-    font-weight: 300;
-    margin-bottom: 4px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-weight: 300 !important;
+    margin-bottom: 6px !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
-
   .contact-form input,
   .contact-form textarea {
-    font-size: 11pt;
-    line-height: 18pt;
-    padding: 8px 10px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 10px !important;
     font-weight: 300;
     border: 1px solid #444;
     background: #f7f7f7;
   }
-
-  .contact-form textarea {
-    height: 146px;
-  }
-
+  .contact-form textarea { height: 146px !important; }
   .contact-form button {
-    width: 180px;
-    padding: 10px 14px;
-    margin-top: 8px;
-    font-size: 11pt;
-    line-height: 18pt;
-    font-weight: 300;
+    width: 180px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-weight: 500 !important;
+    margin-top: 12px !important;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   #confirmation-message {
-    font-size: 14pt;
-    line-height: 18pt;
-    font-weight: 750;
-    margin-top: 14px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 750 !important;
+    margin-top: 18px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .back-to-home-section {
-    padding: 12px 0 20px;
-  }
-
-  .back-to-home-container {
-    width: 1440px;
-  }
+  /* Keep “Back to Home” aligned with the locked page width */
+  .back-to-home-container { width: 1440px !important; margin: 0 auto; }
 }
-
-.about-heading .indent-line {
-  display: inline-block;
-  text-indent: 3em;  /* or adjust to 2.5em if needed */
-}
+/* ───────────────────────────────────────────────────────────────── */
