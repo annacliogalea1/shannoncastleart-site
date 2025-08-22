@@ -1506,3 +1506,9 @@ main.contact-layout {
 
 /* Keep the footer bar aligned to the locked width */
 .contact-page .back-to-home-container { width: 1440px !important; margin: 0 auto !important; }
+
+/* make room for the fixed header */
+.contact-page main.contact-layout {
+  margin-top: var(--header-h) !important;  /* 56px header height */
+  padding-top: 32px !important;            /* extra breathing room like the comp */
+}
