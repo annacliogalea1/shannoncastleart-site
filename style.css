@@ -1411,6 +1411,7 @@ main.contact-layout {
   width: 180px;
   max-width: none;
   align-self: flex-start;
+  text-transform: uppercase;
   margin-top: 0.6rem;
 }
 
