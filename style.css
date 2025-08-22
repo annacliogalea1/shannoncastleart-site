@@ -1297,16 +1297,13 @@ main.contact-layout {
 
 .studio-title {
   margin: 0 0 1.25rem 0;
-  line-height: 0.9;
   text-transform: uppercase;
-}
-.studio-title .title-line {
-  display: block;
   font-family: 'TWKLausanne', sans-serif;
   font-size: 28pt;
   line-height: 24pt;
   letter-spacing: 0.05em;
 }
+
 .studio-title .italic-550 { font-style: italic; font-weight: 550; }
 .studio-title .italic-750 { font-style: italic; font-weight: 750; }
 
@@ -1457,12 +1454,6 @@ main.contact-layout {
     margin: 0 0 24px 0;
   }
 
-  .studio-title .title-line {
-    font-size: 28pt;
-    line-height: 24pt;
-    letter-spacing: 0.05em;
-  }
-
   .studio-info {
     font-size: 11pt;
     line-height: 18pt;
@@ -1572,16 +1563,4 @@ main.contact-layout {
   .back-to-home-container {
     width: 1440px;
   }
-}
-
-/* ===== Pixel Overlay Debug ===== */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("images/shannonwebsite_contactpage-01.jpg") no-repeat center top;
-  background-size: contain; /* or cover depending on your artboard export */
-  opacity: 0.5; /* adjust transparency */
-  pointer-events: none; /* so you can still click */
-  z-index: 9999;
 }

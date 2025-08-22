@@ -276,39 +276,3 @@ function setupContactForm() {
     }, 5000);
   });
 }
-
-// === Pixel overlay keyboard helper ===
-// Toggle overlay: press "o"
-// Opacity: "[" down, "]" up
-// Nudge: arrow keys move overlay 1px; Shift+arrow = 10px
-// Reset: press "0"
-(function () {
-  const root = document.documentElement;
-  const num = v => parseFloat(v) || 0;
-  function setVar(name, val) { root.style.setProperty(name, val); }
-
-  document.addEventListener('keydown', e => {
-    const k = e.key;
-    if (k === 'o' || k === 'O') {
-      document.body.classList.toggle('pixel-overlay-on');
-    } else if (k === '[') {
-      const op = Math.max(0, num(getComputedStyle(root).getPropertyValue('--overlay-opacity')) - 0.05);
-      setVar('--overlay-opacity', op.toFixed(2));
-    } else if (k === ']') {
-      const op = Math.min(1, num(getComputedStyle(root).getPropertyValue('--overlay-opacity')) + 0.05);
-      setVar('--overlay-opacity', op.toFixed(2));
-    } else if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(k)) {
-      const step = e.shiftKey ? 10 : 1;
-      const x = num(getComputedStyle(root).getPropertyValue('--overlay-offset-x'));
-      const y = num(getComputedStyle(root).getPropertyValue('--overlay-offset-y'));
-      if (k === 'ArrowLeft')  setVar('--overlay-offset-x', (x - step) + 'px');
-      if (k === 'ArrowRight') setVar('--overlay-offset-x', (x + step) + 'px');
-      if (k === 'ArrowUp')    setVar('--overlay-offset-y', (y - step) + 'px');
-      if (k === 'ArrowDown')  setVar('--overlay-offset-y', (y + step) + 'px');
-    } else if (k === '0') {
-      setVar('--overlay-opacity', '0.5');
-      setVar('--overlay-offset-x', '0px');
-      setVar('--overlay-offset-y', '0px');
-    }
-  });
-})();
