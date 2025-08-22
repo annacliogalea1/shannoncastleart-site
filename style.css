@@ -1509,8 +1509,7 @@ main.contact-layout {
 
 .contact-page main.contact-layout {
   width: 1440px !important;
-- margin: 0 auto !important;
-+ margin: var(--header-h) auto 0 !important;  /* clears the fixed header */
+  margin: var(--header-h) auto 0 !important;  /* clears the fixed header */
   display: block !important;
   padding: 88px 0 60px !important;
 }
