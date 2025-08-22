@@ -1401,7 +1401,7 @@ main.contact-layout {
   padding: 0;
 }
 .contact-form-row { gap: 0.8rem; }
-.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 11pt; line-height: 18pt; letter-spacing: 0.05em;}
+.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 11pt; line-height: 18pt; letter-spacing: 0.05em; text-transform: uppercase; }
 .contact-form input,
 .contact-form textarea {
   background: #f7f7f7;
@@ -1419,6 +1419,7 @@ main.contact-layout {
   text-align: left;
   margin: 1rem 0 0 0;
   font-family: 'TWKLausanne', sans-serif;
+  text-transform: uppercase;
   font-weight: 750;
   font-size: 14pt;
   line-height: 18pt;
@@ -1459,15 +1460,6 @@ main.contact-layout {
     font-size: 28pt;
     line-height: 24pt;
     letter-spacing: 0.05em;
-  }
-
-  .studio-title .title-line:first-child {
-    padding-bottom: 6px;
-  }
-
-  .studio-title .title-line:first-child::after {
-    width: 72px;   /* underline matches spec */
-    height: 2px;
   }
 
   .studio-info {
