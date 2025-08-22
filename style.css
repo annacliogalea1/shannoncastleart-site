@@ -1475,10 +1475,9 @@ main.contact-layout {
 /* “Contact Us” text block spans same width as the photo */
 .contact-page .contact-us-block {
   width: 865px !important;
-  color: black;                       /* comp reads as light on black */
 }
+
 .contact-page .contact-us-block h3 {
-  color: black;
   margin: 0 0 8px 0 !important;
   text-transform: uppercase;
 }
@@ -1489,19 +1488,6 @@ main.contact-layout {
   width: 520px !important;
   max-width: none !important;
   margin: 0 !important;              /* aligns with photo left edge */
-  color: black;
-}
-.contact-page .form-field label { color: #ddd !important; }
-.contact-page .contact-form input,
-.contact-page .contact-form textarea {
-  background: white !important;
-  color: black !important;
-  border: 1px solid #444 !important;
-}
-.contact-page .contact-form button {
-  background: white !important;
-  color: black !important;
-  border: 1px solid #444 !important;
 }
 
 /* Keep the footer bar aligned to the locked width */
