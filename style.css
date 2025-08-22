@@ -1303,8 +1303,8 @@ main.contact-layout {
 .studio-title .title-line {
   display: block;
   font-family: 'TWKLausanne', sans-serif;
-  font-size: 48pt;
-  line-height: 23pt;
+  font-size: 28pt;
+  line-height: 24pt;
   letter-spacing: 0.05em;
 }
 .studio-title .italic-550 { font-style: italic; font-weight: 550; }
@@ -1327,7 +1327,7 @@ main.contact-layout {
 .studio-info {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 11pt;
   line-height: 18pt;
   letter-spacing: 0.05em;
   margin: 1rem 0 1.5rem;
@@ -1342,7 +1342,7 @@ main.contact-layout {
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 11pt;
   line-height: 18pt;
   letter-spacing: 0.05em;
 }
@@ -1365,8 +1365,8 @@ main.contact-layout {
 .studio-about .about-heading {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 400;
-  font-size: 20pt;
-  line-height: 18pt;
+  font-size: 14pt;
+  line-height: 14pt;
   letter-spacing: 0.05em;
   margin: 0;
 }
@@ -1392,8 +1392,8 @@ main.contact-layout {
   margin: 0 0 0.35rem 0;
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
-  font-weight: 550;
-  font-size: 14pt;
+  font-weight: 750;
+  font-size: 11pt;
   line-height: 18pt;
   letter-spacing: 0.05em;
 }
@@ -1401,7 +1401,7 @@ main.contact-layout {
   margin: 0 0 1rem 0;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 11pt;
   line-height: 18pt;
   letter-spacing: 0.05em;
   max-width: 52ch;
@@ -1414,7 +1414,7 @@ main.contact-layout {
   padding: 0;
 }
 .contact-form-row { gap: 0.8rem; }
-.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 14pt; line-height: 18pt; letter-spacing: 0.05em;}
+.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 11pt; line-height: 18pt; letter-spacing: 0.05em;}
 .contact-form input,
 .contact-form textarea {
   background: #f7f7f7;
@@ -1432,8 +1432,8 @@ main.contact-layout {
   text-align: left;
   margin: 1rem 0 0 0;
   font-family: 'TWKLausanne', sans-serif;
-  font-weight: 550;
-  font-size: 16pt;
+  font-weight: 750;
+  font-size: 14pt;
   line-height: 18pt;
   letter-spacing: 0.05em;
 }
@@ -1471,8 +1471,8 @@ main.contact-layout {
   }
   .studio-title .title-line {
     font-family: 'TWKLausanne', sans-serif;
-    font-size: 48pt;
-    line-height: 23pt;
+    font-size: 28pt;
+    line-height: 24pt;
     letter-spacing: 0.05em;
   }
   .studio-title .title-line:first-child { padding-bottom: 6px; }
@@ -1484,15 +1484,15 @@ main.contact-layout {
   .studio-info {
     font-family: 'TWKLausanne', sans-serif;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 11pt;
     line-height: 18pt;
     letter-spacing: 0.05em;
     margin: 12px 0 18px;
   }
   .studio-links { margin-top: 12px; }
-  .studio-links li { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 14pt; line-height: 18pt; letter-spacing: 0.05em; margin: 6px 0; }
+  .studio-links li { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 11pt; line-height: 18pt; letter-spacing: 0.05em; margin: 6px 0; }
   .studio-about { margin-top: 56px; gap: 12px; }
-  .studio-about .about-heading { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 14pt; line-height: 18pt; letter-spacing: 0.05em; }
+  .studio-about .about-heading { font-family: 'TWKLausanne', sans-serif; font-weight: 400; font-size: 14pt; line-height: 14pt; letter-spacing: 0.05em; }
 
   /* Right column */
   .contact-right .contact-image {
@@ -1501,8 +1501,8 @@ main.contact-layout {
   }
   .contact-us-block h3 {
     font-family: 'TWKLausanne', sans-serif;
-    font-weight: 550;
-    font-size: 14pt;
+    font-weight: 750;
+    font-size: 11pt;
     line-height: 18pt;         
     letter-spacing: 0.05em;
     margin-bottom: 4px;
@@ -1510,7 +1510,7 @@ main.contact-layout {
   .contact-us-block p {
     font-family: 'TWKLausanne', sans-serif;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 11pt;
     line-height: 18pt;
     max-width: 640px;       
   }
@@ -1522,12 +1522,12 @@ main.contact-layout {
     padding: 0;
   }
   .contact-form-row { gap: 14px; }
-  .form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 14pt; line-height: 18pt; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 11pt; line-height: 18pt; letter-spacing: 0.05em; margin-bottom: 4px; }
   .contact-form input,
   .contact-form textarea {
     font-family: 'TWKLausanne', sans-serif;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 11pt;
     line-height: 18pt;         
     letter-spacing: 0.05em;
     padding: 8px 10px;
@@ -1538,7 +1538,7 @@ main.contact-layout {
   .contact-form button {
     font-family: 'TWKLausanne', sans-serif;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 11pt;
     line-height: 18pt;         
     letter-spacing: 0.05em;
     width: 180px;
@@ -1549,8 +1549,8 @@ main.contact-layout {
   /* Confirmation message */
   #confirmation-message {
     font-family: 'TWKLausanne', sans-serif;
-    font-weight: 550;
-    font-size: 16pt;
+    font-weight: 750;
+    font-size: 14pt;
     line-height: 18pt;
     letter-spacing: 0.05em;
     margin-top: 14px;
