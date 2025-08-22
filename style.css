@@ -1573,3 +1573,15 @@ main.contact-layout {
     width: 1440px;
   }
 }
+
+/* ===== Pixel Overlay Debug ===== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("images/shannonwebsite_contactpage-01.jpg") no-repeat center top;
+  background-size: contain; /* or cover depending on your artboard export */
+  opacity: 0.5; /* adjust transparency */
+  pointer-events: none; /* so you can still click */
+  z-index: 9999;
+}
