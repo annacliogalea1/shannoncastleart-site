@@ -1496,3 +1496,61 @@ main.contact-layout {
   display: block !important;
   padding: 88px 0 60px !important;
 }
+
+/* ── CONTACT PAGE • fine-tuning per Illustrator comp ───────────── */
+
+/* 1) Left column not so tight to the edge */
+.contact-page .contact-left{
+  /* nudge whole left stack in from canvas edge */
+  margin-left: 84px;                 /* adjust this ±4px if needed */
+  width: 420px;                      /* keeps line-length consistent */
+}
+
+/* 2) Link group (IG / YouTube / Tour) too spaced out vertically */
+.contact-page .studio-links{
+  margin-top: 10px;                  /* tighter to address block */
+}
+.contact-page .studio-links li{
+  margin: 0;                         /* remove extra vertical gaps */
+  line-height: 18px;                 /* tight row rhythm */
+}
+.contact-page .studio-links .plus{
+  margin-right: 6px;
+}
+
+/* 3) More separation BETWEEN the left-side sections */
+.contact-page .studio-title{         /* “Turquoise / Six / Arts” */
+  margin: 0 0 22px 0;                /* slightly larger block gap */
+}
+.contact-page .studio-info{          /* address/phone/email */
+  margin: 0 0 22px 0;
+}
+.contact-page .studio-about{         /* About + arrow lockup */
+  margin-top: 40px;                  /* a touch more breathing room */
+}
+
+/* 4) Right margin a bit larger (increase white space at canvas edge) */
+.contact-page .contact-right .contact-image{
+  width: 820px !important;           /* was 865 — adds ~45px to right margin */
+}
+.contact-page .contact-us-block{
+  width: 820px !important;           /* keep text block exactly photo width */
+}
+
+/* 5) Contact Us copy should span full photo width (not constrained) */
+.contact-page .contact-us-block p{
+  max-width: none !important;        /* remove 52ch wrap */
+}
+
+/* 6) More space between the Contact Us copy and the form */
+.contact-page .contact-us-block{
+  margin-bottom: 22px !important;    /* adds clear air above the form */
+}
+
+/* (Optional) if the left column looks a touch crowded, this keeps
+   the left and right columns from visually colliding on small shifts */
+@media (min-width: 1200px){
+  .contact-page .contact-right{
+    margin-left: 550px !important;   /* keep photo’s left edge locked */
+  }
+}
