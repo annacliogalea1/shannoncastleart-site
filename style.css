@@ -1302,8 +1302,11 @@ main.contact-layout {
 }
 
 .studio-title .italic-550 {
+  font-family: TWKLausanne, sans-serif;
+  font-size: 40px;
   font-style: italic;
   font-weight: 550;
+  line-height: 
 }
 
 .studio-title .italic-750 {
@@ -1317,6 +1320,7 @@ main.contact-layout {
 
 .studio-info {
   margin-bottom: 1.5rem;
+  font-size: 7px;
 }
 
 .studio-links {
@@ -1328,7 +1332,7 @@ main.contact-layout {
 .studio-links li {
   margin: 0;
   line-height: 18px;
-  font-size: 14px;
+  font-size: 7px;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -1348,7 +1352,7 @@ main.contact-layout {
 }
 
 .about-heading {
-  font-size: 19px;
+  font-size: 8px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
