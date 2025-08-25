@@ -1521,23 +1521,4 @@ main.contact-layout {
     width: 1737px;     /* 864px × 2 + margin fudge */
     max-width: none;   /* allow full physical size */
   }
-
-  .contact-us-block h3 {
-    font-size: 28px;   /* 14px × 2 */
-    margin: 0 0 68px 0;
-  }
-
-  .contact-us-block p {
-    font-size: 28px;   /* 14px × 2 */
-    line-height: 48px;
-    margin-bottom: 54px;
-  }
-
-  .contact-message-followup {
-    margin-bottom: 154px;
-  }
-
-  .back-to-home-section {
-    margin-top: 352px;
-  }
 }
