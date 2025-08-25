@@ -1280,7 +1280,6 @@ body.landing {
 
 /* ── CONTACT PAGE LAYOUT ───────────────────────────── */
 main.contact-layout {
-  margin-top: var(--header-h);
   display: grid;
   grid-template-columns: 36% 64%;
   gap: 3vw;
@@ -1293,6 +1292,14 @@ main.contact-layout {
 /* Left column */
 .contact-left {
   padding-top: 0.25rem;
+}
+
+.contact-right {
+  padding-top: 63px;
+}
+
+.contact-image {
+  padding-top: 63px;
 }
 
 .studio-title .italic-550 { font-style: italic; font-weight: 550; }
@@ -1426,7 +1433,6 @@ main.contact-layout {
 /* Use a simple block flow (no grid) and lock the canvas to 1440 */
 /* ensure the layout respects the fixed header but adds no extra padding */
 .contact-page main.contact-layout {
-  margin-top: var(--header-h) !important;  /* e.g., 56px */
   padding-top: 0 !important;
   display: grid !important;                /* keep grid */
   width: 1440px;
@@ -1436,7 +1442,6 @@ main.contact-layout {
 .contact-page .contact-right {
   width: 765px !important;           /* photo width from comp */
   margin-left: 550px !important;     /* photo’s left edge at x=550 */
-  margin-top: calc(63px - var(--header-h)) !important;  /* e.g., 63 - 56 = 7px */
 }
 
 /* Photo */
@@ -1444,7 +1449,6 @@ main.contact-layout {
   width: 865px !important;
   height: auto !important;
   display: block !important;
-  margin-top: 0 !important;
   object-fit: cover;
 }
 
