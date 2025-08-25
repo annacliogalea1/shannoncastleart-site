@@ -1479,3 +1479,34 @@ main.contact-layout {
   margin-top: 63px;         /* 63px from header */
   margin-bottom: 24px;      /* consistent spacing below image */
 }
+
+/* ── NEW ILLUSTRATOR-BASED ADJUSTMENTS ── */
+
+/* 1. Image should be exactly 864px wide */
+.contact-right img.contact-image {
+  width: 864px;
+  margin-top: 63px;
+  margin-bottom: 34px;  /* space to Contact Us heading */
+}
+
+/* 2. Contact Us heading: 34px below image (margin-bottom not needed, handled above) */
+.contact-us-block h3 {
+  margin: 0 0 34px 0;
+}
+
+/* 3. Contact description text: 34px below heading */
+.contact-us-block p {
+  margin: 0 0 27px 0;  /* will be followed by next paragraph (next rule) */
+}
+
+/* 4. "We will be in touch..." on its own line, 27px below previous paragraph */
+.contact-message-followup {
+  margin: 0 0 77px 0;  /* followed by form */
+}
+
+/* 5. Contact form: 77px below follow-up message (handled above) */
+
+/* 6. Back to home button: 176px below "Send Message" button */
+.back-to-home-section {
+  margin-top: 176px;
+}
