@@ -1482,9 +1482,9 @@ main.contact-layout {
 
 /* ── NEW ILLUSTRATOR-BASED ADJUSTMENTS ── */
 
-/* 1. Image should be exactly 864px wide */
+/* 1. Image should be exactly 1737px wide */
 .contact-right img.contact-image {
-  width: 1728px;
+  width: 1737px;
   margin-top: 63px;
   margin-bottom: 34px;  /* space to Contact Us heading */
 }
