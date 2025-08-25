@@ -1424,18 +1424,19 @@ main.contact-layout {
 .contact-page { background: white; }
 
 /* Use a simple block flow (no grid) and lock the canvas to 1440 */
+/* ensure the layout respects the fixed header but adds no extra padding */
 .contact-page main.contact-layout {
-  width: 1440px !important;
-  margin: 0 auto !important;
-  display: block !important;
-  margin-top: 0 !important;
+  margin-top: var(--header-h) !important;  /* e.g., 56px */
+  padding-top: 0 !important;
+  display: grid !important;                /* keep grid */
+  width: 1440px;
 }
 
 /* Right column: hard position to comp numbers */
 .contact-page .contact-right {
   width: 765px !important;           /* photo width from comp */
   margin-left: 550px !important;     /* photo’s left edge at x=550 */
-  margin-top: 63px !important;        /* photo top edge at y=63 */
+  margin-top: calc(63px - var(--header-h)) !important;  /* e.g., 63 - 56 = 7px */
 }
 
 /* Photo */
@@ -1472,7 +1473,6 @@ main.contact-layout {
   width: 1440px !important;
   margin: var(--header-h) auto 0 !important;  /* clears the fixed header */
   display: block !important;
-  padding: 88px 0 60px !important;
 }
 
 /* ── CONTACT PAGE • fine-tuning per Illustrator comp ───────────── */
