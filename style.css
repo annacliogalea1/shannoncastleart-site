@@ -1454,12 +1454,9 @@ main.contact-layout {
   padding: 88px 0 60px !important;   /* vertical spacing from your comp */
 }
 
-/* Hide the left column on this page (the comp shows none) */
-.contact-page .contact-left { display: none !important; }
-
 /* Right column: hard position to comp numbers */
 .contact-page .contact-right {
-  width: 865px !important;           /* photo width from comp */
+  width: 765px !important;           /* photo width from comp */
   margin-left: 550px !important;     /* photo’s left edge at x=550 */
 }
 
@@ -1478,7 +1475,7 @@ main.contact-layout {
 }
 
 .contact-page .contact-us-block h3 {
-  margin: 0 0 8px 0 !important;
+  margin: 0 0 6px 0 !important;
   text-transform: uppercase;
 }
 
