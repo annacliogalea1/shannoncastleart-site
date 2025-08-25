@@ -1278,124 +1278,183 @@ body.landing {
   margin: 0 auto;
 }
 
-/* ── CONTACT PAGE LAYOUT ───────────────────────────── */
+/* ── CONTACT PAGE ───────────────────────────────────── */
 main.contact-layout {
-  display: grid !important;
-  grid-template-columns: 36% 64%;
-  gap: 3vw;
-  align-items: start;
-  width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 0 3rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
   background: white;
 }
 
-.contact-left {
-  margin-left: 84px;
-  width: 420px;
-  padding-top: 0.25rem;
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.studio-title { margin-bottom: 22px; }
-.studio-info { margin-bottom: 22px; }
-.studio-about { margin-top: 40px; }
+/* Left Column */
+.contact-left {
+  padding-left: 3vw;
+}
+
+.studio-title .italic-550 {
+  font-style: italic;
+  font-weight: 550;
+}
+
+.studio-title .italic-750 {
+  font-style: italic;
+  font-weight: 750;
+}
+
+.studio-title {
+  margin-bottom: 1.5rem;
+}
+
+.studio-info {
+  margin-bottom: 1.5rem;
+}
 
 .studio-links {
   list-style: none;
   margin-top: 10px;
   padding: 0;
 }
+
 .studio-links li {
   margin: 0;
   line-height: 18px;
   font-size: 14px;
   font-weight: 300;
+  text-transform: uppercase;
 }
+
 .studio-links .plus {
   margin-right: 6px;
 }
+
 .studio-links a {
+  color: #000;
   text-decoration: underline;
   text-underline-offset: 2px;
-  color: #000;
+}
+
+.studio-about {
+  margin-top: 2rem;
+}
+
+.about-heading {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.studio-arrow {
+  font-size: 80px;
+  font-weight: 400;
+  transform: translateY(2px);
 }
 
 /* Right Column */
-.contact-right,
-.contact-image {
-  padding-top: 24px; /* reduced from 63px */
-}
-
-.contact-right .contact-image {
-  display: block;
-  margin: 0 0 0.75rem 0; /* reduced bottom spacing */
-  object-fit: cover;
-  margin-left: 550px;
-  width: 820px;
+.contact-right img.contact-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
 .contact-us-block {
-  width: 820px;
-  margin-bottom: 22px;
+  margin-bottom: 1.5rem;
 }
+
 .contact-us-block h3 {
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
+  margin-bottom: 0.5rem;
   font-size: 14px;
   font-weight: 750;
+  text-transform: uppercase;
 }
+
 .contact-us-block p {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 300;
   line-height: 24px;
   letter-spacing: 0.05em;
-  max-width: none;
 }
 
-/* Form */
-.contact-page .contact-form,
-.contact-page #confirmation-message {
-  width: 520px;
-  margin: 0;
-  max-width: none;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 500px;
+  width: 100%;
+  font-weight: 500;
 }
-.contact-form-row { gap: 0.8rem; }
+
+.contact-form-row {
+  display: flex;
+  gap: 1em;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .form-field label {
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 0.8em;
+  color: #333;
+  margin-bottom: 0.3em;
   text-transform: uppercase;
 }
+
 .contact-form input,
 .contact-form textarea {
-  background: #f7f7f7;
+  padding: 0.5em;
   border: 1px solid #444;
+  background: #f7f7f7;
+  font-size: 1em;
 }
+
+.contact-form textarea {
+  height: 8em;
+  resize: vertical;
+}
+
 .contact-form button {
-  width: 180px;
-  text-transform: uppercase;
   align-self: flex-start;
+  padding: 0.5em 1.5em;
+  width: 180px;
+  background: black;
+  color: white;
+  font-size: 0.95em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
   margin-top: 0.6rem;
 }
 
-#confirmation-message {
-  margin-top: 1rem;
+.required {
+  color: #222;
+  margin-left: 0.2em;
+  font-size: 1em;
+}
+
+.confirmation-message {
   font-weight: 750;
   font-size: 19px;
   text-transform: uppercase;
+  margin-top: 1rem;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
   main.contact-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-  .studio-about { margin-top: 2rem; }
-}
-
-@media (min-width: 1200px) {
-  .contact-page .contact-right {
-    margin-left: 550px;
   }
 }
