@@ -1342,7 +1342,7 @@ main.contact-layout {
 /* Right column */
 .contact-right .contact-image {
   width: 100%;
-  height: auto;
+  height: 63px;
   display: block;
   margin: 0 0 1.25rem 0;
   object-fit: cover;
