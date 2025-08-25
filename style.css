@@ -1295,26 +1295,9 @@ main.contact-layout {
   padding-top: 0.25rem;
 }
 
-.studio-title {
-  margin: 0 0 1.25rem 0;
-  text-transform: uppercase;
-  font-family: 'TWKLausanne', sans-serif;
-  font-size: 37.5px;
-  line-height: 32px;
-  letter-spacing: 0.05em;
-}
-
 .studio-title .italic-550 { font-style: italic; font-weight: 550; }
 .studio-title .italic-750 { font-style: italic; font-weight: 750; }
 
-.studio-info {
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  margin: 1rem 0 1.5rem;
-}
 .studio-links {
   list-style: none;
   padding: 0;
@@ -1339,12 +1322,6 @@ main.contact-layout {
 }
 
 /* About/arrow lockup */
-.studio-about {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 3.5rem;
-}
 .studio-about .about-heading {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 400;
@@ -1497,60 +1474,82 @@ main.contact-layout {
   padding: 88px 0 60px !important;
 }
 
-/* ── CONTACT PAGE • fine-tuning per Illustrator comp ───────────── */
-
-/* 1) Left column not so tight to the edge */
-.contact-page .contact-left{
-  /* nudge whole left stack in from canvas edge */
-  margin-left: 84px;                 /* adjust this ±4px if needed */
-  width: 420px;                      /* keeps line-length consistent */
+/* AFTER (correct selectors) */
+.studio-title { 
+  margin: 0 0 28px 0;
+  text-transform: uppercase;
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 37.5px;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+}
+.studio-info {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  margin: 0 0 28px 0;
+}
+.studio-about {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 56px;
 }
 
-/* 2) Link group (IG / YouTube / Tour) too spaced out vertically */
-.contact-page .studio-links{
-  margin-top: 10px;                  /* tighter to address block */
-}
-.contact-page .studio-links li{
-  margin: 0;                         /* remove extra vertical gaps */
-  line-height: 18px;                 /* tight row rhythm */
-}
-.contact-page .studio-links .plus{
-  margin-right: 6px;
+/* ── CONTACT PAGE • lock to 1440 canvas with gutters ─────────── */
+
+/* Canvas + grid */
+body.contact-page .contact-layout{
+  /* 1440 canvas centered */
+  width: 1440px;
+  margin: var(--header-h) auto 0;
+
+  /* left/right gutters + top/bottom breathing room */
+  padding: 88px 80px 60px 72px;   /* T R B L  (Right gutter “a bit larger”) */
+
+  display: grid;
+  grid-template-columns: 420px 828px; /* left text column + image/blocks width */
+  column-gap: 40px;                   /* space between columns */
+  align-items: start;
+  box-sizing: border-box;
 }
 
-/* 3) More separation BETWEEN the left-side sections */
-.contact-page .studio-title{         /* “Turquoise / Six / Arts” */
-  margin: 0 0 22px 0;                /* slightly larger block gap */
-}
-.contact-page .studio-info{          /* address/phone/email */
-  margin: 0 0 22px 0;
-}
-.contact-page .studio-about{         /* About + arrow lockup */
-  margin-top: 40px;                  /* a touch more breathing room */
+/* LEFT COLUMN: not hugging the edge now (gutter above does this) */
+body.contact-page .contact-left{
+  padding-top: 4px; /* tiny nudge to match comp baseline */
 }
 
-/* 4) Right margin a bit larger (increase white space at canvas edge) */
-.contact-page .contact-right .contact-image{
-  width: 820px !important;           /* was 865 — adds ~45px to right margin */
+/* IG / YouTube / Studio Tour tighter */
+body.contact-page .studio-links{ margin-top: 10px; }
+body.contact-page .studio-links li{
+  margin: 0;           /* kill extra vertical gaps */
+  line-height: 18px;   /* compact rows like the comp */
 }
-.contact-page .contact-us-block{
-  width: 820px !important;           /* keep text block exactly photo width */
+body.contact-page .studio-links .plus{ margin-right: 6px; }
+
+/* RIGHT COLUMN: image width = column width, creating larger right margin */
+body.contact-page .contact-right .contact-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 16px 0;   /* match comp spacing below the photo */
+  object-fit: cover;
 }
 
-/* 5) Contact Us copy should span full photo width (not constrained) */
-.contact-page .contact-us-block p{
-  max-width: none !important;        /* remove 52ch wrap */
+/* Contact Us text spans the full photo width (no stacking) */
+body.contact-page .contact-us-block p{
+  max-width: none;      /* remove the 52ch wrap */
 }
 
-/* 6) More space between the Contact Us copy and the form */
-.contact-page .contact-us-block{
-  margin-bottom: 22px !important;    /* adds clear air above the form */
+/* More space between Contact Us copy and the form */
+body.contact-page .contact-us-block{
+  margin-bottom: 24px;
 }
 
-/* (Optional) if the left column looks a touch crowded, this keeps
-   the left and right columns from visually colliding on small shifts */
-@media (min-width: 1200px){
-  .contact-page .contact-right{
-    margin-left: 550px !important;   /* keep photo’s left edge locked */
-  }
+/* Keep the form visually narrower than the image (like the comp) */
+body.contact-page .contact-form,
+body.contact-page #confirmation-message{
+  max-width: 520px;
 }
