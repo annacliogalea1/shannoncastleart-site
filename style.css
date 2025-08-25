@@ -1508,7 +1508,8 @@ main.contact-layout {
 
 /* 4) Right margin a bit larger (increase white space at canvas edge) */
 .contact-page .contact-right .contact-image{
-  width: 820px !important;           /* was 865 — adds ~45px to right margin */
+  width: 820px !important;
+   margin-top: 63px;
 }
 .contact-page .contact-us-block{
   width: 820px !important;           /* keep text block exactly photo width */
