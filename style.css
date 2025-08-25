@@ -1278,15 +1278,15 @@ body.landing {
   margin: 0 auto;
 }
 
-/* ── CONTACT PAGE ───────────────────────────────────── */
+/* ── CONTACT PAGE (DPR=2 ADJUSTED) ───────────────────────────────────── */
 main.contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4vw;
-  max-width: 1400px;
+  gap: 8vw;
+  max-width: 2800px;
   margin: 0 auto;
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
   background: white;
 }
 
@@ -1298,7 +1298,7 @@ main.contact-layout {
 
 /* Left Column */
 .contact-left {
-  padding-left: 3vw;
+  padding-left: 6vw;
 }
 
 .studio-title .italic-550 {
@@ -1312,92 +1312,92 @@ main.contact-layout {
 }
 
 .studio-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .studio-info {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .studio-links {
   list-style: none;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 0;
 }
 
 .studio-links li {
   margin: 0;
-  line-height: 18px;
-  font-size: 14px;
+  line-height: 36px;
+  font-size: 28px;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 .studio-links .plus {
-  margin-right: 6px;
+  margin-right: 12px;
 }
 
 .studio-links a {
   color: #000;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 4px;
 }
 
 .studio-about {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .about-heading {
-  font-size: 19px;
+  font-size: 38px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
 
 .studio-arrow {
-  font-size: 80px;
+  font-size: 160px;
   font-weight: 400;
-  transform: translateY(2px);
+  transform: translateY(4px);
 }
 
 /* Right Column */
 .contact-right img.contact-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .contact-us-block {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .contact-us-block h3 {
-  margin-bottom: 0.5rem;
-  font-size: 14px;
+  margin-bottom: 1rem;
+  font-size: 28px;
   font-weight: 750;
   text-transform: uppercase;
 }
 
 .contact-us-block p {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 28px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 48px;
   letter-spacing: 0.05em;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
-  max-width: 500px;
+  gap: 3em;
+  max-width: 1000px;
   width: 100%;
   font-weight: 500;
 }
 
 .contact-form-row {
   display: flex;
-  gap: 1em;
+  gap: 2em;
 }
 
 .form-field {
@@ -1407,106 +1407,92 @@ main.contact-layout {
 }
 
 .form-field label {
-  font-size: 0.8em;
+  font-size: 1.6em;
   color: #333;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.6em;
   text-transform: uppercase;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.5em;
-  border: 1px solid #444;
+  padding: 1em;
+  border: 2px solid #444;
   background: #f7f7f7;
-  font-size: 1em;
+  font-size: 2em;
 }
 
 .contact-form textarea {
-  height: 8em;
+  height: 16em;
   resize: vertical;
 }
 
 .contact-form button {
   align-self: flex-start;
-  padding: 0.5em 1.5em;
-  width: 180px;
+  padding: 1em 3em;
+  width: 360px;
   background: black;
   color: white;
-  font-size: 0.95em;
+  font-size: 1.9em;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
-  margin-top: 0.6rem;
+  margin-top: 1.2rem;
 }
 
 .required {
   color: #222;
-  margin-left: 0.2em;
-  font-size: 1em;
+  margin-left: 0.4em;
+  font-size: 2em;
 }
 
 .confirmation-message {
   font-weight: 750;
-  font-size: 19px;
+  font-size: 38px;
   text-transform: uppercase;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 980px) {
   main.contact-layout {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem;
   }
 }
 
-/* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
+/* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC (DPR=2) ── */
 
 .studio-title {
-  margin-top: 24px;         /* 24px from header */
-  margin-bottom: 96px;      /* 96px to address block */
+  margin-top: 48px;         /* 24px × 2 */
+  margin-bottom: 192px;     /* 96px × 2 */
 }
 
 .studio-info p {
-  margin: 0 0 29px 0;       /* 29px to phone/email block (email stacked naturally) */
-  line-height: 1.5;         /* keep line spacing default for now */
+  margin: 0 0 58px 0;       /* 29px × 2 */
+  line-height: 1.5;
 }
 
 .studio-links {
-  margin-top: 248px;        /* 248px from phone/email block */
+  margin-top: 496px;        /* 248px × 2 */
 }
 
 .contact-right img.contact-image {
-  margin-top: 63px;         /* 63px from header */
-  margin-bottom: 24px;      /* consistent spacing below image */
+  margin-top: 126px;        /* 63px × 2 */
+  margin-bottom: 48px;
+  width: 1728px;            /* 864px × 2 */
 }
 
-/* ── NEW ILLUSTRATOR-BASED ADJUSTMENTS ── */
-
-/* 1. Image should be exactly 864px wide */
-.contact-right img.contact-image {
-  width: 864px;
-  margin-top: 63px;
-  margin-bottom: 34px;  /* space to Contact Us heading */
-}
-
-/* 2. Contact Us heading: 34px below image (margin-bottom not needed, handled above) */
 .contact-us-block h3 {
-  margin: 0 0 34px 0;
+  margin: 0 0 68px 0;        /* 34px × 2 */
 }
 
-/* 3. Contact description text: 34px below heading */
 .contact-us-block p {
-  margin: 0 0 27px 0;  /* will be followed by next paragraph (next rule) */
+  margin: 0 0 54px 0;        /* 27px × 2 */
 }
 
-/* 4. "We will be in touch..." on its own line, 27px below previous paragraph */
 .contact-message-followup {
-  margin: 0 0 77px 0;  /* followed by form */
+  margin: 0 0 154px 0;       /* 77px × 2 */
 }
 
-/* 5. Contact form: 77px below follow-up message (handled above) */
-
-/* 6. Back to home button: 176px below "Send Message" button */
 .back-to-home-section {
-  margin-top: 176px;
+  margin-top: 352px;         /* 176px × 2 */
 }
