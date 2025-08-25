@@ -1418,138 +1418,49 @@ main.contact-layout {
   .studio-about { margin-top: 2rem; }
 }
 
-/* ── CONTACT PAGE • Match Illustrator 1440 spec ────────────────── */
-/* Place at the VERY END of style.css */
+/* ── CONTACT PAGE • minimal tuning ───────────────────────── */
 
-.contact-page { background: white; }
-
-/* Use a simple block flow (no grid) and lock the canvas to 1440 */
-.contact-page main.contact-layout {
-  width: 1440px !important;
-  margin: 0 auto !important;
-  display: block !important;
-  padding: 88px 0 60px !important;   /* vertical spacing from your comp */
-}
-
-/* Right column: hard position to comp numbers */
-.contact-page .contact-right {
-  width: 765px !important;           /* photo width from comp */
-  margin-left: 550px !important;     /* photo’s left edge at x=550 */
-}
-
-/* Photo */
-.contact-page .contact-right .contact-image {
-  width: 865px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 0 32px 0 !important;
-  object-fit: cover;
-}
-
-/* “Contact Us” text block spans same width as the photo */
-.contact-page .contact-us-block {
-  width: 865px !important;
-}
-
-.contact-page .contact-us-block h3 {
-  margin: 0 0 6px 0 !important;
-  text-transform: uppercase;
-}
-
-/* Form: narrower block, left-aligned under the photo */
-.contact-page .contact-form,
-.contact-page #confirmation-message {
-  width: 520px !important;
-  max-width: none !important;
-  margin: 0 !important;              /* aligns with photo left edge */
-}
-
-/* Keep the footer bar aligned to the locked width */
-.contact-page .back-to-home-container { width: 1440px !important; margin: 0 auto !important; }
-
-.contact-page main.contact-layout {
-  width: 1440px !important;
-  margin: var(--header-h) auto 0 !important;  /* clears the fixed header */
-  display: block !important;
-  padding: 88px 0 60px !important;
-}
-
-/* AFTER (correct selectors) */
-.studio-title { 
-  margin: 0 0 28px 0;
-  text-transform: uppercase;
-  font-family: 'TWKLausanne', sans-serif;
-  font-size: 37.5px;
-  line-height: 32px;
-  letter-spacing: 0.05em;
-}
-.studio-info {
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  margin: 0 0 28px 0;
-}
-.studio-about {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 56px;
-}
-
-/* ── CONTACT PAGE • lock to 1440 canvas with gutters ─────────── */
-
-/* Canvas + grid */
-body.contact-page .contact-layout{
-  /* 1440 canvas centered */
+main.contact-layout{
+  /* lock to 1440 and include gutters in the width */
+  box-sizing: border-box;
   width: 1440px;
   margin: var(--header-h) auto 0;
-
-  /* left/right gutters + top/bottom breathing room */
-  padding: 88px 80px 60px 72px;   /* T R B L  (Right gutter “a bit larger”) */
-
+  padding: 88px 110px 60px 96px;  /* top | right | bottom | left */
+  /* keep grid, but make it stable */
   display: grid;
-  grid-template-columns: 420px 828px; /* left text column + image/blocks width */
-  column-gap: 40px;                   /* space between columns */
-  align-items: start;
-  box-sizing: border-box;
+  grid-template-columns: 420px 1fr; /* left column + right content */
+  column-gap: 40px;
 }
 
-/* LEFT COLUMN: not hugging the edge now (gutter above does this) */
-body.contact-page .contact-left{
-  padding-top: 4px; /* tiny nudge to match comp baseline */
-}
+.contact-left{ padding-top: 4px; }   /* baseline nudge */
 
-/* IG / YouTube / Studio Tour tighter */
-body.contact-page .studio-links{ margin-top: 10px; }
-body.contact-page .studio-links li{
-  margin: 0;           /* kill extra vertical gaps */
-  line-height: 18px;   /* compact rows like the comp */
-}
-body.contact-page .studio-links .plus{ margin-right: 6px; }
+/* Left-side sections: more separation */
+.studio-title{ margin: 0 0 28px 0; }
+.studio-info{  margin: 0 0 28px 0; }
+.studio-about{ margin-top: 56px; }
 
-/* RIGHT COLUMN: image width = column width, creating larger right margin */
-body.contact-page .contact-right .contact-image{
+/* IG / YouTube / Studio Tour: tighter rows */
+.studio-links{ margin-top: 10px; }
+.studio-links li{ margin: 0; line-height: 18px; }
+.studio-links .plus{ margin-right: 6px; }
+
+/* Right column */
+.contact-right .contact-image{
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 16px 0;   /* match comp spacing below the photo */
-  object-fit: cover;
+  margin: 0 0 16px 0; /* spacing below photo */
 }
 
-/* Contact Us text spans the full photo width (no stacking) */
-body.contact-page .contact-us-block p{
-  max-width: none;      /* remove the 52ch wrap */
-}
+/* Contact Us text spans full photo width (no stacking) */
+.contact-us-block p{ max-width: none; }
 
 /* More space between Contact Us copy and the form */
-body.contact-page .contact-us-block{
-  margin-bottom: 24px;
-}
+.contact-us-block{ margin-bottom: 24px; }
 
-/* Keep the form visually narrower than the image (like the comp) */
-body.contact-page .contact-form,
-body.contact-page #confirmation-message{
+/* Keep the form visually narrower than the image, like your comp */
+.contact-form,
+#confirmation-message{
   max-width: 520px;
+  margin: 0;
 }
