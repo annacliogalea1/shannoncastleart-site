@@ -1280,7 +1280,7 @@ body.landing {
 
 /* ── CONTACT PAGE LAYOUT ───────────────────────────── */
 main.contact-layout {
-  display: grid;
+  display: grid !important;
   grid-template-columns: 36% 64%;
   gap: 3vw;
   align-items: start;
@@ -1288,104 +1288,84 @@ main.contact-layout {
   margin: 0 auto;
   padding: 0 0 3rem;
   background: white;
-  display: grid !important;
 }
 
-/* Left column */
 .contact-left {
+  margin-left: 84px;
+  width: 420px;
   padding-top: 0.25rem;
 }
 
-.contact-right {
-  padding-top: 63px;
-}
-
-.contact-image {
-  padding-top: 63px;
-}
-
-.studio-title .italic-550 { font-style: italic; font-weight: 550; }
-.studio-title .italic-750 { font-style: italic; font-weight: 750; }
+.studio-title { margin-bottom: 22px; }
+.studio-info { margin-bottom: 22px; }
+.studio-about { margin-top: 40px; }
 
 .studio-links {
   list-style: none;
+  margin-top: 10px;
   padding: 0;
-  margin: 1rem 0 0;
 }
 .studio-links li {
-  margin: 0.35rem 0;
-  text-transform: uppercase;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 300;
+  margin: 0;
+  line-height: 18px;
   font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
+  font-weight: 300;
 }
 .studio-links .plus {
-  margin-right: 0.35rem;
+  margin-right: 6px;
 }
 .studio-links a {
-  color: #000;
   text-decoration: underline;
   text-underline-offset: 2px;
+  color: #000;
 }
 
-/* About/arrow lockup */
-.studio-about .about-heading {
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 18px;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
-.studio-arrow {
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 400;
-  font-size: 80px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  transform: translateY(2px);
+/* Right Column */
+.contact-right,
+.contact-image {
+  padding-top: 24px; /* reduced from 63px */
 }
 
-/* Right column */
 .contact-right .contact-image {
-  height: auto;
   display: block;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 0.75rem 0; /* reduced bottom spacing */
   object-fit: cover;
-  margin-left: 550px !important;  
-  width: 820px !important;
+  margin-left: 550px;
+  width: 820px;
 }
 
+.contact-us-block {
+  width: 820px;
+  margin-bottom: 22px;
+}
 .contact-us-block h3 {
-  margin: 0 0 0.35rem 0;
+  margin: 0 0 6px 0;
   text-transform: uppercase;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 750;
   font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
+  font-weight: 750;
 }
 .contact-us-block p {
-  margin: 0 0 1rem 0;
   text-transform: uppercase;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 300;
   font-size: 14px;
+  font-weight: 300;
   line-height: 24px;
   letter-spacing: 0.05em;
-  max-width: 52ch;
+  max-width: none;
 }
 
-/* Form sizing to align with comp */
-.contact-form {
-  max-width: 520px;
+/* Form */
+.contact-page .contact-form,
+.contact-page #confirmation-message {
+  width: 520px;
   margin: 0;
-  padding: 0;
+  max-width: none;
 }
 .contact-form-row { gap: 0.8rem; }
-.form-field label { font-family: 'TWKLausanne', sans-serif; font-weight: 300; font-size: 14px; line-height: 24px; letter-spacing: 0.05em; text-transform: uppercase; }
+.form-field label {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
 .contact-form input,
 .contact-form textarea {
   background: #f7f7f7;
@@ -1393,30 +1373,16 @@ main.contact-layout {
 }
 .contact-form button {
   width: 180px;
-  max-width: none;
-  align-self: flex-start;
   text-transform: uppercase;
+  align-self: flex-start;
   margin-top: 0.6rem;
 }
 
-/* Confirmation message */
 #confirmation-message {
-  text-align: left;
-  margin: 1rem 0 0 0;
-  font-family: 'TWKLausanne', sans-serif;
-  text-transform: uppercase;
+  margin-top: 1rem;
   font-weight: 750;
   font-size: 19px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-}
-
-/* Back to Home aligns under the grid */
-.back-to-home-section {
-  padding: 0.75rem 0 1.25rem;
-}
-.back-to-home-container {
-  max-width: min(1500px, 92vw);
+  text-transform: uppercase;
 }
 
 /* Responsive */
@@ -1428,81 +1394,8 @@ main.contact-layout {
   .studio-about { margin-top: 2rem; }
 }
 
-/* “Contact Us” text block spans same width as the photo */
-.contact-page .contact-us-block {
-  width: 865px !important;
-}
-
-.contact-page .contact-us-block h3 {
-  margin: 0 0 6px 0 !important;
-  text-transform: uppercase;
-}
-
-/* Form: narrower block, left-aligned under the photo */
-.contact-page .contact-form,
-.contact-page #confirmation-message {
-  width: 520px !important;
-  max-width: none !important;
-  margin: 0 !important;              /* aligns with photo left edge */
-}
-
-/* Keep the footer bar aligned to the locked width */
-.contact-page .back-to-home-container { width: 1440px !important; margin: 0 auto !important; }
-
-/* 1) Left column not so tight to the edge */
-.contact-page .contact-left{
-  /* nudge whole left stack in from canvas edge */
-  margin-left: 84px;                 /* adjust this ±4px if needed */
-  width: 420px;                      /* keeps line-length consistent */
-}
-
-/* 2) Link group (IG / YouTube / Tour) too spaced out vertically */
-.contact-page .studio-links{
-  margin-top: 10px;                  /* tighter to address block */
-}
-.contact-page .studio-links li{
-  margin: 0;                         /* remove extra vertical gaps */
-  line-height: 18px;                 /* tight row rhythm */
-}
-.contact-page .studio-links .plus{
-  margin-right: 6px;
-}
-
-/* 3) More separation BETWEEN the left-side sections */
-.contact-page .studio-title{         /* “Turquoise / Six / Arts” */
-  margin: 0 0 22px 0;                /* slightly larger block gap */
-}
-.contact-page .studio-info{          /* address/phone/email */
-  margin: 0 0 22px 0;
-}
-.contact-page .studio-about{         /* About + arrow lockup */
-  margin-top: 40px;                  /* a touch more breathing room */
-}
-
-.contact-page .contact-us-block{
-  width: 820px !important;           /* keep text block exactly photo width */
-}
-
-/* 5) Contact Us copy should span full photo width (not constrained) */
-.contact-page .contact-us-block p{
-  max-width: none !important;        /* remove 52ch wrap */
-}
-
-/* 6) More space between the Contact Us copy and the form */
-.contact-page .contact-us-block{
-  margin-bottom: 22px !important;    /* adds clear air above the form */
-}
-
-/* (Optional) if the left column looks a touch crowded, this keeps
-   the left and right columns from visually colliding on small shifts */
-@media (min-width: 1200px){
-  .contact-page .contact-right{
-    margin-left: 550px !important;   /* keep photo’s left edge locked */
+@media (min-width: 1200px) {
+  .contact-page .contact-right {
+    margin-left: 550px;
   }
-}
-
-/* CONTACT: lock photo column 63px below header */
-.contact-page main.contact-layout {
-  /* make sure the layout itself isn't adding top padding */
-  padding-top: 0 !important;
 }
