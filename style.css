@@ -1342,7 +1342,7 @@ main.contact-layout {
 /* Right column */
 .contact-right .contact-image {
   width: 100%;
-  height: 63px;
+  height: auto;
   display: block;
   margin: 0 0 1.25rem 0;
   object-fit: cover;
@@ -1429,7 +1429,6 @@ main.contact-layout {
   margin: 0 auto !important;
   display: block !important;
   margin-top: 0 !important;
-  padding: 0 60px !important;   /* vertical spacing from your comp */
 }
 
 /* Right column: hard position to comp numbers */
@@ -1445,7 +1444,6 @@ main.contact-layout {
   height: auto !important;
   display: block !important;
   margin-top: 0 !important;
-  margin: 0 0 32px 0 !important;
   object-fit: cover;
 }
 
@@ -1512,7 +1510,6 @@ main.contact-layout {
 /* 4) Right margin a bit larger (increase white space at canvas edge) */
 .contact-page .contact-right .contact-image{
   width: 820px !important;
-   margin-top: 63px;
 }
 .contact-page .contact-us-block{
   width: 820px !important;           /* keep text block exactly photo width */
@@ -1534,4 +1531,20 @@ main.contact-layout {
   .contact-page .contact-right{
     margin-left: 550px !important;   /* keep photo’s left edge locked */
   }
+}
+
+/* CONTACT: lock photo column 63px below header */
+.contact-page main.contact-layout {
+  /* make sure the layout itself isn't adding top padding */
+  padding-top: 0 !important;
+  margin-top: var(--header-h) !important; /* uses your 56px header height */
+}
+
+.contact-page .contact-right {
+  margin-top: 63px !important;   /* photo column starts 63px below header */
+}
+
+.contact-page .contact-right .contact-image {
+  margin-top: 0 !important;      /* no extra push on the image */
+  height: auto !important;        /* ensure natural height */
 }
