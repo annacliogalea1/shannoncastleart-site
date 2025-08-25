@@ -1541,14 +1541,4 @@ main.contact-layout {
 .contact-page main.contact-layout {
   /* make sure the layout itself isn't adding top padding */
   padding-top: 0 !important;
-  margin-top: var(--header-h) !important; /* uses your 56px header height */
-}
-
-.contact-page .contact-right {
-  margin-top: 63px !important;   /* photo column starts 63px below header */
-}
-
-.contact-page .contact-right .contact-image {
-  margin-top: 0 !important;      /* no extra push on the image */
-  height: auto !important;        /* ensure natural height */
 }
