@@ -1362,7 +1362,7 @@ main.contact-layout {
 
 /* Right Column */
 .contact-right img.contact-image {
-  max-width: 100%;
+  max-width: none;
   height: auto;
   margin-bottom: 1.5rem;
 }
@@ -1509,4 +1509,35 @@ main.contact-layout {
 /* 6. Back to home button: 176px below "Send Message" button */
 .back-to-home-section {
   margin-top: 176px;
+}
+
+/* ── DPR=2 Retina Scaling ───────────────────────────── */
+@media (min-resolution: 2dppx) {
+  main.contact-layout {
+    max-width: 2800px; /* 1400px × 2 */
+  }
+
+  .contact-right img.contact-image {
+    width: 1737px;     /* 864px × 2 + margin fudge */
+    max-width: none;   /* allow full physical size */
+  }
+
+  .contact-us-block h3 {
+    font-size: 28px;   /* 14px × 2 */
+    margin: 0 0 68px 0;
+  }
+
+  .contact-us-block p {
+    font-size: 28px;   /* 14px × 2 */
+    line-height: 48px;
+    margin-bottom: 54px;
+  }
+
+  .contact-message-followup {
+    margin-bottom: 154px;
+  }
+
+  .back-to-home-section {
+    margin-top: 352px;
+  }
 }
