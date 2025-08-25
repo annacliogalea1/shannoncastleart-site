@@ -1362,7 +1362,7 @@ main.contact-layout {
 
 /* Right Column */
 .contact-right img.contact-image {
-  max-width: none;
+  max-width: 100%;
   height: auto;
   margin-bottom: 1.5rem;
 }
@@ -1482,7 +1482,7 @@ main.contact-layout {
 
 /* ── NEW ILLUSTRATOR-BASED ADJUSTMENTS ── */
 
-/* 1. Image should be exactly 1737px wide */
+/* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
   width: 1737px;
   margin-top: 63px;
