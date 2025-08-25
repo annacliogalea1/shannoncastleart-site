@@ -1287,6 +1287,8 @@ main.contact-layout {
   width: 1440px;
   margin: 0 auto;
   padding: 0 0 3rem;
+  background: white;
+  display: grid !important;
 }
 
 /* Left column */
@@ -1348,11 +1350,12 @@ main.contact-layout {
 
 /* Right column */
 .contact-right .contact-image {
-  width: 100%;
   height: auto;
   display: block;
   margin: 0 0 1.25rem 0;
   object-fit: cover;
+  margin-left: 550px !important;  
+  width: 820px !important;
 }
 
 .contact-us-block h3 {
@@ -1425,33 +1428,6 @@ main.contact-layout {
   .studio-about { margin-top: 2rem; }
 }
 
-/* ── CONTACT PAGE • Match Illustrator 1440 spec ────────────────── */
-/* Place at the VERY END of style.css */
-
-.contact-page { background: white; }
-
-/* Use a simple block flow (no grid) and lock the canvas to 1440 */
-/* ensure the layout respects the fixed header but adds no extra padding */
-.contact-page main.contact-layout {
-  padding-top: 0 !important;
-  display: grid !important;                /* keep grid */
-  width: 1440px;
-}
-
-/* Right column: hard position to comp numbers */
-.contact-page .contact-right {
-  width: 765px !important;           /* photo width from comp */
-  margin-left: 550px !important;     /* photo’s left edge at x=550 */
-}
-
-/* Photo */
-.contact-page .contact-right .contact-image {
-  width: 865px !important;
-  height: auto !important;
-  display: block !important;
-  object-fit: cover;
-}
-
 /* “Contact Us” text block spans same width as the photo */
 .contact-page .contact-us-block {
   width: 865px !important;
@@ -1472,14 +1448,6 @@ main.contact-layout {
 
 /* Keep the footer bar aligned to the locked width */
 .contact-page .back-to-home-container { width: 1440px !important; margin: 0 auto !important; }
-
-.contact-page main.contact-layout {
-  width: 1440px !important;
-  margin: var(--header-h) auto 0 !important;  /* clears the fixed header */
-  display: block !important;
-}
-
-/* ── CONTACT PAGE • fine-tuning per Illustrator comp ───────────── */
 
 /* 1) Left column not so tight to the edge */
 .contact-page .contact-left{
@@ -1511,10 +1479,6 @@ main.contact-layout {
   margin-top: 40px;                  /* a touch more breathing room */
 }
 
-/* 4) Right margin a bit larger (increase white space at canvas edge) */
-.contact-page .contact-right .contact-image{
-  width: 820px !important;
-}
 .contact-page .contact-us-block{
   width: 820px !important;           /* keep text block exactly photo width */
 }
