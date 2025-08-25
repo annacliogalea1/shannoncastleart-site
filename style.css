@@ -1440,3 +1440,54 @@ main.contact-layout {
   }
   .studio-about { margin-top: 2rem; }
 }
+
+/* ── CONTACT PAGE • fine tuning to Illustrator comp ───────────── */
+
+/* Canvas: 1440px centered, with explicit side gutters
+   (left gutter also fixes “too aligned to the left”) */
+body.contact-page main.contact-layout{
+  width: 1440px;
+  margin: var(--header-h) auto 0;
+  display: grid;
+  grid-template-columns: 440px 1fr;   /* fixed left column + fluid right */
+  column-gap: 64px;                   /* tune ±4px if needed */
+  padding: 88px 120px 60px 96px;      /* top | right | bottom | left gutters */
+}
+
+/* Left-side section spacing (more separation between blocks) */
+body.contact-page .studio-title{ margin: 0 0 28px 0; }
+body.contact-page .studio-info{  margin: 0 0 28px 0; }
+body.contact-page .studio-about{ margin-top: 56px; }
+
+/* IG / YouTube / Studio Tour list — tighten vertical spacing */
+body.contact-page .studio-links{ margin-top: 10px; }
+body.contact-page .studio-links li{
+  margin: 0;                /* kill extra gaps */
+  line-height: 18px;        /* tight lines to match comp */
+}
+body.contact-page .studio-links .plus{ margin-right: 6px; }
+
+/* Right margin “a bit larger” is achieved by the 120px right gutter above.
+   Keep the image full width of its grid column. */
+body.contact-page .contact-right .contact-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 16px 0;
+}
+
+/* Contact Us copy should span full photo width (no stacking) */
+body.contact-page .contact-us-block p{
+  max-width: none !important;  /* remove 52ch wrap */
+}
+
+/* Add space between Contact Us copy and the form */
+body.contact-page .contact-us-block{
+  margin-bottom: 24px;
+}
+
+/* Form stays visually narrower than the image (like your comp) */
+body.contact-page .contact-form,
+body.contact-page #confirmation-message{
+  max-width: 520px;
+}
