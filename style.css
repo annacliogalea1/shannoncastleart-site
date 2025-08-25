@@ -1458,3 +1458,24 @@ main.contact-layout {
     gap: 2rem;
   }
 }
+
+/* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
+
+.studio-title {
+  margin-top: 24px;         /* 24px from header */
+  margin-bottom: 96px;      /* 96px to address block */
+}
+
+.studio-info p {
+  margin: 0 0 29px 0;       /* 29px to phone/email block (email stacked naturally) */
+  line-height: 1.5;         /* keep line spacing default for now */
+}
+
+.studio-links {
+  margin-top: 248px;        /* 248px from phone/email block */
+}
+
+.contact-right img.contact-image {
+  margin-top: 63px;         /* 63px from header */
+  margin-bottom: 24px;      /* consistent spacing below image */
+}
