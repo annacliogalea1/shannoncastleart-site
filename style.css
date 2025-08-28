@@ -1085,10 +1085,10 @@ body.landing {
 
 /* ── Collections Section ─── */
 .collections {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 3em 0 2em;           
-  background: black     
+  padding: 3em 0 2em;
+  background: black;
 }
 
 .collections-title {
