@@ -1119,7 +1119,11 @@ body.landing {
   line-height: 1;
   transition: color 220ms ease;
   outline: none;
-  padding: 0 1.5em;
+}
+
+.tab-text {
+  position: relative;
+  display: inline-block;
 }
 
 .tab-link .tab-underline {
