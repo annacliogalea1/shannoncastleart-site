@@ -712,18 +712,20 @@ header h1 a:hover { opacity: 0.7; }
 
 /* ── Collection Grid (Fixed 3-Column Layout) ─── */
 .collection-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0em;
-  width: 90%;
-  margin: 0 auto;
   margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  width: 90%;
+  margin: 0 auto 100px;
 }
 
 .collection-grid .grid-item {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  width: 402px;
+  height: 415px;
   isolation: isolate;
   border: 0.01px solid white;
   border-radius: 0;
@@ -748,19 +750,24 @@ header h1 a:hover { opacity: 0.7; }
   background: rgba(0, 0, 0, 0.6);
 }
 
-.collection-grid .grid-item p {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  color: white;
-  font-size: 1.875em;
-  z-index: 20;
-  transition: transform 0.3s ease;
+.grid-title {
+  margin: 0.5em 0 0.2em;
+  font-size: 1.4em;
+  color: #333;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
 }
 
-.collection-grid .grid-item:hover p {
-  transform: translate(-50%, -50%) scale(1.25);
+.grid-subtitle {
+  font-size: 0.8em;
+  font-style: italic;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 200;
+  color: #333;
+  margin: 0;
+  text-align: left;
 }
 
 /* title above the overlay */
@@ -779,9 +786,9 @@ header h1 a:hover { opacity: 0.7; }
   transition: transform 0.3s ease;
 }
 
-/* text zooms on hover */
-.collection-grid .grid-item:hover p {
-  transform: translate(-50%, -50%) scale(1.25);
+.grid-title:hover {
+  color: #1faacf;
+  transition: color 0.3s ease;
 }
 
 /* ── Masonry Grid ─── */
@@ -1200,10 +1207,14 @@ body.landing {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 500;
   font-size: 2em;
-  text-align: center;
+  text-align: left;
   margin: 0 0 1em;
-  color: #333
+  color: #333;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 /* ── COLLECTION PAGE ───────────────────────────────── */
 /* ── Banner ─── */
