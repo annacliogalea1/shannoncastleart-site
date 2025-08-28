@@ -1099,7 +1099,7 @@ body.landing {
   display: grid;
   /* mimic the spacious, centered layout */
   grid-auto-flow: column;
-  gap: clamp(3.5em, 7vw, 10em);
+  gap: clamp(5em, 7vw, 10em);
   align-items: center;
 }
 
