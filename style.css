@@ -1074,30 +1074,114 @@ body.landing {
 }
 
 /* ── Text Section ─── */
-.links {
-  padding: 6em 2em 4em;
-  text-align: center;
-  font-size: 1.2em;
-  line-height: 1.8;
-  max-width: 162px;
-  margin: 0 auto;
-  opacity: 0;
-  background: #f4f4f5;
+/* ── TABBED MENU (under banner) ───────────────────────────────── */
+:root {
+  /* 163px ≈ 10.2em (assuming 16px base) */
+  --tabbar-h: 10.2em;
+  --tabbar-bg: #f4f4f5;
+  --tab-text: #000;
+  --tab-hover: #1faacf;
+  --tab-underline-h: 2px;
 }
 
-.link-item {
+.tabbed-menu {
+  background: var(--tabbar-bg);
+  min-height: var(--tabbar-h);
+  display: grid;
+  place-items: center;
+  padding: 0 1.2em;
+}
+
+.tab-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* mimic the spacious, centered layout */
+  grid-auto-flow: column;
+  gap: clamp(2.5em, 6vw, 8em);
+  align-items: center;
+}
+
+.tab-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--tab-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-family: 'TWKLausanne', sans-serif;
-  font-weight: 750;
-  font-size: 1em;
-  text-align: center;
-  margin: 0 0 1em;
-  color: black;
-  text-transform: uppercase
+  font-weight: 550;                /* requested */
+  font-size: 2em;                    /* 24pt ≈ 32px ≈ 2em */
+  line-height: 1;
+  transition: color 220ms ease;
+  outline: none;
 }
 
-.link-item:hover {
-  color: #1faacf;
+.tab-link .tab-underline {
+  position: absolute;
+  bottom: -0.45em;                   /* sits nicely under the text */
+  left: 0;
+  width: 100%;
+  height: var(--tab-underline-h);
+  background: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 280ms ease;
 }
+
+.tab-link:hover,
+.tab-link:focus-visible {
+  color: var(--tab-hover);
+}
+
+.tab-link:hover .tab-underline,
+.tab-link:focus-visible .tab-underline,
+.tab-link.is-active .tab-underline {
+  transform: scaleX(1);
+}
+
+/* Active state keeps text black (like a selected tab) and underline shown */
+.tab-link.is-active {
+  color: var(--tab-text);
+}
+
+/* Responsive nudge so tall bar doesn’t overwhelm small screens */
+@media (max-width: 700px) {
+  :root { --tabbar-h: 8.5em; }
+  .tab-link { font-size: 1.5em; }
+  .tab-list { gap: clamp(1.5em, 6vw, 4em); }
+}
+
+/* ── Tab panels baseline ─────────────────── */
+.panel {
+  background: #fff;
+  color: #000;
+  padding: 3em 1.2em;
+}
+
+.panel .panel-inner {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+.panel-title {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 0 0 0.75em;
+}
+
+.panel-copy {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+
 
 /* ── Collections Section ─── */
 .collections {

@@ -69,17 +69,32 @@
   </div>
 </section>
 
-<section class="links">
-  <div class="link-item">
-    <p>Collections</p>
-    <p>Exhibitions</p>
-    <p>Contact</p>
-  </div>
-
-  </section>
+<!-- Tabbed Menu (under banner) -->
+<nav class="tabbed-menu" role="navigation" aria-label="Section menu">
+  <ul class="tab-list" role="tablist">
+    <li role="presentation">
+      <a href="#collections" role="tab" aria-selected="true" class="tab-link is-active">
+        <span class="tab-text">Collections</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li role="presentation">
+      <a href="#exhibitions" role="tab" aria-selected="false" class="tab-link">
+        <span class="tab-text">Exhibitions</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li role="presentation">
+      <a href="#contact" role="tab" aria-selected="false" class="tab-link">
+        <span class="tab-text">Contact</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 <!-- Collections Section -->
-<section class="collections">
+<section id="collections" class="collections" role="tabpanel" aria-labelledby="tab-collections">
   <h2 class="collections-title">Collections</h2>
     <div class="collection-grid">
       <div class="grid-item">
@@ -127,6 +142,23 @@
     </a>
   </div>
 </section>
+
+<!-- Exhibitions Panel -->
+<section id="exhibitions" class="panel panel-exhibitions" role="tabpanel" aria-labelledby="tab-exhibitions" hidden>
+  <div class="panel-inner">
+    <h2 class="panel-title">Exhibitions</h2>
+    <p class="panel-copy">Add your exhibitions grid or timeline here.</p>
+  </div>
+</section>
+
+<!-- Contact Panel -->
+<section id="contact" class="panel panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+  <div class="panel-inner">
+    <h2 class="panel-title">Contact</h2>
+    <p class="panel-copy">Short contact blurb or embed your existing form section here.</p>
+  </div>
+</section>
+
 </section>
   <footer class="site-footer">
   <div class="footer-container">

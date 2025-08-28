@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupQuoteFadeIn();
   setupMenuToggle();
   setupContactForm();
+  setupTabbedMenu();
 });
 
 // ─────────────────────────────────────────────
@@ -275,4 +276,61 @@ function setupContactForm() {
       }, 600);
     }, 5000);
   });
+}
+
+// ─────────────────────────────────────────────
+// 7. TABBED MENU (Collections / Exhibitions / Contact)
+// ─────────────────────────────────────────────
+function setupTabbedMenu() {
+  const tabLinks = [...document.querySelectorAll('.tab-link')];
+  const panels = [
+    document.getElementById('collections'),
+    document.getElementById('exhibitions'),
+    document.getElementById('contact')
+  ].filter(Boolean);
+
+  if (tabLinks.length === 0 || panels.length === 0) return;
+
+  const byHash = (hash) => tabLinks.find(a => a.getAttribute('href') === hash);
+
+  function activate(targetId, opts = { scroll: true }) {
+    // toggle active class + aria
+    tabLinks.forEach(a => {
+      const isActive = a.getAttribute('href') === `#${targetId}`;
+      a.classList.toggle('is-active', isActive);
+      a.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    // show/hide panels without reloading
+    panels.forEach(p => {
+      const show = p.id === targetId;
+      p.hidden = !show;
+    });
+
+    // optional smooth scroll to the menu’s bottom so the new section feels attached
+    if (opts.scroll) {
+      const menu = document.querySelector('.tabbed-menu');
+      if (menu) {
+        const y = menu.offsetTop + menu.offsetHeight;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    // update URL hash (no jump)
+    history.replaceState(null, '', `#${targetId}`);
+  }
+
+  // click handling
+  tabLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      activate(id);
+    });
+  });
+
+  // deep-link support: #exhibitions, etc.
+  const initialHash = window.location.hash && window.location.hash.trim();
+  const initial = byHash(initialHash) ? initialHash.slice(1) : 'collections';
+  activate(initial, { scroll: false });
 }
