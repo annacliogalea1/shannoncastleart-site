@@ -302,19 +302,20 @@ function setupTabbedMenu() {
     });
 
     panels.forEach(p => {
-  if (p.id === 'collections') return; // Always show Collections
   const show = p.id === targetId;
-  p.hidden = !show;
+  
+  if (show) {
+    p.hidden = false;
+    p.style.opacity = 0;
+    p.style.transition = 'opacity 300ms ease';
+    requestAnimationFrame(() => {
+      p.style.opacity = 1;
+    });
+  } else {
+    p.style.opacity = 0;
+    setTimeout(() => { p.hidden = true; }, 300);
+  }
 });
-
-    // optional smooth scroll to the menu’s bottom so the new section feels attached
-    if (opts.scroll) {
-      const menu = document.querySelector('.tabbed-menu');
-      if (menu) {
-        const y = menu.offsetTop + menu.offsetHeight;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }
 
     // update URL hash (no jump)
     history.replaceState(null, '', `#${targetId}`);

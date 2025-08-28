@@ -1079,6 +1079,7 @@ body.landing {
   --tabbar-h: 5em;
   --tabbar-bg: #f4f4f5;
   --tab-text: #000;
+  --tab-inactive: #333;
   --tab-hover: #1faacf;
   --tab-underline-h: 2px;
 }
@@ -1109,10 +1110,11 @@ body.landing {
   justify-content: center;
   text-decoration: none;
   color: var(--tab-text);
+  color: var(--tab-inactive);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-family: 'TWKLausanne', sans-serif;
-  font-weight: 550;                /* requested */
+  font-weight: 550;               
   font-size: 1.2em;
   line-height: 1;
   transition: color 220ms ease;
@@ -1136,9 +1138,13 @@ body.landing {
   color: var(--tab-hover);
 }
 
-/* Active state keeps text black (like a selected tab) and underline shown */
+.tab-link:hover .tab-underline,
+.tab-link:focus-visible .tab-underline {
+  transform: scaleX(1);
+}
+
 .tab-link.is-active {
-  color: var(--tab-inactive); /* now uses gray */
+  color: var(--tab-text);
 }
 
 /* Responsive nudge so tall bar doesn’t overwhelm small screens */
