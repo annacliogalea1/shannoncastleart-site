@@ -714,7 +714,7 @@ header h1 a:hover { opacity: 0.7; }
 .collection-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
+  gap: 0em;
   width: 90%;
   margin: 0 auto;
 }
@@ -724,6 +724,8 @@ header h1 a:hover { opacity: 0.7; }
   overflow: hidden;
   aspect-ratio: 4 / 3;
   isolation: isolate;
+  border: 0.035px solid #7b7b7b;
+  border-radius: 0;
 }
 
 .collection-grid .grid-item img {
@@ -770,7 +772,7 @@ header h1 a:hover { opacity: 0.7; }
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 500;
   font-size: 1.875em;
-  text-align: center;
+  text-align: left;
   z-index: 20;                   
   transition: transform 0.3s ease;
 }
