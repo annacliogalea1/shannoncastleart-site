@@ -1188,7 +1188,7 @@ body.landing {
   width: 100%;
   margin: 0 auto;
   padding: 3em 0 2em;
-  background: black;
+  background: white
 }
 
 .collections-title {
@@ -1197,8 +1197,7 @@ body.landing {
   font-size: 2em;
   text-align: center;
   margin: 0 0 1em;
-  color: white;
-  text-transform: uppercase;
+  color: #333
 }
 
 /* ── COLLECTION PAGE ───────────────────────────────── */
