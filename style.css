@@ -746,10 +746,6 @@ header h1 a:hover { opacity: 0.7; }
   transition: background 0.3s ease;
 }
 
-.collection-grid .grid-item:hover::before {
-  background: rgba(0, 0, 0, 0.6);
-}
-
 .grid-title {
   margin: 0.5em 0 0.2em;
   font-size: 1.4em;
