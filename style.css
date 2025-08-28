@@ -717,7 +717,7 @@ header h1 a:hover { opacity: 0.7; }
   gap: 0em;
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 10px; 
+  margin-bottom: 100px;
 }
 
 .collection-grid .grid-item {
@@ -725,7 +725,7 @@ header h1 a:hover { opacity: 0.7; }
   overflow: hidden;
   aspect-ratio: 4 / 3;
   isolation: isolate;
-  border: 0.025px solid white;
+  border: 0.01px solid white;
   border-radius: 0;
 }
 
