@@ -741,7 +741,6 @@ header h1 a:hover { opacity: 0.7; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
   z-index: 10;
   transition: background 0.3s ease;
 }
