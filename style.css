@@ -55,7 +55,7 @@
 /* ── BASE STYLES ───────────────────────────────────── */
 body * {
   display: inline-block;
-  transform: scaleY(1.05);
+  transform: scaleY(0.05);
   transform-origin: bottom;
 }
 
