@@ -1074,17 +1074,29 @@ body.landing {
 }
 
 /* ── Text Section ─── */
-.quote {
+.links {
   padding: 6em 2em 4em;
   text-align: center;
-  font-style: italic;
   font-size: 1.2em;
   line-height: 1.8;
-  max-width: 894px;
+  max-width: 162px;
   margin: 0 auto;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  background: #f4f4f5;
+}
+
+.link-item {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 750;
+  font-size: 1em;
+  text-align: center;
+  margin: 0 0 1em;
+  color: black;
+  text-transform: uppercase
+}
+
+.link-item:hover {
+  color: #1faacf;
 }
 
 /* ── Collections Section ─── */
