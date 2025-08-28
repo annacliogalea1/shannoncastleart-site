@@ -301,11 +301,11 @@ function setupTabbedMenu() {
       a.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-    // show/hide panels without reloading
     panels.forEach(p => {
-      const show = p.id === targetId;
-      p.hidden = !show;
-    });
+  if (p.id === 'collections') return; // Always show Collections
+  const show = p.id === targetId;
+  p.hidden = !show;
+});
 
     // optional smooth scroll to the menu’s bottom so the new section feels attached
     if (opts.scroll) {

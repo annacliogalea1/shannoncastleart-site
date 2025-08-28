@@ -1098,7 +1098,7 @@ body.landing {
   display: grid;
   /* mimic the spacious, centered layout */
   grid-auto-flow: column;
-  gap: clamp(2.5em, 6vw, 8em);
+  gap: clamp(3.5em, 7vw, 10em);
   align-items: center;
 }
 
@@ -1136,15 +1136,9 @@ body.landing {
   color: var(--tab-hover);
 }
 
-.tab-link:hover .tab-underline,
-.tab-link:focus-visible .tab-underline,
-.tab-link.is-active .tab-underline {
-  transform: scaleX(1);
-}
-
 /* Active state keeps text black (like a selected tab) and underline shown */
 .tab-link.is-active {
-  color: var(--tab-text);
+  color: var(--tab-inactive); /* now uses gray */
 }
 
 /* Responsive nudge so tall bar doesn’t overwhelm small screens */
