@@ -1076,8 +1076,7 @@ body.landing {
 /* ── Text Section ─── */
 /* ── TABBED MENU (under banner) ───────────────────────────────── */
 :root {
-  /* 163px ≈ 10.2em (assuming 16px base) */
-  --tabbar-h: 81px
+  --tabbar-h: 6em;
   --tabbar-bg: #f4f4f5;
   --tab-text: #000;
   --tab-hover: #1faacf;
