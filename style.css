@@ -1076,7 +1076,7 @@ body.landing {
 /* ── Text Section ─── */
 /* ── TABBED MENU (under banner) ───────────────────────────────── */
 :root {
-  --tabbar-h: 6em;
+  --tabbar-h: 5em;
   --tabbar-bg: #f4f4f5;
   --tab-text: #000;
   --tab-hover: #1faacf;
@@ -1113,7 +1113,7 @@ body.landing {
   letter-spacing: 0.05em;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 550;                /* requested */
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1;
   transition: color 220ms ease;
   outline: none;
