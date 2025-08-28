@@ -8,201 +8,197 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <h1><a href="overview.html" class="brand" aria-label="Go to Overview">SHANNON CASTLE</a></h1>
     <div id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation"></div>
   </header>
 
+  <!-- Fullscreen Menu -->
   <nav id="fullscreen-menu" class="fullscreen-menu">
-  <ul>
-    <li><a href="home.html">Home</a></li>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">Work</button>
+        <ul id="work-submenu" class="submenu">
+          <li><a href="overview.html">Overview</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Artist</a></li>
+      <li><a href="#">Studio</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">Exhibitions</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-    <li class="has-submenu">
-      <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">
-        Work
-      </button>
-      <ul id="work-submenu" class="submenu">
-        <li><a href="overview.html">Overview</a></li>
-      </ul>
-    </li>
+  <!-- Menu Overlay -->
+  <div id="overlay" class="overlay"></div>
 
-    <li><a href="#">Artist</a></li>
-    <li><a href="#">Studio</a></li>
-    <li><a href="#">Videos</a></li>
-    <li><a href="#">Exhibitions</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-  
-<div id="overlay" class="overlay"></div>
-
-<!-- Lightbox Functionality -->
-<div id="lightbox" class="lightbox">
-  <span class="close">✕</span>
-  <img id="lightbox-img" class="lightbox-content" />
-  <div id="lightbox-caption" class="lightbox-caption"></div>
-  <a class="prev">⟵</a>
-  <a class="next">⟶</a>
-</div>
-
-<!-- Fullscreen Rotating Banner Gallery -->
-<section class="banner-gallery">
-  <div class="slider" id="banner-slider">
-    <div class="slide active"><img src="images/placeholder pics-01.jpg" alt="Banner 1"></div>
-    <div class="slide"><img src="images/placeholder pics-02.jpg" alt="Banner 2" /></div>
-    <div class="slide"><img src="images/placeholder pics-03.jpg" alt="Banner 3" /></div>
-    <div class="slide"><img src="images/placeholder pics-04.jpg" alt="Banner 4" /></div>
-    <div class="slide"><img src="images/placeholder pics-05.jpg" alt="Banner 5" /></div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">✕</span>
+    <img id="lightbox-img" class="lightbox-content" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <a class="prev">⟵</a>
+    <a class="next">⟶</a>
   </div>
 
-  <div class="nav-arrows">
-    <span class="arrow prev">&#10094;</span>
-    <span class="arrow next">&#10095;</span>
-  </div>
-
-  <div class="nav-dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-<!-- Tabbed Menu (under banner) -->
-<nav class="tabbed-menu" role="navigation" aria-label="Section menu">
-  <ul class="tab-list" role="tablist">
-    <li role="presentation">
-      <a href="#collections" role="tab" aria-selected="false" class="tab-link">
-        <span class="tab-text">Collections</span>
-        <span class="tab-underline" aria-hidden="true"></span>
-      </a>
-    </li>
-    <li role="presentation">
-      <a href="#exhibitions" role="tab" aria-selected="false" class="tab-link">
-        <span class="tab-text">Exhibitions</span>
-        <span class="tab-underline" aria-hidden="true"></span>
-      </a>
-    </li>
-    <li role="presentation">
-      <a href="#contact" role="tab" aria-selected="false" class="tab-link">
-        <span class="tab-text">Contact</span>
-        <span class="tab-underline" aria-hidden="true"></span>
-      </a>
-    </li> 
-  </ul>
-</nav>
-
-<!-- Collections Section -->
-<section id="collections" class="collections" role="tabpanel" aria-labelledby="tab-collections">
-  <h2 class="collections-title">Collections</h2>
-  <div class="collection-grid">
-
-<div class="collection-grid">
-  <div class="grid-wrapper">
-    <div class="grid-item">
-      <a href="collection-one.html">
-        <img src="images/GLASS 6.jpg" alt="The Mermaid Ibiza" />
-      </a>
-    </div>
-    <p class="grid-title">The Mermaid Ibiza</p>
-    <p class="grid-subtitle">2023</p>
-  </div>
-
-  <div class="grid-wrapper">
-    <div class="grid-item">
-      <a href="#">
-        <img src="images/WoodsmanCopy2.jpg" alt="Rhiannon">
-      </a>
-    </div>
-    <p class="grid-title">Rhiannon</p>
-    <p class="grid-subtitle">2023</p>
-  </div>
-
-  <div class="grid-wrapper">
-    <div class="grid-item">
-      <a href="#">
-        <img src="images/IbizaSilverRomanEdit.jpg" alt="Lovers">
-      </a>
-    </div>
-    <p class="grid-title">Lovers</p>
-    <p class="grid-subtitle">2023</p>
-  </div>
-
-  <div class="grid-wrapper">
-    <div class="grid-item">
-      <a href="#">
-        <img src="images/CapeVerdeNewFramedRoman.jpg" alt="Cape Verde">
-      </a>
-    </div>
-    <p class="grid-title">Cape Verde</p>
-    <p class="grid-subtitle">2023</p>
-  </div>
-
-  <div class="grid-wrapper">
-    <div class="grid-item">
-      <a href="#">
-        <img src="images/BikeBackTireCU.JPG" alt="1958 Harley Duo-Glide">
-      </a>
-    </div>
-    <p class="grid-title">1958 Harley Duo-Glide</p>
-    <p class="grid-subtitle">2023</p>
-  </div>
-
-  <div class="grid-wrapper">
-    <div class="grid-item">
-      <a href="#">
-        <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI: Abstract Works">
-      </a>
-    </div>
-    <p class="grid-title">AI: Abstract Works</p>
-    <p class="grid-subtitle">2023</p>
-  </div>
-</div>
-
-<!-- Exhibitions Panel -->
-<section id="exhibitions" class="panel panel-exhibitions" role="tabpanel" aria-labelledby="tab-exhibitions" hidden>
-  <div class="panel-inner">
-    <h2 class="panel-title">Exhibitions</h2>
-    <p class="panel-copy">Add your exhibitions grid or timeline here.</p>
-  </div>
-</section>
-
-<!-- Contact Panel -->
-<section id="contact" class="panel panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
-  <div class="panel-inner">
-    <h2 class="panel-title">Contact</h2>
-    <p class="panel-copy">Short contact blurb or embed your existing form section here.</p>
-  </div>
-</section>
-
-<section class="back-to-top-section">
-  <div class="back-to-top-container">
-    <a href="#" class="back-to-top-link">
-      <span class="arrow">↑</span>
-      <span class="back-text">Back to top</span>
-    </a>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-section footer-left">
-      <a href="https://www.instagram.com/" target="_blank" class="footer-link">Instagram</a>
-      <span class="separator">|</span>
-      <a href="about.html" class="footer-link">About Shannon Castle</a>
-      <span class="separator">|</span>
-      <a href="contact.html" class="footer-link">Contact</a>
+  <!-- Banner Gallery -->
+  <section class="banner-gallery">
+    <div class="slider" id="banner-slider">
+      <div class="slide active"><img src="images/placeholder pics-01.jpg" alt="Banner 1"></div>
+      <div class="slide"><img src="images/placeholder pics-02.jpg" alt="Banner 2" /></div>
+      <div class="slide"><img src="images/placeholder pics-03.jpg" alt="Banner 3" /></div>
+      <div class="slide"><img src="images/placeholder pics-04.jpg" alt="Banner 4" /></div>
+      <div class="slide"><img src="images/placeholder pics-05.jpg" alt="Banner 5" /></div>
     </div>
 
-    <div class="footer-section footer-right">
-      <a href="terms.html" class="footer-link">Terms of Use</a>
-      <span class="separator">|</span>
-      <a href="privacy.html" class="footer-link">Privacy Policy</a>
-      <span class="separator">|</span>
-      <span class="footer-copy">© 2025 Shannon Castle</span>
+    <div class="nav-arrows">
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
     </div>
-  </div>
-</footer>
+
+    <div class="nav-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Tabbed Menu -->
+  <nav class="tabbed-menu" role="navigation" aria-label="Section menu">
+    <ul class="tab-list" role="tablist">
+      <li role="presentation">
+        <a href="#collections" role="tab" aria-selected="false" class="tab-link">
+          <span class="tab-text">Collections</span>
+          <span class="tab-underline" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#exhibitions" role="tab" aria-selected="false" class="tab-link">
+          <span class="tab-text">Exhibitions</span>
+          <span class="tab-underline" aria-hidden="true"></span>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#contact" role="tab" aria-selected="false" class="tab-link">
+          <span class="tab-text">Contact</span>
+          <span class="tab-underline" aria-hidden="true"></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Collections Section -->
+  <section id="collections" class="collections" role="tabpanel" aria-labelledby="tab-collections">
+    <h2 class="collections-title">Collections</h2>
+
+    <div class="collection-grid">
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="collection-one.html">
+            <img src="images/GLASS 6.jpg" alt="The Mermaid Ibiza" />
+          </a>
+        </div>
+        <p class="grid-title">The Mermaid Ibiza</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/WoodsmanCopy2.jpg" alt="Rhiannon"></a>
+        </div>
+        <p class="grid-title">Rhiannon</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/IbizaSilverRomanEdit.jpg" alt="Lovers"></a>
+        </div>
+        <p class="grid-title">Lovers</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/CapeVerdeNewFramedRoman.jpg" alt="Cape Verde"></a>
+        </div>
+        <p class="grid-title">Cape Verde</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/BikeBackTireCU.JPG" alt="1958 Harley Duo-Glide"></a>
+        </div>
+        <p class="grid-title">1958 Harley Duo-Glide</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI: Abstract Works"></a>
+        </div>
+        <p class="grid-title">AI: Abstract Works</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+    </div> 
+
+  </section> 
+
+  <!-- Exhibitions Panel -->
+  <section id="exhibitions" class="panel panel-exhibitions" role="tabpanel" aria-labelledby="tab-exhibitions" hidden>
+    <div class="panel-inner">
+      <h2 class="panel-title">Exhibitions</h2>
+      <p class="panel-copy">Add your exhibitions grid or timeline here.</p>
+    </div>
+  </section>
+
+  <!-- Contact Panel -->
+  <section id="contact" class="panel panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+    <div class="panel-inner">
+      <h2 class="panel-title">Contact</h2>
+      <p class="panel-copy">Short contact blurb or embed your existing form section here.</p>
+    </div>
+  </section>
+
+  <!-- Back to Top -->
+  <section class="back-to-top-section">
+    <div class="back-to-top-container">
+      <a href="#" class="back-to-top-link">
+        <span class="arrow">↑</span>
+        <span class="back-text">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section footer-left">
+        <a href="https://www.instagram.com/" target="_blank" class="footer-link">Instagram</a>
+        <span class="separator">|</span>
+        <a href="about.html" class="footer-link">About Shannon Castle</a>
+        <span class="separator">|</span>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+
+      <div class="footer-section footer-right">
+        <a href="terms.html" class="footer-link">Terms of Use</a>
+        <span class="separator">|</span>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="separator">|</span>
+        <span class="footer-copy">© 2025 Shannon Castle</span>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
