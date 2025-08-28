@@ -1078,8 +1078,8 @@ body.landing {
 :root {
   --tabbar-h: 5em;
   --tabbar-bg: #f4f4f5;
-  --tab-text: #000;
-  --tab-inactive: #333;
+  --tab-text: #333;
+  --tab-inactive: #7c7c7c;
   --tab-hover: #1faacf;
   --tab-underline-h: 2px;
 }
@@ -1139,7 +1139,8 @@ body.landing {
 }
 
 .tab-link:hover .tab-underline,
-.tab-link:focus-visible .tab-underline {
+.tab-link:focus-visible .tab-underline,
+.tab-link.is-active .tab-underline {
   transform: scaleX(1);
 }
 
