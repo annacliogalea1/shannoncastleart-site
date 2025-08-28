@@ -1089,7 +1089,7 @@ body.landing {
   min-height: var(--tabbar-h);
   display: grid;
   place-items: center;
-  padding: 0 1.2em;
+  padding: 0.5em 1em;
 }
 
 .tab-list {
@@ -1099,7 +1099,7 @@ body.landing {
   display: grid;
   /* mimic the spacious, centered layout */
   grid-auto-flow: column;
-  gap: clamp(5em, 7vw, 10em);
+  gap: clamp(4em, 8vw, 10em);
   align-items: center;
 }
 
