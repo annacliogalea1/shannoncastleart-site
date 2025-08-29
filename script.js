@@ -303,20 +303,31 @@ function setupTabbedMenu() {
     });
 
     panels.forEach(p => {
-  const show = p.id === targetId;
-  
-  if (show) {
-    p.hidden = false;
-    p.style.opacity = 0;
-    p.style.transition = 'opacity 300ms ease';
-    requestAnimationFrame(() => {
-      p.style.opacity = 1;
+      const show = p.id === targetId;
+
+      if (show) {
+        p.hidden = false;
+
+        // ✨ Reflow fix for masonry layout on tab activation
+        if (targetId === 'selected-works') {
+          const grid = document.querySelector('#selected-works .masonry-grid');
+          if (grid) {
+            grid.style.display = 'none';
+            grid.offsetHeight; // force reflow
+            grid.style.display = '';
+          }
+        }
+
+        p.style.opacity = 0;
+        p.style.transition = 'opacity 300ms ease';
+        requestAnimationFrame(() => {
+          p.style.opacity = 1;
+        });
+      } else {
+        p.style.opacity = 0;
+        setTimeout(() => { p.hidden = true; }, 300);
+      }
     });
-  } else {
-    p.style.opacity = 0;
-    setTimeout(() => { p.hidden = true; }, 300);
-  }
-});
 
     // update URL hash (no jump)
     history.replaceState(null, '', `#${targetId}`);
