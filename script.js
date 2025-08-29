@@ -260,21 +260,9 @@ function setupContactForm() {
 
   if (!form || !confirmation || !userName) return;
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+  form.addEventListener('submit', function () {
     const name = document.getElementById('name')?.value.trim() || 'there';
     userName.textContent = name;
-    form.style.display = 'none';
-    confirmation.style.display = 'block';
-    setTimeout(() => confirmation.classList.add('visible'), 50);
-    setTimeout(() => {
-      confirmation.classList.remove('visible');
-      setTimeout(() => {
-        confirmation.style.display = 'none';
-        form.reset();
-        form.style.display = 'flex';
-      }, 600);
-    }, 5000);
   });
 }
 
