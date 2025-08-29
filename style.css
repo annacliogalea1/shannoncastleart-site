@@ -1225,12 +1225,12 @@ body.landing {
 .panel-selected-works {
   width: 100%;
   background: white;
-  padding: 3em 0 2.5em;
+  padding: 1em 0 2.5em;
 }
 
 .panel-selected-works .masonry-gallery {
-  max-width: 1300px;
-  width: 100%;
+  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
   padding: 0 1.2em;
   box-sizing: border-box;
