@@ -69,29 +69,29 @@
     </div>
   </section>
 
-<!-- Tabbed Menu -->
+  <!-- Tabbed Menu -->
   <nav class="tabbed-menu" role="navigation" aria-label="Section menu">
     <ul class="tab-list" role="tablist">
       <li role="presentation">
-        <a id="tab-selected-works" href="#selected-works" role="tab" aria-selected="true" class="tab-link">
+        <a id="tab-selected-works" href="#selected-works">
           <span class="tab-text">Selected Works</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
       </li>
       <li role="presentation">
-        <a id="tab-collections" href="#collections" role="tab" aria-selected="false" class="tab-link">
+        <a id="tab-collections" href="#collections">
           <span class="tab-text">Collections</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
       </li>
       <li role="presentation">
-        <a id="tab-exhibitions" href="#exhibitions" role="tab" aria-selected="false" class="tab-link">
+        <a id="tab-exhibitions" href="#exhibitions">
           <span class="tab-text">Exhibitions</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
       </li>
       <li role="presentation">
-        <a id="tab-contact" href="#contact" role="tab" aria-selected="false" class="tab-link">
+        <a id="tab-contact" href="#contact">
           <span class="tab-text">Contact</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
@@ -100,34 +100,88 @@
   </nav>
 
   <!-- Selected Works Panel -->
-  <section id="selected-works" class="panel panel-selected-works" role="tabpanel" aria-labelledby="tab-selected-works">
+  <section id="selected-works" class="panel panel-selected-works" role="tabpanel" aria-labelledby="tab-exhibitions" hidden>
     <div class="panel-inner">
       <h2 class="panel-title">Selected Works</h2>
-      <div class="selected-works-gallery">
-        <div class="selected-works-grid">
-          <img src="images/WoodsmanCopy2.jpg" alt="Sisters" />
-          <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" />
-          <!-- Additional images... -->
-        </div>
-      </div>
+    <div class="selected-works-gallery">
+      <div class="selected-works-grid">
+        <img src="images/WoodsmanCopy2.jpg" alt="Sisters" data-title="‘Woodsman’ – framed in gold, oil on panel, 2022" />
+        <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" data-title="‘AI Tile’ – digital print, 2025" />
+        <img src="images/SantaMariaFramed2.jpg" alt="Santa Maria" data-title="‘Santa Maria’ – framed in silver, oil on canvas, 2022" />
+        <img src="images/BikeFullShot.JPG" alt="Bike 1" data-title="‘Bike 1’ – full shot, oil on panel, 2022" />
+        <img src="images/BikeBackTireCU.JPG" alt="Bike 2" data-title="‘Bike 2’ – close-up, oil on panel, 2022" />
+        <img src="images/bike-feature-3.jpg" alt="Bike 3" data-title="‘Bike 3’ – feature shot, oil on panel, 2022" />
+        <img src="images/bike-feature-5.jpg" alt="Bike 4" data-title="‘Bike 4’ – feature shot, oil on panel, 2022" />
+        <img src="images/bike-feature-7.jpg" alt="Bike 5" data-title="‘Bike 5’ – feature shot, oil on panel, 2022" />
+        <img src="images/Bikew_FlagCandid.JPG" alt="Bike 6" data-title="‘Bike 6’ – feature shot, oil on panel, 2022" />
+        <img src="images/bike-feature-7.jpg" alt="Bike 7" data-title="‘Bike 7’ – feature shot, oil on panel, 2022" />
+        <img src="images/TheOracleRomanEdit.jpg" alt="The Oracle" data-title="‘The Oracle’ – framed in gold, oil on panel, 2022" />
+        <img src="images/SistersFramedRomanEdit.jpg" alt="Sisters" data-title="‘Sisters’ – framed in silver, oil on canvas, 2022" />
+        <img src="images/IbizaSilverRomanEdit.jpg" alt="Ibiza Silver" data-title="‘Ibiza Silver’ – framed in silver, oil on canvas, 2022" />
+        <img src="images/CatherineFramedRomanEdit.jpg" alt="Catherine" data-title="‘Catherine’ – framed in gold, oil on panel, 2022" />
+        <img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI Tile" data-title="‘AI Tile’ – digital print, 2025" />
     </div>
   </section>
 
-  <!-- Collections Panel -->
+  <!-- Collections Section -->
   <section id="collections" class="panel panel-collections" role="tabpanel" aria-labelledby="tab-collections" hidden>
-    <div class="panel-inner">
-      <h2 class="panel-title">Collections</h2>
-      <div class="collection-grid">
-        <div class="grid-wrapper">
-          <div class="grid-item">
-            <a href="#"><img src="images/GLASS 6.jpg" alt="Collection" /></a>
-          </div>
-          <p class="grid-title">The Mermaid Ibiza</p>
+    <h2 class="collections-title">Collections</h2>
+
+    <div class="collection-grid">
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="collection-one.html">
+            <img src="images/GLASS 6.jpg" alt="The Mermaid Ibiza" />
+          </a>
         </div>
-        <!-- More items... -->
+        <p class="grid-title">The Mermaid Ibiza</p>
+        <p class="grid-subtitle">2023</p>
       </div>
-    </div>
-  </section>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/WoodsmanCopy2.jpg" alt="Rhiannon"></a>
+        </div>
+        <p class="grid-title">Rhiannon</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/IbizaSilverRomanEdit.jpg" alt="Lovers"></a>
+        </div>
+        <p class="grid-title">Lovers</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/CapeVerdeNewFramedRoman.jpg" alt="Cape Verde"></a>
+        </div>
+        <p class="grid-title">Cape Verde</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/BikeBackTireCU.JPG" alt="1958 Harley Duo-Glide"></a>
+        </div>
+        <p class="grid-title">1958 Harley Duo-Glide</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+      <div class="grid-wrapper">
+        <div class="grid-item">
+          <a href="#"><img src="images/scan_2025-07-28_17-31-41.jpg" alt="AI: Abstract Works"></a>
+        </div>
+        <p class="grid-title">AI: Abstract Works</p>
+        <p class="grid-subtitle">2023</p>
+      </div>
+
+    </div> 
+
+  </section> 
 
   <!-- Exhibitions Panel -->
   <section id="exhibitions" class="panel panel-exhibitions" role="tabpanel" aria-labelledby="tab-exhibitions" hidden>
@@ -139,29 +193,73 @@
 
   <!-- Contact Panel -->
   <section id="contact" class="panel panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
-    <div class="panel-inner">
-      <h2 class="panel-title">Contact</h2>
-      <form id="contact-form" class="contact-form">
-        <label for="name">Name*</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Email*</label>
-        <input type="email" id="email" name="email" required />
-        <label for="message">Message*</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <h2 class="panel-title contact-title">Contact</h2>
+    <form id="contact-form" class="contact-form">
+      <div class="contact-form-row">
+        <div class="form-field">
+          <label for="name">Name<span class="required">*</span></label>
+      <input type="text" id="name" name="name" required />
     </div>
-  </section>
+    <div class="form-field">
+      <label for="email">Email<span class="required">*</span></label>
+      <input type="email" id="email" name="email" required />
+    </div>
+  </div>
+  <div class="form-field">
+    <label for="title">Subject<span class="required">*</span></label>
+    <input type="text" id="title" name="title" required />
+  </div>
+  <div class="form-field">
+    <label for="message">Message<span class="required">*</span></label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+  <button type="submit">Send Message</button>
+</form>
+
+<!-- Load EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("p0aMlDyeD1NE151kR"); // Replace with your public key from EmailJS (not service ID)
+  })();
+</script>
+
+<!-- Instagram Gallery Scrollable with Hover Info -->
+<section class="instagram-gallery-manual full-bleed">
+  <div class="instagram-gallery-wrapper">
+    <div class="vignette left"></div>
+    <button class="insta-arrow left" aria-label="Scroll left">&#8592;</button>
+
+    <div class="instagram-gallery-track" id="instaTrack">
+      <!-- Each post -->
+      <div class="insta-post"><img src="images/insta1.png" alt="Instagram post 1"><div class="insta-overlay"><p class="caption">"Dreamscape horizon study"</p><p class="meta">&#10084; 142 &nbsp; &#128172; 9</p></div></div>
+      <div class="insta-post"><img src="images/insta2.png" alt="Instagram post 2"><div class="insta-overlay"><p class="caption">"Studio quietude and sun"</p><p class="meta">&#10084; 198 &nbsp; &#128172; 14</p></div></div>
+      <div class="insta-post"><img src="images/insta3.png" alt="Instagram post 3"><div class="insta-overlay"><p class="caption">"Detail: silver canvas"</p><p class="meta">&#10084; 120 &nbsp; &#128172; 7</p></div></div>
+      <div class="insta-post"><img src="images/insta4.png" alt="Instagram post 4"><div class="insta-overlay"><p class="caption">"Ibiza textures exploration"</p><p class="meta">&#10084; 163 &nbsp; &#128172; 5</p></div></div>
+      <div class="insta-post"><img src="images/insta5.png" alt="Instagram post 5"><div class="insta-overlay"><p class="caption">"Gold leaf in process"</p><p class="meta">&#10084; 104 &nbsp; &#128172; 4</p></div></div>
+      <div class="insta-post"><img src="images/insta6.png" alt="Instagram post 6"><div class="insta-overlay"><p class="caption">"Monochrome test panel"</p><p class="meta">&#10084; 89 &nbsp; &#128172; 2</p></div></div>
+      <div class="insta-post"><img src="images/insta7.png" alt="Instagram post 7"><div class="insta-overlay"><p class="caption">"Desert reflections"</p><p class="meta">&#10084; 175 &nbsp; &#128172; 11</p></div></div>
+      <div class="insta-post"><img src="images/insta8.png" alt="Instagram post 8"><div class="insta-overlay"><p class="caption">"Color test swipe"</p><p class="meta">&#10084; 132 &nbsp; &#128172; 6</p></div></div>
+      <div class="insta-post"><img src="images/insta9.png" alt="Instagram post 9"><div class="insta-overlay"><p class="caption">"Sunlight on unfinished panel"</p><p class="meta">&#10084; 166 &nbsp; &#128172; 8</p></div></div>
+      <div class="insta-post"><img src="images/insta10.png" alt="Instagram post 10"><div class="insta-overlay"><p class="caption">"Studio notes: glass series"</p><p class="meta">&#10084; 147 &nbsp; &#128172; 10</p></div></div>
+      <div class="insta-post"><img src="images/insta11.png" alt="Instagram post 11"><div class="insta-overlay"><p class="caption">"Layered reflections"</p><p class="meta">&#10084; 111 &nbsp; &#128172; 3</p></div></div>
+      <div class="insta-post"><img src="images/insta12.png" alt="Instagram post 12"><div class="insta-overlay"><p class="caption">"Framing complete."</p><p class="meta">&#10084; 139 &nbsp; &#128172; 5</p></div></div>
+    </div>
+
+    <button class="insta-arrow right" aria-label="Scroll right">&#8594;</button>
+    <div class="vignette right"></div>
+  </div>
+</section>
 
   <!-- Back to Top -->
-<section class="back-to-top-section">
-  <div class="back-to-top-container">
-    <a href="#" class="back-to-top-link">
-      <span class="arrow">↑</span>
-      <span class="back-text">Back to top</span>
+  <section class="back-to-top-section">
+    <div class="back-to-top-container">
+      <a href="#" class="back-to-top-link">
+        <span class="arrow">↑</span>
+        <span class="back-text">Back to top</span>
       </a>
     </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
