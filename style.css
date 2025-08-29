@@ -1225,7 +1225,7 @@ body.landing {
 .panel-selected-works {
   width: 100%;
   background: white;
-  padding: 0 0 2.5em;
+  padding: 1em 0 2.5em;
 }
 
 .panel-selected-works .masonry-gallery {
@@ -1237,7 +1237,7 @@ body.landing {
 }
 
 .panel-selected-works .masonry-grid {
-  column-count: 3;
+  column-count: 4;
   column-gap: 10px;
   margin-bottom: 2.5em;
 }
