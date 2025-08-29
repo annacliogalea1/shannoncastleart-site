@@ -302,7 +302,7 @@ function setupTabbedMenu() {
 
         // ✨ Reflow fix for masonry layout on tab activation
         if (targetId === 'selected-works') {
-          const grid = document.querySelector('#selected-works .masonry-grid');
+          const grid = document.querySelector('#selected-works .selected-works-grid');
           if (grid) {
             grid.style.display = 'none';
             grid.offsetHeight; // force reflow
