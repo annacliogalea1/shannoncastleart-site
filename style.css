@@ -715,7 +715,7 @@ header h1 a:hover { opacity: 0.7; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(402px, 1fr));
   justify-content: center;
-  gap: 1.5em;
+  gap: 88px 40px; /* 88px row gap, 40px column gap */
   width: 100%;
   max-width: 1300px;
   margin: 0 auto 100px;
@@ -750,6 +750,7 @@ header h1 a:hover { opacity: 0.7; }
   isolation: isolate;
   border: 0.01px solid white;
   border-radius: 0;
+  cursor: pointer;
 }
 
 .collection-grid .grid-item img {
@@ -762,8 +763,13 @@ header h1 a:hover { opacity: 0.7; }
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 10;
-  transition: background 0.3s ease;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.4s ease; 
+  z-index: 1;
+}
+
+.collection-grid .grid-item:hover::before {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .grid-title {
@@ -787,6 +793,11 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 .grid-title:hover {
+  color: #1faacf;
+  transition: color 0.3s ease;
+}
+
+.grid-wrapper:hover .grid-subtitle {
   color: #1faacf;
   transition: color 0.3s ease;
 }
