@@ -1275,11 +1275,10 @@ body.landing {
 .panel-selected-works .panel-title {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 500;
-  font-size: 2.2em;
+  font-size: 2em;
   color: #111;
-  letter-spacing: 0.04em;
-  margin-top: 1em;
-  margin-bottom: 0.25em;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
   text-transform: none;
   text-align: left;
 }
