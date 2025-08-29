@@ -1696,3 +1696,89 @@ main.contact-layout {
 .back-to-home-section {
   margin-top: 176px;
 }
+
+/* Instagram Gallery */
+.instagram-gallery {
+  width: 100%;
+  padding: 3em 0 2em;
+  background: #f7f7f7;
+  overflow: hidden;
+  font-family: 'TWKLausanne', sans-serif;
+}
+
+.gallery-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(1200px, 92vw);
+  margin: 0 auto 1.5em;
+  padding: 0 1.2em;
+  flex-wrap: wrap;
+}
+
+.insta-title {
+  font-size: 1.6em;
+  font-weight: 450;
+  color: #111;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.insta-follow-link {
+  font-size: 0.9em;
+  color: #000;
+  text-decoration: underline;
+  font-weight: 250;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
+}
+
+.insta-follow-link:hover {
+  opacity: 0.6;
+}
+
+.instagram-scroll {
+  overflow: hidden;
+  position: relative;
+}
+
+.instagram-track {
+  display: flex;
+  gap: 12px;
+  animation: scroll-left 40s linear infinite;
+  width: max-content;
+  padding: 0 1.2em;
+}
+
+.instagram-track a {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.instagram-track img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.instagram-track img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .instagram-track img {
+    width: 140px;
+    height: 140px;
+  }
+}
