@@ -347,3 +347,15 @@ function setupTabbedMenu() {
   const initial = byHash(initialHash) ? initialHash.slice(1) : 'selected-works';
   activate(initial, { scroll: false });
 }
+
+// Instagram scroll buttons
+document.querySelectorAll('.insta-arrow').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const track = document.getElementById('instaTrack');
+    const scrollAmount = 240; // adjust based on image width + margin
+    track.scrollBy({
+      left: btn.classList.contains('left') ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+});

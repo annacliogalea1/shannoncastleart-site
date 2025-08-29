@@ -1697,88 +1697,113 @@ main.contact-layout {
   margin-top: 176px;
 }
 
-/* Instagram Gallery */
-.instagram-gallery {
+/* Instagram Manual Scroll Gallery */
+.instagram-gallery-manual {
   width: 100%;
-  padding: 3em 0 2em;
-  background: #f7f7f7;
+  background: #fff;
+  padding: 2em 0;
   overflow: hidden;
-  font-family: 'TWKLausanne', sans-serif;
 }
 
-.gallery-title-row {
+.instagram-gallery-wrapper {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1em;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: min(1200px, 92vw);
-  margin: 0 auto 1.5em;
-  padding: 0 1.2em;
-  flex-wrap: wrap;
 }
 
-.insta-title {
-  font-size: 1.6em;
-  font-weight: 450;
-  color: #111;
-  margin: 0;
-  text-transform: uppercase;
+.instagram-gallery-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 0; /* no gaps between posts */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.insta-follow-link {
-  font-size: 0.9em;
-  color: #000;
-  text-decoration: underline;
-  font-weight: 250;
-  letter-spacing: 0.05em;
+.instagram-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.insta-post {
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+}
+
+.insta-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover Overlay */
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 0.85em;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: opacity 0.3s ease;
+  padding: 1em;
+  text-align: center;
 }
 
-.insta-follow-link:hover {
+.insta-post:hover .insta-overlay {
+  opacity: 1;
+}
+
+.caption {
+  font-weight: 350;
+  margin-bottom: 0.4em;
+}
+
+.meta {
+  font-weight: 200;
+}
+
+/* Arrows */
+.insta-arrow {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0.5em;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.insta-arrow:hover {
   opacity: 0.6;
 }
 
-.instagram-scroll {
-  overflow: hidden;
-  position: relative;
+.insta-arrow.left {
+  margin-right: 0.6em;
 }
 
-.instagram-track {
-  display: flex;
-  gap: 12px;
-  animation: scroll-left 40s linear infinite;
-  width: max-content;
-  padding: 0 1.2em;
+.insta-arrow.right {
+  margin-left: 0.6em;
 }
 
-.instagram-track a {
-  flex-shrink: 0;
-  display: inline-block;
-}
-
-.instagram-track img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 2px;
-  transition: transform 0.3s ease;
-}
-
-.instagram-track img:hover {
-  transform: scale(1.05);
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
+@media (max-width: 600px) {
+  .insta-post {
+    width: 160px;
+    height: 160px;
   }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
-@media (max-width: 768px) {
-  .instagram-track img {
-    width: 140px;
-    height: 140px;
+  .insta-arrow {
+    font-size: 1.5em;
   }
 }
