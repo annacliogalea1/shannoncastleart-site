@@ -1228,25 +1228,11 @@ body.landing {
   padding: 1em 0 2.5em;
 }
 
-.selected-works-gallery {
-  max-width: 1200px;
-  padding: 0 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.selected-works-gallery .panel-title,
-.selected-works-gallery .selected-works-subcaption {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.panel-selected-works .selected-works-gallery {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px; /* creates even left and right margins */
-  box-sizing: border-box;
+.selected-works-gallery .panel-title {
+  max-width: 1160px; /* or whatever your grid's max-width is */
+  padding-left: 0; /* or fine-tune if needed */
+  display: block;
+  margin-left: 10px; /* Adjust until it lines up visually */
 }
 
 .panel-selected-works .selected-works-grid {
