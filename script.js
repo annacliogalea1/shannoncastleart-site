@@ -294,35 +294,42 @@ function setupTabbedMenu() {
       a.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-    panels.forEach(p => {
-      const show = p.id === targetId;
+panels.forEach(p => {
+  const show = p.id === targetId;
 
-      if (show) {
-        p.hidden = false;
+  if (show) {
+    p.hidden = false;
+    p.classList.add('fade-in');
+    p.classList.add('showing');
 
-        // ✨ Reflow fix for masonry layout on tab activation
-        if (targetId === 'selected-works') {
-          const grid = document.querySelector('#selected-works .selected-works-grid');
-          if (grid) {
-            grid.style.display = 'none';
-            grid.offsetHeight; // force reflow
-            grid.style.display = '';
-          }
-        }
-
-        p.style.opacity = 0;
-        p.style.transition = 'opacity 300ms ease';
-        requestAnimationFrame(() => {
-          p.style.opacity = 1;
-        });
-      } else {
-        p.style.opacity = 0;
-        setTimeout(() => { p.hidden = true; }, 300);
+    // Reflow fix (keep this!)
+    if (targetId === 'selected-works') {
+      const grid = document.querySelector('#selected-works .selected-works-grid');
+      if (grid) {
+        grid.style.display = 'none';
+        grid.offsetHeight;
+        grid.style.display = '';
       }
+    }
+
+    // Force animation restart
+    p.style.opacity = 0;
+    p.style.transform = 'translateY(10px)';
+    requestAnimationFrame(() => {
+      p.style.opacity = 1;
+      p.style.transform = 'translateY(0)';
     });
+  } else {
+    p.classList.remove('showing');
+    setTimeout(() => {
+      p.hidden = true;
+    }, 300); // match CSS transition time
+  }
+});
+
 
     // update URL hash (no jump)
-    history.replaceState(null, '', `#${targetId}`);
+    history.pushState(null, '', ' ');
   }
 
   // click handling

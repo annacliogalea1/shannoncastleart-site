@@ -1161,8 +1161,36 @@ body.landing {
   transform: scaleX(1);
 }
 
+.tab-link.is-active .tab-underline {
+  transform: scaleX(1);
+  background: #333
+}
+
 .tab-link.is-active {
-  color: var(--tab-text);
+  color: #333
+}
+
+.panel[hidden] {
+  display: block !important;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.panel.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.panel.fade-in.showing {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  position: relative;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 /* Responsive nudge so tall bar doesn’t overwhelm small screens */
