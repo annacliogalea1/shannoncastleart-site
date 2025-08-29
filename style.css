@@ -98,7 +98,7 @@ body {
   letter-spacing: 0.1em;
 }
 
-h1, h2, nav, .submenu a {
+h1, nav, .submenu a {
   font-weight: 250;
   text-transform: uppercase;
 }
@@ -1319,6 +1319,23 @@ body.landing {
   }
 }
 
+/* Home page Contact title — override global .panel-title */
+.contact-title {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  color: #111;
+  margin: 0 0 0.75em;
+  text-transform: none; 
+  text-align: left;
+}
+
+/* Align the form left under the title */
+.panel-contact .contact-form {
+  margin: 0;       
+  padding: 0;      
+  max-width: 600px;
+}
 
 /* ── COLLECTION PAGE ───────────────────────────────── */
 /* ── Banner ─── */
