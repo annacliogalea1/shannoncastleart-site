@@ -192,10 +192,12 @@
   </section>
 
   <!-- Contact Panel -->
-<form id="contact-form" class="contact-form">
-  <div class="contact-form-row">
-    <div class="form-field">
-      <label for="name">Name<span class="required">*</span></label>
+  <section id="contact" class="contact" role="tabpanel" aria-labelledby="tab-contact">
+    <h2 class="panel-title contact-title">Contact</h2>
+    <form id="contact-form" class="contact-form">
+      <div class="contact-form-row">
+        <div class="form-field">
+          <label for="name">Name<span class="required">*</span></label>
       <input type="text" id="name" name="name" required />
     </div>
     <div class="form-field">
@@ -213,6 +215,14 @@
   </div>
   <button type="submit">Send Message</button>
 </form>
+
+<!-- Load EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("p0aMlDyeD1NE151kR"); // Replace with your public key from EmailJS (not service ID)
+  })();
+</script>
 
 <!-- Instagram Gallery Scrollable with Hover Info -->
 <section class="instagram-gallery-manual full-bleed">

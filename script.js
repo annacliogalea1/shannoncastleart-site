@@ -253,38 +253,22 @@ function setupMenuToggle() {
 // ─────────────────────────────────────────────
 // 6. CONTACT FORM LOGIC
 // ─────────────────────────────────────────────
-function setupContactForm() {
-  const form = document.getElementById('contact-form');
-  const confirmation = document.getElementById('confirmation-message');
-  const userName = document.getElementById('shannoncastle');
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-  if (!form || !confirmation || !userName) return;
+  emailjs.sendForm("shannoncastle", "template_kepnfkh", this)
+    .then(function() {
+      console.log("Email sent successfully!");
+      const confirmation = document.getElementById("confirmation-message");
+      confirmation.classList.add("visible");
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name')?.value.trim() || 'there';
-    userName.textContent = name;
-
-    emailjs.sendForm('service_abc123xyz', 'template_abc987', form, 'YOUR_PUBLIC_KEY')
-      .then(() => {
-        form.style.display = 'none';
-        confirmation.style.display = 'block';
-        setTimeout(() => confirmation.classList.add('visible'), 50);
-        setTimeout(() => {
-          confirmation.classList.remove('visible');
-          setTimeout(() => {
-            confirmation.style.display = 'none';
-            form.reset();
-            form.style.display = 'flex';
-          }, 600);
-        }, 5000);
-      }, (error) => {
-        alert('Failed to send message. Please try again later.');
-        console.error('EmailJS error:', error);
-      });
-  });
-}
+      // Hide form and show thank you message
+      document.getElementById("contact-form").style.display = "none";
+      confirmation.innerText = `Thank you, ${document.getElementById("name").value}. Your message has been sent.`;
+    }, function(error) {
+      console.error("Failed to send email:", error);
+    });
+});
 
 // ─────────────────────────────────────────────
 // 7. TABBED MENU (Selected Works / Collections / Exhibitions / Contact)
