@@ -1228,6 +1228,20 @@ body.landing {
   padding: 3em 0 2.5em;
 }
 
+.panel-selected-works .masonry-gallery {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.2em;
+  box-sizing: border-box;
+}
+
+.panel-selected-works .masonry-grid {
+  column-count: 4;
+  column-gap: 10px;
+  margin-bottom: 2.5em;
+}
+
 .panel-selected-works .panel-inner {
   width: min(1200px, 92vw);
   margin: 0 auto;
