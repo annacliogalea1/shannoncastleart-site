@@ -73,25 +73,25 @@
   <nav class="tabbed-menu" role="navigation" aria-label="Section menu">
     <ul class="tab-list" role="tablist">
       <li role="presentation">
-        <a id="tab-selected-works" href="#selected-works">
+        <a href="#selected-works" role="tab" aria-selected="false" class="tab-link">
           <span class="tab-text">Selected Works</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
       </li>
       <li role="presentation">
-        <a id="tab-collections" href="#collections">
+        <a href="#collections" role="tab" aria-selected="false" class="tab-link">
           <span class="tab-text">Collections</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
       </li>
       <li role="presentation">
-        <a id="tab-exhibitions" href="#exhibitions">
+        <a href="#exhibitions" role="tab" aria-selected="false" class="tab-link">
           <span class="tab-text">Exhibitions</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
       </li>
       <li role="presentation">
-        <a id="tab-contact" href="#contact">
+        <a href="#contact" role="tab" aria-selected="false" class="tab-link">
           <span class="tab-text">Contact</span>
           <span class="tab-underline" aria-hidden="true"></span>
         </a>
@@ -124,7 +124,7 @@
   </section>
 
   <!-- Collections Section -->
-  <section id="collections" class="panel panel-collections" role="tabpanel" aria-labelledby="tab-collections" hidden>
+  <section id="collections" class="collections" role="tabpanel" aria-labelledby="tab-collections">
     <h2 class="collections-title">Collections</h2>
 
     <div class="collection-grid">
@@ -193,36 +193,32 @@
 
   <!-- Contact Panel -->
   <section id="contact" class="panel panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
-    <h2 class="panel-title contact-title">Contact</h2>
-    <form id="contact-form" class="contact-form">
-      <div class="contact-form-row">
+    <div class="panel-inner">
+      <h2 class="contact-title">Contact</h2>
+      <form id="contact-form" class="contact-form" method="POST" action="https://formspree.io/f/myzdeyge"></form>
+        <div class="contact-form-row">
+          <div class="form-field">
+            <label for="name">Name<span class="required">*</span></label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
         <div class="form-field">
-          <label for="name">Name<span class="required">*</span></label>
-      <input type="text" id="name" name="name" required />
+          <label for="message">Message<span class="required">*</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p class="confirmation-message" id="confirmation-message">
+        Thank you, <span id="user-name">there</span>! We’ll be in touch shortly.
+      </p>
     </div>
-    <div class="form-field">
-      <label for="email">Email<span class="required">*</span></label>
-      <input type="email" id="email" name="email" required />
+  </main>
     </div>
-  </div>
-  <div class="form-field">
-    <label for="title">Subject<span class="required">*</span></label>
-    <input type="text" id="title" name="title" required />
-  </div>
-  <div class="form-field">
-    <label for="message">Message<span class="required">*</span></label>
-    <textarea id="message" name="message" required></textarea>
-  </div>
-  <button type="submit">Send Message</button>
-</form>
-
-<!-- Load EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("p0aMlDyeD1NE151kR"); // Replace with your public key from EmailJS (not service ID)
-  })();
-</script>
+  </section>
 
 <!-- Instagram Gallery Scrollable with Hover Info -->
 <section class="instagram-gallery-manual full-bleed">
