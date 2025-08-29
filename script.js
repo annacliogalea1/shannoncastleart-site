@@ -279,11 +279,12 @@ function setupContactForm() {
 }
 
 // ─────────────────────────────────────────────
-// 7. TABBED MENU (Collections / Exhibitions / Contact)
+// 7. TABBED MENU (Selected Works / Collections / Exhibitions / Contact)
 // ─────────────────────────────────────────────
 function setupTabbedMenu() {
   const tabLinks = [...document.querySelectorAll('.tab-link')];
   const panels = [
+    document.getElementById('selected-works'),
     document.getElementById('collections'),
     document.getElementById('exhibitions'),
     document.getElementById('contact')
@@ -332,6 +333,6 @@ function setupTabbedMenu() {
 
   // deep-link support: #exhibitions, etc.
   const initialHash = window.location.hash && window.location.hash.trim();
-  const initial = byHash(initialHash) ? initialHash.slice(1) : 'collections';
+  const initial = byHash(initialHash) ? initialHash.slice(1) : 'selected-works';
   activate(initial, { scroll: false });
 }
