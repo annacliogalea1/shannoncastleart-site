@@ -359,7 +359,7 @@ function setupTabbedMenu() {
   // Set initial state immediately
   activate(initial, { scroll: false });
 }
-
+ 
 // Instagram scroll buttons
 document.querySelectorAll('.insta-arrow').forEach(btn => {
   btn.addEventListener('click', () => {
