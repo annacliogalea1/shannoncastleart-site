@@ -1193,6 +1193,42 @@ body.landing {
   z-index: 1;
 }
 
+/* Updated panel visibility and animation styles */
+.panel {
+  background: #fff;
+  color: #333;
+  padding: 3em 1.2em;
+}
+
+.panel[hidden] {
+  display: none !important;
+}
+
+.panel:not([hidden]) {
+  display: block;
+}
+
+.panel.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.panel.fade-in.showing {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure active tab styling works */
+.tab-link.is-active {
+  color: #333 !important;
+}
+
+.tab-link.is-active .tab-underline {
+  transform: scaleX(1);
+  background: #333 !important;
+}
+
 /* Responsive nudge so tall bar doesn’t overwhelm small screens */
 @media (max-width: 700px) {
   :root { --tabbar-h: 8.5em; }

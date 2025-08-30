@@ -287,52 +287,63 @@ function setupTabbedMenu() {
   const byHash = (hash) => tabLinks.find(a => a.getAttribute('href') === hash);
 
   function activate(targetId, opts = { scroll: true }) {
-    // toggle active class + aria
+    // Toggle active class + aria for tabs
     tabLinks.forEach(a => {
       const isActive = a.getAttribute('href') === `#${targetId}`;
-      a.classList.toggle('is-active', isActive);
+      a.classList.toggle('is-active', isActive);  // This was missing!
       a.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-panels.forEach(p => {
-  const show = p.id === targetId;
+    // Handle panel visibility and animations
+    panels.forEach(p => {
+      const show = p.id === targetId;
 
-  if (show) {
-    p.hidden = false;
-    p.classList.add('fade-in');
-    p.classList.add('showing');
+      if (show) {
+        // Show the panel
+        p.hidden = false;
+        p.classList.remove('fade-in', 'showing');
+        
+        // Force reflow to ensure hidden attribute is processed
+        p.offsetHeight;
+        
+        // Start fade-in animation
+        p.classList.add('fade-in');
+        
+        // Trigger the showing class after a brief delay
+        requestAnimationFrame(() => {
+          p.classList.add('showing');
+        });
 
-    // Reflow fix (keep this!)
-    if (targetId === 'selected-works') {
-      const grid = document.querySelector('#selected-works .selected-works-grid');
-      if (grid) {
-        grid.style.display = 'none';
-        grid.offsetHeight;
-        grid.style.display = '';
+        // Handle Selected Works grid reflow fix
+        if (targetId === 'selected-works') {
+          const grid = document.querySelector('#selected-works .selected-works-grid');
+          if (grid) {
+            grid.style.display = 'none';
+            grid.offsetHeight;
+            grid.style.display = '';
+          }
+        }
+      } else {
+        // Hide the panel
+        p.classList.remove('showing');
+        
+        // Wait for transition to complete before hiding
+        setTimeout(() => {
+          if (!p.classList.contains('showing')) {
+            p.hidden = true;
+            p.classList.remove('fade-in');
+          }
+        }, 300);
       }
-    }
-
-    // Force animation restart
-    p.style.opacity = 0;
-    p.style.transform = 'translateY(10px)';
-    requestAnimationFrame(() => {
-      p.style.opacity = 1;
-      p.style.transform = 'translateY(0)';
     });
-  } else {
-    p.classList.remove('showing');
-    setTimeout(() => {
-      p.hidden = true;
-    }, 300); // match CSS transition time
-  }
-});
 
-
-    // update URL hash (no jump)
-    history.pushState(null, '', ' ');
+    // Update URL hash without jumping
+    if (history.pushState) {
+      history.pushState(null, '', `#${targetId}`);
+    }
   }
 
-  // click handling
+  // Click handling
   tabLinks.forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
@@ -341,9 +352,11 @@ panels.forEach(p => {
     });
   });
 
-  // deep-link support: #exhibitions, etc.
+  // Deep-link support and initial load
   const initialHash = window.location.hash && window.location.hash.trim();
   const initial = byHash(initialHash) ? initialHash.slice(1) : 'selected-works';
+  
+  // Set initial state immediately
   activate(initial, { scroll: false });
 }
 
