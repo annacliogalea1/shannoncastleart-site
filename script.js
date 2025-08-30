@@ -251,26 +251,6 @@ function setupMenuToggle() {
 }
 
 // ─────────────────────────────────────────────
-// 6. CONTACT FORM LOGIC
-// ─────────────────────────────────────────────
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  emailjs.sendForm("shannoncastle", "template_kepnfkh", this)
-    .then(function() {
-      console.log("Email sent successfully!");
-      const confirmation = document.getElementById("confirmation-message");
-      confirmation.classList.add("visible");
-
-      // Hide form and show thank you message
-      document.getElementById("contact-form").style.display = "none";
-      confirmation.innerText = `Thank you, ${document.getElementById("name").value}. Your message has been sent.`;
-    }, function(error) {
-      console.error("Failed to send email:", error);
-    });
-});
-
-// ─────────────────────────────────────────────
 // 7. TABBED MENU (Selected Works / Collections / Exhibitions / Contact)
 // ─────────────────────────────────────────────
 function setupTabbedMenu() {
