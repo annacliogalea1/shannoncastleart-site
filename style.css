@@ -1654,7 +1654,6 @@ main.contact-layout {
   max-width: 100%;
   height: auto;
   margin-bottom: 1.5rem;
-  margin-right: 0.5rem;
 }
 
 .contact-us-block {
@@ -1774,19 +1773,19 @@ main.contact-layout {
 
 /* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
-  width: 1737px;
+  width: 2000px;
   margin-top: 63px;
   margin-bottom: 34px;  /* space to Contact Us heading */
 }
 
 /* 2. Contact Us heading: 34px below image (margin-bottom not needed, handled above) */
 .contact-us-block h3 {
-  margin: 0 0 34px 0;
+  margin: 0 20px 34px 0;
 }
 
 /* 3. Contact description text: 34px below heading */
 .contact-us-block p {
-  margin: 0 0 27px 0;  /* will be followed by next paragraph (next rule) */
+  margin: 0 20px 27px 0;  /* will be followed by next paragraph (next rule) */
 }
 
 /* 4. "We will be in touch..." on its own line, 27px below previous paragraph */
