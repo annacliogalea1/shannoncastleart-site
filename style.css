@@ -1122,7 +1122,7 @@ body.landing {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--tab-text);
+  color: var(--tab-inactive);
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 550;               
@@ -1238,7 +1238,7 @@ body.landing {
 /* ── Tab panels baseline ─────────────────── */
 .panel {
   background: #fff;
-  color: #000;
+  color: #333;
   padding: 3em 1.2em;
 }
 
