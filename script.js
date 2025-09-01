@@ -186,6 +186,10 @@ function setupBannerSlider() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  setupMenuToggle();
+});
+
 // ─────────────────────────────────────────────
 // 5. MENU TOGGLE + SUBMENUS
 // ─────────────────────────────────────────────
