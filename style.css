@@ -1773,7 +1773,7 @@ main.contact-layout {
 
 /* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
-  width: 2500px;
+  width: 1737px;
   margin-top: 63px;
   margin-bottom: 34px;  /* space to Contact Us heading */
 }
@@ -1791,6 +1791,11 @@ main.contact-layout {
 /* 4. "We will be in touch..." on its own line, 27px below previous paragraph */
 .contact-message-followup {
   margin: 0 0 77px 0;  /* followed by form */
+}
+
+.contact-column.contact-right {
+  padding-left: 80px; 
+  max-width: 1000px; 
 }
 
 /* 5. Contact form: 77px below follow-up message (handled above) */
