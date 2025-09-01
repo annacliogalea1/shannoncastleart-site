@@ -1773,7 +1773,7 @@ main.contact-layout {
 
 /* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
-  width: 1737px;
+  width: 1700px;
   margin-top: 35px;
   margin-bottom: 34px;  /* space to Contact Us heading */
 }
