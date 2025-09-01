@@ -70,37 +70,60 @@
   </section>
 
   <!-- Tabbed Menu -->
-  <nav class="tabbed-menu" role="navigation" aria-label="Section menu">
-    <ul class="tab-list" role="tablist">
-      <li role="presentation">
-        <a href="#selected-works" role="tab" aria-selected="false" class="tab-link">
-          <span class="tab-text">Selected Works</span>
-          <span class="tab-underline" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li role="presentation">
-        <a href="#collections" role="tab" aria-selected="false" class="tab-link">
-          <span class="tab-text">Collections</span>
-          <span class="tab-underline" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li role="presentation">
-        <a href="#exhibitions" role="tab" aria-selected="false" class="tab-link">
-          <span class="tab-text">Exhibitions</span>
-          <span class="tab-underline" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li role="presentation">
-        <a href="#contact" role="tab" aria-selected="false" class="tab-link">
-          <span class="tab-text">Contact</span>
-          <span class="tab-underline" aria-hidden="true"></span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+<nav class="tabbed-menu" role="navigation" aria-label="Section menu">
+  <ul class="tab-list" role="tablist">
+    <li role="presentation">
+      <a id="tab-selected-works"
+         href="#selected-works"
+         role="tab"
+         aria-selected="true"
+         aria-controls="selected-works"
+         class="tab-link is-active">
+        <span class="tab-text">Selected Works</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li role="presentation">
+      <a id="tab-collections"
+         href="#collections"
+         role="tab"
+         aria-selected="false"
+         aria-controls="collections"
+         class="tab-link">
+        <span class="tab-text">Collections</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li role="presentation">
+      <a id="tab-exhibitions"
+         href="#exhibitions"
+         role="tab"
+         aria-selected="false"
+         aria-controls="exhibitions"
+         class="tab-link">
+        <span class="tab-text">Exhibitions</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li role="presentation">
+      <a id="tab-contact"
+         href="#contact"
+         role="tab"
+         aria-selected="false"
+         aria-controls="contact"
+         class="tab-link">
+        <span class="tab-text">Contact</span>
+        <span class="tab-underline" aria-hidden="true"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 <!-- Selected Works Panel (FIXED - added missing closing div) -->
-<section id="selected-works" class="panel panel-selected-works" role="tabpanel" aria-labelledby="tab-selected-works">
+<section id="selected-works"
+         role="tabpanel"
+         aria-labelledby="tab-selected-works"
+         class="panel panel-selected-works fade-in showing">
   <div class="panel-inner">
     <h2 class="panel-title">Selected Works</h2>
     <div class="selected-works-gallery">
@@ -126,7 +149,12 @@
 </section>
 
 <!-- Collections Section (FIXED - removed stray closing tag) -->
-<section id="collections" class="panel panel-collections" role="tabpanel" aria-labelledby="tab-collections" hidden>
+<section id="collections"
+         role="tabpanel"
+         aria-labelledby="tab-collections"
+         tabindex="0"
+         class="panel panel-collections"
+         hidden>
   <h2 class="collections-title">Collections</h2>
   <div class="collection-grid">
     <div class="grid-wrapper">
@@ -182,7 +210,12 @@
 </section> 
 
 <!-- Exhibitions Panel -->
-<section id="exhibitions" class="panel panel-exhibitions" role="tabpanel" aria-labelledby="tab-exhibitions" hidden>
+<section id="exhibitions"
+         role="tabpanel"
+         aria-labelledby="tab-exhibitions"
+         tabindex="0"
+         class="panel panel-exhibitions"
+         hidden>
   <div class="panel-inner">
     <h2 class="panel-title">Exhibitions</h2>
     <p class="panel-copy">Add your exhibitions grid or timeline here.</p>
@@ -190,7 +223,12 @@
 </section>
 
 <!-- Contact Panel (FIXED - proper form tags and removed stray closing tags) -->
-<section id="contact" class="panel panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+<section id="contact"
+         role="tabpanel"
+         aria-labelledby="tab-contact"
+         tabindex="0"
+         class="panel panel-contact"
+         hidden>
   <div class="panel-inner">
     <h2 class="contact-title">Contact</h2>
     <form id="contact-form" class="contact-form" method="POST" action="https://formspree.io/f/myzdeyge">
@@ -214,7 +252,7 @@
       Thank you, <span id="user-name">there</span>! We'll be in touch shortly.
     </p>
   </div>
-</section>
+</section> 
 
 <!-- Instagram Gallery Scrollable with Hover Info -->
 <section class="instagram-gallery-manual full-bleed">

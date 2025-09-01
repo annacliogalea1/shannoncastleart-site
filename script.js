@@ -187,23 +187,6 @@ function setupBannerSlider() {
 }
 
 // ─────────────────────────────────────────────
-// 4. QUOTE FADE-IN
-// ─────────────────────────────────────────────
-function setupQuoteFadeIn() {
-  const quote = document.querySelector('.quote');
-  if (!quote) return;
-
-  window.addEventListener('scroll', () => {
-    const trigger = window.innerHeight * 0.85;
-    if (quote.getBoundingClientRect().top < trigger) {
-      quote.classList.add('visible');
-      quote.style.opacity = '1';
-      quote.style.transform = 'translateY(0)';
-    }
-  });
-}
-
-// ─────────────────────────────────────────────
 // 5. MENU TOGGLE + SUBMENUS
 // ─────────────────────────────────────────────
 function setupMenuToggle() {
@@ -334,8 +317,9 @@ function setupTabbedMenu() {
 
   // Deep-link support and initial load
   const initialHash = window.location.hash && window.location.hash.trim();
-  const initial = byHash(initialHash) ? initialHash.slice(1) : 'selected-works';
-  
+  const initialTab = byHash(initialHash) ? initialHash.slice(1) : 'selected-works';
+  activate(initialTab, { scroll: false });
+
   // Set initial state immediately
   activate(initial, { scroll: false });
 }

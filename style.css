@@ -1123,7 +1123,6 @@ body.landing {
   justify-content: center;
   text-decoration: none;
   color: var(--tab-text);
-  color: var(--tab-inactive);
   text-transform: uppercase;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 550;               
@@ -1162,16 +1161,16 @@ body.landing {
 }
 
 .tab-link.is-active .tab-underline {
-  transform: scaleX(1);
-  background: #333
+  background: #333 !important;
+  transform: scaleX(1)
 }
 
 .tab-link.is-active {
-  color: #333
+  color: #333 !important;
 }
 
 .panel[hidden] {
-  display: block !important;
+  display: none !important;
   visibility: hidden;
   position: absolute;
   pointer-events: none;
