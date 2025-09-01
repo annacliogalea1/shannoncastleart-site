@@ -1794,7 +1794,7 @@ main.contact-layout {
 }
 
 .contact-column.contact-right {
-  margin-left: -200px; /* shift column leftward toward center */
+  margin-left: -190px; /* shift column leftward toward center */
 }
 
 /* 5. Contact form: 77px below follow-up message (handled above) */
