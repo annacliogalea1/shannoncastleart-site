@@ -1654,6 +1654,7 @@ main.contact-layout {
   max-width: 100%;
   height: auto;
   margin-bottom: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .contact-us-block {
