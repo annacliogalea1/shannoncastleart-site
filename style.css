@@ -1751,8 +1751,8 @@ main.contact-layout {
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
-  margin-top: 24px;         /* 24px from header */
-  margin-bottom: 96px;      /* 96px to address block */
+  margin-top: 14px;         /* 14px from header */
+  margin-bottom: 190px;      /* 190px to address block */
 }
 
 .studio-info p {
@@ -1761,7 +1761,7 @@ main.contact-layout {
 }
 
 .studio-links {
-  margin-top: 248px;        /* 248px from phone/email block */
+  margin-top: 190px;        /* 248px from phone/email block */
 }
 
 .contact-right img.contact-image {
@@ -1774,7 +1774,7 @@ main.contact-layout {
 /* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
   width: 1500px;
-  margin-top: 34px;
+  margin-top: 30px;
   margin-bottom: 34px;  /* space to Contact Us heading */
 }
 
