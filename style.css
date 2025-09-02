@@ -1756,7 +1756,7 @@ main.contact-layout {
 }
 
 .studio-info p {
-  margin: 0 0 29px 0;       /* 29px to phone/email block (email stacked naturally) */
+  margin: 0 0 50px 30px;       /* 50px to phone/email block (email stacked naturally) */
   line-height: 1.5;         /* keep line spacing default for now */
 }
 
