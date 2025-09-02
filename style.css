@@ -1756,12 +1756,12 @@ main.contact-layout {
 }
 
 .studio-info p {
-  margin: 0 0 50px 30px;       /* 50px to phone/email block (email stacked naturally) */
+  margin: 0 0 190px 0;       /* 50px to phone/email block (email stacked naturally) */
   line-height: 1.5;         /* keep line spacing default for now */
 }
 
 .studio-links {
-  margin-top: 190px;        /* 248px from phone/email block */
+  margin-top: 190px;        /* 190px from phone/email block */
 }
 
 .contact-right img.contact-image {
