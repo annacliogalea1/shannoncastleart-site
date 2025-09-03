@@ -1640,23 +1640,6 @@ main.contact-layout {
   text-underline-offset: 2px;
 }
 
-.studio-about {
-  margin-top: 2rem;
-}
-
-.about-heading {
-  font-size: 19px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.05em;
-}
-
-.studio-arrow {
-  font-size: 80px;
-  font-weight: 400;
-  transform: translateY(2px);
-}
-
 /* Right Column */
 .contact-right img.contact-image {
   max-width: 100%;

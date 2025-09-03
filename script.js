@@ -257,7 +257,7 @@ function setupTabbedMenu() {
     // Toggle active class + aria for tabs
     tabLinks.forEach(a => {
       const isActive = a.getAttribute('href') === `#${targetId}`;
-      a.classList.toggle('is-active', isActive);  // This was missing!
+      a.classList.toggle('is-active', isActive); 
       a.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
