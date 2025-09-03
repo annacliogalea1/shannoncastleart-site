@@ -1590,6 +1590,10 @@ main.contact-layout {
   padding-left: 3vw;
 }
 
+.contact-column.contact-left {
+  margin-top: -50px; /* adjust this value as needed */
+}
+
 .studio-title .italic-550 {
   font-style: italic;
   font-weight: 550;
