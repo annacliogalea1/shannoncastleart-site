@@ -1591,7 +1591,7 @@ main.contact-layout {
 }
 
 .contact-column.contact-left {
-  margin-top: 0px; /* adjust this value as needed */
+  margin-top: 20px; /* adjust this value as needed */
 }
 
 .studio-title .italic-550 {
