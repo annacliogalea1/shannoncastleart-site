@@ -1591,7 +1591,11 @@ main.contact-layout {
 }
 
 .contact-column.contact-left {
-  margin-top: -20px; /* or your exact Illustrator delta */
+  margin-top: -20px; 
+}
+
+.contact-right img.contact-image {
+  margin-top: 30px;
 }
 
 .studio-title .italic-550 {
