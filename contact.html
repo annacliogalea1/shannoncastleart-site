@@ -13,19 +13,24 @@
     <div id="menu-toggle" class="menu-toggle"></div>
   </header>
 
+  <!-- Fullscreen Menu -->
   <nav id="fullscreen-menu" class="fullscreen-menu">
     <ul>
       <li><a href="home.html">Home</a></li>
       <li class="has-submenu">
         <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">Work</button>
         <ul id="work-submenu" class="submenu">
-          <li><a href="home.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="motorcycle.html">Motorcycle</a></li>
+          <li><a href="commissions.html">Commissions</a></li>
         </ul>
       </li>
-      <li><a href="#">Artist</a></li>
-      <li><a href="#">Studio</a></li>
-      <li><a href="#">Videos</a></li>
-      <li><a href="#">Exhibitions</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false" aria-controls="about-submenu">About</button>
+        <ul id="about-submenu" class="submenu">
+          <li><a href="artist.html">Artist</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
