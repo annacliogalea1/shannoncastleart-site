@@ -2147,14 +2147,14 @@ main.contact-layout {
 }
 
 /* ── ABOUT ARTIST PAGE ───────────────────────────── */
-.about-artist-page main.contact-layout {
+.about-artist-page main.about-layout {
   padding-top: 6rem;
   padding-bottom: 4rem;
   background: white;
 }
 
 /* Left Column */
-.about-artist-page .contact-column.contact-left h2 {
+.about-artist-page .text-column.text-right h2 {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 750;
   font-size: 24pt;
@@ -2198,14 +2198,14 @@ main.contact-layout {
 }
 
 /* Right column image */
-.about-artist-page .contact-column.contact-right img {
+.about-artist-page .image-column.image-left img {
   width: 425px;
   height: auto;
   margin-top: 63px;
   margin-bottom: 24px;
 }
 
-.about-artist-page main.contact-layout {
+.about-artist-page main.about-layout {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -2215,29 +2215,29 @@ main.contact-layout {
   gap: 2rem; /* optional: space between columns */
 }
 
-.about-artist-page .contact-column.contact-left {
+.about-artist-page .text-column.text-right {
   flex: 1;
   max-width: 60%;
 }
 
-.about-artist-page .contact-column.contact-right {
+.about-artist-page .image-column.image-left {
   flex: 0 0 425px; /* fixed width for image column */
 }
 
 /* Responsive tweaks */
 @media (max-width: 980px) {
-  .about-artist-page main.contact-layout {
+  .about-artist-page main.about-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .about-artist-page .contact-column.contact-right img {
+  .about-artist-page .image-column.image-left img {
     width: 100%;
     max-width: 425px;
     margin: 2em auto 1.5em;
   }
 
-  .about-artist-page .contact-column.contact-right {
+  .about-artist-page .text-column.text-right {
     margin-left: 0;
     display: flex;
     justify-content: center;
