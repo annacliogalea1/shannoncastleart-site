@@ -1748,6 +1748,8 @@ main.contact-layout {
   font-size: 1em;
   font-family: 'TWK Lausanne', sans-serif;
   font-weight: 300;
+  width: 100%; /* ensures they fill their container */
+  max-width: 100%; /* prevents overflow */
 }
 
 .contact-form textarea {
@@ -1811,7 +1813,8 @@ main.contact-layout {
 
 /* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
-  width: 1500px;
+  max-width: calc(100% - 20px);
+  margin-right: 20px;
   margin-top: 30px;
   margin-bottom: 34px;  /* space to Contact Us heading */
 }
