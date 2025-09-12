@@ -2181,8 +2181,9 @@ main.contact-layout {
 
 .about-artist-page ul.studio-links li {
   line-height: 18px;
+  font-family: 'TWKLausanne', sans-serif;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 550;
   text-transform: uppercase;
 }
 
