@@ -2202,7 +2202,7 @@ main.contact-layout {
   width: 425px;
   height: auto;
   margin-bottom: 24px;
-  margin-left: 40px;
+  margin-left: 50px;
   align-self: flex-start;
 }
 
@@ -2213,12 +2213,12 @@ main.contact-layout {
   padding-top: 6rem;
   padding-bottom: 4rem;
   background: white;
-  gap: 0.2rem; /* optional: space between columns */
 }
 
 .about-artist-page .text-column.text-right {
   flex: 1;
   max-width: 60%;
+  margin-left: 1rem;
 }
 
 .about-artist-page .image-column.image-left {
