@@ -1631,7 +1631,7 @@ main.contact-layout {
   line-height: 24px;
   font-size: 18px;
   font-family: 'TWK Lausanne', sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   text-transform: uppercase;
 }
 
@@ -1642,7 +1642,7 @@ main.contact-layout {
   line-height: 24px;
   font-size: 18px;
   font-family: 'TWK Lausanne', sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   text-transform: uppercase;
 }
 
@@ -1651,7 +1651,7 @@ main.contact-layout {
   line-height: 24px;
   font-size: 18px;
   font-family: 'TWK Lausanne', sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   text-transform: uppercase;
 }
 
@@ -1775,8 +1775,9 @@ main.contact-layout {
 }
 
 .confirmation-message {
+  font-family: 'TWK Lausanne', sans-serif;
   font-weight: 750;
-  font-size: 19px;
+  font-size: 18px;
   text-transform: uppercase;
   margin-top: 1rem;
 }
@@ -1791,7 +1792,7 @@ main.contact-layout {
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
-  margin-bottom: 240px; /* was 190px */
+  margin-bottom: 200px; /* was 190px */
 }
 .studio-info p {
   margin: 0 0 220px 0;   /* was 190px */
