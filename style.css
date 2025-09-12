@@ -1600,7 +1600,8 @@ main.contact-layout {
 }
 
 .contact-right img.contact-image {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .studio-title .italic-550 {
@@ -1792,7 +1793,7 @@ main.contact-layout {
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
-  margin-bottom: 210px; /* was 190px */
+  margin-bottom: 220px; /* was 190px */
 }
 .studio-info p {
   margin: 0 0 220px 0;   /* was 190px */
