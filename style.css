@@ -1692,6 +1692,11 @@ main.contact-layout {
   align-items: flex-end;
 }
 
+/* Align only the form to the right */
+.contact-form.align-right {
+  align-self: flex-end;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;
