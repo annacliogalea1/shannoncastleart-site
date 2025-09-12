@@ -1984,6 +1984,7 @@ main.contact-layout {
   transition: opacity 0.4s ease;
   display: none;
   min-width: 0;
+  width: 100%;
 }
 
 .collection-gallery.active {
@@ -1995,6 +1996,8 @@ main.contact-layout {
   width: 100%;
   margin-bottom: 10px;
   break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
   display: block;
   cursor: pointer;
 }
