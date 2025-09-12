@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCollectionsTabs();
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+  setupLightbox();
+  setupBackToTop();
+  setupBannerSlider();
+  setupQuoteFadeIn();
+  setupMenuToggle();
+  setupContactForm();
+  setupTabbedMenu();
+  setupVideoLightbox(); // NEW
+});
+
 // ─────────────────────────────────────────────
 // PAGE CONTEXT DETECTION
 // ─────────────────────────────────────────────
@@ -125,6 +136,24 @@ function setupMagnifier(img) {
   });
 
   img.addEventListener("mouseleave", () => lens.style.display = "none");
+}
+
+lightbox.classList.add("show", "video-mode");
+
+function closeLightbox() {
+  lightbox.style.opacity = "0";
+  setTimeout(() => {
+    lightbox.classList.remove("show", "video-mode");
+    // Restore image element if needed
+    const video = lightbox.querySelector("video");
+    if (video) {
+      video.remove();
+      const img = document.createElement("img");
+      img.id = "lightbox-img";
+      img.classList.add("lightbox-content");
+      lightbox.insertBefore(img, captionEl);
+    }
+  }, fadeDuration);
 }
 
 // ─────────────────────────────────────────────
@@ -391,3 +420,35 @@ function setupCollectionsTabs() {
 document.addEventListener("DOMContentLoaded", () => {
   setupCollectionsTabs(); // only runs on collections.html
 });
+
+function setupVideoLightbox() {
+  const videoWrapper = document.querySelector('.video-wrapper');
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const captionEl = document.getElementById("lightbox-caption");
+
+  if (!videoWrapper || !lightbox) return;
+
+  // Remove magnifier if applied
+  lightboxImg.classList.remove("lightbox-content");
+
+  videoWrapper.addEventListener("click", () => {
+    const videoEl = document.createElement("video");
+    videoEl.src = "videos/sample-video.mp4"; // your video path
+    videoEl.controls = true;
+    videoEl.autoplay = true;
+    videoEl.style.maxWidth = "90vw";
+    videoEl.style.maxHeight = "90vh";
+    videoEl.style.display = "block";
+
+    // Replace image with video
+    const current = lightbox.querySelector("img, video");
+    if (current) current.remove();
+    lightbox.insertBefore(videoEl, captionEl);
+
+    captionEl.textContent = "";
+    lightbox.classList.add("show");
+    lightbox.style.opacity = "0";
+    setTimeout(() => (lightbox.style.opacity = "1"), 10);
+  });
+}
