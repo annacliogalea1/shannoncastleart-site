@@ -5,7 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Collections</title>
   <link rel="stylesheet" href="your-styles.css" />
+  <script defer src="script.js"></script>
 </head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1><a href="home.html" class="brand" aria-label="Go to Home">SHANNON CASTLE</a></h1>
+    <div id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation"></div>
+  </header>
+
+  <!-- Fullscreen Menu -->
+  <nav id="fullscreen-menu" class="fullscreen-menu">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false" aria-controls="work-submenu">Work</button>
+        <ul id="work-submenu" class="submenu">
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="motorcycle.html">Motorcycle</a></li>
+          <li><a href="commissions.html">Commissions</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false" aria-controls="about-submenu">About</button>
+        <ul id="about-submenu" class="submenu">
+          <li><a href="artist.html">Artist</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Menu Overlay -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">✕</span>
+    <img id="lightbox-img" class="lightbox-content" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <a class="prev">⟵</a>
+    <a class="next">⟶</a>
+  </div>
+
 <body>
     <!-- Main Layout -->
     <section class="collections-layout">
@@ -63,17 +106,6 @@
       <div class="collection-gallery masonry-grid" id="mandalas">
         <img src="images/Bikew_FlagCandid.JPG" alt="Mandalas">
       </div>
-
-        <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <button class="prev">&#10094;</button>
-    <div class="lightbox-inner">
-      <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox Image" />
-      <div id="lightbox-caption" class="lightbox-caption"></div>
-    </div>
-    <button class="next">&#10095;</button>
-  </div>
 
     </section>
 
