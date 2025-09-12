@@ -2054,6 +2054,24 @@ main.contact-layout {
   background: black;
 }
 
+.tab-content {
+  display: none;
+}
+
+.tab-content.active-tab {
+  display: block;
+}
+
+.gallery-caption {
+  max-width: 1200px;
+  margin: 2em auto 100px;
+  padding: 0 1.2em;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  text-align: left;
+}
+
 @media (max-width: 1200px) {
   .collection-gallery.masonry-grid { column-count: 4; }
 }
