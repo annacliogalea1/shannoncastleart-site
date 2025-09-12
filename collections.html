@@ -87,9 +87,10 @@
       </a>
     </div>
   </section>
+</body>
 
   <!-- Footer -->
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="footer-container">
       <div class="footer-section footer-left">
         <a href="https://www.instagram.com/shannoncastleart" target="_blank" class="footer-link" aria-label="Instagram">
@@ -108,24 +109,6 @@
         <span class="footer-copy">© 2025 Shannon Castle</span>
       </div>
     </div>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const buttons = document.querySelectorAll('#collectionList button');
-      const galleries = document.querySelectorAll('.collection-gallery');
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          galleries.forEach(g => g.classList.remove('active'));
-          document.getElementById(btn.dataset.target)?.classList.add('active');
-        });
-      });
-    });
-  </script>
-
+</footer>
 </body>
 </html>
