@@ -142,8 +142,6 @@ function setupMagnifier(img) {
   img.addEventListener("mouseleave", () => lens.style.display = "none");
 }
 
-lightbox.classList.add("show", "video-mode");
-
 function closeLightbox() {
   lightbox.style.opacity = "0";
   setTimeout(() => {
