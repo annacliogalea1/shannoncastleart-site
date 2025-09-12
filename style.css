@@ -1954,7 +1954,7 @@ main.contact-layout {
   flex-direction: column;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 550;
-  font-size: 14px;
+  font-size: 18px;
   color: black;
 }
 
@@ -1999,7 +1999,7 @@ main.contact-layout {
 }
 
 .collection-gallery.masonry-grid {
-  column-count: 5;
+  column-count: 6;
   column-gap: 10px;
 }
 
