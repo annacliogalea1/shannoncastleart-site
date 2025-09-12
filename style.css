@@ -1948,7 +1948,7 @@ main.contact-layout {
 }
 
 .collection-list {
-  flex: 1;
+  flex: 0 0 220px; /* Fixed width instead of percentage */
   max-width: 20%;
   display: flex;
   flex-direction: column;
@@ -1980,10 +1980,11 @@ main.contact-layout {
 }
 
 .collection-gallery {
-  flex: 2;
+  flex: 1;
   opacity: 0;
   transition: opacity 0.4s ease;
   display: none;
+  min-width: 0;
 }
 
 .collection-gallery.active {
@@ -1996,11 +1997,30 @@ main.contact-layout {
   margin-bottom: 10px;
   break-inside: avoid;
   display: block;
+  cursor: pointer;
 }
 
 .collection-gallery.masonry-grid {
-  column-count: 6;
+  column-count: auto;
+  column-width: 200px;
   column-gap: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.collections-layout,
+.back-to-top-section {
+  flex: 1;
 }
 
 @media (max-width: 1200px) {

@@ -3,112 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Collections | Shannon Castle</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <title>Collections</title>
+  <link rel="stylesheet" href="your-styles.css" />
 </head>
-<body data-page="collections">
+<body>
+  <div class="page-wrapper">
 
-  <!-- Header -->
-  <header>
-    <h1><a href="home.html" class="brand" aria-label="Go to Home">SHANNON CASTLE</a></h1>
-    <div id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation"></div>
-  </header>
+    <!-- Main Layout -->
+    <section class="collections-layout">
+      <!-- Collection List -->
+      <div class="collection-list" id="collectionList">
+        <button class="active" data-target="gallery">Gallery</button>
+        <button data-target="cape-verde">Cape Verde</button>
+        <button data-target="firefly">Firefly</button>
+        <button data-target="ibiza">The Mermaid Ibiza</button>
+        <button data-target="lovers">Lovers</button>
+        <button data-target="rhiannon">Rhiannon</button>
+        <button data-target="santa-maria">Santa Maria</button>
+        <button data-target="sisters">Sisters</button>
+        <button data-target="mandalas">Mandalas</button>
+      </div>
 
-  <!-- Menu + Overlay -->
-  <nav id="fullscreen-menu" class="fullscreen-menu">
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li class="has-submenu">
-        <button class="submenu-toggle">Work</button>
-        <ul class="submenu">
-          <li><a href="collections.html">Collections</a></li>
-          <li><a href="motorcycle.html">Motorcycle</a></li>
-          <li><a href="commissions.html">Commissions</a></li>
-        </ul>
-      </li>
-      <li class="has-submenu">
-        <button class="submenu-toggle">About</button>
-        <ul class="submenu">
-          <li><a href="artist.html">Artist</a></li>
-        </ul>
-      </li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div id="overlay" class="overlay"></div>
+      <!-- Masonry Galleries -->
+      <div class="collection-gallery masonry-grid active" id="gallery">
+        <img src="images/WoodsmanCopy2.jpg" alt="Art 1" data-title="Woodsman – Oil on panel, 2022">
+        <img src="images/SantaMariaFramed2.jpg" alt="Art 2">
+        <img src="images/BikeFullShot.JPG" alt="Art 3">
+        <img src="images/BikeBackTireCU.JPG" alt="Art 4">
+        <img src="images/IbizaSilverRomanEdit.jpg" alt="Art 5">
+      </div>
 
-  <!-- Main Layout -->
-  <section class="collections-layout">
-    <!-- Collection List -->
-    <div class="collection-list" id="collectionList">
-      <button class="active" data-target="gallery">Gallery</button>
-      <button data-target="cape-verde">Cape Verde</button>
-      <button data-target="firefly">Firefly</button>
-      <button data-target="ibiza">The Mermaid Ibiza</button>
-      <button data-target="lovers">Lovers</button>
-      <button data-target="rhiannon">Rhiannon</button>
-      <button data-target="santa-maria">Santa Maria</button>
-      <button data-target="sisters">Sisters</button>
-      <button data-target="mandalas">Mandalas</button>
-    </div>
+      <div class="collection-gallery masonry-grid" id="cape-verde">
+        <img src="images/scan_2025-07-28_17-31-41.jpg" alt="Cape Verde 1">
+        <img src="images/bike-feature-5.jpg" alt="Cape Verde 2">
+      </div>
 
-    <!-- Masonry Galleries -->
-    <div class="collection-gallery masonry-grid active" id="collection1">
-      <!-- Sample Images -->
-      <img src="images/WoodsmanCopy2.jpg" alt="Art 1" data-title="Woodsman – Oil on panel, 2022">
-      <img src="images/SantaMariaFramed2.jpg" alt="Art 2">
-      <img src="images/BikeFullShot.JPG" alt="Art 3">
-      <img src="images/BikeBackTireCU.JPG" alt="Art 4">
-      <img src="images/IbizaSilverRomanEdit.jpg" alt="Art 5">
-    </div>
+      <div class="collection-gallery masonry-grid" id="firefly">
+        <img src="images/TheOracleRomanEdit.jpg" alt="Firefly">
+      </div>
 
-    <!-- Placeholder Galleries -->
-    <div class="collection-gallery masonry-grid" id="collection2">
-      <img src="images/scan_2025-07-28_17-31-41.jpg" alt="Placeholder">
-      <img src="images/bike-feature-5.jpg" alt="Placeholder">
-    </div>
-    <div class="collection-gallery masonry-grid" id="collection3"><img src="images/TheOracleRomanEdit.jpg" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection4"><img src="images/SistersFramedRomanEdit.jpg" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection5"><img src="images/CatherineFramedRomanEdit.jpg" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection6"><img src="images/bike-feature-3.jpg" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection7"><img src="images/bike-feature-7.jpg" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection8"><img src="images/GLASS 6.jpg" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection9"><img src="images/Bikew_FlagCandid.JPG" alt=""></div>
-    <div class="collection-gallery masonry-grid" id="collection10"><img src="images/scan_2025-07-28_17-31-41.jpg" alt=""></div>
-  </section>
+      <div class="collection-gallery masonry-grid" id="ibiza">
+        <img src="images/SistersFramedRomanEdit.jpg" alt="Ibiza">
+      </div>
 
-  <!-- Back to Top -->
-  <section class="back-to-top-section">
-    <div class="back-to-top-container">
-      <a href="#" class="back-to-top-link">
-        <span class="arrow">↑</span>
-        <span class="back-text">Back to top</span>
-      </a>
-    </div>
-  </section>
-</body>
+      <div class="collection-gallery masonry-grid" id="lovers">
+        <img src="images/CatherineFramedRomanEdit.jpg" alt="Lovers">
+      </div>
 
-  <!-- Footer -->
-<footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-section footer-left">
-        <a href="https://www.instagram.com/shannoncastleart" target="_blank" class="footer-link" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.4-115-115-115zm0 190.3c-41.6 0-75.3-33.7-75.3-75.3s33.7-75.3 75.3-75.3 75.3 33.7 75.3 75.3-33.7 75.3-75.3 75.3zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-.2-54.6-14.9-103.2-54.5-142.7C368.1 14.9 319.5.2 264.9 0H183.1c-54.6.2-103.2 14.9-142.7 54.5C14.9 93.9.2 142.5 0 197.1v81.8c.2 54.6 14.9 103.2 54.5 142.7 39.5 39.5 88.1 54.2 142.7 54.5h81.8c54.6-.2 103.2-14.9 142.7-54.5 39.5-39.5 54.2-88.1 54.5-142.7v-81.8z"/></svg>
+      <div class="collection-gallery masonry-grid" id="rhiannon">
+        <img src="images/bike-feature-3.jpg" alt="Rhiannon">
+      </div>
+
+      <div class="collection-gallery masonry-grid" id="santa-maria">
+        <img src="images/bike-feature-7.jpg" alt="Santa Maria">
+      </div>
+
+      <div class="collection-gallery masonry-grid" id="sisters">
+        <img src="images/GLASS 6.jpg" alt="Sisters">
+      </div>
+
+      <div class="collection-gallery masonry-grid" id="mandalas">
+        <img src="images/Bikew_FlagCandid.JPG" alt="Mandalas">
+      </div>
+      
+    </section>
+
+    <!-- Back to Top -->
+    <section class="back-to-top-section">
+      <div class="back-to-top-container">
+        <a href="#" class="back-to-top-link">
+          <span class="arrow">↑</span>
+          <span class="back-text">Back to top</span>
         </a>
-        <span class="separator">|</span>
-        <a href="about.html" class="footer-link">About Shannon Castle</a>
-        <span class="separator">|</span>
-        <a href="contact.html" class="footer-link">Contact</a>
       </div>
-      <div class="footer-section footer-right">
-        <a href="terms.html" class="footer-link">Terms of Use</a>
-        <span class="separator">|</span>
-        <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        <span class="separator">|</span>
-        <span class="footer-copy">© 2025 Shannon Castle</span>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section footer-left">
+          <a href="https://www.instagram.com/shannoncastleart" target="_blank" class="footer-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.4-115-115-115zm0 190.3c-41.6 0-75.3-33.7-75.3-75.3s33.7-75.3 75.3-75.3 75.3 33.7 75.3 75.3-33.7 75.3-75.3 75.3zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-.2-54.6-14.9-103.2-54.5-142.7C368.1 14.9 319.5.2 264.9 0H183.1c-54.6.2-103.2 14.9-142.7 54.5C14.9 93.9.2 142.5 0 197.1v81.8c.2 54.6 14.9 103.2 54.5 142.7 39.5 39.5 88.1 54.2 142.7 54.5h81.8c54.6-.2 103.2-14.9 142.7-54.5 39.5-39.5 54.2-88.1 54.5-142.7v-81.8z"/></svg>
+          </a>
+          <span class="separator">|</span>
+          <a href="about.html" class="footer-link">About Shannon Castle</a>
+          <span class="separator">|</span>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-section footer-right">
+          <a href="terms.html" class="footer-link">Terms of Use</a>
+          <span class="separator">|</span>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <span class="separator">|</span>
+          <span class="footer-copy">© 2025 Shannon Castle</span>
+        </div>
       </div>
+    </footer>
+
+  </div> <!-- End .page-wrapper -->
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <button class="prev">&#10094;</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox Image" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
-</footer>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Optional JS files -->
+  <script src="your-lightbox.js"></script>
+  <script src="collections-tabs.js"></script>
+
 </body>
 </html>
