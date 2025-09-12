@@ -2148,7 +2148,7 @@ main.contact-layout {
 
 /* ── ABOUT ARTIST PAGE ───────────────────────────── */
 .about-artist-page main.about-layout {
-  padding-top: 3rem;
+  padding-top: 6rem;
   padding-bottom: 4rem;
   background: white;
 }
@@ -2180,7 +2180,6 @@ main.contact-layout {
 }
 
 .about-artist-page ul.studio-links li {
-  margin-right: 10px;
   line-height: 18px;
   font-size: 14px;
   font-weight: 300;
@@ -2203,17 +2202,17 @@ main.contact-layout {
   height: auto;
   margin-top: 50px;
   margin-bottom: 24px;
-  margin-left: 10px
+  margin-left: 20px
 }
 
 .about-artist-page main.about-layout {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 3rem;
+  padding-top: 6rem;
   padding-bottom: 4rem;
   background: white;
-  gap: 1rem; /* optional: space between columns */
+  gap: 0.8rem; /* optional: space between columns */
 }
 
 .about-artist-page .text-column.text-right {
