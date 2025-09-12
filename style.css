@@ -1586,13 +1586,8 @@ main.contact-layout {
 }
 
 .contact-column.contact-right {
-  align-items: flex-end; /* Ensures children align to the right */
+  align-items: flex-start;
   position: relative;    /* optional: allows easier absolute positioning if needed */
-}
-
-.contact-form.align-right {
-  width: 100%;
-  max-width: 864px; /* Match the image width */
 }
 
 /* Left Column */
