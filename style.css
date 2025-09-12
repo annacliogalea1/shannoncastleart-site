@@ -1695,6 +1695,7 @@ main.contact-layout {
   width: 100%;
   font-family: 'TWK Lausanne', sans-serif;
   font-weight: 500;
+  align-items: flex-end;
 }
 
 .contact-form-row {
@@ -1706,11 +1707,6 @@ main.contact-layout {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-}
-
-/* Align only the form to the right */
-.contact-form.align-right {
-  align-self: flex-end;
 }
 
 .form-field {
@@ -1783,7 +1779,7 @@ main.contact-layout {
   margin: 0 0 220px 0;   /* was 190px */
 }
 .studio-links {
-  margin-top: 250px;   
+  margin-top: 220px;   
 }
 
 .contact-right img.contact-image {
