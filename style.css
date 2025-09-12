@@ -2006,12 +2006,6 @@ main.contact-layout {
   column-gap: 10px;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -2021,6 +2015,43 @@ html, body {
 .collections-layout,
 .back-to-top-section {
   flex: 1;
+}
+
+.collection-list {
+  flex: 1;
+  max-width: 20%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 550;
+  font-size: 18px;
+  color: black;
+}
+
+.collection-list button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.2em 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.collection-list button:hover {
+  color: #555;
+}
+
+.collection-list button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
 }
 
 @media (max-width: 1200px) {
