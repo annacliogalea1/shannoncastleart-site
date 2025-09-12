@@ -1792,7 +1792,7 @@ main.contact-layout {
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
-  margin-bottom: 200px; /* was 190px */
+  margin-bottom: 210px; /* was 190px */
 }
 .studio-info p {
   margin: 0 0 220px 0;   /* was 190px */
