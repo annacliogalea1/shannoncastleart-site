@@ -1938,7 +1938,6 @@ main.contact-layout {
 }
 
 /* ── COLLECTIONS PAGE ───────────────────────────────────── */
-
 .collections-layout {
   display: flex;
   max-width: 1600px;
@@ -2063,13 +2062,25 @@ main.contact-layout {
 }
 
 .gallery-caption {
-  max-width: 1200px;
-  margin: 2em auto 100px;
-  padding: 0 1.2em;
+  margin: 2em 0 100px;
+  padding: 0 0.5em;
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 300;
   font-size: 14px;
   text-align: left;
+}
+
+.collection-container {
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: none;
+  min-width: 0;
+}
+
+.collection-container.active {
+  display: block;
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {
