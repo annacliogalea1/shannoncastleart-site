@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="your-styles.css" />
 </head>
 <body>
-  <div class="page-wrapper">
-
     <!-- Main Layout -->
     <section class="collections-layout">
       <!-- Collection List -->
@@ -65,7 +63,18 @@
       <div class="collection-gallery masonry-grid" id="mandalas">
         <img src="images/Bikew_FlagCandid.JPG" alt="Mandalas">
       </div>
-      
+
+        <!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <button class="prev">&#10094;</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox Image" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+
     </section>
 
     <!-- Back to Top -->
@@ -99,23 +108,5 @@
         </div>
       </div>
     </footer>
-
-  </div> <!-- End .page-wrapper -->
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <button class="prev">&#10094;</button>
-    <div class="lightbox-inner">
-      <img id="lightbox-img" class="lightbox-content" src="" alt="Lightbox Image" />
-      <div id="lightbox-caption" class="lightbox-caption"></div>
-    </div>
-    <button class="next">&#10095;</button>
-  </div>
-
-  <!-- Optional JS files -->
-  <script src="your-lightbox.js"></script>
-  <script src="collections-tabs.js"></script>
-
 </body>
 </html>
