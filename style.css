@@ -2201,9 +2201,9 @@ main.contact-layout {
 .about-artist-page .image-column.image-left img {
   width: 425px;
   height: auto;
+  margin-top: 10px;
   margin-bottom: 24px;
   margin-left: 50px;
-  align-self: flex-start;
 }
 
 .about-artist-page main.about-layout {
@@ -2218,7 +2218,7 @@ main.contact-layout {
 .about-artist-page .text-column.text-right {
   flex: 1;
   max-width: 60%;
-  margin-left: 1rem;
+  margin-left: 0.8rem;
 }
 
 .about-artist-page .image-column.image-left {
