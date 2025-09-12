@@ -1811,8 +1811,8 @@ main.contact-layout {
 
 /* ── NEW ILLUSTRATOR-BASED ADJUSTMENTS ── */
 
-/* 1. Image should be exactly 864px wide */
 .contact-right img.contact-image {
+  width: 900px;
   max-width: calc(100% - 20px);
   margin-right: 20px;
   margin-top: 30px;
