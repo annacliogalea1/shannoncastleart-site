@@ -1672,6 +1672,7 @@ main.contact-layout {
   gap: 1.5em;
   max-width: 500px;
   width: 100%;
+  font-family: 'TWK Lausanne', sans-serif;
   font-weight: 500;
 }
 
@@ -1699,6 +1700,7 @@ main.contact-layout {
   border: 1px solid #444;
   background: #f7f7f7;
   font-size: 1em;
+  font-family: 'TWK Lausanne', sans-serif;
 }
 
 .contact-form textarea {
@@ -1717,6 +1719,7 @@ main.contact-layout {
   cursor: pointer;
   text-transform: uppercase;
   margin-top: 0.6rem;
+  font-family: 'TWK Lausanne', sans-serif;
 }
 
 .required {
@@ -1752,7 +1755,7 @@ main.contact-layout {
 }
 
 .studio-links {
-  margin-top: 190px;        /* 190px from phone/email block */
+  margin-top: 250px;        /* 250px from phone/email block */
 }
 
 .contact-right img.contact-image {
