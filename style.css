@@ -1936,3 +1936,84 @@ main.contact-layout {
   right: 0;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0));
 }
+
+/* ── COLLECTIONS PAGE ───────────────────────────────────── */
+
+.collections-layout {
+  display: flex;
+  max-width: 1600px;
+  margin: 100px auto 80px;
+  gap: 3vw;
+  padding: 0 2vw;
+}
+
+.collection-list {
+  flex: 1;
+  max-width: 20%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 550;
+  font-size: 14px;
+  color: black;
+}
+
+.collection-list button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.5em 0;
+  font: inherit;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.collection-list button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
+}
+
+.collection-gallery {
+  flex: 2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: none;
+}
+
+.collection-gallery.active {
+  display: block;
+  opacity: 1;
+}
+
+.collection-gallery img {
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  display: block;
+}
+
+.collection-gallery.masonry-grid {
+  column-count: 5;
+  column-gap: 10px;
+}
+
+@media (max-width: 1200px) {
+  .collection-gallery.masonry-grid { column-count: 4; }
+}
+
+@media (max-width: 900px) {
+  .collections-layout { flex-direction: column; }
+  .collection-list {
+    max-width: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .collection-gallery.masonry-grid { column-count: 2; }
+}

@@ -11,6 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTabbedMenu();
 });
 
+  // Load page-specific logic
+  const page = getPageContext();
+
+  if (page === 'collections') {
+    setupCollectionsTabs();
+  }
+
+// ─────────────────────────────────────────────
+// PAGE CONTEXT DETECTION
+// ─────────────────────────────────────────────
+function getPageContext() {
+  return document.body?.dataset?.page || 'default';
+}
+
 // ─────────────────────────────────────────────
 // 1. LIGHTBOX + MAGNIFIER
 // ─────────────────────────────────────────────
@@ -338,4 +352,42 @@ document.querySelectorAll('.insta-arrow').forEach(btn => {
       behavior: 'smooth'
     });
   });
+});
+
+// ─────────────────────────────────────────────
+// COLLECTIONS PAGE INTERACTIVITY
+// ─────────────────────────────────────────────
+function setupCollectionsTabs() {
+  const list = document.getElementById('collectionList');
+  const buttons = list?.querySelectorAll('button');
+  const galleries = document.querySelectorAll('.collection-gallery');
+
+  if (!list || buttons.length === 0 || galleries.length === 0) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      galleries.forEach(g => g.classList.remove('active'));
+      const target = document.getElementById(btn.dataset.target);
+      if (target) {
+        target.classList.add('active');
+
+        // Reinitialize lightbox to include newly shown images
+        setupLightbox({
+          gallerySelector: '.collection-gallery.active img'
+        });
+      }
+    });
+  });
+
+  // Run on page load for the default gallery
+  setupLightbox({
+    gallerySelector: '.collection-gallery.active img'
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupCollectionsTabs(); // only runs on collections.html
 });
