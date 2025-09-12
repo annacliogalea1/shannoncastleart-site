@@ -1608,6 +1608,11 @@ main.contact-layout {
   font-weight: 750;
 }
 
+.studio-title .title-line {
+  font-size: 2.5rem; /* Adjust size as needed */
+  line-height: 1.1;
+}
+
 .studio-title {
   margin-bottom: 1.5rem;
 }
@@ -1681,6 +1686,12 @@ main.contact-layout {
   gap: 1em;
 }
 
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;
@@ -1745,17 +1756,13 @@ main.contact-layout {
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
-  margin-top: 14px;         /* 14px from header */
-  margin-bottom: 190px;      /* 190px to address block */
+  margin-bottom: 240px; /* was 190px */
 }
-
 .studio-info p {
-  margin: 0 0 190px 0;       /* 50px to phone/email block (email stacked naturally) */
-  line-height: 1.5;         /* keep line spacing default for now */
+  margin: 0 0 220px 0;   /* was 190px */
 }
-
 .studio-links {
-  margin-top: 250px;        /* 250px from phone/email block */
+  margin-top: 270px;     /* was 250px */
 }
 
 .contact-right img.contact-image {
