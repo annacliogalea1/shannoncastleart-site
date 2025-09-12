@@ -1813,7 +1813,6 @@ main.contact-layout {
 
 .contact-right img.contact-image {
   width: 900px;
-  max-width: calc(100% - 20px);
   margin-right: 20px;
   margin-top: 30px;
   margin-bottom: 34px;  /* space to Contact Us heading */
