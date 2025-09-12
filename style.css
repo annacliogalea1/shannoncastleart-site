@@ -2145,3 +2145,83 @@ main.contact-layout {
 .lightbox.video-mode .next {
   display: none !important;
 }
+
+/* ── ABOUT ARTIST PAGE ───────────────────────────── */
+
+.about-artist-page main.contact-layout {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  background: white;
+}
+
+/* Left Column */
+.about-artist-page .contact-column.contact-left h2 {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 750;
+  font-size: 24pt;
+  color: black;
+  margin: 0;
+}
+
+.about-artist-page .artist-bio {
+  margin-top: 80px;
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 450;
+  font-size: 14pt;
+  color: black;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Section links under bio */
+.about-artist-page ul.studio-links {
+  margin-top: 60px;
+  list-style: none;
+  padding: 0;
+}
+
+.about-artist-page ul.studio-links li {
+  margin: 0;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.about-artist-page ul.studio-links .plus {
+  margin-right: 6px;
+}
+
+.about-artist-page ul.studio-links a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Right column image */
+.about-artist-page .contact-column.contact-right img {
+  width: 425px;
+  height: auto;
+  margin-top: 63px;
+  margin-bottom: 24px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 980px) {
+  .about-artist-page main.contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-artist-page .contact-column.contact-right img {
+    width: 100%;
+    max-width: 425px;
+    margin: 2em auto 1.5em;
+  }
+
+  .about-artist-page .contact-column.contact-right {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+}

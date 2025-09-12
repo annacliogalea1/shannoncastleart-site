@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCollectionsTabs();
   }
 
+  if (getPageContext() === 'artist') {
+  // Custom artist page JS could go here
+}
+
   document.addEventListener("DOMContentLoaded", () => {
   setupLightbox();
   setupBackToTop();
