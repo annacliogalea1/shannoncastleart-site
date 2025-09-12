@@ -1686,7 +1686,7 @@ main.contact-layout {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
-  max-width: 500px;
+  max-width: 850px;
   width: 100%;
   font-family: 'TWK Lausanne', sans-serif;
   font-weight: 500;
@@ -1814,7 +1814,7 @@ main.contact-layout {
 
 /* 6. Back to home button: 176px below "Send Message" button */
 .back-to-home-section {
-  margin-top: 176px;
+  margin-top: 100px;
 }
 
 .instagram-gallery-manual.full-bleed {
