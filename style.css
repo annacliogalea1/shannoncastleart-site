@@ -1945,19 +1945,3 @@ main.contact-layout {
   right: 0;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0));
 }
-
-footer.site-footer {
-  width: 100%;
-  background-color: #000; /* Or your footer color */
-  color: white;
-  padding: 2rem 0;
-}
-
-.footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2vw;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
