@@ -1728,7 +1728,6 @@ main.contact-layout {
 .form-field {
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .form-field label {
