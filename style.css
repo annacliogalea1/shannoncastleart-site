@@ -2275,7 +2275,7 @@ main.contact-layout {
   height: 492px;
   display: flex;
   align-items: center;
-  padding-left: 40px;
+  padding-left: 50px;
   padding-right: 20px;
   font-family: 'Lausanne', sans-serif;
 }
@@ -2294,7 +2294,7 @@ main.contact-layout {
   flex-direction: column;
   justify-content: center;
   text-align: right;
-  margin-right: 10px; /* gap between text and image */
+  margin-right: 20px; /* gap between text and image */
 }
 
 .title-line1 {
@@ -2334,17 +2334,27 @@ main.contact-layout {
 }
 
 .image-content img {
-  height: 328px;
+  height: 350px;
   object-fit: contain;
   display: block;
 }
 
-.caption {
+.caption-line1 {
   font-family: 'Lausanne', sans-serif;
   font-weight: 300;
   font-size: 13.33px; /* 10pt */
   margin-top: 4px;
-  color: #000;
+  color: #333;
+  text-align: right;
+  width: 100%;
+}
+
+.caption-line2 {
+  font-family: 'Lausanne', sans-serif;
+  font-weight: 300;
+  font-size: 13.33px; /* 10pt */
+  margin-top: 4px;
+  color: #333;
   text-align: right;
   width: 100%;
 }
