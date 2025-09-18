@@ -2274,6 +2274,7 @@ main.contact-layout {
 .motorcycle-about-section {
   height: 492px;
   display: flex;
+  justify-content: center; /* centers container within margins */
   align-items: center;
   font-family: 'Lausanne', sans-serif;
   background-color: #efefef;
@@ -2285,22 +2286,20 @@ main.contact-layout {
   max-width: 1200px;
   height: 100%;
   position: relative;
-  padding-left: 10px;
-  padding-right: 50px;
+  margin-left: 50px;   /* correct left margin */
+  margin-right: 10px;  /* correct right margin */
 }
 
 .text-content {
-  font-family: 'Lausanne', sans-serif;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: right;
-  margin-right: 20px; /* gap between text and image */
+  margin-right: 10px; /* consistent gap between text and image */
 }
 
 .title-line1 {
-  font-family: 'Lausanne', sans-serif;
   font-weight: 550;
   font-size: 26.66px; /* 20pt */
   color: #000;
@@ -2309,7 +2308,6 @@ main.contact-layout {
 }
 
 .title-line2 {
-  font-family: 'Lausanne', sans-serif;
   font-weight: 550;
   font-size: 26.66px; /* 20pt */
   color: #7b7b7b;
@@ -2319,7 +2317,6 @@ main.contact-layout {
 }
 
 .body-text {
-  font-family: 'Lausanne', sans-serif;
   font-weight: 450;
   font-size: 18.66px; /* 14pt */
   color: #000;
@@ -2332,28 +2329,16 @@ main.contact-layout {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  margin-right: 0px; /* image already flush with 20px section padding */
 }
 
 .image-content img {
   height: 350px;
   object-fit: contain;
   display: block;
-  align-self: right;
 }
 
-.caption-line1 {
-  font-family: 'Lausanne', sans-serif;
-  font-weight: 300;
-  font-size: 13.33px; /* 10pt */
-  margin-top: 4px;
-  color: #333;
-  text-align: right;
-  width: 100%;
-}
-
+.caption-line1,
 .caption-line2 {
-  font-family: 'Lausanne', sans-serif;
   font-weight: 300;
   font-size: 13.33px; /* 10pt */
   margin-top: 4px;
