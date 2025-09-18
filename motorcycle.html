@@ -110,14 +110,16 @@
       gallery.scrollBy({ left: direction * 300, behavior: 'smooth' });
     }
   </script>
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">✕</span>
+
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <button class="prev">&#10094;</button>
+  <div class="lightbox-inner">
     <img id="lightbox-img" class="lightbox-content" />
     <div id="lightbox-caption" class="lightbox-caption"></div>
-    <a class="prev">⟵</a>
-    <a class="next">⟶</a>
   </div>
+  <button class="next">&#10095;</button>
+</div>
 
   <footer class="site-footer">
     <div class="footer-container">

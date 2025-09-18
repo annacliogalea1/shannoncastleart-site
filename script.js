@@ -100,11 +100,12 @@ function setupLightbox({
   prevBtn?.addEventListener("click", () => changeImage(-1));
   nextBtn?.addEventListener("click", () => changeImage(1));
 
-  lightbox.addEventListener("click", e => {
-    if (e.target === lightbox || !lightbox.querySelector(".lightbox-inner")?.contains(e.target)) {
-      closeLightbox();
-    }
-  });
+lightbox.addEventListener("click", e => {
+  const inner = lightbox.querySelector(".lightbox-inner");
+  if (!inner || !inner.contains(e.target)) {
+    closeLightbox();
+  }
+});
 
   document.addEventListener("keydown", e => {
     if (!lightbox.classList.contains("show")) return;
