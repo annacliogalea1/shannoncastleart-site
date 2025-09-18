@@ -2298,6 +2298,7 @@ main.contact-layout {
 }
 
 .title-line1 {
+  font-family: 'Lausanne', sans-serif;
   font-weight: 750;
   font-size: 26.66px; /* 20pt */
   color: #000;
@@ -2306,6 +2307,7 @@ main.contact-layout {
 }
 
 .title-line2 {
+  font-family: 'Lausanne', sans-serif;
   font-weight: 750;
   font-size: 26.66px; /* 20pt */
   color: #333;
@@ -2315,6 +2317,7 @@ main.contact-layout {
 }
 
 .body-text {
+  font-family: 'Lausanne', sans-serif;
   font-weight: 550;
   font-size: 18.66px; /* 14pt */
   color: #000;
@@ -2337,6 +2340,7 @@ main.contact-layout {
 }
 
 .caption {
+  font-family: 'Lausanne', sans-serif;
   font-weight: 300;
   font-size: 13.33px; /* 10pt */
   margin-top: 4px;
