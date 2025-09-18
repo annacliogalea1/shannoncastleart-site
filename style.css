@@ -2277,8 +2277,10 @@ main.contact-layout {
   max-width: 1200px;
   height: 100%;
   position: relative;
+  margin-top: 30px;
   margin-left: 50px;
   margin-right: 10px;
+  background-color: #efefef;
 }
 
 .text-content {
@@ -2330,7 +2332,7 @@ main.contact-layout {
 
 .caption-line1,
 .caption-line2 {
-  font-weight: 300;
+  font-weight: 350;
   font-size: 13.33px;
   margin-top: 4px;
   color: #333;
