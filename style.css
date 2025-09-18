@@ -2269,3 +2269,78 @@ main.contact-layout {
     justify-content: center;
   }
 }
+
+/* ── MOTORCYCLE PAGE ───────────────────────────────── */
+.motorcycle-about-section {
+  height: 492px;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  font-family: 'Lausanne', sans-serif;
+}
+
+.motorcycle-about-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  position: relative;
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.title-line1 {
+  font-weight: 750;
+  font-size: 26.66px; /* 20pt */
+  color: #000;
+  text-transform: lowercase;
+  line-height: 1.2;
+}
+
+.title-line2 {
+  font-weight: 750;
+  font-size: 26.66px; /* 20pt */
+  color: #333;
+  text-transform: capitalize;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.body-text {
+  font-weight: 550;
+  font-size: 18.66px; /* 14pt */
+  color: #000;
+  max-width: 90%;
+  line-height: 1.5;
+}
+
+.image-content {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.image-content img {
+  height: 328px;
+  object-fit: contain;
+  display: block;
+}
+
+.caption {
+  font-weight: 300;
+  font-size: 13.33px; /* 10pt */
+  margin-top: 4px;
+  color: #000;
+  text-align: right;
+  width: 100%;
+}
