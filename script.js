@@ -101,8 +101,7 @@ function setupLightbox({
   nextBtn?.addEventListener("click", () => changeImage(1));
 
 lightbox.addEventListener("click", e => {
-  const inner = lightbox.querySelector(".lightbox-inner");
-  if (!inner || !inner.contains(e.target)) {
+  if (e.target === lightbox || !lightbox.querySelector(".lightbox-inner")?.contains(e.target)) {
     closeLightbox();
   }
 });

@@ -659,17 +659,6 @@ header h1 a:hover { opacity: 0.7; }
   opacity: 1;
 }
 
-.prev, .next, .close {
-  z-index: 101; /* ensure they're above .lightbox-inner */
-}
-
-.lightbox-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 /* lightbox caption below image */
 .lightbox-caption {
   width: 100%;
