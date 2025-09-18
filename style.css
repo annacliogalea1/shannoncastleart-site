@@ -2275,8 +2275,6 @@ main.contact-layout {
   height: 492px;
   display: flex;
   align-items: center;
-  padding-left: 50px;
-  padding-right: 20px;
   font-family: 'Lausanne', sans-serif;
 }
 
@@ -2286,9 +2284,12 @@ main.contact-layout {
   max-width: 1200px;
   height: 100%;
   position: relative;
+  padding-left: 50px;
+  padding-right: 10px;
 }
 
 .text-content {
+  font-family: 'Lausanne', sans-serif;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -2318,7 +2319,7 @@ main.contact-layout {
 
 .body-text {
   font-family: 'Lausanne', sans-serif;
-  font-weight: 550;
+  font-weight: 450;
   font-size: 18.66px; /* 14pt */
   color: #000;
   line-height: 1.5;
@@ -2337,6 +2338,7 @@ main.contact-layout {
   height: 350px;
   object-fit: contain;
   display: block;
+  align-self: right;
 }
 
 .caption-line1 {
