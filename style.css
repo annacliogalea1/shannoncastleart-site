@@ -2284,8 +2284,8 @@ main.contact-layout {
   max-width: 1200px;
   height: 100%;
   position: relative;
-  padding-left: 50px;
-  padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 50px;
 }
 
 .text-content {
