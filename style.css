@@ -2275,7 +2275,8 @@ main.contact-layout {
   height: 492px;
   display: flex;
   align-items: center;
-  margin-left: 50px;
+  padding-left: 40px;
+  padding-right: 20px;
   font-family: 'Lausanne', sans-serif;
 }
 
@@ -2293,7 +2294,7 @@ main.contact-layout {
   flex-direction: column;
   justify-content: center;
   text-align: right;
-  margin-right: 10px;
+  margin-right: 10px; /* gap between text and image */
 }
 
 .title-line1 {
@@ -2317,17 +2318,16 @@ main.contact-layout {
   font-weight: 550;
   font-size: 18.66px; /* 14pt */
   color: #000;
-  max-width: 90%;
   line-height: 1.5;
+  text-align: right;
 }
 
 .image-content {
-  width: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  margin-right: 30px;
+  margin-right: 0px; /* image already flush with 20px section padding */
 }
 
 .image-content img {
