@@ -2276,6 +2276,7 @@ main.contact-layout {
   display: flex;
   align-items: center;
   font-family: 'Lausanne', sans-serif;
+  background-color: #efefef;
 }
 
 .motorcycle-about-container {
@@ -2300,7 +2301,7 @@ main.contact-layout {
 
 .title-line1 {
   font-family: 'Lausanne', sans-serif;
-  font-weight: 750;
+  font-weight: 550;
   font-size: 26.66px; /* 20pt */
   color: #000;
   text-transform: lowercase;
@@ -2309,9 +2310,9 @@ main.contact-layout {
 
 .title-line2 {
   font-family: 'Lausanne', sans-serif;
-  font-weight: 750;
+  font-weight: 550;
   font-size: 26.66px; /* 20pt */
-  color: #333;
+  color: #7b7b7b;
   text-transform: capitalize;
   line-height: 1.2;
   margin-bottom: 16px;
