@@ -1454,32 +1454,6 @@ body.landing {
   line-height: 1.6;
 }
 
-/* ── OVERVIEW PAGE ───────────────────────────────── */
-/* ── Banner ─── */
-.image-banner {
-  position: relative;
-  height: 100vh;
-  background: url('Untitled-4-01.png') no-repeat center/cover;
-}
-
-.overlay-layer {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
-  z-index: 1;
-}
-
-.overlay-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 2;
-  pointer-events: none;
-}
-
 /* ── Section Titles and Descriptive Text ─── */
 .mockup-title {
   font-size: 60pt;
@@ -2271,16 +2245,26 @@ main.contact-layout {
 }
 
 /* ── MOTORCYCLE PAGE ───────────────────────────────── */
+.image-banner {
+  position: relative;
+  height: 100vh;
+}
+
+.motorcycle-about-section {
+  background-color: #efefef;
+  width: 100%;
+}
+
 .motorcycle-about-container {
   display: flex;
   width: 100%;
   max-width: 1440px;
   height: 100%;
   position: relative;
-  margin-top: 30px;
-  margin-left: 50px;
-  margin-right: 10px;
+  margin: 30px auto 0 auto; /* top margin only, center horizontally */
   background-color: #efefef;
+  padding: 0 20px; /* optional: adds breathing room on very small screens */
+  box-sizing: border-box; /* ensures padding doesn't create overflow */
 }
 
 .text-content {
