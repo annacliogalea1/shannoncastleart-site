@@ -2271,37 +2271,28 @@ main.contact-layout {
 }
 
 /* ── MOTORCYCLE PAGE ───────────────────────────────── */
-.motorcycle-about-section {
-  height: 492px;
-  display: flex;
-  justify-content: center; /* centers container within margins */
-  align-items: center;
-  font-family: 'Lausanne', sans-serif;
-  background-color: #efefef;
-}
-
 .motorcycle-about-container {
   display: flex;
   width: 100%;
   max-width: 1200px;
   height: 100%;
   position: relative;
-  margin-left: 50px;   /* correct left margin */
-  margin-right: 10px;  /* correct right margin */
+  margin-left: 50px;
+  margin-right: 10px;
 }
 
 .text-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;   /* align text block to top edge of image */
+  align-items: flex-end;
   text-align: right;
-  margin-right: 20px;      /* increased gap between text and image */
+  margin-right: 20px; /* increased from 10px */
 }
 
 .title-line1 {
   font-weight: 550;
-  font-size: 26.66px; /* 20pt */
+  font-size: 26.66px;
   color: #000;
   text-transform: lowercase;
   line-height: 1.2;
@@ -2309,7 +2300,7 @@ main.contact-layout {
 
 .title-line2 {
   font-weight: 550;
-  font-size: 26.66px; /* 20pt */
+  font-size: 26.66px;
   color: #7b7b7b;
   text-transform: capitalize;
   line-height: 1.2;
@@ -2318,7 +2309,7 @@ main.contact-layout {
 
 .body-text {
   font-weight: 450;
-  font-size: 18.66px; /* 14pt */
+  font-size: 18.66px;
   color: #000;
   line-height: 1.5;
   text-align: right;
@@ -2328,7 +2319,7 @@ main.contact-layout {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .image-content img {
@@ -2340,7 +2331,7 @@ main.contact-layout {
 .caption-line1,
 .caption-line2 {
   font-weight: 300;
-  font-size: 13.33px; /* 10pt */
+  font-size: 13.33px;
   margin-top: 4px;
   color: #333;
   text-align: right;
