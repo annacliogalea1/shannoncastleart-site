@@ -650,11 +650,11 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 .grid-sizer {
-  width: 16.6667%; /* 6 columns on desktop */
+  width: 25%; /* 4 columns on desktop */
 }
 
 .grid-item {
-  width: 16.6667%; /* 6 columns on desktop */
+  width: 25%; /* 4 columns on desktop */
   float: left;
   margin-bottom: 10px;
 }
