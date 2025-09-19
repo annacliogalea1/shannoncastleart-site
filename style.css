@@ -643,8 +643,19 @@ header h1 a:hover { opacity: 0.7; }
   width: 100%;
 }
 
+.masonry-gallery {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.grid-sizer {
+  width: 25%; /* 4 columns on desktop */
+}
+
 .grid-item {
-  width: 100%;
+  width: 25%;
+  float: left;
   margin-bottom: 16px;
 }
 
@@ -652,6 +663,13 @@ header h1 a:hover { opacity: 0.7; }
   display: block;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .grid-sizer,
+  .grid-item {
+    width: 50%; /* 2 columns on mobile */
+  }
 }
 
 /* ── Collection Grid (Fixed 3-Column Layout) ─── */
