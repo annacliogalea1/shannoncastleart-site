@@ -2330,7 +2330,7 @@ body {
   margin-top: 30px;
   margin-right: 20px;
   height: 100%;
-  gap: 0;
+  gap: 0 !important;
 }
 
 .image-content img {
@@ -2344,6 +2344,7 @@ body {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 350;
   font-size: 13.33px;
+  line-height: 1;
   color: #333;
   text-align: right;
   margin: 0;
@@ -2355,6 +2356,7 @@ body {
   font-family: 'TWKLausanne', sans-serif;
   font-weight: 350;
   font-size: 13.33px;
+  line-height: 1;
   color: #333;
   text-align: right;
   margin: 4px 0 30px 0; /* 4px gap from caption-line1, 30px bottom margin */
