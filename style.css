@@ -2328,8 +2328,7 @@ body {
 }
 
 .image-content img {
-  height: auto;
-  max-height: calc(492px - 30px - 30px); /* fits inside container with top/bottom space */
+  height: 328px;
   object-fit: contain;
   display: block;
 }
