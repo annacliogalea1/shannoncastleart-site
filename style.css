@@ -659,6 +659,10 @@ header h1 a:hover { opacity: 0.7; }
   margin-bottom: 10px;
 }
 
+.gutter-sizer {
+  width: 2%; /* 2% gutter */
+}
+
 .grid-item img {
   display: block;
   width: 100%;

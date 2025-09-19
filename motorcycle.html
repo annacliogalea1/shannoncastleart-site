@@ -112,14 +112,21 @@
     }
   </script>
 
+<div class="grid">
+  <div class="grid-sizer"></div>
+  <div class="gutter-sizer"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2"></div>
+
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     var grid = document.querySelector('.masonry-gallery');
     new Masonry(grid, {
-      itemSelector: 'img',
-      columnWidth: 'img',
+      columnWidth: '.grid-sizer',
       gutter: 10,
-      percentPosition: true
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      horizontalOrder: true
     });
   });
 </script>
