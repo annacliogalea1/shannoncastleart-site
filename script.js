@@ -457,7 +457,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLightbox();
   setupBackToTop();
   setupBannerSlider();
-  setupQuoteFadeIn();
   setupMenuToggle();
   setupContactForm();
   setupTabbedMenu();
@@ -468,7 +467,4 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCollectionsTabs();
   }
 
-  if (page === 'artist') {
-    // Custom artist page JS could go here
-  }
 });
