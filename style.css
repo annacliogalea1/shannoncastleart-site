@@ -547,6 +547,7 @@ header h1 a:hover { opacity: 0.7; }
   transition: opacity 0.3s ease;
   z-index: 100;
   padding: 0.5em;
+  pointer-events: auto;
 }
 
 .prev { left: 1em; }
