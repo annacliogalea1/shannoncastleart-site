@@ -632,6 +632,13 @@ header h1 a:hover { opacity: 0.7; }
   }
 }
 
+@media (max-width: 480px) {
+  .lightbox .prev,
+  .lightbox .next {
+    display: none !important;
+  }
+}
+
 /* ── MASONRY GRID ───────────────────────────────── */
 .masonry-gallery {
   width: 85%;
