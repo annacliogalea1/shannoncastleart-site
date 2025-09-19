@@ -681,7 +681,11 @@ header h1 a:hover { opacity: 0.7; }
 @media (max-width: 768px) {
   .grid-sizer,
   .grid-item {
-    width: 50%; /* 2 columns on mobile */
+    width: calc((100% - 5px) / 2);
+  }
+
+  .gutter-sizer {
+    width: 5px;
   }
 }
 

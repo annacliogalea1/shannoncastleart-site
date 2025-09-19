@@ -78,11 +78,13 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var grid = document.querySelector('.masonry-gallery');
+let msnry;
+
+document.addEventListener('DOMContentLoaded', function () {
+  var grid = document.querySelector('.masonry-gallery');
 
     imagesLoaded(grid, function () {
-      new Masonry(grid, {
+      msnry = new Masonry(grid, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         gutter: '.gutter-sizer',
@@ -91,6 +93,11 @@
       });
     });
   });
+
+  window.addEventListener('resize', function () {
+  msnry.layout(); // Recalculates layout on viewport change
+});
+
 </script>
 
   <!-- Video Section -->
