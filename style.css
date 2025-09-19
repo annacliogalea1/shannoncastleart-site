@@ -763,6 +763,12 @@ header h1 a:hover { opacity: 0.7; }
   }
 }
 
+@media (max-width: 500px) and (min-width: 375px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
 /* ── Horizontal Scroll Grid ─── */
 .slider-arrows {
   position: absolute;
@@ -2316,40 +2322,40 @@ body {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) and (min-width: 375px) {
   .motorcycle-about-container {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 0 1em;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .text-content, .image-content {
+    width: 48%;
   }
 
   .text-content {
-    align-items: center;
-    text-align: center;
+    align-items: flex-end;
+    text-align: right;
     padding-left: 0;
     margin-right: 0;
   }
 
-  .body-text {
-    text-align: center;
-    font-size: 16px;
-    margin-right: 0;
-  }
-
   .image-content {
-    align-items: center;
-    margin-right: 0;
+    align-items: flex-end;
+    margin: 0 auto;
   }
 
   .image-content img {
     width: 100%;
     height: auto;
-    max-width: 320px;
+    object-fit: contain;
   }
 
   .caption-line1,
   .caption-line2 {
-    text-align: center;
+    text-align: right;
     font-size: 12px;
   }
 }
