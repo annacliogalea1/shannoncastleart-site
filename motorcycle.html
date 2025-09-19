@@ -57,8 +57,11 @@
   </div>
 </section>
 
-<section class="masonry-gallery">
+<section class="masonry-gallery grid">
   <div class="grid-sizer"></div>
+  <div class="gutter-sizer"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2"></div>
 
   <div class="grid-item"><img src="images/BIKE_FLAG.JPG" alt="Bike1" /></div>
   <div class="grid-item"><img src="images/BikeBackTireCU.JPG" alt="Bike2" /></div>
@@ -72,6 +75,19 @@
   <div class="grid-item"><img src="images/GLASS 6.jpg" alt="Bike10" /></div>
   <div class="grid-item"><img src="images/HarleySaddlebag.jpg" alt="Bike11" /></div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.querySelector('.masonry-gallery');
+    new Masonry(grid, {
+      columnWidth: '.grid-sizer',
+      itemSelector: '.grid-item',
+      gutter: '.gutter-sizer',
+      percentPosition: true,
+      horizontalOrder: true
+    });
+  });
+</script>
 
   <!-- Video Section -->
 <section class="video-preview-section">
@@ -111,25 +127,6 @@
       gallery.scrollBy({ left: direction * 300, behavior: 'smooth' });
     }
   </script>
-
-<div class="grid">
-  <div class="grid-sizer"></div>
-  <div class="gutter-sizer"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2"></div>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var grid = document.querySelector('.masonry-gallery');
-    new Masonry(grid, {
-      columnWidth: '.grid-sizer',
-      gutter: 10,
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      horizontalOrder: true
-    });
-  });
-</script>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
