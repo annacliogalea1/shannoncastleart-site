@@ -414,17 +414,23 @@ document.addEventListener("DOMContentLoaded", () => {
 // Video Lightbox
 // ─────────────────────────────────────────────
 function setupVideoLightbox() {
+  console.log("Video lightbox setup running");
+
   const videoWrapper = document.querySelector('.video-wrapper');
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const captionEl = document.getElementById("lightbox-caption");
 
-  if (!videoWrapper || !lightbox) return;
+  console.log({ videoWrapper, lightbox, lightboxImg, captionEl });
 
-  // Remove magnifier if applied
-  lightboxImg.classList.remove("lightbox-content");
+  if (!videoWrapper || !lightbox || !captionEl) {
+    console.error("One or more required elements are missing");
+    return;
+  }
 
   videoWrapper.addEventListener("click", () => {
+    console.log("Video wrapper clicked");
+
     const videoEl = document.createElement("video");
     videoEl.src = "images/1958 Duo-Glide Shannon Connor Castle-ForWeb.mp4";
     videoEl.controls = true;
@@ -433,53 +439,16 @@ function setupVideoLightbox() {
     videoEl.style.maxHeight = "90vh";
     videoEl.style.display = "block";
 
-    // Replace image with video
     const current = lightbox.querySelector("img, video");
     if (current) current.remove();
     lightbox.insertBefore(videoEl, captionEl);
 
     captionEl.textContent = "";
-    lightbox.classList.add("show");
-    lightbox.classList.add("video-mode");
+    lightbox.classList.add("show", "video-mode");
     lightbox.style.opacity = "0";
     setTimeout(() => (lightbox.style.opacity = "1"), 10);
   });
 }
-
-console.log("Video lightbox setup running");
-
-const videoWrapper = document.querySelector('.video-wrapper');
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const captionEl = document.getElementById("lightbox-caption");
-
-console.log({ videoWrapper, lightbox, lightboxImg, captionEl });
-
-if (!videoWrapper || !lightbox || !captionEl) {
-  console.error("One or more required elements are missing");
-  return;
-}
-
-videoWrapper.addEventListener("click", () => {
-  console.log("Video wrapper clicked");
-
-  const videoEl = document.createElement("video");
-  videoEl.src = "images/1958 Duo-Glide Shannon Connor Castle-ForWeb.mp4";
-  videoEl.controls = true;
-  videoEl.autoplay = true;
-  videoEl.style.maxWidth = "90vw";
-  videoEl.style.maxHeight = "90vh";
-  videoEl.style.display = "block";
-
-  const current = lightbox.querySelector("img, video");
-  if (current) current.remove();
-  lightbox.insertBefore(videoEl, captionEl);
-
-  captionEl.textContent = "";
-  lightbox.classList.add("show", "video-mode");
-  lightbox.style.opacity = "0";
-  setTimeout(() => (lightbox.style.opacity = "1"), 10);
-});
 
 // ─────────────────────────────────────────────
 // DOM Ready
