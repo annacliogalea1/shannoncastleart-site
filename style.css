@@ -631,7 +631,7 @@ header h1 a:hover { opacity: 0.7; }
   }
 }
 
-/* ── GRID STYLES ───────────────────────────────── */
+/* ── MASONRY GRID ───────────────────────────────── */
 .masonry-gallery img {
   display: block;
   width: 100%;
@@ -673,66 +673,6 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 /* ── Collection Grid (Fixed 3-Column Layout) ─── */
-.collection-grid {
-  display: grid;
-  justify-content: center;
-  gap: 80px 10px; /* 80px row gap, 10px column gap */
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto 100px;
-}
-
-.grid-wrapper {
-  width: 402px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.grid-item {
-  width: 402px;
-  height: 415px;
-  overflow: hidden;
-  border: 0.01px solid white;
-  border-radius: 0;
-}
-
-.grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collection-grid .grid-item {
-  position: relative;
-  overflow: hidden;
-  width: 402px;
-  height: 415px;
-  isolation: isolate;
-  border: 0.01px solid white;
-  border-radius: 0;
-  cursor: pointer;
-}
-
-.collection-grid .grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collection-grid .grid-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.4s ease; 
-  z-index: 1;
-}
-
-.collection-grid .grid-item:hover::before {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .grid-title {
   margin: 0.5em 0 0.2em;
   font-size: 1.75em;
@@ -756,19 +696,6 @@ header h1 a:hover { opacity: 0.7; }
 .grid-wrapper:hover .grid-subtitle {
   color: #1faacf;
   transition: color 0.3s ease;
-}
-
-/* ── Masonry Grid ─── */
-.masonry-gallery {
-  width: min(1200px, 92vw);
-  margin: 0 auto;          
-}
-
-.masonry-grid img {
-  width: 100%;
-  margin-bottom: 10px;           
-  break-inside: avoid;          
-  display: block;
 }
 
 /* ── Horizontal Scroll Grid ─── */
