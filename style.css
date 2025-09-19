@@ -636,6 +636,8 @@ header h1 a:hover { opacity: 0.7; }
   width: 85%;
   margin: 0 auto;
   position: relative;
+  overflow: hidden; /* prevent floating wrap issues */
+  clear: both;
 }
 
 .grid-sizer,
@@ -645,7 +647,7 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 .grid-sizer {
-  width: 25%;
+  width: calc((100% - 30px) / 4);
 }
 
 .gutter-sizer {
@@ -653,8 +655,9 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 .grid-item {
-  width: 25%;
+  width: calc((100% - 30px) / 4);
   margin-bottom: 10px;
+  float: left;
 }
 
 .masonry-gallery img {
