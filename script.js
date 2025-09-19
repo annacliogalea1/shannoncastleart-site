@@ -458,7 +458,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupBackToTop();
   setupBannerSlider();
   setupMenuToggle();
-  setupContactForm();
   setupTabbedMenu();
   setupVideoLightbox();
 
