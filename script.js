@@ -100,6 +100,15 @@ function setupLightbox({
   prevBtn?.addEventListener("click", () => changeImage(-1));
   nextBtn?.addEventListener("click", () => changeImage(1));
 
+
+lightbox.addEventListener("click", (e) => {
+  const clickedInsideContent = lightbox.querySelector(".lightbox-inner")?.contains(e.target);
+  const isArrow = e.target.classList.contains("prev") || e.target.classList.contains("next");
+  if (!clickedInsideContent && !isArrow) {
+    closeLightbox();
+  }
+});
+
 // Add tap-zone functionality for mobile
 const tapLeft = document.createElement("div");
 tapLeft.className = "tap-zone tap-left";
