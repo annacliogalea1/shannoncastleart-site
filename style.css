@@ -2363,3 +2363,9 @@ body {
   padding: 0;
   width: 100%;
 }
+
+.caption-line1,
+.caption-line2,
+.image-content img {
+  outline: 1px solid red;
+}
