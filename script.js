@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMenuToggle();
   setupContactForm();
   setupTabbedMenu();
+  setupVideoLightbox();
 });
 
   // Load page-specific logic
@@ -457,7 +458,7 @@ function setupVideoLightbox() {
 
   videoWrapper.addEventListener("click", () => {
     const videoEl = document.createElement("video");
-    videoEl.src = "videos/sample-video.mp4"; // your video path
+    videoEl.src = "images/1958 Duo-Glide Shannon Connor Castle-ForWeb.mp4";
     videoEl.controls = true;
     videoEl.autoplay = true;
     videoEl.style.maxWidth = "90vw";
@@ -471,6 +472,7 @@ function setupVideoLightbox() {
 
     captionEl.textContent = "";
     lightbox.classList.add("show");
+    lightbox.classList.add("video-mode");
     lightbox.style.opacity = "0";
     setTimeout(() => (lightbox.style.opacity = "1"), 10);
   });
