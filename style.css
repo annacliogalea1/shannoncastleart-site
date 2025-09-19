@@ -2398,3 +2398,7 @@ body {
   object-position: center;
   display: block;
 }
+
+.banner-img {
+  object-position: center top; /* or left, right, bottom */
+}
