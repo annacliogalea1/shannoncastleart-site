@@ -2361,10 +2361,12 @@ body {
 }
 
 @media (max-width: 480px) {
-  .image-banner img {
+  .banner-img {
     width: 100%;
-    height: auto;
+    height: 100vh;
     object-fit: cover;
+    object-position: center top;
+    display: block;
   }
 }
 
