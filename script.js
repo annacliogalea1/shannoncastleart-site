@@ -102,9 +102,9 @@ function setupLightbox({
 
 
 lightbox.addEventListener("click", (e) => {
-  const clickedInsideContent = lightbox.querySelector(".lightbox-inner")?.contains(e.target);
-  const isArrow = e.target.classList.contains("prev") || e.target.classList.contains("next");
-  if (!clickedInsideContent && !isArrow) {
+  const isClickInside = e.target.closest(".lightbox-inner");
+  const isArrow = e.target.closest(".prev, .next");
+  if (!isClickInside && !isArrow) {
     closeLightbox();
   }
 });
