@@ -632,16 +632,23 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 /* ── GRID STYLES ───────────────────────────────── */
-.grid-base {
-  display: grid;
-  gap: 1em;
+.masonry-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .masonry-gallery {
   margin: 0 auto;
+  width: 100%;
 }
 
-.masonry-gallery img {
+.grid-item {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.grid-item img {
   display: block;
   width: 100%;
   height: auto;
