@@ -2318,8 +2318,8 @@ body {
   color: #000;
   line-height: 1.5;
   text-align: right;
+  margin-right: 20px;
   margin-top: 16px;
-  margin-left: 50px;
 }
 
 .image-content {
@@ -2345,6 +2345,7 @@ body {
   color: #333;
   text-align: right;
   margin-top: 4px;
+  margin-bottom: 0;
   width: 100%;
 }
 
@@ -2354,6 +2355,7 @@ body {
   font-size: 13.33px;
   color: #333;
   text-align: right;
+  margin-top: 4px;
   margin-bottom: 30px;
   width: 100%;
 }
