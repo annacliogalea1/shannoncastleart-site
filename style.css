@@ -103,125 +103,6 @@ h1, nav, .submenu a {
   text-transform: uppercase;
 }
 
-/* ── CONTACT FORM ───────────────────────────────────── */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  max-width: 600px;
-  margin: 0 auto;           
-  padding: 0.4em;
-  background: transparent;  
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
-}
-
-.contact-form-row {
-  display: flex;
-  gap: 1em;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.form-field label {
-  font-size: 0.8em;
-  color: #333;
-  margin-bottom: 0.3em;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.5em;
-  border: 1px solid #444;
-  border-radius: 0;
-  background: #f7f7f7;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
-  font-size: 1em;
-}
-
-.contact-form textarea {
-  height: 8em;
-  resize: vertical;
-}
-
-.contact-form button {
-  align-self: flex-end;
-  padding: 0.5em 1.5em;
-  width: 50%;
-  max-width: 200px;
-  background: black;
-  color: white;
-  font-size: 0.95em;
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  margin-top: 1em;
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
-}
-
-.required {
-  color: #222;
-  margin-left: 0.2em;
-  font-size: 1em;
-}
-
-.form-container {
-  min-height: 0;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-}
-
-.confirmation-message {
-  font-family: 'TWKLausanne', sans-serif;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 2em;
-  color: #333;
-  font-size: 1.2em;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  display: none;
-}
-
-.confirmation-message.visible {
-  display: block;
-  opacity: 1;
-}
-
-.contact-form button:hover {
-  background: #222;
-  transform: scale(1.02);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-@media (max-width: 768px) {
-  .contact-form-row {
-    flex-direction: column;
-  }
-}
-
-/* full-bleed contact area */
-.form-section {
-  width: 100%;
-  background: #f0f0f0;   
-  padding: 1em 0 1.25em;       
-}
-
-/* keep form centered */
-.form-container { 
-  padding: 0 1.2em;
-}
-
 /* ── FOOTER ───────────────────────────────────── */
 footer {
   background: #000000;
@@ -2262,7 +2143,7 @@ body {
 .motorcycle-about-section {
   background-color: #efefef;
   width: 100%;
-  height: 492px;
+  height: auto;
   padding: 0;
   margin: 0;
 }
@@ -2376,10 +2257,4 @@ body {
 .caption-line1,
 .caption-line2 {
   display: block;
-}
-
-.caption-line1,
-.caption-line2,
-.image-content img {
-  outline: 1px solid red;
 }
