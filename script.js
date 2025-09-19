@@ -100,6 +100,25 @@ function setupLightbox({
   prevBtn?.addEventListener("click", () => changeImage(-1));
   nextBtn?.addEventListener("click", () => changeImage(1));
 
+// Add tap-zone functionality for mobile
+const tapLeft = document.createElement("div");
+tapLeft.className = "tap-zone tap-left";
+const tapRight = document.createElement("div");
+tapRight.className = "tap-zone tap-right";
+
+lightbox.appendChild(tapLeft);
+lightbox.appendChild(tapRight);
+
+tapLeft.addEventListener("click", e => {
+  e.stopPropagation();
+  changeImage(-1);
+});
+
+tapRight.addEventListener("click", e => {
+  e.stopPropagation();
+  changeImage(1);
+});
+
 lightbox.addEventListener("click", e => {
   if (e.target === lightbox || !lightbox.querySelector(".lightbox-inner")?.contains(e.target)) {
     closeLightbox();
