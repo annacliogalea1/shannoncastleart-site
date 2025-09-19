@@ -128,22 +128,6 @@ function setupMagnifier(img) {
   img.addEventListener("mouseleave", () => lens.style.display = "none");
 }
 
-function closeLightbox() {
-  lightbox.style.opacity = "0";
-  setTimeout(() => {
-    lightbox.classList.remove("show", "video-mode");
-    // Restore image element if needed
-    const video = lightbox.querySelector("video");
-    if (video) {
-      video.remove();
-      const img = document.createElement("img");
-      img.id = "lightbox-img";
-      img.classList.add("lightbox-content");
-      lightbox.insertBefore(img, captionEl);
-    }
-  }, fadeDuration);
-}
-
 // ─────────────────────────────────────────────
 // 2. BACK TO TOP
 // ─────────────────────────────────────────────
@@ -216,10 +200,6 @@ function setupBannerSlider() {
     else if (e.key === "ArrowLeft") { prevSlide(); resetInterval(); }
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  setupMenuToggle();
-});
 
 // ─────────────────────────────────────────────
 // 5. MENU TOGGLE + SUBMENUS
@@ -405,11 +385,6 @@ function setupCollectionsTabs() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setupCollectionsTabs(); // only runs on collections.html
-});
-
-
 // ─────────────────────────────────────────────
 // Video Lightbox
 // ─────────────────────────────────────────────
@@ -420,12 +395,26 @@ function setupVideoLightbox() {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const captionEl = document.getElementById("lightbox-caption");
-
-  console.log({ videoWrapper, lightbox, lightboxImg, captionEl });
+  const fadeDuration = 300;
 
   if (!videoWrapper || !lightbox || !captionEl) {
     console.error("One or more required elements are missing");
     return;
+  }
+
+  function closeLightbox() {
+    lightbox.style.opacity = "0";
+    setTimeout(() => {
+      lightbox.classList.remove("show", "video-mode");
+      const video = lightbox.querySelector("video");
+      if (video) {
+        video.remove();
+        const img = document.createElement("img");
+        img.id = "lightbox-img";
+        img.classList.add("lightbox-content");
+        lightbox.insertBefore(img, captionEl);
+      }
+    }, fadeDuration);
   }
 
   videoWrapper.addEventListener("click", () => {
