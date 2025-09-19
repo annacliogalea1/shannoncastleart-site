@@ -2404,3 +2404,10 @@ body {
 .banner-img {
   object-position: center top; /* or left, right, bottom */
 }
+
+@media (max-width: 480px) {
+  .masonry-gallery {
+    column-count: 2;
+    column-gap: 16px;
+  }
+}
