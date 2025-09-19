@@ -632,25 +632,20 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 /* ── MASONRY GRID ───────────────────────────────── */
-.masonry-gallery img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .masonry-gallery {
-  margin: 0 auto;
   width: 85%;
-}
-
-.masonry-gallery {
-  max-width: 100%;
   margin: 0 auto;
   position: relative;
 }
 
+.grid-sizer,
+.gutter-sizer,
+.grid-item {
+  float: left;
+}
+
 .grid-sizer {
-  width: 25%; /* 4 columns on desktop */
+  width: 25%;
 }
 
 .gutter-sizer {
@@ -658,14 +653,26 @@ header h1 a:hover { opacity: 0.7; }
 }
 
 .grid-item {
-  width: 25%; /* 4 columns on desktop */
+  width: 25%;
   margin-bottom: 10px;
+}
+
+.masonry-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .grid-item img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.masonry-gallery::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 @media (max-width: 768px) {

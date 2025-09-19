@@ -80,12 +80,15 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var grid = document.querySelector('.masonry-gallery');
-    new Masonry(grid, {
-      columnWidth: '.grid-sizer',
-      itemSelector: '.grid-item',
-      gutter: '.gutter-sizer',
-      percentPosition: true,
-      horizontalOrder: true
+
+    imagesLoaded(grid, function () {
+      new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+        percentPosition: true,
+        horizontalOrder: true
+      });
     });
   });
 </script>
