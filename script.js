@@ -1,40 +1,4 @@
 // ─────────────────────────────────────────────
-// DOM Ready
-// ─────────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", () => {
-  setupLightbox();
-  setupBackToTop();
-  setupBannerSlider();
-  setupQuoteFadeIn();
-  setupMenuToggle();
-  setupContactForm();
-  setupTabbedMenu();
-  setupVideoLightbox();
-});
-
-  // Load page-specific logic
-  const page = getPageContext();
-
-  if (page === 'collections') {
-    setupCollectionsTabs();
-  }
-
-  if (getPageContext() === 'artist') {
-  // Custom artist page JS could go here
-}
-
-  document.addEventListener("DOMContentLoaded", () => {
-  setupLightbox();
-  setupBackToTop();
-  setupBannerSlider();
-  setupQuoteFadeIn();
-  setupMenuToggle();
-  setupContactForm();
-  setupTabbedMenu();
-  setupVideoLightbox(); // NEW
-});
-
-// ─────────────────────────────────────────────
 // PAGE CONTEXT DETECTION
 // ─────────────────────────────────────────────
 function getPageContext() {
@@ -445,6 +409,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCollectionsTabs(); // only runs on collections.html
 });
 
+
+// ─────────────────────────────────────────────
+// Video Lightbox
+// ─────────────────────────────────────────────
 function setupVideoLightbox() {
   const videoWrapper = document.querySelector('.video-wrapper');
   const lightbox = document.getElementById("lightbox");
@@ -477,3 +445,61 @@ function setupVideoLightbox() {
     setTimeout(() => (lightbox.style.opacity = "1"), 10);
   });
 }
+
+console.log("Video lightbox setup running");
+
+const videoWrapper = document.querySelector('.video-wrapper');
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const captionEl = document.getElementById("lightbox-caption");
+
+console.log({ videoWrapper, lightbox, lightboxImg, captionEl });
+
+if (!videoWrapper || !lightbox || !captionEl) {
+  console.error("One or more required elements are missing");
+  return;
+}
+
+videoWrapper.addEventListener("click", () => {
+  console.log("Video wrapper clicked");
+
+  const videoEl = document.createElement("video");
+  videoEl.src = "images/1958 Duo-Glide Shannon Connor Castle-ForWeb.mp4";
+  videoEl.controls = true;
+  videoEl.autoplay = true;
+  videoEl.style.maxWidth = "90vw";
+  videoEl.style.maxHeight = "90vh";
+  videoEl.style.display = "block";
+
+  const current = lightbox.querySelector("img, video");
+  if (current) current.remove();
+  lightbox.insertBefore(videoEl, captionEl);
+
+  captionEl.textContent = "";
+  lightbox.classList.add("show", "video-mode");
+  lightbox.style.opacity = "0";
+  setTimeout(() => (lightbox.style.opacity = "1"), 10);
+});
+
+// ─────────────────────────────────────────────
+// DOM Ready
+// ─────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  setupLightbox();
+  setupBackToTop();
+  setupBannerSlider();
+  setupQuoteFadeIn();
+  setupMenuToggle();
+  setupContactForm();
+  setupTabbedMenu();
+  setupVideoLightbox();
+
+  const page = getPageContext();
+  if (page === 'collections') {
+    setupCollectionsTabs();
+  }
+
+  if (page === 'artist') {
+    // Custom artist page JS could go here
+  }
+});
