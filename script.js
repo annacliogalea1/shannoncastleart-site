@@ -128,12 +128,6 @@ tapRight.addEventListener("click", e => {
   changeImage(1);
 });
 
-lightbox.addEventListener("click", e => {
-  if (e.target === lightbox || !lightbox.querySelector(".lightbox-inner")?.contains(e.target)) {
-    closeLightbox();
-  }
-});
-
   document.addEventListener("keydown", e => {
     if (!lightbox.classList.contains("show")) return;
     if (e.key === "Escape") closeLightbox();
