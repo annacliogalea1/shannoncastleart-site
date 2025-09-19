@@ -64,7 +64,7 @@
     </div>
 
     <!-- Masonry Galleries -->
-    <div class="collection-gallery masonry-grid active" id="gallery">
+    <div class="masonry-gallery masonry-gallery-active" id="gallery">
       <img src="images/AI6x6Tile.jpg" alt="A.I.">
       <img src="images/algorhythmCopy.tif" alt="Algorhythm">
       <img src="images/WoodsmanCopy2.jpg" alt="Woodsman">
@@ -79,40 +79,54 @@
       <img src="images/Mothra.jpg" alt="Mothra">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="cape-verde">
+    <div class="masonry-gallery" id="cape-verde">
       <img src="images/scan_2025-07-28_17-31-41.jpg" alt="Cape Verde 1">
       <img src="images/bike-feature-5.jpg" alt="Cape Verde 2">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="firefly">
+    <div class="masonry-gallery" id="firefly">
       <img src="images/TheOracleRomanEdit.jpg" alt="Firefly">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="ibiza">
+    <div class="masonry-gallery" id="ibiza">
       <img src="images/SistersFramedRomanEdit.jpg" alt="Ibiza">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="lovers">
+    <div class="masonry-gallery" id="lovers">
       <img src="images/CatherineFramedRomanEdit.jpg" alt="Lovers">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="rhiannon">
+    <div class="masonry-gallery" id="rhiannon">
       <img src="images/bike-feature-3.jpg" alt="Rhiannon">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="santa-maria">
+    <div class="masonry-gallery" id="santa-maria">
       <img src="images/bike-feature-7.jpg" alt="Santa Maria">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="sisters">
+    <div class="masonry-gallery" id="sisters">
       <img src="images/GLASS 6.jpg" alt="Sisters">
     </div>
 
-    <div class="collection-gallery masonry-grid" id="mandalas">
+    <div class="masonry-gallery" id="mandalas">
       <img src="images/Bikew_FlagCandid.JPG" alt="Mandalas">
     </div>
 
   </section>
+
+    <!-- Masonry.js -->
+  <script src="js/masonry.pkgd.min.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+      const grid = document.querySelector('.masonry-gallery');
+        new Masonry(grid, {
+          itemSelector: 'img',
+          columnWidth: 'img',
+          gutter: 16,
+          percentPosition: true
+        });
+      });
+    </script>
 
   <!-- Back to Home Button -->
   <section class="back-to-home-section">

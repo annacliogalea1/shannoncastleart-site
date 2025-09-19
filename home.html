@@ -300,6 +300,20 @@
     <a class="next">⟶</a>
   </div>
 
+  <!-- Masonry.js -->
+  <script src="js/masonry.pkgd.min.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+      const grid = document.querySelector('.masonry-gallery');
+        new Masonry(grid, {
+          itemSelector: 'img',
+          columnWidth: 'img',
+          gutter: 16,
+          percentPosition: true
+        });
+      });
+    </script>
+
   <!-- Back to Top -->
   <section class="back-to-top-section">
     <div class="back-to-top-container">
