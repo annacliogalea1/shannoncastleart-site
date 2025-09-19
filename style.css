@@ -2289,9 +2289,11 @@ body {
 .title-line1,
 .title-line2 {
   margin-top: 0;
+  margin-right: 20px;
 }
 
 .title-line1 {
+  font-family: 'TWKLausanne', sans-serif;
   font-weight: 550;
   font-size: 26.66px;
   color: #000;
@@ -2300,6 +2302,7 @@ body {
 }
 
 .title-line2 {
+  font-family: 'TWKLausanne', sans-serif;
   font-weight: 550;
   font-size: 26.66px;
   color: #7b7b7b;
@@ -2309,12 +2312,14 @@ body {
 }
 
 .body-text {
+  font-family: 'TWKLausanne', sans-serif;
   font-weight: 450;
   font-size: 18.66px;
   color: #000;
   line-height: 1.5;
   text-align: right;
   margin-top: 16px;
+  margin-left: 50px;
 }
 
 .image-content {
@@ -2333,13 +2338,22 @@ body {
   display: block;
 }
 
-.caption-line1,
-.caption-line2 {
+.caption-line1 {
+  font-family: 'TWKLausanne', sans-serif;
   font-weight: 350;
   font-size: 13.33px;
-  margin-top: 4px;
-  margin-bottom: 30px;
   color: #333;
   text-align: right;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.caption-line2 {
+  font-family: 'TWKLausanne', sans-serif;
+  font-weight: 350;
+  font-size: 13.33px;
+  color: #333;
+  text-align: right;
+  margin-bottom: 30px;
   width: 100%;
 }
