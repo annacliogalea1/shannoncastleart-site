@@ -660,7 +660,6 @@ header h1 a:hover { opacity: 0.7; }
 .grid-item {
   width: 25%; /* 4 columns on desktop */
   margin-bottom: 10px;
-  float: left;
 }
 
 .grid-item img {
