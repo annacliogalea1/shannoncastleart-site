@@ -50,7 +50,8 @@ function setupLightbox({
 } = {}) {
   const galleryImages = [...document.querySelectorAll(gallerySelector)];
   const lightbox = document.getElementById("lightbox");
-  let lightboxImg = document.getElementById("lightbox-img");
+  const lightboxInner = lightbox?.querySelector(".lightbox-inner");
+  const lightboxImg = document.getElementById("lightbox-img");
   const captionEl = document.querySelector(captionSelector);
   const closeBtn = lightbox?.querySelector(".close");
   const prevBtn = lightbox?.querySelector(".prev");
@@ -62,9 +63,6 @@ function setupLightbox({
   function showImage(index) {
     const img = galleryImages[index];
     lightboxImg.src = img.src;
-
-    lightboxImg.replaceWith(lightboxImg.cloneNode(true));
-    lightboxImg = document.getElementById("lightbox-img");
     setupMagnifier(lightboxImg);
 
     const caption = img.getAttribute("data-title") || img.alt || "";
@@ -100,35 +98,36 @@ function setupLightbox({
   prevBtn?.addEventListener("click", () => changeImage(-1));
   nextBtn?.addEventListener("click", () => changeImage(1));
 
+  // Unified click-to-close handler with exclusions
+  lightbox.addEventListener("click", (e) => {
+    const isInside = e.target.closest(".lightbox-inner");
+    const isArrow = e.target.closest(".prev, .next");
+    const isTapZone = e.target.closest(".tap-zone");
+    if (!isInside && !isArrow && !isTapZone) {
+      closeLightbox();
+    }
+  });
 
-lightbox.addEventListener("click", (e) => {
-  const isClickInside = e.target.closest(".lightbox-inner");
-  const isArrow = e.target.closest(".prev, .next");
-  if (!isClickInside && !isArrow) {
-    closeLightbox();
-  }
-});
+  // Mobile tap-zone navigation
+  const tapLeft = document.createElement("div");
+  tapLeft.className = "tap-zone tap-left";
+  const tapRight = document.createElement("div");
+  tapRight.className = "tap-zone tap-right";
 
-// Add tap-zone functionality for mobile
-const tapLeft = document.createElement("div");
-tapLeft.className = "tap-zone tap-left";
-const tapRight = document.createElement("div");
-tapRight.className = "tap-zone tap-right";
+  lightboxInner?.appendChild(tapLeft);
+  lightboxInner?.appendChild(tapRight);
 
-lightbox.appendChild(tapLeft);
-lightbox.appendChild(tapRight);
+  tapLeft.addEventListener("click", (e) => {
+    e.stopPropagation();
+    changeImage(-1);
+  });
 
-tapLeft.addEventListener("click", e => {
-  e.stopPropagation();
-  changeImage(-1);
-});
+  tapRight.addEventListener("click", (e) => {
+    e.stopPropagation();
+    changeImage(1);
+  });
 
-tapRight.addEventListener("click", e => {
-  e.stopPropagation();
-  changeImage(1);
-});
-
-  document.addEventListener("keydown", e => {
+  document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("show")) return;
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowRight") changeImage(1);
