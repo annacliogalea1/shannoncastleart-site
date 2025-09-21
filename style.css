@@ -848,6 +848,11 @@ body.landing {
   height: auto;
 }
 
+.enter-button {
+  /* existing styles... */
+  transition: opacity 0.8s ease;
+}
+
 /* Fade in animation */
 .fade-in {
   animation: fadeIn 1.5s ease forwards;

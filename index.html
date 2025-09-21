@@ -42,28 +42,34 @@
   <!-- Black Overlay On Click -->
   <div class="black-fade-overlay"></div>
 
-  <script>
-    const button = document.querySelector('.enter-button');
-    const overlay = document.querySelector('.overlay-image');
-    const bgImage = document.querySelector('.background-image');
-    const blackFade = document.querySelector('.black-fade-overlay');
-    const logo = document.querySelector('.logo-image');
+<script>
+  const button = document.querySelector('.enter-button');
+  const overlay = document.querySelector('.overlay-image');
+  const bgImage = document.querySelector('.background-image');
+  const blackFade = document.querySelector('.black-fade-overlay');
+  const logo = document.querySelector('.logo-image');
 
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
 
-      // Hide background, overlay, and button
-      bgImage.style.opacity = '0';
-      overlay.style.opacity = '0';
-      button.style.opacity = '0';
+    // Fade out background, overlay, and button
+    bgImage.style.opacity = '0';
+    overlay.style.opacity = '0';
+    button.style.opacity = '0';
+    button.style.pointerEvents = 'none';
 
-      // Show black fade
-      blackFade.classList.add('show-black');
+    // Fade in black overlay
+    blackFade.classList.add('show-black');
 
-      // Keep logo only
-      logo.classList.add('stay');
-    });
-  </script>
+    // Fade in logo
+    logo.classList.add('stay');
+
+    // After delay, redirect to home page
+    setTimeout(() => {
+      window.location.href = 'home.html';
+    }, 1200); // Match black fade transition
+  });
+</script>
 
 </body>
 </html>
