@@ -7,35 +7,63 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="landing">
-  <div class="fade-container">
-    <div class="landing-overlay">
-      <h1 class="landing-title">SHANNON CASTLE</h1>
-      <a href="motorcycle.html" class="enter-button">Enter</a>
-    </div>
 
-    <!-- Black fade overlay -->
-    <div class="black-fade-overlay"></div>
-  </div>
+  <!-- Background Image (Responsive) -->
+  <picture>
+    <source media="(max-width: 479px)" srcset="images/index-iphone.png" />
+    <source media="(min-width: 480px) and (max-width: 1023px)" srcset="images/index-ipad.png" />
+    <source media="(min-width: 1024px)" srcset="images/index-desktop.png" />
+    <img src="images/index-desktop.png" alt="Background" class="background-image" />
+  </picture>
+
+  <!-- Overlay Image with Multiply -->
+  <picture class="overlay-image multiply-blend fade-in">
+    <source media="(max-width: 479px)" srcset="images/index-overlay-iphone.png" />
+    <source media="(min-width: 480px) and (max-width: 1023px)" srcset="images/index-overlay-ipad.png" />
+    <source media="(min-width: 1024px)" srcset="images/index-overlay-desktop.png" />
+    <img src="images/index-overlay-desktop.png" alt="Overlay" />
+  </picture>
+
+  <!-- Logo (100% opacity, no blend mode) -->
+  <picture class="logo-image fade-in">
+    <source media="(max-width: 479px)" srcset="images/index-logo-iphone.png" />
+    <source media="(min-width: 480px) and (max-width: 1023px)" srcset="images/index-logo-ipad.png" />
+    <source media="(min-width: 1024px)" srcset="images/index-logo-desktop.png" />
+    <img src="images/index-logo-desktop.png" alt="Logo" />
+  </picture>
+
+  <!-- Enter Button (Image-based) -->
+  <picture class="enter-button fade-in">
+    <source media="(max-width: 479px)" srcset="images/index-enter-iPhone.png" />
+    <source media="(min-width: 480px)" srcset="images/index-enter.png" />
+    <img src="images/index-enter.png" alt="Enter" />
+  </picture>
+
+  <!-- Black Overlay On Click -->
+  <div class="black-fade-overlay"></div>
 
   <script>
     const button = document.querySelector('.enter-button');
-    const fadeOverlay = document.querySelector('.black-fade-overlay');
-    const fadeContainer = document.querySelector('.fade-container');
+    const overlay = document.querySelector('.overlay-image');
+    const bgImage = document.querySelector('.background-image');
+    const blackFade = document.querySelector('.black-fade-overlay');
+    const logo = document.querySelector('.logo-image');
 
     button.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // Fade out only the button
-      button.classList.add('button-exit');
+      // Hide background, overlay, and button
+      bgImage.style.opacity = '0';
+      overlay.style.opacity = '0';
+      button.style.opacity = '0';
 
-      // Fade in the black overlay
-      fadeOverlay.classList.add('show-black');
+      // Show black fade
+      blackFade.classList.add('show-black');
 
-      // Redirect after fade
-      setTimeout(() => {
-        window.location.href = button.getAttribute('href');
-      }, 1000);
+      // Keep logo only
+      logo.classList.add('stay');
     });
   </script>
+
 </body>
 </html>
