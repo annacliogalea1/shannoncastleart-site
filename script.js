@@ -440,6 +440,26 @@ function setupVideoLightbox() {
 }
 
 // ─────────────────────────────────────────────
+// Contact Form Logic
+// ─────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contact-form');
+  const confirmation = document.getElementById('confirmation-message');
+
+  if (form && confirmation) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // prevent real submission during testing
+
+      // Show confirmation message
+      confirmation.classList.add('show');
+
+      // Reset the form
+      form.reset();
+    });
+  }
+});
+
+// ─────────────────────────────────────────────
 // DOM Ready
 // ─────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
@@ -449,6 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMenuToggle();
   setupTabbedMenu();
   setupVideoLightbox();
+  setupContactForm();
 
   const page = getPageContext();
   if (page === 'collections') {
