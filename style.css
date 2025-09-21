@@ -841,6 +841,12 @@ body.landing {
   transition: opacity 0.8s ease;
 }
 
+.fade-out {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.8s ease;
+}
+
 /* Default: large + medium screens → bottom right */
 .enter-button {
   position: absolute;
@@ -859,7 +865,7 @@ body.landing {
   .enter-button {
     right: auto;
     left: 20px;
-    bottom: 20px;
+    bottom: 40px;
   }
 }
 

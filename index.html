@@ -55,8 +55,7 @@
     // Fade out background, overlay, and button
     bgImage.style.opacity = '0';
     overlay.style.opacity = '0';
-    button.style.opacity = '0';
-    button.style.pointerEvents = 'none';
+    button.classList.add('fade-out');
 
     // Fade in black overlay
     blackFade.classList.add('show-black');
