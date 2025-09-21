@@ -1610,34 +1610,6 @@ main.contact-layout {
   margin-bottom: 1rem;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  max-width: 850px;
-  width: 100%;
-  font-family: 'TWK Lausanne', sans-serif;
-  font-weight: 550;
-  align-items: flex-start;
-  margin-top: 20px
-}
-
-.contact-form-row {
-  display: flex;
-  gap: 1em;
-}
-
-.contact-form-container {
-  display: flex;
-  align-items: flex-start;
-  width: 820px;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-field label {
   font-family: 'TWK Lausanne', sans-serif;
   font-weight: 550;
@@ -1697,6 +1669,38 @@ main.contact-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 1000px; /* increased from 850px */
+  width: 100%;
+  font-family: 'TWK Lausanne', sans-serif;
+  font-weight: 550;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.contact-form-container {
+  display: flex;
+  align-items: flex-start;
+  width: 1000px; /* match the new max-width */
+}
+
+.contact-form-row {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+}
+
+.contact-form-row .form-field {
+  flex: 1;
+}
+
+.contact-form > .form-field {
+  width: 100%;
 }
 
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
