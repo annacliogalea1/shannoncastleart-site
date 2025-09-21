@@ -831,18 +831,6 @@ body.landing {
   z-index: 4;
 }
 
-/* Enter button image */
-.enter-button {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
 .enter-button img {
   max-width: 200px;
   height: auto;
@@ -851,6 +839,28 @@ body.landing {
 .enter-button {
   /* existing styles... */
   transition: opacity 0.8s ease;
+}
+
+/* Default: large + medium screens → bottom right */
+.enter-button {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  left: auto;
+  transform: none;
+  z-index: 3;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* Small screens (iPhone) → bottom left */
+@media (max-width: 479px) {
+  .enter-button {
+    right: auto;
+    left: 20px;
+    bottom: 20px;
+  }
 }
 
 /* Fade in animation */
