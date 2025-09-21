@@ -826,6 +826,12 @@ body.landing {
   height: auto;
 }
 
+@media (max-width: 479px) {
+  .logo-image img {
+    width: 80vw;
+  }
+}
+
 .logo-image.stay {
   opacity: 1 !important;
   z-index: 4;
@@ -865,7 +871,7 @@ body.landing {
   .enter-button {
     right: auto;
     left: 20px;
-    bottom: 40px;
+    bottom: 60px;
   }
 }
 
