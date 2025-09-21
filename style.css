@@ -1899,6 +1899,60 @@ main.contact-layout {
   }
 }
 
+@media (max-width: 1024px) {
+  /* Scale down typography */
+  .studio-title .title-line {
+    font-size: 2.1rem;
+  }
+
+  .studio-info,
+  .studio-info p,
+  .studio-links,
+  .studio-links li,
+  .contact-us-block p,
+  .contact-us-block h3,
+  .form-field label,
+  .contact-form input,
+  .contact-form textarea,
+  .confirmation-message {
+    font-size: 90%; /* scales all shared text elements */
+  }
+
+  /* Scale down margins and spacing */
+  .studio-title {
+    margin-top: 64px;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    gap: 1.2em;
+  }
+
+  .contact-form button {
+    width: 160px;
+    font-size: 0.9em;
+  }
+
+  /* Adjust image and content widths */
+  .contact-right img.contact-image {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form-container,
+  .contact-us-block,
+  .contact-column.contact-right > * {
+    max-width: 90%;
+  }
+
+  .contact-form-row {
+    gap: 0.8em;
+  }
+}
+
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
