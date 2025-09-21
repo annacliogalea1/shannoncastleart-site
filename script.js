@@ -442,22 +442,27 @@ function setupVideoLightbox() {
 // ─────────────────────────────────────────────
 // Contact Form Logic
 // ─────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function () {
+function setupContactForm() {
   const form = document.getElementById('contact-form');
   const confirmation = document.getElementById('confirmation-message');
+  const userNameSpan = document.getElementById('user-name');
 
-  if (form && confirmation) {
+  if (form && confirmation && userNameSpan) {
     form.addEventListener('submit', function (e) {
-      e.preventDefault(); // prevent real submission during testing
+      e.preventDefault();
 
-      // Show confirmation message
+      const nameInput = form.querySelector('input[name="name"]');
+      const nameValue = nameInput ? nameInput.value.trim() : '';
+
+      if (nameValue) {
+        userNameSpan.textContent = nameValue;
+      }
+
       confirmation.classList.add('show');
-
-      // Reset the form
       form.reset();
     });
   }
-});
+}
 
 // ─────────────────────────────────────────────
 // DOM Ready
