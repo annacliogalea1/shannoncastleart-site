@@ -1499,6 +1499,11 @@ main.contact-layout {
   position: relative;    /* optional: allows easier absolute positioning if needed */
 }
 
+.contact-column.contact-right > * {
+  max-width: 900px;
+  width: 100%;
+}
+
 /* Left Column */
 .contact-left {
   padding-left: 3vw;
@@ -1584,6 +1589,8 @@ main.contact-layout {
 
 .contact-us-block {
   margin-bottom: 1.5rem;
+  max-width: 900px;
+  width: 100%;
 }
 
 .contact-content-block {
@@ -1694,7 +1701,8 @@ main.contact-layout {
 .contact-form-container {
   display: flex;
   align-items: flex-start;
-  width: 1000px; /* match the new max-width */
+  max-width: 900px; /* match image */
+  width: 100%;
 }
 
 .contact-form-row {
