@@ -1830,17 +1830,31 @@ main.contact-layout {
   .studio-info {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem 0;
   }
 
   .studio-links {
     font-size: 16px;
     line-height: 1.5;
     margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
   }
 
   .studio-links li {
     font-size: 16px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 300px; /* or 80%, adjust as needed */
+    text-align: right;
+  }
+
+  .studio-links .plus {
+    margin-right: 6px;
+    min-width: 1em; /* keep alignment clean */
   }
 }
 
@@ -1867,11 +1881,12 @@ main.contact-layout {
 
 @media (max-width: 480px) {
   .studio-title {
+    margin-top: 80px;
     margin-bottom: 1rem;
   }
 
   .studio-links {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 }
 
@@ -1920,13 +1935,12 @@ main.contact-layout {
   margin-left: -190px; /* shift column leftward toward center */
 }
 
-/* 5. Contact form: 77px below follow-up message (handled above) */
-
 /* 6. Back to home button: 176px below "Send Message" button */
 .back-to-home-section {
   margin-top: 100px;
 }
 
+/* ── INSTAGRAM GALLERY ───────────────────────────────────── */
 .instagram-gallery-manual.full-bleed {
   width: 100vw;
   margin: 0;
