@@ -1865,6 +1865,16 @@ main.contact-layout {
   }
 }
 
+@media (max-width: 480px) {
+  .studio-title {
+    margin-bottom: 1rem;
+  }
+
+  .studio-links {
+    margin-top: 1rem;
+  }
+}
+
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
