@@ -1849,7 +1849,7 @@ main.contact-layout {
     justify-content: flex-end;
     width: 100%;
     max-width: 300px; /* or 80%, adjust as needed */
-    text-align: right;
+    text-align: left;
   }
 
   .studio-links .plus {
