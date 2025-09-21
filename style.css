@@ -1766,6 +1766,91 @@ main.contact-layout {
   }
 }
 
+@media (max-width: 480px) {
+  main.contact-layout {
+    grid-template-columns: 1fr;
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .contact-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-column.contact-left,
+  .contact-column.contact-right {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-right img.contact-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto 1.5rem auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-us-block {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .contact-us-block h3 {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .contact-us-block p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .studio-info {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .studio-links {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+
+  .studio-links li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .contact-form {
+    align-items: center;
+  }
+
+  .contact-form button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .confirmation-message {
+    text-align: center;
+  }
+}
+
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
 
 .studio-title {
