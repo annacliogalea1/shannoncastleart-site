@@ -826,7 +826,7 @@ body.landing {
   height: auto;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .logo-image img {
     width: 100vw;
   }
@@ -867,7 +867,7 @@ body.landing {
 }
 
 /* Small screens (iPhone) → bottom left */
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .enter-button {
     right: auto;
     left: 20px;
@@ -1679,13 +1679,6 @@ main.contact-layout {
   visibility: visible;
 }
 
-@media (max-width: 980px) {
-  main.contact-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -1717,6 +1710,60 @@ main.contact-layout {
 
 .contact-form > .form-field {
   width: 100%;
+}
+
+/* LARGE: >1025px — no media query needed, this is your default */
+
+/* MEDIUM: Tablets and small laptops */
+@media (max-width: 1024px) {
+  main.contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
+  }
+
+  .contact-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-form-container,
+  .contact-column.contact-right > *,
+  .contact-us-block,
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-form-row {
+    flex-direction: column;
+  }
+
+  .contact-right img.contact-image {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+}
+
+/* SMALL: Phones */
+@media (max-width: 480px) {
+  .studio-title .title-line {
+    font-size: 2rem;
+  }
+
+  .contact-us-block p,
+  .studio-links,
+  .studio-info,
+  .form-field label,
+  .contact-form input,
+  .contact-form textarea,
+  .confirmation-message {
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
 }
 
 /* ── EXACT PIXEL SPACING FROM ILLUSTRATOR SPEC ── */
