@@ -828,7 +828,7 @@ body.landing {
 
 @media (max-width: 479px) {
   .logo-image img {
-    width: 80vw;
+    width: 100vw;
   }
 }
 
