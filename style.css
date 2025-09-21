@@ -1831,39 +1831,39 @@ main.contact-layout {
 }
 
 @media (max-width: 480px) {
-  .studio-info {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0 0 0.5rem 0;
-  }
-
-  /* Shrink and reposition links */
   .studio-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;     /* align left */
+    margin-left: 1rem;           /* small indent */
+    margin-top: 0.5rem;
+    padding: 0;
     font-size: 14px;
-    margin-top: 0.25rem;
-    padding-left: 1rem;    /* nudge left */
-    align-items: flex-start;
-  }
-
-  /* Align links left within centered column */
-  .studio-links li {
-    justify-content: flex-start;
-    text-align: left;
-    max-width: 260px;      /* tighter bounds */
-    padding-left: 0.25rem; /* small indent */
-    font-size: 14px;
-  }
-
-  /* Remove huge bottom margin */
-  .studio-info p {
-    margin: 0 0 0.25rem 0;
-    font-size: 15px;
     line-height: 1.4;
   }
 
+  .studio-links li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;             /* allow full width */
+    white-space: nowrap;         /* prevent line breaks */
+    overflow: hidden;            /* safety */
+    text-overflow: ellipsis;     /* optional if width constrained */
+    font-size: 14px;
+  }
+
   .studio-links .plus {
-    min-width: 1.2em;
+    min-width: 1em;
     margin-right: 6px;
+  }
+
+  .studio-links a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    white-space: nowrap;         /* prevent wrap */
   }
 }
 
