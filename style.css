@@ -1792,6 +1792,10 @@ main.contact-layout {
     padding: 0;
   }
 
+  .contact-column.contact-right {
+    margin-left: 0 !important;
+  }
+
   .contact-column.contact-left,
   .contact-column.contact-right {
     align-items: center;
