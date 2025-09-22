@@ -1836,12 +1836,12 @@ main.contact-layout {
   }
 
   .studio-title {
-    margin-top: 64px;
-    margin-bottom: 0.5rem;
+    margin-top: 40px;      /* was 64px */
+    margin-bottom: 0.25rem;
   }
 
   .studio-title .title-line {
-    font-size: 2rem;
+    font-size: 1.8rem;      /* slightly reduced */
   }
 
   .studio-info,
@@ -1856,19 +1856,15 @@ main.contact-layout {
     line-height: 1.2;
     margin-top: 0;
     margin-left: 1rem;
-    padding: 0;
+    gap: 0.15rem; /* use gap for tighter control */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
   .studio-links li {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
     font-size: 16px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem;  /* was 0.25rem */
     white-space: nowrap;
   }
 
