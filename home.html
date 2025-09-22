@@ -40,15 +40,6 @@
   <!-- Menu Overlay -->
   <div id="overlay" class="overlay"></div>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">✕</span>
-    <img id="lightbox-img" class="lightbox-content" />
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-    <a class="prev">⟵</a>
-    <a class="next">⟶</a>
-  </div>
-
   <!-- Banner Gallery -->
   <section class="banner-gallery">
     <div class="slider" id="banner-slider">
@@ -123,7 +114,7 @@
   </ul>
 </nav>
 
-<!-- Selected Works Panel (FIXED - added missing closing div) -->
+<!-- Selected Works Panel -->
 <section id="selected-works"
          role="tabpanel"
          aria-labelledby="tab-selected-works"
@@ -152,7 +143,7 @@
   </div>
 </section>
 
-<!-- Collections Section (FIXED - removed stray closing tag) -->
+<!-- Collections Section -->
 <section id="collections"
          role="tabpanel"
          aria-labelledby="tab-collections"
@@ -285,14 +276,15 @@
   </div>
 </section>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">✕</span>
+<div id="lightbox" class="lightbox">
+  <span class="close">✕</span>
+  <div class="lightbox-inner">
     <img id="lightbox-img" class="lightbox-content" />
     <div id="lightbox-caption" class="lightbox-caption"></div>
     <a class="prev">⟵</a>
     <a class="next">⟶</a>
   </div>
+</div>
 
   <!-- Masonry.js -->
   <script src="js/masonry.pkgd.min.js"></script>
