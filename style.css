@@ -1921,6 +1921,10 @@ main.contact-layout {
 
   .contact-form {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;           /* ⬅️ centers the form container */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 1.2em;
   }
@@ -1933,6 +1937,10 @@ main.contact-layout {
 
   .form-field {
     width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* or center if labels look off */
   }
 
   .contact-form input,
