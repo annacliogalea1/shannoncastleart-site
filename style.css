@@ -1837,7 +1837,7 @@ main.contact-layout {
 
   .studio-title {
     margin-top: 64px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .studio-title .title-line {
@@ -1853,8 +1853,8 @@ main.contact-layout {
 
   .studio-links {
     font-size: 16px;
-    line-height: 1.4;
-    margin-top: 0.25rem;
+    line-height: 1.2;
+    margin-top: 0;
     margin-left: 1rem;
     padding: 0;
     display: flex;
