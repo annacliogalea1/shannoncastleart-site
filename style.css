@@ -1912,21 +1912,21 @@ main.contact-layout {
 
   .contact-form-container {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 1rem;
     display: flex;
     justify-content: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
 
   .contact-form {
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;           /* ⬅️ centers the form container */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.2em;
+    align-items: stretch; /* critical: allows full width of inputs */
+    margin: 0 auto;
   }
 
   .contact-form-row {
