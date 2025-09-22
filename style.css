@@ -842,7 +842,7 @@ body.landing {
 
 @media (max-width: 480px) {
   .logo-image img {
-    width: 100vw;
+    width: 120vw;
   }
 }
 
@@ -1807,12 +1807,17 @@ main.contact-layout {
   }
 }
 
-/* SMALL: Phones */
+/* SMALL: Mobile phones */
 @media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
   main.contact-layout {
     grid-template-columns: 1fr;
     padding: 3rem 1rem;
     gap: 2rem;
+    max-width: 100%;
   }
 
   .contact-column {
@@ -1879,15 +1884,17 @@ main.contact-layout {
   }
 
   .contact-right img.contact-image {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin: 2rem 0;
-    padding: 0;
     display: block;
   }
 
   .contact-us-block {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 0 1rem;
     text-align: center;
   }
@@ -1905,7 +1912,8 @@ main.contact-layout {
 
   .contact-form-container {
     width: 100%;
-    max-width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 0 1rem;
     display: flex;
     justify-content: center;
@@ -1913,7 +1921,6 @@ main.contact-layout {
 
   .contact-form {
     width: 100%;
-    max-width: 500px;
     align-items: center;
     gap: 1.2em;
   }
